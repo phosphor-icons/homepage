@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.grid-item {
+  margin: 4px;
+  background-color: aquamarine;
+  filter: grayscale(100%);
+  transition: 0.5s ease;
+}
+
+.grid-item:hover {
+  filter: grayscale(0%);
+  transition: 0.5s ease;
+}
