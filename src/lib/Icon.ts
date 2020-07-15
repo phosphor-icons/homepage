@@ -1,10 +1,8 @@
-export interface IconStyle {
-  type: IconFillStyle;
-  weight?: "light" | "regular" | "medium" | "bold";
-}
-
-export enum IconFillStyle {
-  LINE = "line",
+export enum IconStyle {
+  THIN = "thin",
+  LIGHT = "light",
+  REGULAR = "regular",
+  BOLD = "bold",
   FILL = "fill",
   DUOTONE = "duotone",
 }
@@ -20,7 +18,6 @@ export enum IconCategory {
   EDITOR = "Editor",
   FINANCE = "Finance",
   HEALTH = "Health & Medical",
-  LOGOS = "Logos",
   MAP = "Map",
   MEDIA = "Media",
   SYSTEM = "System",
@@ -34,4 +31,5 @@ export interface Icon {
   style: IconStyle;
   categories: IconCategory[];
   tags: string[];
+  asset: string;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useRecoilState } from "recoil";
 
 import { searchQueryAtom, styleQueryAtom } from "../../state/atoms";
-import { IconFillStyle } from "../../lib/Icon";
+import { IconStyle } from "../../lib/Icon";
 
 type IconSearchProps = {};
 
@@ -15,7 +15,7 @@ const IconSearch: React.FC<IconSearchProps> = () => {
   };
 
   const handleStyleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setStyle(event.target.value as IconFillStyle);
+    setStyle(event.target.value as IconStyle);
   };
 
   return (
@@ -23,9 +23,12 @@ const IconSearch: React.FC<IconSearchProps> = () => {
       <input value={query} onChange={handleSearchChange} />
       <select value={style?.toString()} onChange={handleStyleChange}>
         <option value={""}>All</option>
-        <option value={IconFillStyle.LINE}>Line</option>
-        <option value={IconFillStyle.FILL}>Fill</option>
-        <option value={IconFillStyle.DUOTONE}>Duotone</option>
+        <option value={IconStyle.THIN}>Thin</option>
+        <option value={IconStyle.LIGHT}>Light</option>
+        <option value={IconStyle.REGULAR}>Regular</option>
+        <option value={IconStyle.BOLD}>Bold</option>
+        <option value={IconStyle.FILL}>Fill</option>
+        <option value={IconStyle.DUOTONE}>Duotone</option>
       </select>
     </>
   );

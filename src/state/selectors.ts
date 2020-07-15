@@ -1,7 +1,7 @@
 import { selector } from "recoil";
-import { searchQueryAtom, styleQueryAtom, IconStyleQuery } from "./atoms";
-import { ICON_LIST as list } from "../data/iconList";
-import { Icon } from "../lib/Icon";
+import { searchQueryAtom, styleQueryAtom } from "./atoms";
+import { iconList } from "../lib/iconList";
+import { Icon, IconStyle } from "../lib/Icon";
 
 /**
  * SELECTOR
@@ -14,16 +14,12 @@ const isQueryMatch = (icon: Icon, query: string): boolean => {
   return (
     icon.name.includes(query) ||
     icon.tags.some((tag) => tag.toLowerCase().includes(query)) ||
-    icon.categories.some((category) =>
-      category.toLowerCase().includes(query)
-    ) ||
-    icon.style.type.toString().includes(query) ||
-    !!icon.style.weight?.includes(query)
+    icon.categories.some((category) => category.toLowerCase().includes(query))
   );
 };
 
-const isStyleMatch = (icon: Icon, style: IconStyleQuery): boolean => {
-  return !style || icon.style.type === style;
+const isStyleMatch = (icon: Icon, style?: IconStyle): boolean => {
+  return !style || icon.style === style;
 };
 
 export const filteredQueryResultsSelector = selector({
@@ -32,9 +28,9 @@ export const filteredQueryResultsSelector = selector({
     const query = get(searchQueryAtom).trim().toLowerCase();
     const style = get(styleQueryAtom);
 
-    if (!query && !style) return list;
+    if (!query && !style) return iconList;
 
-    return list.filter((icon) => {
+    return iconList.filter((icon) => {
       return isStyleMatch(icon, style) && isQueryMatch(icon, query);
     });
   },

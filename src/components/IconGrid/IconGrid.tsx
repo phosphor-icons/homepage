@@ -12,9 +12,9 @@ const IconGrid: React.FC<IconGridProps> = () => {
   return (
     <div className="grid">
       {filteredQueryResults.map((icon) => (
-        <div key={`${icon.name}-${icon.style.type.toString()}`} className="grid-item">
+        <div key={`ph-${icon.name}-${icon.style}`} className="grid-item">
           <img
-            src="https://i.imgur.com/zaO12Y8m.jpeg"
+            src={icon.asset}
             alt={`${icon.name} icon`}
             width="100%"
           />

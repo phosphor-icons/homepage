@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { IconFillStyle } from "../lib/Icon";
+import { IconStyle } from "../lib/Icon";
 
 /**
  * ATOM
@@ -8,14 +8,12 @@ import { IconFillStyle } from "../lib/Icon";
  * updates will result in a re-render of all components subscribed to that atom:
  */
 
-export type IconStyleQuery = IconFillStyle | null | undefined;
-
 export const searchQueryAtom = atom<string>({
   key: "searchQueryAtom",
   default: "",
 });
 
-export const styleQueryAtom = atom<IconStyleQuery>({
+export const styleQueryAtom = atom<IconStyle>({
   key: "styleQueryAtom",
-  default: undefined,
+  default: IconStyle.REGULAR,
 });
