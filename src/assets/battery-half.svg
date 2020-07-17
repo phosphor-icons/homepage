@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ph-battery-half</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="REFACTOR---Testing-32-line-style-MEDIUM---REFACTOR" transform="translate(-172.000000, -932.000000)">
+            <g id="ph-battery-half" transform="translate(172.000000, 932.000000)">
+                <polygon id="Fill-1" points="0 16 16 16 16 0 0 0"></polygon>
+                <path d="M12.5,3.5 C13.3291424,3.5 14,4.17085763 14,5 L14,5 L14,11 C14,11.8291424 13.3291424,12.5 12.5,12.5 L12.5,12.5 L2.5,12.5 C1.67085763,12.5 1,11.8291424 1,11 L1,11 L1,5 C1,4.17085763 1.67085763,3.5 2.5,3.5 L2.5,3.5 Z M12.5,4.5 L8,4.5 L8,11.5 L12.5,11.5 C12.7460957,11.5 12.9497497,11.32369 12.9919679,11.090064 L13,11 L13,5 C13,4.72314237 12.7768576,4.5 12.5,4.5 L12.5,4.5 Z M15,5.5 C15.2454599,5.5 15.4496084,5.67687516 15.4919443,5.91012437 L15.5,6 L15.5,10 C15.5,10.2761424 15.2761424,10.5 15,10.5 C14.7545401,10.5 14.5503916,10.3231248 14.5080557,10.0898756 L14.5,10 L14.5,6 C14.5,5.72385763 14.7238576,5.5 15,5.5 Z" id="Combined-Shape" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
