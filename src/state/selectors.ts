@@ -1,7 +1,8 @@
-import { selector } from "recoil";
+import { selector, selectorFamily } from "recoil";
+
 import { searchQueryAtom, styleQueryAtom } from "./atoms";
+import { Icon, IconStyle, IconCategory } from "../lib/Icon";
 import { iconList } from "../lib/iconList";
-import { Icon, IconStyle } from "../lib/Icon";
 
 /**
  * SELECTOR
@@ -22,7 +23,7 @@ const isStyleMatch = (icon: Icon, style?: IconStyle): boolean => {
   return !style || icon.style === style;
 };
 
-export const filteredQueryResultsSelector = selector({
+export const filteredQueryResultsSelector = selector<Icon[]>({
   key: "filteredQueryResultsSelector",
   get: ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();
@@ -33,5 +34,32 @@ export const filteredQueryResultsSelector = selector({
     return iconList.filter((icon) => {
       return isStyleMatch(icon, style) && isQueryMatch(icon, query);
     });
+    // .sort(() => Math.floor(Math.random() - 0.5));
+  },
+});
+
+type CategorizedIcons = {
+  [key in IconCategory]?: Icon[];
+};
+
+export const categorizedQueryResultsSelector = selector<CategorizedIcons>({
+  key: "categorizedQueryResultsSelector",
+  get: ({ get }) => {
+    const filteredResults = get(filteredQueryResultsSelector);
+    return filteredResults.reduce<CategorizedIcons>((acc, curr) => {
+      curr.categories.forEach((category) => {
+        if (acc[category]) acc[category]?.push(curr);
+        else acc[category] = [curr];
+      });
+      return acc;
+    }, {});
+  },
+});
+
+export const singleCategoryQueryResultsSelector = selectorFamily<Icon[], IconCategory>({
+  key: "singleCategoryQueryResultsSelector",
+  get: (category: IconCategory) => ({ get }) => {
+    const filteredResults = get(filteredQueryResultsSelector);
+    return filteredResults.filter((icon) => icon.categories.includes(category));
   },
 });
