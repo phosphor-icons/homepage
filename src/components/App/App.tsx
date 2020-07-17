@@ -1,13 +1,12 @@
 import React from "react";
-import { IconSearch, IconGrid } from "../";
+import { Toolbar, IconGrid } from "../";
 
 const App = () => {
   return (
     <div>
       <header>
-        Phosphor Icons{" "}
+        <h1>Phosphor Icons</h1>
         <a
-          // className="App-link"
           href="https://play.google.com/store/apps/details?id=com.tobiasfried.phosphor"
           target="_blank"
           rel="noopener noreferrer"
@@ -15,7 +14,7 @@ const App = () => {
           on the play store
         </a>
       </header>
-      <IconSearch />
+      <Toolbar />
       <IconGrid />
     </div>
   );
