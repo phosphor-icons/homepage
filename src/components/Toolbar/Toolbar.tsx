@@ -34,7 +34,7 @@ const Toolbar: React.FC<ToolbarProps> = () => {
   }
 
   return (
-    <>
+    <div style={{ position: "sticky", top: 0, padding: 8, backgroundColor: "white", zIndex: 1.1 }}>
       <input value={query} onChange={handleSearchChange} />
       <select value={style?.toString()} onChange={handleStyleChange}>
         <option value={""}>All</option>
@@ -47,7 +47,7 @@ const Toolbar: React.FC<ToolbarProps> = () => {
       </select>
       <input value={size} type="range" min={12} max={256} onChange={handleSizeChange}/>
       <input type="color" onChange={handleColorChange}/>
-    </>
+    </div>
   );
 }
 

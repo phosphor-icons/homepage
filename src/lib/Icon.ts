@@ -31,5 +31,5 @@ export interface Icon {
   style: IconStyle;
   categories: IconCategory[];
   tags: string[];
-  asset: string;
+  asset: React.FC<React.SVGProps<SVGSVGElement>>;
 }

@@ -14,7 +14,7 @@ const IconGridRL: React.FC<IconGridProps> = () => {
     const icon = filteredQueryResults[index];
     return (
       <div key={key} className="grid-item" style={{ width: 120}}>
-        <img src={icon.asset} alt={`${icon.name} icon`} width="100%" />
+        {/* <img src={icon.asset} alt={`${icon.name} icon`} width="100%" /> */}
         <div style={{ padding: 16 }}>{icon.name}</div>
       </div>
     );
