@@ -1,4 +1,10 @@
 export { default as App } from "./App/App";
+export { default as Header } from "./Header/Header";
 export { default as IconGrid } from "./IconGrid/IconGrid";
 export { default as IconGridUV } from "./IconGrid/IconGridUV";
 export { default as Toolbar } from "./Toolbar/Toolbar";
+export { default as ColorInput } from "./ColorInput/ColorInput";
+export { default as SearchInput } from "./SearchInput/SearchInput";
+export { default as SizeInput } from "./SizeInput/SizeInput";
+export { default as StyleInput } from "./StyleInput/StyleInput";
+export { default as Footer } from "./Footer/Footer";

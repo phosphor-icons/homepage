@@ -1,0 +1,56 @@
+.size-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  margin: 4px;
+  padding: 8px 16px;
+  border: 1px solid black;
+  border-radius: 24px;
+  background-color: white;
+  font-family: sans-serif;
+  font-size: 13.333px;
+  height: 20px;
+}
+
+.size-bar:focus-within {
+  outline: none;
+  border: 1px solid violet;
+  border-radius: 24px;
+}
+
+.size-bar input {
+  flex: 1;
+  margin-left: 16px;
+  border: none;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  height: 1px; /* Specified height */
+  background: black; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+}
+
+.size-bar input::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: black; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.size-bar input::-moz-range-thumb {
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: black; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.size-bar input:focus {
+  outline: none;
+}
+
+.size-bar input::placeholder {
+  color: black;
+}

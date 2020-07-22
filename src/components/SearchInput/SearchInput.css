@@ -1,0 +1,32 @@
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 250px;
+  margin: 4px;
+  padding: 8px 16px;
+  border: 1px solid black;
+  border-radius: 24px;
+  background-color: white;
+}
+
+.search-bar:focus-within {
+  outline: none;
+  border: 1px solid violet;
+  border-radius: 24px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  margin-left: 8px;
+  padding: 2px 0px 0px;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: black;
+}

@@ -1,6 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  /* min-height: 100vh; */
 }
 
 .grid-item {
@@ -10,7 +11,7 @@
   justify-content: center;
   margin: 4px;
   border-radius: 8px;
-  background-color: gainsboro;
+  background-color: white;
   /* transition: background-color 0.5s ease; */
 }
 

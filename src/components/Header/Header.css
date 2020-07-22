@@ -1,0 +1,8 @@
+header {
+  display: flex;
+  align-items: center;
+}
+
+header > * {
+  flex: 1;
+}

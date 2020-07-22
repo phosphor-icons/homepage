@@ -1,8 +1,8 @@
 import { selector, selectorFamily } from "recoil";
 
 import { searchQueryAtom, styleQueryAtom } from "./atoms";
-import { Icon, IconStyle, IconCategory } from "../lib/Icon";
-import { iconList } from "../lib/iconList";
+import { IconEntry, IconCategory } from "../lib";
+import { icons } from "../lib/icons";
 
 /**
  * SELECTOR
@@ -11,7 +11,7 @@ import { iconList } from "../lib/iconList";
  * modifies the given state in some way:
  */
 
-const isQueryMatch = (icon: Icon, query: string): boolean => {
+const isQueryMatch = (icon: IconEntry, query: string): boolean => {
   return (
     icon.name.includes(query) ||
     icon.tags.some((tag) => tag.toLowerCase().includes(query)) ||
@@ -19,44 +19,43 @@ const isQueryMatch = (icon: Icon, query: string): boolean => {
   );
 };
 
-const isStyleMatch = (icon: Icon, style?: IconStyle): boolean => {
-  return !style || icon.style === style;
-};
-
-export const filteredQueryResultsSelector = selector<Icon[]>({
+export const filteredQueryResultsSelector = selector<Readonly<IconEntry[]>>({
   key: "filteredQueryResultsSelector",
   get: ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();
     const style = get(styleQueryAtom);
 
-    if (!query && !style) return iconList;
+    if (!query && !style) return icons;
 
-    return iconList.filter((icon) => {
-      return isStyleMatch(icon, style) && isQueryMatch(icon, query);
+    return icons.filter((icon) => {
+      return isQueryMatch(icon, query);
     });
     // .sort(() => Math.floor(Math.random() - 0.5));
   },
 });
 
-type CategorizedIcons = {
-  [key in IconCategory]?: Icon[];
-};
+type CategorizedIcons = Partial<Record<IconCategory, IconEntry[]>>;
 
-export const categorizedQueryResultsSelector = selector<CategorizedIcons>({
+export const categorizedQueryResultsSelector = selector<
+  Readonly<CategorizedIcons>
+>({
   key: "categorizedQueryResultsSelector",
   get: ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);
     return filteredResults.reduce<CategorizedIcons>((acc, curr) => {
       curr.categories.forEach((category) => {
-        if (acc[category]) acc[category]?.push(curr);
-        else acc[category] = [curr];
+        if (!acc[category]) acc[category] = [];
+        acc[category]!!.push(curr);
       });
       return acc;
     }, {});
   },
 });
 
-export const singleCategoryQueryResultsSelector = selectorFamily<Icon[], IconCategory>({
+export const singleCategoryQueryResultsSelector = selectorFamily<
+  Readonly<IconEntry[]>,
+  IconCategory
+>({
   key: "singleCategoryQueryResultsSelector",
   get: (category: IconCategory) => ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);

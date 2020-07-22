@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { IconStyle } from "../lib/Icon";
+import { IconStyle } from "../lib";
 
 /**
  * ATOM
@@ -20,7 +20,7 @@ export const styleQueryAtom = atom<IconStyle>({
 
 export const iconSizeAtom = atom<number>({
   key: "iconSizeAtom",
-  default: 24,
+  default: 32,
 });
 
 export const iconColorAtom = atom<string>({

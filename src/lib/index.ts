@@ -1,3 +1,5 @@
+import { IconProps } from "phosphor-react/dist/lib/Icon";
+
 export enum IconStyle {
   THIN = "thin",
   LIGHT = "light",
@@ -26,10 +28,11 @@ export enum IconCategory {
   OTHER = "Other",
 }
 
-export interface Icon {
+export interface IconEntry {
   name: string;
-  style: IconStyle;
   categories: IconCategory[];
   tags: string[];
-  asset: React.FC<React.SVGProps<SVGSVGElement>>;
+  Icon: React.ForwardRefExoticComponent<
+    IconProps & React.RefAttributes<SVGSVGElement>
+  >;
 }

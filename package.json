@@ -13,6 +13,7 @@
     "@types/react-list": "^0.8.5",
     "@types/react-virtualized": "^9.21.10",
     "framer-motion": "^2.1.0",
+    "phosphor-react": "^0.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-list": "^0.8.15",
