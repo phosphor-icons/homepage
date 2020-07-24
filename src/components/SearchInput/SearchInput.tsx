@@ -16,11 +16,9 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   return (
     <div className="search-bar">
       <Search />
-      <label htmlFor="search-input" hidden>
-        Search for an icon
-      </label>
       <input
         id="search-input"
+        aria-label="Search for an icon"
         type="text"
         value={query}
         placeholder="Search for an icon"

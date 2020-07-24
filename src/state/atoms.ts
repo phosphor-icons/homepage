@@ -27,3 +27,8 @@ export const iconColorAtom = atom<string>({
   key: "iconColorAtom",
   default: "#000000",
 });
+
+export const iconPreviewOpenAtom = atom<string | false>({
+  key: "iconPreviewOpenAtom",
+  default: false,
+});

@@ -1,11 +1,14 @@
 .toolbar {
   position: sticky;
   top: 0px;
-  padding: 8px;
-  background-color: #f2f2f2;
-  border: 1px 0px 1px solid black;
-  z-index: 2px;
+  padding: 4px;
+  /* background-color: #f2f2f2; */
+  background-color: #e2e2e2;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   display: flex;
+  z-index: 1;
+  flex-flow: wrap;
   justify-content: center;
   align-items: center;
 }

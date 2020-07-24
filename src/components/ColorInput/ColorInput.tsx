@@ -17,11 +17,9 @@ const ColorInput: React.FC<ColorInputProps> = () => {
 
   return (
     <div>
-      <label htmlFor="color-picker" hidden>
-        Icon Color
-      </label>
       <input
         id="color-picker"
+        aria-label="Icon Color"
         type="color"
         onChange={handleColorChange}
         value={color}

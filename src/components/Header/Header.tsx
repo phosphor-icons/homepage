@@ -10,9 +10,12 @@ const Header: React.FC<HeaderProps> = () => {
         <h1>Phosphor Icons</h1>
       </div>
       <div style={{ paddingRight: 32, textAlign: "end" }}>
-        <button>Download All</button>
+        <button>Download all</button>
         <button>Request</button>
         <button>Donate</button>
+        <a href="https://github.com/rektdeckard/phosphor-react">
+          <button>Github</button>
+        </a>
       </div>
     </header>
   );

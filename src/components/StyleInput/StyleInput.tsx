@@ -15,11 +15,9 @@ const StyleInput: React.FC<StyleInputProps> = () => {
 
   return (
     <div>
-      <label htmlFor="style-input" hidden>
-        Icon Size
-      </label>
       <select
         id="style-input"
+        aria-label="Icon Style"
         value={style?.toString()}
         onChange={handleStyleChange}
       >
