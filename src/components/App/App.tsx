@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 
-import { Header, Toolbar, IconGrid, Footer } from "../";
+import { Header, Toolbar, Footer } from "../";
 import "./App.css";
+import IconGrid from "../IconGrid/IconGrid";
 
 const App: React.FC<any> = () => {
   return (
@@ -9,7 +10,9 @@ const App: React.FC<any> = () => {
       <Header />
       <main>
         <Toolbar />
-        <IconGrid />
+        <Suspense fallback={<div>Loading...</div>}>
+          <IconGrid />
+        </Suspense>
       </main>
       <Footer />
     </>

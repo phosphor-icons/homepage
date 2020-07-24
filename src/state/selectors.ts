@@ -21,16 +21,15 @@ const isQueryMatch = (icon: IconEntry, query: string): boolean => {
 
 export const filteredQueryResultsSelector = selector<Readonly<IconEntry[]>>({
   key: "filteredQueryResultsSelector",
-  get: ({ get }) => {
+  get: async ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();
     const style = get(styleQueryAtom);
 
     if (!query && !style) return icons;
 
-    return icons.filter((icon) => {
-      return isQueryMatch(icon, query);
-    });
-    // .sort(() => Math.floor(Math.random() - 0.5));
+    return await new Promise((resolve) =>
+      resolve(icons.filter((icon) => isQueryMatch(icon, query)))
+    );
   },
 });
 
