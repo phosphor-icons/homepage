@@ -1,4 +1,4 @@
-import { IconProps } from "phosphor-react/dist/lib/Icon";
+import { Icon } from "phosphor-react";
 
 export enum IconStyle {
   THIN = "thin",
@@ -32,7 +32,5 @@ export interface IconEntry {
   name: string;
   categories: IconCategory[];
   tags: string[];
-  Icon: React.ForwardRefExoticComponent<
-    IconProps & React.RefAttributes<SVGSVGElement>
-  >;
+  Icon: Icon;
 }

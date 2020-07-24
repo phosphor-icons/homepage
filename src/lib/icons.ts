@@ -302,7 +302,7 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "user-circle",
     categories: [IconCategory.USERS],
-    tags: ["person", "users", "account", "login", "circle"],
+    tags: ["person", "users", "account", "login", "round"],
     Icon: Icon.UserCircle,
   },
   {

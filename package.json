@@ -13,7 +13,7 @@
     "@types/react-list": "^0.8.5",
     "@types/react-virtualized": "^9.21.10",
     "framer-motion": "^2.1.0",
-    "phosphor-react": "^0.1.2",
+    "phosphor-react": "^0.1.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-list": "^0.8.15",
@@ -24,6 +24,7 @@
     "typescript": "^3.9.6"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
