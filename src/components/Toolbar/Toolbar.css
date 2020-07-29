@@ -1,14 +1,22 @@
-.toolbar {
+menu.toolbar {
   position: sticky;
   top: 0px;
-  padding: 4px;
-  /* background-color: #f2f2f2; */
-  background-color: #e2e2e2;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  display: flex;
+  padding: 0;
+  margin: 0;
+  background-color: #35313d;
   z-index: 1;
-  flex-flow: wrap;
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.toolbar-contents {
+  width: 83.33%;
+  max-width: 1120px;
+  /* height: 48px; */
+  padding: 8px 0;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
 }

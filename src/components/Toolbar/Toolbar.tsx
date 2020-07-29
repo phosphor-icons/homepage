@@ -7,12 +7,14 @@ type ToolbarProps = {};
 
 const Toolbar: React.FC<ToolbarProps> = () => {
   return (
-    <div className="toolbar">
-      <StyleInput />
-      <SearchInput />
-      <SizeInput />
-      <ColorInput />
-    </div>
+    <menu className="toolbar">
+      <div className="toolbar-contents">
+        <StyleInput />
+        <SearchInput />
+        <SizeInput />
+        <ColorInput />
+      </div>
+    </menu>
   );
 };
 
