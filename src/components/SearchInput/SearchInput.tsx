@@ -15,7 +15,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   };
   return (
     <div className="search-bar">
-      <Search />
+      <Search size={24} />
       <input
         id="search-input"
         aria-label="Search for an icon"
