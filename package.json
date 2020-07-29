@@ -16,6 +16,7 @@
     "phosphor-react": "^0.1.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropdown-select": "^4.4.2",
     "react-list": "^0.8.15",
     "react-scripts": "3.4.1",
     "react-use": "^15.3.2",
