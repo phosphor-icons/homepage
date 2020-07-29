@@ -1,6 +1,16 @@
 {
   "name": "phosphor-web",
   "version": "0.1.0",
+  "license": "GPL-3.0",
+  "homepage": "https://phosphoricons.com",
+  "author": {
+    "name": "Tobias Fried",
+    "email": "friedtm@gmail.com",
+    "url": "https://tobiasfried.com"
+  },
+  "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
+  "keywords": [ "phosphor", "icons", "svg", "design", "interface", "UI", "UX"],
+  "repository": "github:rektdeckard/phosphor-web",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
