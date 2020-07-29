@@ -20,7 +20,7 @@ const SizeInput: React.FC<SizeInputProps> = () => {
 
   return (
     <div className="size-bar">
-      <label htmlFor="size-input">{`Size: ${size}px`}</label>
+      <label htmlFor="size-input">{`${size}px`}</label>
       <input
         id="size-input"
         value={size}

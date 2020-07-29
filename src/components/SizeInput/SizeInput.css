@@ -1,56 +1,63 @@
 .size-bar {
   position: relative;
   display: flex;
-  align-items: center;
   flex: 2;
-  margin: 4px;
-  padding: 8px 16px;
-  border: 1px solid black;
-  border-radius: 24px;
-  background-color: white;
-  font-family: sans-serif;
-  font-size: 13.333px;
-  height: 17px;
+  align-items: center;
+  height: 48px;
+  margin: 0 4px;
+  padding: 0 24px;
+  color: white;
+  border-radius: 8px;
+  background-color: #494650;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
 }
 
 .size-bar:focus-within {
   outline: none;
-  border: 1px solid violet;
-  border-radius: 24px;
 }
 
 .size-bar input {
   flex: 1;
-  margin-left: 16px;
   border: none;
+  margin: 0 0 0 12px;
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   height: 1px; /* Specified height */
-  background: black; /* Grey background */
   outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
 }
 
 .size-bar input::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 12px; /* Set a specific slider handle width */
-  height: 12px; /* Slider handle height */
-  background: black; /* Green background */
+  width: 14px; /* Set a specific slider handle width */
+  height: 14px; /* Slider handle height */
+  border-radius: 50%;
+  background: white; /* Green background */
   cursor: pointer; /* Cursor on hover */
+  transition: height 0.1s, width 0.1s;
 }
 
 .size-bar input::-moz-range-thumb {
-  width: 12px; /* Set a specific slider handle width */
-  height: 12px; /* Slider handle height */
+  width: 14px; /* Set a specific slider handle width */
+  height: 14px; /* Slider handle height */
   background: black; /* Green background */
   cursor: pointer; /* Cursor on hover */
+  transition: height 0.1s, width 0.1s;
 }
 
-.size-bar input:focus {
+.size-bar input:focus::-moz-range-thumb {
   outline: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  transition: height 0.1s, width 0.1s;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
-.size-bar input::placeholder {
-  color: black;
+.size-bar input:focus::-webkit-slider-thumb {
+  outline: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  transition: height 0.1s, width 0.1s;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
 }
