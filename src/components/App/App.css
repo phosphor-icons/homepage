@@ -1,89 +1,86 @@
+/* @font-face {
+  font-family: Manrope;
+  src: url('https://fonts.googleapis.com/css2?family=Manrope') format('woff2');
+} */
+
 html {
-  background-color: #FAFAFA;
+  font-variant-ligatures: common-ligatures;
 }
 
 body {
   margin: 0px;
-  font-family: monospace;
+  font-family: "Manrope";
 }
 
-button,
-select {
-  margin: 4px;
-  padding: 8px;
-  border: 1px solid black;
-  border-radius: 24px;
-  background-color: white;
-}
-
-button > * {
-  vertical-align: middle;
-}
-
-button:focus,
-select:focus {
-  outline: none;
-  border: 1px solid violet;
-  border-radius: 24px;
-}
-
-button:hover {
-  color: white;
-  background-color: black;
-}
-button:active {
-  background-color: darkmagenta;
-}
-
-input[type="color"] {
-  border: 1px solid black;
-  border-radius: 50%;
-  background-color: white;
-}
-
-input[type="color" i] {
-  -webkit-appearance: square-button;
-  padding: 4px;
-  width: 25px;
-  height: 25px;
-}
-
-input[type="color"]:focus {
-  outline: none;
-  border: 1px solid violet;
+pre,
+code {
+  font-family: "IBM Plex Mono";
+  font-size: 14px;
+  color: "black";
 }
 
 pre {
-  padding: 4px;
-  background-color: gainsboro;
-}
-
-/* .color-picker {
-  padding: 0px;
+  box-sizing: border-box;
+  padding: 20px 16px 20px 24px;
+  margin: 12px 0px;
   background-color: white;
-  height: 32px;
-  width: 32px;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
+  border-radius: 6px;
+  border: 1px solid #E1D4D7;
 }
 
-.color-picker::-webkit-color-swatch {
-  border: none;
-  border-radius: 50%;
-  margin: 4px;
-} */
-
-/* input {
-  margin: 4px;
-  padding: 8px;
-  border: 2px solid black;
-  border-radius: 24px;
-  background-color: transparent;
+input {
+  font-family: "Manrope";
 }
 
-input:focus {
+button {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 40px 0 32px;
+  margin-top: 32px;
+  background-color: #ffd171;
+  border-radius: 8px;
+  border: none;
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+button.main-button {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 40px 0 32px;
+  margin-top: 32px;
+  background-color: #ffd171;
+  border-radius: 8px;
+  border: none;
+  font-family: "Manrope";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: transform 0.15s 
+}
+
+button.main-button:hover {
   outline: none;
-  border: 2px solid violet;
-  border-radius: 24px;
-} */
+  transform: scale(1.05);
+  transition: transform 0.15s
+}
+
+button.main-button:active {
+  outline: none;
+  background-color: #FFBF3B;
+  transform: scale(1);
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
