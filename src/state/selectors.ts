@@ -4,13 +4,6 @@ import { searchQueryAtom, styleQueryAtom } from "./atoms";
 import { IconEntry, IconCategory } from "../lib";
 import { icons } from "../lib/icons";
 
-/**
- * SELECTOR
- * A selector represents a piece of derived state. Derived state is a transformation of state.
- * You can think of derived state as the output of passing state to a pure function that
- * modifies the given state in some way:
- */
-
 const isQueryMatch = (icon: IconEntry, query: string): boolean => {
   return (
     icon.name.includes(query) ||
@@ -39,15 +32,19 @@ export const categorizedQueryResultsSelector = selector<
   Readonly<CategorizedIcons>
 >({
   key: "categorizedQueryResultsSelector",
-  get: ({ get }) => {
+  get: async ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);
-    return filteredResults.reduce<CategorizedIcons>((acc, curr) => {
-      curr.categories.forEach((category) => {
-        if (!acc[category]) acc[category] = [];
-        acc[category]!!.push(curr);
-      });
-      return acc;
-    }, {});
+    return await new Promise((resolve) =>
+      resolve(
+        filteredResults.reduce<CategorizedIcons>((acc, curr) => {
+          curr.categories.forEach((category) => {
+            if (!acc[category]) acc[category] = [];
+            acc[category]!!.push(curr);
+          });
+          return acc;
+        }, {})
+      )
+    );
   },
 });
 
@@ -56,8 +53,12 @@ export const singleCategoryQueryResultsSelector = selectorFamily<
   IconCategory
 >({
   key: "singleCategoryQueryResultsSelector",
-  get: (category: IconCategory) => ({ get }) => {
+  get: (category: IconCategory) => async ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);
-    return filteredResults.filter((icon) => icon.categories.includes(category));
+    return await new Promise((resolve) =>
+      resolve(
+        filteredResults.filter((icon) => icon.categories.includes(category))
+      )
+    );
   },
 });
