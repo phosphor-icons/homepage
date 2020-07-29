@@ -1,8 +1,11 @@
 export { default as App } from "./App/App";
-export { default as Header } from "./Header/Header";
-export { default as IconGrid } from "./IconGrid/IconGrid";
-export { default as IconGridUV } from "./IconGrid/IconGridUV";
+export { default as NavBar } from "./NavBar/NavBar";
+export { default as Panorama } from "./Panorama/Panorama";
+export { default as Info } from "./Info/Info";
 export { default as Toolbar } from "./Toolbar/Toolbar";
+export { default as IconGrid } from "./IconGrid/IconGrid";
+export { default as IconGridStatic } from "./IconGrid/IconGridStatic";
+export { default as IconGridUV } from "./IconGrid/IconGridUV";
 export { default as ColorInput } from "./ColorInput/ColorInput";
 export { default as SearchInput } from "./SearchInput/SearchInput";
 export { default as SizeInput } from "./SizeInput/SizeInput";
