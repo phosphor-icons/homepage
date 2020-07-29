@@ -1,0 +1,54 @@
+nav {
+  display: flex;
+  align-items: center;
+  height: 96px;
+  width: 83.33%;
+  margin: auto;
+}
+
+nav > div {
+  flex: 1;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: baseline;
+}
+
+.title h1 {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0px 16px 0px 8px;
+}
+
+.title small {
+  margin-top: 4px;
+  color: #b2b2b2;
+  font-size: 16px;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 32;
+  text-align: end;
+}
+
+.links a {
+  color: black;
+  text-decoration: none;
+}
+
+.links a:hover {
+  /* border-bottom: 2px solid black; */
+  box-shadow: 0 2px 0px -1px black;
+}
+
+.links a:not(:first-child) {
+  margin-left: 48px;
+}
