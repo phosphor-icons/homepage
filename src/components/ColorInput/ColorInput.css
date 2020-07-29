@@ -1,0 +1,46 @@
+.color-picker {
+  position: relative;
+  overflow: hidden;
+  height: 48px;
+  min-width: 112px;
+  flex: 1;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.color-picker span {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+}
+
+input.color-input {
+  position: relative;
+  height: 100%;
+  width: 96%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  margin: 0 0 0 4px;
+  padding: 0;
+}
+
+input.color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input.color-input::-webkit-color-swatch {
+  border: none;
+  border-radius: 100%;
+}
+
+input.color-input:focus {
+  outline: none;
+  border: 2px solid white;
+}
