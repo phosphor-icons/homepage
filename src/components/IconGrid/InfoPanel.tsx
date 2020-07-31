@@ -1,10 +1,22 @@
 import React, { useRef } from "react";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
 import { saveAs } from "file-saver";
 
-import { styleQueryAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
-import { Icon, ArrowUpRightCircle, Copy } from "phosphor-react";
+import {
+  styleQueryAtom,
+  iconSizeAtom,
+  iconColorAtom,
+  iconPreviewOpenAtom,
+} from "../../state/atoms";
+import useTransientState from "../../hooks/useTransientState";
+import {
+  Icon,
+  ArrowUpRightCircle,
+  Copy,
+  Prohibit,
+  CheckCircle,
+} from "phosphor-react";
 
 const infoVariants = {
   open: {
@@ -34,26 +46,43 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
   const weight = useRecoilValue(styleQueryAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
+  const setOpen = useSetRecoilState(iconPreviewOpenAtom);
+  const [copied, setCopied] = useTransientState<string | false>(false, 2000);
   const ref = useRef<SVGSVGElement>(null);
 
-  const htmlString = `<i class="ph-${name}${
-    weight === "regular" ? "" : `-${weight}`
-  }"></i>`;
-  const reactString = `<${Icon.displayName} size={${size}} color="${color}" ${
-    weight === "regular" ? "" : `weight="${weight}" `
-  }/>`;
+  const snippets = {
+    html: `<i class="ph-${name}${
+      weight === "regular" ? "" : `-${weight}`
+    }"></i>`,
+    react: `<${Icon.displayName} size={${size}} color="${color}" ${
+      weight === "regular" ? "" : `weight="${weight}" `
+    }/>`,
+  };
 
-  const handleCopySnippet = (data: string) => {
+  const handleCopySnippet = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    type: "html" | "react"
+  ) => {
+    event.currentTarget.blur();
+    setCopied(type);
+    const data = snippets[type];
     data && navigator.clipboard.writeText(data);
   };
 
-  const handleDownloadSVG = () => {
+  const handleDownloadSVG = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.currentTarget.blur();
     if (!ref.current?.outerHTML) return;
     const blob = new Blob([ref.current.outerHTML]);
     saveAs(blob, `${name}.svg`);
   };
 
-  const handleCopySVG = () => {
+  const handleCopySVG = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.currentTarget.blur();
+    setCopied("svg");
     ref.current && navigator.clipboard.writeText(ref.current.outerHTML);
   };
 
@@ -79,24 +108,32 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
         <div className="snippet">
           HTML/CSS
           <pre style={{ color: "black" }}>
-            {htmlString}
+            {snippets.html}
             <button
               title="Copy snippet"
-              onClick={() => handleCopySnippet(htmlString)}
+              onClick={(e) => handleCopySnippet(e, "html")}
             >
-              <Copy size={24} color="currentColor" weight="regular" />
+              {copied === "html" ? (
+                <CheckCircle size={24} color="#1FA647" weight="fill" />
+              ) : (
+                <Copy size={24} color="currentColor" weight="regular" />
+              )}
             </button>
           </pre>
         </div>
         <div className="snippet">
           React
           <pre style={{ color: "black" }}>
-            {reactString}
+            {snippets.react}
             <button
               title="Copy snippet"
-              onClick={() => handleCopySnippet(reactString)}
+              onClick={(e) => handleCopySnippet(e, "react")}
             >
-              <Copy size={24} color="currentColor" weight="regular" />
+              {copied === "react" ? (
+                <CheckCircle size={24} color="#1FA647" weight="fill" />
+              ) : (
+                <Copy size={24} color="currentColor" weight="regular" />
+              )}
             </button>
           </pre>
         </div>
@@ -117,15 +154,33 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
             style={{ color: isDark ? "white" : "black" }}
             onClick={handleCopySVG}
           >
-            <Copy
-              size={32}
-              style={{ marginRight: 8 }}
-              color="currentColor"
-              weight="regular"
-            />{" "}
-            Copy SVG
+            {copied === "svg" ? (
+              <CheckCircle
+                size={32}
+                style={{ marginRight: 8 }}
+                color="#1FA647"
+                weight="fill"
+              />
+            ) : (
+              <Copy
+                size={32}
+                style={{ marginRight: 8 }}
+                color="currentColor"
+                weight="regular"
+              />
+            )}
+            {copied === "svg" ? "Copied!" : "Copy SVG"}
           </button>
         </div>
+      </div>
+      <div className="close">
+        <Prohibit
+          className="close-icon"
+          color="currentColor"
+          size={32}
+          weight="regular"
+          onClick={() => setOpen(false)}
+        />
       </div>
     </motion.section>
   );
