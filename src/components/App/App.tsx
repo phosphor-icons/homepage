@@ -120,20 +120,20 @@ const App: React.FC<any> = () => {
               Copyright © 2020 Phosphor Icons
               <br />
               Phosphor Icons is designed by{" "}
-              <a href="https://helenazhang.com">Helena Zhang</a> + built by{" "}
-              <a href="https://tobiasfried.com">Tobias Fried</a>.
+              <a className="main-link" href="https://helenazhang.com">Helena Zhang</a> + built by{" "}
+              <a className="main-link" href="https://tobiasfried.com">Tobias Fried</a>.
               <br />
               This website is set in{" "}
-              <a href="https://manropefont.com/">Manrope</a> by{" "}
-              <a href="https://gent.media/">Mikhail Sharanda</a>.
+              <a className="main-link" href="https://manropefont.com/">Manrope</a> by{" "}
+              <a className="main-link" href="https://gent.media/">Mikhail Sharanda</a>.
             </p>
             <p>
               See also: <Droid size={20} />{" "}
-              <a href="https://play.google.com/store/apps/details?id=com.tobiasfried.phosphor">
+              <a className="main-link" href="https://play.google.com/store/apps/details?id=com.tobiasfried.phosphor">
                 Phosphor for Android
               </a>
             </p>
-            <a href="#">Back to zee top</a>
+            <a className="main-link" href="#">Back to zee top</a>
           </div>
         </div>
       </Info>

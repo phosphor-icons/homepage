@@ -39,16 +39,26 @@ nav > div {
   text-align: end;
 }
 
-.links a {
-  color: black;
-  text-decoration: none;
-}
-
-.links a:hover {
-  /* border-bottom: 2px solid black; */
-  box-shadow: 0 2px 0px -1px black;
-}
-
 .links a:not(:first-child) {
   margin-left: 48px;
+}
+
+a.nav-link {
+  text-decoration: none;
+  position: relative;
+  color: black;
+}
+
+a.nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  border-bottom: 1px solid black;
+  transition: 0.2s;
+}
+
+a.nav-link:hover:after {
+  width: 100%;
 }

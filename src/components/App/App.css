@@ -77,10 +77,22 @@ button.main-button:active {
   transform: scale(1);
 }
 
-a {
+a.main-link {
+  text-decoration: none;
+  position: relative;
   color: black;
 }
 
-a:hover {
-  color: blue;
+a.main-link:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid black;
+  transition: 0.2s;
+}
+
+a.main-link:hover:after {
+  width: 0%;
 }

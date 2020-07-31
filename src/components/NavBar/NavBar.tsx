@@ -21,10 +21,10 @@ const NavBar: React.FC<NavBarProps> = () => {
         </div>
       </div>
       <div className="links">
-        <a href="#">Download</a>
-        <a href="#">Request</a>
-        <a href="#">Donate</a>
-        <a href="https://github.com/rektdeckard/phosphor-react">
+        <a className="nav-link" href="#">Download</a>
+        <a className="nav-link" href="https://github.com/rektdeckard/phosphor-web/issues">Request</a>
+        <a className="nav-link" href="#">Donate</a>
+        <a className="nav-link" href="https://github.com/rektdeckard/phosphor-react">
           <span>Github</span>
         </a>
       </div>
