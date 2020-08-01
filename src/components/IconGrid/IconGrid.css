@@ -52,7 +52,7 @@
   width: 100%;
   height: 0px;
   margin: 0px;
-  padding-right: 10%;
+  /* padding-right: 10%; */
   border-radius: 16px;
   overflow: hidden;
 }
@@ -108,6 +108,16 @@
   margin: 0 48px 0 0;
   padding: 0;
   height: 48px;
+}
+
+.close {
+  width: 10%;
+  text-align: end;
+}
+
+.close-icon {
+  margin: 24px;
+  cursor: pointer;
 }
 
 .empty-list {
