@@ -46,6 +46,7 @@ button {
   font-size: 20px;
   line-height: 30px;
   cursor: pointer;
+  user-select: none;
 }
 
 button.main-button {
