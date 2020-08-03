@@ -8,7 +8,7 @@
   padding: 0 24px;
   color: white;
   border-radius: 8px;
-  background-color: #494650;
+  background-color: rgba(255, 255, 255, 0.05);
   font-family: "Manrope", sans-serif;
   font-size: 16px;
 }
@@ -24,6 +24,7 @@
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   height: 1px; /* Specified height */
+  background: rgba(255, 255, 255, 0.3);
   outline: none; /* Remove outline */
 }
 

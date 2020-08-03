@@ -1,5 +1,5 @@
 .grid-container {
-  padding: 0px 16px 8px;
+  padding: 4px 16px;
   /* background-color: #35313D;
   color: white; */
 }
@@ -32,7 +32,11 @@
   border-radius: 16px;
   user-select: none;
   cursor: pointer;
-  /* background-color: rgba(255, 255, 255, 0); */
+}
+
+.grid-item:hover {
+  background-color: rgba(163, 159, 171, 0.1);
+  transition: background-color 0.2s;
 }
 
 .grid-item:focus {
@@ -43,7 +47,7 @@
 .grid-item p {
   font-size: 12px;
   line-height: 16px;
-  color: #7F7F7F;
+  color: #86838B;
   margin-top: 12px;
 }
 

@@ -54,7 +54,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
     html: `<i class="ph-${name}${
       weight === "regular" ? "" : `-${weight}`
     }"></i>`,
-    react: `<${Icon.displayName} size={${size}} color="${color}" ${
+    react: `<${Icon.displayName} size={${size}} ${color !== "#000000" ? `color="${color}" ` : ""}${
       weight === "regular" ? "" : `weight="${weight}" `
     }/>`,
   };
@@ -66,6 +66,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
     event.currentTarget.blur();
     setCopied(type);
     const data = snippets[type];
+    if (!navigator.clipboard) throw new Error("no clipboard!");
     data && navigator.clipboard.writeText(data);
   };
 
@@ -94,7 +95,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
       variants={infoVariants}
       style={{
         order: index + (spans - (index % spans)),
-        backgroundColor: isDark ? "rgb(73, 70, 80)" : "rgb(246, 242, 243)",
+        backgroundColor: "rgba(163, 159, 171, 0.1)",
         color: isDark ? "white" : "black",
       }}
     >

@@ -2,7 +2,6 @@ import React, {
   useRef,
   useLayoutEffect,
   useEffect,
-  useMemo,
   MutableRefObject,
 } from "react";
 import { useRecoilState } from "recoil";
@@ -36,7 +35,7 @@ const itemVariants = {
 };
 
 const IconGridItem: React.FC<IconGridItemProps> = (props) => {
-  const { index, isDark, originOffset, name, Icon } = props;
+  const { index, originOffset, name, Icon } = props;
   const [open, setOpen] = useRecoilState(iconPreviewOpenAtom);
   const isOpen = open === name;
   const delayRef = useRef<number>(0);
@@ -44,13 +43,6 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
   const ref = useRef<any>();
 
   const handleOpen = () => setOpen(isOpen ? false : name);
-
-  const whileHover = useMemo(
-    () => ({
-      backgroundColor: isDark ? "rgb(73, 70, 80)" : "rgb(246, 242, 243)",
-    }),
-    [isDark]
-  );
 
   // The measurement for all elements happens in the layoutEffect cycle
   // This ensures that when we calculate distance in the effect cycle
@@ -82,15 +74,11 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
         key={name}
         ref={ref}
         tabIndex={0}
-        // onFocus={console.log}
         style={{
           order: index,
-          backgroundColor: isDark
-            ? "rgba(73, 70, 80, 0)"
-            : "rgba(246, 242, 243, 0)",
+          backgroundColor: isOpen ? "rgba(163, 159, 171, 0.1)" : undefined,
         }}
         custom={delayRef}
-        whileHover={whileHover}
         whileTap={whileTap}
         transition={transition}
         variants={itemVariants}
@@ -100,11 +88,11 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
         <Icon />
         <p>{name}</p>
       </motion.div>
-      <AnimatePresence initial={false}>
-        <ErrorBoundary fallback={<p>NOOOOOO</p>}>
-        {isOpen && <InfoPanel {...props} />}
-        </ErrorBoundary>
-      </AnimatePresence>
+      <ErrorBoundary>
+        <AnimatePresence initial={false}>
+          {isOpen && <InfoPanel {...props} />}
+        </AnimatePresence>
+      </ErrorBoundary>
     </>
   );
 };
