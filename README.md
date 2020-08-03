@@ -38,11 +38,11 @@ import { Smiley, Heart, Horse } from "phosphor-react";
 
 const App = () => {
   return (
-    <>
+    <div>
       <Smiley />
       <Heart size={32} color="hotpink" weight="fill" />
       <Horse weight="duotone" />
-    </>
+    </div>
   );
 };
 
