@@ -21,7 +21,7 @@ interface IconGridItemProps extends IconProps {
   originOffset: MutableRefObject<{ top: number; left: number }>;
 }
 
-const whileTap = { boxShadow: "0 0 0 4px rgb(73, 70, 80)" };
+// const whileTap = { boxShadow: "0 0 0 6px rgba(163, 159, 171, 0.1)" };
 const transition = { duration: 0.2 };
 const originIndex = 0;
 const delayPerPixel = 0.0004;
@@ -79,7 +79,7 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
           backgroundColor: isOpen ? "rgba(163, 159, 171, 0.1)" : undefined,
         }}
         custom={delayRef}
-        whileTap={whileTap}
+        // whileTap={whileTap}
         transition={transition}
         variants={itemVariants}
         onKeyPress={(e) => e.key === "Enter" && handleOpen()}

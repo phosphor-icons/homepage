@@ -1,18 +1,8 @@
 .grid-container {
   padding: 0px 16px 4px;
-  /* background-color: #35313D;
-  color: white; */
 }
 
 .grid {
-  /* display: grid;
-  grid-area: auto;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  grid-gap: 10px;
-  grid-auto-rows: 160px;
-  grid-auto-columns: auto;
-  max-width: 1120px; */
-
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -41,7 +31,7 @@
 
 .grid-item:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgb(246, 242, 243);
+  border: 2px solid rgba(163, 159, 171, 0.1);
 }
 
 .grid-item p {
@@ -56,7 +46,6 @@
   width: 100%;
   height: 0px;
   margin: 0px;
-  /* padding-right: 10%; */
   border-radius: 16px;
   overflow: hidden;
 }
@@ -80,10 +69,6 @@
 .icon-usage {
   flex: 1;
   padding: 56px 0px 56px;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: flex-start; */
-  /* vertical-align: middle; */
 }
 
 .snippet {
@@ -91,7 +76,6 @@
 }
 .snippet pre {
   text-overflow: ellipsis;
-  /* overflow-x: auto; */
 }
 .snippet button {
   background-color: transparent;
