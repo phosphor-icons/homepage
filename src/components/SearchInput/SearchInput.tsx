@@ -20,6 +20,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
         id="search-input"
         aria-label="Search for an icon"
         type="text"
+        autoComplete="off"
         value={query}
         placeholder="Search for an icon"
         onChange={handleSearchChange}
