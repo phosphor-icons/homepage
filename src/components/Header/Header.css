@@ -1,0 +1,58 @@
+header {
+  height: 1435px;
+  width: 100%;
+  background-color: #ffd171;
+  overflow: hidden;
+  /* display: block; */
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.image-container {
+  position: relative;
+  width: 1366px;
+  height: 100%;
+  margin: auto;
+}
+
+#marker-purple {
+  position: absolute;
+  transform: translate(143px, -158px);
+}
+
+#tablet {
+  position: absolute;
+  transform: translate(577px, -900px);
+}
+
+#billiard-ball {
+  position: absolute;
+  transform: translate(917.83px, 359.83px);
+}
+
+#warning {
+  position: absolute;
+  transform: translate(1184px, 421px);
+}
+
+#paperclips {
+  position: absolute;
+  transform: translate(982px, 621px);
+}
+
+#cutting-mat {
+  position: absolute;
+  transform: translate(119px, 825px);
+}
+
+#receipt {
+  position: absolute;
+  transform: translate(-5px, 1016px);
+}
+
+#calculator {
+  position: absolute;
+  transform: translate(924px, 940px);
+}

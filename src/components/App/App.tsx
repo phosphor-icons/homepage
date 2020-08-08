@@ -1,84 +1,14 @@
 import React, { Suspense } from "react";
 
-import { NavBar, Panorama, Info, Toolbar, IconGrid } from "../";
-import { ArrowUpRightCircle, DocumentText, Heart, Droid } from "phosphor-react";
+import { Info, Toolbar, IconGrid } from "../";
+import { Heart, Droid } from "phosphor-react";
 import "./App.css";
+import Header from "../Header/Header";
 
 const App: React.FC<any> = () => {
   return (
     <>
-      <NavBar />
-      <Panorama />
-      <Info id="overview">
-        <h2>
-          Phosphor is a flexible icon family for interfaces, diagrams,
-          presentations — whatever, really.
-        </h2>
-        <div className="feature">
-          <h3>
-            Clear and
-            <br />
-            reductive
-          </h3>
-          <div className="feature-contents">
-            <p>
-              Phosphor has been meticulously crafted to work together in
-              harmony. With 6 weights and alternative glyphs, Phosphor pairs
-              with all sorts of type sizes and layouts.
-            </p>
-            <h4>Design Specs</h4>
-            <ul>
-              <li>6 weights: Regular, Bold, Light, Thin, Fill, Duotone</li>
-              <li>Designed at 16px to scale down to a small size</li>
-              <li>Rounded end caps and ever so slightly rounded corners</li>
-              <li>Alternate glyphs to suit your needs</li>
-              <li>6,341 icons and counting</li>
-            </ul>
-            <button
-              className="main-button"
-              onClick={(e) => e.currentTarget.blur()}
-            >
-              <ArrowUpRightCircle size={32} style={{ marginRight: 12 }} />
-              Download icons
-            </button>
-          </div>
-        </div>
-        <div className="feature">
-          <h3>
-            Intuitive
-            <br />
-            and light
-          </h3>
-          <div className="feature-contents">
-            <p>
-              Phosphor is available as an icon font and a React package, and can
-              be sourced from NPM, a CDN like CDNJS and jsDelivr, or downloaded
-              and used locally.
-            </p>
-            <h4>Eng Specs</h4>
-            <ul>
-              <li>Intuitive, powerful API to style and add interactivity</li>
-              <li>Lightweight and full support for tree-shaking</li>
-              <li>Familiar usage and naming scheme</li>
-              <li>
-                Built with TypeScript, and includes type definitions to ease
-                development
-              </li>
-            </ul>
-            <button
-              className="main-button"
-              onClick={(e) =>
-                window.open(
-                  "https://github.com/rektdeckard/phosphor-web#phosphor-icons"
-                ) && e.currentTarget.blur()
-              }
-            >
-              <DocumentText size={32} style={{ marginRight: 12 }} />
-              See documentation
-            </button>
-          </div>
-        </div>
-      </Info>
+      <Header />
       <main>
         <Toolbar />
         <Suspense fallback={<div>Loading...</div>}>
