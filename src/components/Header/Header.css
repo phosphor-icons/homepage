@@ -1,13 +1,8 @@
 header {
-  height: 1435px;
   width: 100%;
+  height: 1435px;
   background-color: #ffd171;
   overflow: hidden;
-  /* display: block; */
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 .intro {
