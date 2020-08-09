@@ -10,11 +10,59 @@ header {
   justify-content: center; */
 }
 
+.intro {
+  width: 660px;
+  position: absolute;
+  transform: translate(143px, 392px);
+}
+
+.intro h2 {
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 32px;
+}
+
+div.links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 56px 0 0;
+}
+
+.links a:not(:first-child) {
+  margin-left: 48px;
+}
+
+a.nav-link {
+  text-decoration: none;
+  position: relative;
+  color: black;
+}
+
+a.nav-link:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  border-bottom: 1px solid black;
+  transition: 0.2s;
+}
+
+a.nav-link:hover:after {
+  width: 100%;
+}
+
+
 .image-container {
   position: relative;
   width: 1366px;
   height: 100%;
   margin: auto;
+}
+
+.inspectable {
+  cursor: cell;
 }
 
 #marker-purple {
