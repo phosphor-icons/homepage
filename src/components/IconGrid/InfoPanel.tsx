@@ -76,7 +76,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
     event.currentTarget.blur();
     if (!ref.current?.outerHTML) return;
     const blob = new Blob([ref.current.outerHTML]);
-    saveAs(blob, `${name}.svg`);
+    saveAs(blob, `${name}${weight === "regular" ? "" : `-${weight}`}.svg`);
   };
 
   const handleCopySVG = (
