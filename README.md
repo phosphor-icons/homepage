@@ -6,7 +6,7 @@ Phosphor is a kickass and dead-simple set of open-source icons for web and digit
 
 Phosphor is available as an icon font and a React package, which can be sourced from NPM or from a CDN.
 
-### Vanilla JS
+### HTML/CSS
 
 - **This seems familiar...** – Using Phosphor in your web project might seem familiar. We use a similar approach as many other icon sets out there, providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. But you don't need to know that. All you need to do is source the stylesheet, and drop in an icon:
 
