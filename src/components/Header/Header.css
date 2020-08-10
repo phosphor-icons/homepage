@@ -5,6 +5,10 @@ header {
   overflow: hidden;
 }
 
+header img {
+  user-select: none;
+}
+
 .intro {
   width: 660px;
   position: absolute;
