@@ -16,12 +16,23 @@ import receiptSpec from "../../assets/receipt-spec.svg";
 import calculator from "../../assets/calculator.svg";
 import calculatorSpec from "../../assets/calculator-spec.svg";
 import "./Header.css";
+import { ArrowUpRightCircle } from "phosphor-react";
 
 type HeaderProps = {};
 
 const variants = {
   hidden: { opacity: 0, transition: { duration: 0.2 } },
   visible: { opacity: 1, transition: { duration: 0.2 } },
+};
+
+const handleGetStarted = () => {
+  window.open("https://github.com/rektdeckard/phosphor-web#phosphor-icons");
+};
+
+const handleScrollToIcons = () => {
+  document
+    .getElementById("toolbar")
+    ?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
 const Header: React.FC<HeaderProps> = () => {
@@ -208,16 +219,13 @@ const Header: React.FC<HeaderProps> = () => {
             presentations – whatever really.
           </h2>
           <div style={{ display: "flex" }}>
-            <button className="main-button">Get started</button>
+            <button className="main-button" onClick={handleGetStarted}>
+              Get started{" "}
+              <ArrowUpRightCircle size={24} weight="fill" style={{ marginLeft: 12 }} />
+            </button>
 
-            <button
-              className="main-button"
-              onClick={() => {
-                document
-                  .getElementById("toolbar")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
-            >
+            <button className="main-button" onClick={handleScrollToIcons}>
+              {/* <ArrowUpRightCircle size={24} style={{ marginRight: 12 }} />{" "} */}
               Explore icons
             </button>
           </div>
