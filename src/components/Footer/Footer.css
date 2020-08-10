@@ -1,6 +1,72 @@
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  width: 100%;
+  height: 696px;
+  background-color: #925bff;
+  overflow: hidden;
+  position: absolute;
+}
+
+.outro-container {
+  position: relative;
+  width: 1366px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.outro-container img {
+  user-select: none;
+}
+
+.outro {
+  width: 660px;
+  position: absolute;
+  top: 104px;
+  left: 320px;
+}
+
+.outro h2 {
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 32px;
+}
+
+.fine-print {
+  margin: 104px 0 0;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+#back-to-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(120px, 104px);
+}
+
+#back-to-top-button {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+#marker-green {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(240px, 424px);
+}
+
+#phone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-211px, 414px);
+}
+
+#command {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(1213px, 464px);
 }
