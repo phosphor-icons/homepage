@@ -1,12 +1,65 @@
 footer {
   width: 100%;
-  height: 696px;
   background-color: #925bff;
   overflow: hidden;
   position: absolute;
 }
 
-.outro-container {
+@media screen and (min-width: 1280px) {
+  .outro {
+    position: relative;
+    width: 666px;
+    margin: 160px auto 324px;
+  }
+
+  .outro h2 {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 32px;
+  }
+
+  .fine-print {
+    margin: 96px 0 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  #back-to-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-212px, 0);
+  }
+
+  #back-to-top-button {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+  }
+
+  #marker-green {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(384px, 500px);
+  }
+  
+  #phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-80px, 500px);
+  }
+
+  #command {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(706px, 360px);
+  }
+}
+
+/* .outro-container {
   position: relative;
   width: 1366px;
   height: 100%;
@@ -69,4 +122,4 @@ footer {
   top: 0;
   left: 0;
   transform: translate(1213px, 464px);
-}
+} */
