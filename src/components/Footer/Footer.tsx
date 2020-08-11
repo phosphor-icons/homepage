@@ -71,6 +71,7 @@ const Footer: React.FC<FooterProps> = () => {
         <div id="back-to-top">
           <button
             id="back-to-top-button"
+            aria-label="back-to-top button"
             className="main-button"
             onClick={() => {
               document
@@ -81,7 +82,6 @@ const Footer: React.FC<FooterProps> = () => {
             <img src={uArrowUpLeft} alt="" />
           </button>
         </div>
-        <img id="marker-green" src={markerGreen} alt="" />
         <AnimatePresence>
           {hovered === "phone" ? (
             <motion.img
@@ -95,6 +95,7 @@ const Footer: React.FC<FooterProps> = () => {
               // onHoverStart={() => setHovered("phone")}
               onHoverEnd={clearHover}
               src={phoneSpec}
+              alt=""
             />
           ) : (
             <motion.img
@@ -108,6 +109,7 @@ const Footer: React.FC<FooterProps> = () => {
               onHoverStart={() => setHovered("phone")}
               // onHoverEnd={clearHover}
               src={phone}
+              alt=""
             />
           )}
           {hovered === "command" ? (
@@ -122,6 +124,7 @@ const Footer: React.FC<FooterProps> = () => {
               // onHoverStart={() => setHovered("command")}
               onHoverEnd={clearHover}
               src={commandKeySpec}
+              alt=""
             />
           ) : (
             <motion.img
@@ -135,9 +138,11 @@ const Footer: React.FC<FooterProps> = () => {
               onHoverStart={() => setHovered("command")}
               // onHoverEnd={clearHover}
               src={commandKey}
+              alt=""
             />
           )}
         </AnimatePresence>
+        <img id="marker-green" src={markerGreen} alt="" />
       </div>
     </footer>
   );
