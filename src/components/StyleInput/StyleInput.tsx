@@ -57,11 +57,18 @@ const StyleInput: React.FC<StyleInputProps> = () => {
       searchable={false}
       labelField="key"
       onChange={(values) => setStyle(values[0].value as IconStyle)}
-      itemRenderer={({ item, itemIndex, state: { cursor, values }, methods }) => (
+      itemRenderer={({
+        item,
+        itemIndex,
+        state: { cursor, values },
+        methods,
+      }) => (
         <span
           role="option"
           aria-selected={item.key === values[0].key}
-          className={`react-dropdown-select-item ${itemIndex === cursor ? "react-dropdown-select-item-active" : ""}`}
+          className={`react-dropdown-select-item ${
+            itemIndex === cursor ? "react-dropdown-select-item-active" : ""
+          }`}
           tabIndex={-1}
           onClick={() => methods.addItem(item)}
         >
@@ -69,8 +76,8 @@ const StyleInput: React.FC<StyleInputProps> = () => {
           {item.key}
         </span>
       )}
-      contentRenderer={({ state: { values }, methods }) => (
-        <div className="react-dropdown-select-content" {...methods}>
+      contentRenderer={({ state: { values } }) => (
+        <div className="react-dropdown-select-content">
           {values[0].icon}
           {values[0].key}
         </div>
