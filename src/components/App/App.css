@@ -41,13 +41,13 @@ button {
   border: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 button.main-button {
   height: 64px;
-  width: 240px;
-  margin: 0 24px 0 0;
+  margin: 16px 24px 0 0;
+  padding: 0 48px 0 40px;
   background-color: white;
   border-radius: 8px;
   font-family: "Manrope";
