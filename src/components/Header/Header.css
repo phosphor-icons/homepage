@@ -1,0 +1,186 @@
+header {
+  width: 100%;
+  height: 1434px;
+  background-color: #ffd171;
+  overflow: hidden;
+}
+
+header img {
+  user-select: none;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 56px;
+  margin: 48px 0;
+}
+
+a.nav-link {
+  text-decoration: none;
+  position: relative;
+  color: black;
+}
+
+a.nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  border-bottom: 1px solid black;
+  transition: 0.2s;
+}
+
+a.nav-link:hover:after {
+  width: 100%;
+}
+
+.inspectable {
+  cursor: cell;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 759px) {
+  .intro h2 {
+    font-size: 40px;
+    line-height: 52px;
+    margin-bottom: 32px;
+  }
+}
+
+/* Illustrations remain at same layout up to 1024px */
+@media screen and (max-width: 1023px) {
+  .intro {
+    margin: 0 10%;
+    position: absolute;
+    transform: translate(0, 382px);
+  }
+
+  .intro h2 {
+    font-size: 40px;
+    line-height: 52px;
+    margin-bottom: 32px;
+  }
+
+  #marker-purple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(40px, -158px);
+  }
+
+  #billiard-ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(130px, -98px);
+  }
+
+  #paperclips {
+    position: absolute;
+    transform: translate(176px, 152px);
+  }
+
+  #warning {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(398px, -116px);
+  }
+
+  #tablet {
+    position: absolute;
+    transform: translate(672px, -900px);
+  }
+
+  #cutting-mat {
+    position: absolute;
+    transform: translate(96px, 766px);
+  }
+
+  #calculator {
+    position: absolute;
+    transform: translate(632px, 938px);
+  }
+
+  #receipt {
+    position: absolute;
+    transform: translate(-96px, 958px);
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1023px) {
+  .intro h2 {
+    font-size: 40px;
+    line-height: 52px;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .image-container {
+    width: 1366px;
+  }
+
+  .intro {
+    margin: 0;
+    width: 660px;
+    position: absolute;
+    transform: translate(144px, 386px);
+  }
+
+  .intro h2 {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 32px;
+  }
+
+  #marker-purple {
+    position: absolute;
+    transform: translate(144px, -158px);
+  }
+
+  #tablet {
+    position: absolute;
+    transform: translate(578px, -900px);
+  }
+
+  #billiard-ball {
+    position: absolute;
+    transform: translate(918px, 360px);
+  }
+
+  #warning {
+    position: absolute;
+    transform: translate(1184px, 424px);
+  }
+
+  #paperclips {
+    position: absolute;
+    transform: translate(982px, 621px);
+  }
+
+  #cutting-mat {
+    position: absolute;
+    transform: translate(120px, 824px);
+  }
+
+  #receipt {
+    position: absolute;
+    transform: translate(-16px, 1016px);
+  }
+
+  #calculator {
+    position: absolute;
+    transform: translate(924px, 940px);
+  }
+}

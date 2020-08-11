@@ -1,11 +1,15 @@
+/* eslint-disable */
 import { useState, useEffect } from "react";
 import { useTimeoutFn } from "react-use";
 
-export default <T>(baseState: T, duration: number): [T, (setter: T) => void] => {
+export default <T>(baseState: T, ms: number = 1000): [T, (transientValue: T) => void] => {
   const [value, setValue] = useState<T>(baseState);
-  const [, , restart] = useTimeoutFn(() => setValue(baseState), duration);
+  const [, cancel, restart] = useTimeoutFn(() => setValue(baseState), ms);
 
-  useEffect(() => setValue(baseState), [baseState]);
+  useEffect(() => {
+    cancel();
+    setValue(baseState);
+  }, [baseState, ms]);
 
   const setTransientValue = (transientValue: T): void => {
     setValue(transientValue);

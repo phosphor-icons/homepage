@@ -7,6 +7,11 @@ html {
   font-variant-ligatures: common-ligatures;
 }
 
+::selection {
+  color: white;
+  background-color: black;
+}
+
 body {
   margin: 0px;
   font-family: "Manrope";
@@ -33,49 +38,39 @@ input {
 }
 
 button {
+  border: none;
   display: flex;
   align-items: center;
-  height: 72px;
-  padding: 0 40px 0 32px;
-  margin-top: 32px;
-  background-color: #ffd171;
+  justify-content: flex-start;
+}
+
+button.main-button {
+  height: 64px;
+  margin: 16px 24px 0 0;
+  padding: 0 48px 0 40px;
+  background-color: white;
   border-radius: 8px;
-  border: none;
   font-family: "Manrope";
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  box-shadow: 4px 4px 0 0 black;
+  transform: translate(0, 0);
+  transition: all 0.2s ease;
   cursor: pointer;
   user-select: none;
 }
 
-button.main-button {
-  display: flex;
-  align-items: center;
-  height: 72px;
-  padding: 0 40px 0 32px;
-  margin-top: 32px;
-  background-color: #ffd171;
-  border-radius: 8px;
-  border: none;
-  font-family: "Manrope";
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 30px;
-  cursor: pointer;
-  transition: transform 0.15s 
-}
-
-button.main-button:hover {
-  outline: none;
-  transform: scale(1.05);
-  transition: transform 0.15s
-}
-
 button.main-button:active {
+  transform: translate(4px, 4px);
+  /* background-color: #DDDDDD; */
+  box-shadow: 0 0 0 0 black;
+}
+
+button.main-button:focus {
   outline: none;
-  background-color: #FFBF3B;
-  transform: scale(1);
 }
 
 a.main-link {

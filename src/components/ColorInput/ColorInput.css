@@ -29,6 +29,7 @@ input.color-input {
   border-radius: 8px;
   margin: 0 0 0 4px;
   padding: 0;
+  cursor: pointer;
 }
 
 input.color-input::-webkit-color-swatch-wrapper {
