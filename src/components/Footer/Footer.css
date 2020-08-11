@@ -1,11 +1,101 @@
 footer {
   width: 100%;
+  position: relative;
   background-color: #925bff;
   overflow: hidden;
-  position: absolute;
 }
 
-@media screen and (min-width: 1280px) {
+#back-to-top-button {
+  width: 140px;
+  height: 140px;
+  margin: 0;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 759px) {
+  .outro h2 {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 32px;
+  }
+
+  .fine-print {
+    margin: 80px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  #marker-green {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(324px, 460px);
+  }
+  
+  #phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-140px, 420px);
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1023px) {
+  .outro h2 {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 32px;
+  }
+
+  .fine-print {
+    margin: 80px 0 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  #marker-green {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(544px, 500px);
+  }
+  
+  #phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(80px, 480px);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .outro {
+    position: relative;
+    margin: 292px 10% 292px;
+  }
+
+  #back-to-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-48px, -196px);
+  }
+
+  #command {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(640px, -228px);
+  }
+}
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  footer {
+    height: 920px;
+  }
+
   .outro {
     position: relative;
     width: 666px;
@@ -31,24 +121,18 @@ footer {
     transform: translate(-212px, 0);
   }
 
-  #back-to-top-button {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-  }
-
   #marker-green {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(384px, 500px);
+    transform: translate(384px, 512px);
   }
   
   #phone {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-80px, 500px);
+    position: relative;
+    /* top: 0; */
+    /* left: 0; */
+    transform: translate(-80px, 16px);
   }
 
   #command {
@@ -59,67 +143,53 @@ footer {
   }
 }
 
-/* .outro-container {
-  position: relative;
-  width: 1366px;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
+@media screen and (min-width: 1280px) {
+  .outro {
+    width: 660px;
+    position: relative;
+    margin: 160px 0 120px 468px;
+  }
+  
+  .outro h2 {
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 32px;
+  }
+  
+  .fine-print {
+    margin: 96px 0 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+  #back-to-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-320px, -12px);
+  }
+  
+  #marker-green {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* x and y-translate is wrong in spec? */
+    transform: translate(-208px, 270px);
+  }
+  
+  #phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* y-translate is wrong in spec? */
+    transform: translate(-684px, 236px);
+  }
+  
+  #command {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* y-translate is wrong in spec? */
+    transform: translate(744px, 352px);
+  }
 }
-
-.outro-container img {
-  user-select: none;
-}
-
-.outro {
-  width: 660px;
-  position: absolute;
-  top: 104px;
-  left: 320px;
-}
-
-.outro h2 {
-  font-size: 40px;
-  line-height: 50px;
-  margin-bottom: 32px;
-}
-
-.fine-print {
-  margin: 104px 0 0;
-  font-size: 20px;
-  line-height: 30px;
-}
-
-#back-to-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(120px, 104px);
-}
-
-#back-to-top-button {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-}
-
-#marker-green {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(240px, 424px);
-}
-
-#phone {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-211px, 414px);
-}
-
-#command {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(1213px, 464px);
-} */
