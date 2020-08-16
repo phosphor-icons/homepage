@@ -13,7 +13,7 @@ export const styleQueryAtom = atom<IconStyle>({
 
 export const iconSizeAtom = atom<number>({
   key: "iconSizeAtom",
-  default: 32,
+  default: 56,
 });
 
 export const iconColorAtom = atom<string>({
