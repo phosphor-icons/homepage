@@ -49,6 +49,11 @@ a.nav-link:hover:after {
   margin: auto;
 }
 
+.button-container {
+  display: flex; 
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 759px) {
   .intro h2 {
     font-size: 40px;

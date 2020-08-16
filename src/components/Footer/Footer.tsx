@@ -28,8 +28,17 @@ const Footer: React.FC<FooterProps> = () => {
           Phosphor is free and open source software. If you enjoy these icons,
           please support us with a donation.
         </h2>
-        <button className="main-button" onClick={(e) => e.currentTarget.blur()}>
-          <Heart size={24} weight="fill" style={{ marginRight: 12 }} />
+        <button
+          className="main-button"
+          onClick={() =>
+            window.open(
+              "https://paypal.me/TobiasFried",
+              "_blank",
+              "noopener noreferrer"
+            )
+          }
+        >
+          <Heart size={24} weight="fill" />
           Buy us a coffee
         </button>
         <p className="fine-print">
@@ -47,7 +56,7 @@ const Footer: React.FC<FooterProps> = () => {
             role="img"
             aria-label="Emoji of woman technologist, man technologist, and cat"
           >
-            👩🏻‍💻👨‍💻🐱
+            👩🏻‍💻👨‍💻🐈
           </span>
           <br />
           This website is set in{" "}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRightCircle } from "phosphor-react";
 
+import "./Header.css";
 import markerPurple from "../../assets/marker-purple.svg";
 import paperclips from "../../assets/paperclips.svg";
 import tablet from "../../assets/tablet.svg";
@@ -16,17 +17,20 @@ import receipt from "../../assets/receipt.svg";
 import receiptSpec from "../../assets/receipt-spec.svg";
 import calculator from "../../assets/calculator.svg";
 import calculatorSpec from "../../assets/calculator-spec.svg";
-import "./Header.css";
 
 type HeaderProps = {};
 
-const variants = {
+const illustrationVariants = {
   hidden: { opacity: 0, transition: { duration: 0.2 } },
   visible: { opacity: 1, transition: { duration: 0.2 } },
 };
 
 const handleGetStarted = () => {
-  window.open("https://github.com/rektdeckard/phosphor-web#phosphor-icons");
+  window.open(
+    "https://github.com/rektdeckard/phosphor-web#phosphor-icons",
+    "_blank",
+    "noopener noreferrer"
+  );
 };
 
 const handleScrollToIcons = () => {
@@ -43,10 +47,9 @@ const Header: React.FC<HeaderProps> = () => {
     <header>
       <motion.div
         className="image-container"
-        variants={variants}
-        initial="visible"
-        // animate="visible"
-        transition={{ duration: 2 }}
+        variants={illustrationVariants}
+        initial="hidden"
+        animate="visible"
       >
         <img src={markerPurple} id="marker-purple" alt="" />
         <img src={paperclips} id="paperclips" alt="" />
@@ -55,32 +58,18 @@ const Header: React.FC<HeaderProps> = () => {
             Phosphor Icons is a flexible icon family for interfaces, diagrams,
             presentations — whatever really.
           </h2>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <div className="button-container">
             <button className="main-button" onClick={handleGetStarted}>
-              <ArrowUpRightCircle
-                size={24}
-                weight="fill"
-                style={{ marginRight: 12 }}
-              />
+              <ArrowUpRightCircle size={24} weight="fill" />
               Go to docs
             </button>
 
             <button className="main-button" onClick={handleScrollToIcons}>
-              <ArrowUpRightCircle
-                size={24}
-                weight="fill"
-                style={{ marginRight: 12 }}
-              />
+              <ArrowUpRightCircle size={24} weight="fill" />
               Explore icons
             </button>
           </div>
           <div className="links">
-            {/* <a
-              className="nav-link"
-              href="https://github.com/rektdeckard/phosphor-web#phosphor-icons"
-            >
-              Docs
-            </a> */}
             <a className="nav-link" href="#">
               Download all
             </a>
@@ -90,7 +79,7 @@ const Header: React.FC<HeaderProps> = () => {
             >
               Request
             </a>
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="https://paypal.me/TobiasFried">
               Donate
             </a>
             <a
@@ -110,7 +99,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               // onHoverStart={() => setHovered("tablet")}
               onHoverEnd={clearHover}
               src={tabletSpec}
@@ -124,7 +113,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               onHoverStart={() => setHovered("tablet")}
               // onHoverEnd={clearHover}
               src={tablet}
@@ -139,7 +128,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               // onHoverStart={() => setHovered("billiard-ball")}
               onHoverEnd={clearHover}
               src={billiardBallSpec}
@@ -153,7 +142,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               onHoverStart={() => setHovered("billiard-ball")}
               // onHoverEnd={clearHover}
               src={billiardBall}
@@ -168,7 +157,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               // onHoverStart={() => setHovered("warning")}
               onHoverEnd={clearHover}
               src={warningSpec}
@@ -182,7 +171,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               onHoverStart={() => setHovered("warning")}
               // onHoverEnd={clearHover}
               src={warning}
@@ -197,7 +186,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               // onHoverStart={() => setHovered("cutting-mat")}
               onHoverEnd={clearHover}
               src={cuttingMatSpec}
@@ -211,7 +200,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               onHoverStart={() => setHovered("cutting-mat")}
               // onHoverEnd={clearHover}
               src={cuttingMat}
@@ -226,7 +215,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               // onHoverStart={() => setHovered("receipt")}
               onHoverEnd={clearHover}
               src={receiptSpec}
@@ -238,7 +227,7 @@ const Header: React.FC<HeaderProps> = () => {
               key="receipt"
               className="inspectable"
               initial="visible"
-              variants={variants}
+              variants={illustrationVariants}
               onHoverStart={() => setHovered("receipt")}
               // onHoverEnd={clearHover}
               src={receipt}
@@ -253,7 +242,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               // onHoverStart={() => setHovered("calculator")}
               onHoverEnd={clearHover}
               src={calculatorSpec}
@@ -267,7 +256,7 @@ const Header: React.FC<HeaderProps> = () => {
               initial="hidden"
               animate="visible"
               exit="hidden"
-              variants={variants}
+              variants={illustrationVariants}
               onHoverStart={() => setHovered("calculator")}
               // onHoverEnd={clearHover}
               src={calculator}
