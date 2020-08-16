@@ -2,6 +2,13 @@ import React, { useRef } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
 import { saveAs } from "file-saver";
+import {
+  Icon,
+  ArrowUpRightCircle,
+  Copy,
+  Prohibit,
+  CheckCircle,
+} from "phosphor-react";
 
 import {
   styleQueryAtom,
@@ -10,13 +17,6 @@ import {
   iconPreviewOpenAtom,
 } from "../../state/atoms";
 import useTransientState from "../../hooks/useTransientState";
-import {
-  Icon,
-  ArrowUpRightCircle,
-  Copy,
-  Prohibit,
-  CheckCircle,
-} from "phosphor-react";
 
 const infoVariants = {
   open: {
@@ -95,7 +95,6 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
       variants={infoVariants}
       style={{
         order: index + (spans - (index % spans)),
-        backgroundColor: "rgba(163, 159, 171, 0.1)",
         color: isDark ? "white" : "black",
       }}
     >
@@ -108,7 +107,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
       <div className="icon-usage">
         <div className="snippet">
           HTML/CSS
-          <pre style={{ color: "black" }}>
+          <pre>
             {snippets.html}
             <button
               title="Copy snippet"
@@ -124,7 +123,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
         </div>
         <div className="snippet">
           React
-          <pre style={{ color: "black" }}>
+          <pre>
             {snippets.react}
             <button
               title="Copy snippet"
@@ -145,7 +144,6 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
           >
             <ArrowUpRightCircle
               size={32}
-              style={{ marginRight: 8 }}
               color="currentColor"
               weight="regular"
             />{" "}
@@ -158,14 +156,12 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
             {copied === "svg" ? (
               <CheckCircle
                 size={32}
-                style={{ marginRight: 8 }}
                 color="#1FA647"
                 weight="fill"
               />
             ) : (
               <Copy
                 size={32}
-                style={{ marginRight: 8 }}
                 color="currentColor"
                 weight="regular"
               />

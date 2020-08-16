@@ -6,9 +6,9 @@ import React, {
 } from "react";
 import { useRecoilState } from "recoil";
 import { motion, AnimatePresence } from "framer-motion";
+import { IconProps, Icon } from "phosphor-react";
 
 import { iconPreviewOpenAtom } from "../../state/atoms";
-import { IconProps, Icon } from "phosphor-react";
 import InfoPanel from "./InfoPanel";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 

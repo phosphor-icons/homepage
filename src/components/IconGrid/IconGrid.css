@@ -47,6 +47,7 @@
   height: 0px;
   margin: 0px;
   border-radius: 16px;
+  background-color: rgba(163, 159, 171, 0.1);
   overflow: hidden;
 }
 
@@ -76,6 +77,7 @@
 }
 .snippet pre {
   text-overflow: ellipsis;
+  color: black;
 }
 .snippet button {
   background-color: transparent;
@@ -96,6 +98,10 @@
   margin: 0 48px 0 0;
   padding: 0;
   height: 48px;
+}
+
+.button-row button svg {
+  margin-right: 8px;
 }
 
 .close {
