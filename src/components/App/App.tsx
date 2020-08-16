@@ -1,7 +1,10 @@
 import React, { Suspense } from "react";
 
-import { Toolbar, IconGrid, Header, Footer } from "../";
 import "./App.css";
+import Header from "../Header/Header";
+import Toolbar from "../Toolbar/Toolbar";
+import IconGrid from "../IconGrid/IconGrid";
+import Footer from "../Footer/Footer";
 
 const App: React.FC<any> = () => {
   return (
