@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { useWindowSize } from "react-use";
 import TinyColor from "tinycolor2";
-import { IconContext, WarningTriangle } from "phosphor-react";
+import { IconContext, Warning } from "phosphor-react";
 
 import {
   styleQueryAtom,
@@ -44,7 +44,7 @@ const IconGridAnimated: React.FC<IconGridProps> = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.2 }}
       >
-        <WarningTriangle size={92} color="darkmagenta" weight="duotone" />
+        <Warning size={92} color="currentColor" weight="fill" />
         <p>{`No results for '${query}'`}</p>
       </motion.div>
     );

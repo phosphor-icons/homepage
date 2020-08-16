@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRightCircle } from "phosphor-react";
+import { ArrowUpRightCircle, ArrowDownCircle } from "phosphor-react";
 
 import "./Header.css";
 import markerPurple from "../../assets/marker-purple.svg";
@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = () => {
             </button>
 
             <button className="main-button" onClick={handleScrollToIcons}>
-              <ArrowUpRightCircle size={24} weight="fill" />
+              <ArrowDownCircle size={24} weight="fill" />
               Explore icons
             </button>
           </div>

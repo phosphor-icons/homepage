@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { Search } from "phosphor-react";
+import { MagnifyingGlass } from "phosphor-react";
 
 import { searchQueryAtom } from "../../state/atoms";
 import "./SearchInput.css";
@@ -15,7 +15,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   };
   return (
     <div className="search-bar">
-      <Search size={24} />
+      <MagnifyingGlass size={24} />
       <input
         id="search-input"
         aria-label="Search for an icon"
