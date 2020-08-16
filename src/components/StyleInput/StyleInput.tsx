@@ -1,11 +1,11 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import Select from "react-dropdown-select";
+import { PencilLine } from "phosphor-react";
 
 import { styleQueryAtom } from "../../state/atoms";
 import { IconStyle } from "../../lib";
 import "./StyleInput.css";
-import { PencilLine } from "phosphor-react";
 
 const options = [
   {

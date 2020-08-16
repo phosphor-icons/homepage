@@ -1,8 +1,8 @@
 import React from "react";
 import { useRecoilState } from "recoil";
+import { Search } from "phosphor-react";
 
 import { searchQueryAtom } from "../../state/atoms";
-import { Search } from "phosphor-react";
 import "./SearchInput.css";
 
 type SearchInputProps = {};
