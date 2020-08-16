@@ -14,8 +14,13 @@ header img {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: 56px;
+  /* gap: 56px; */
+  /* column-gap: 56px; */
   margin: 48px 0;
+}
+
+a.nav-link:not(:last-child) {
+  margin-right: 56px;
 }
 
 a.nav-link {

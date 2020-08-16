@@ -19,6 +19,10 @@ body {
   font-family: "Manrope";
 }
 
+h2 {
+  font-weight: 400;
+}
+
 pre,
 code {
   font-family: "IBM Plex Mono";
