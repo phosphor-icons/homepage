@@ -5,6 +5,8 @@
 
 html {
   font-variant-ligatures: common-ligatures;
+  /* -webkit-font-smoothing: antialiased; */
+/* -moz-osx-font-smoothing: grayscale; */
 }
 
 ::selection {
@@ -71,6 +73,10 @@ button.main-button:active {
 
 button.main-button:focus {
   outline: none;
+}
+
+button.main-button svg {
+  margin-right: 12px;
 }
 
 a.main-link {
