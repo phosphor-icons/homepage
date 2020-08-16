@@ -27,7 +27,7 @@ const illustrationVariants = {
 
 const handleGetStarted = () => {
   window.open(
-    "https://github.com/rektdeckard/phosphor-web#phosphor-icons",
+    "https://github.com/phosphor-icons/phosphor-web#phosphor-icons",
     "_blank",
     "noopener noreferrer"
   );
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = () => {
             </a>
             <a
               className="nav-link"
-              href="https://github.com/rektdeckard/phosphor-web/issues"
+              href="https://github.com/phosphor-icons/phosphor-web/issues"
             >
               Request
             </a>
@@ -84,7 +84,7 @@ const Header: React.FC<HeaderProps> = () => {
             </a>
             <a
               className="nav-link"
-              href="https://github.com/rektdeckard/phosphor-web"
+              href="https://github.com/phosphor-icons/phosphor-web"
             >
               Github
             </a>

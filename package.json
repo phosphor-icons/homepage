@@ -18,7 +18,7 @@
     "UI",
     "UX"
   ],
-  "repository": "github:rektdeckard/phosphor-web",
+  "repository": "github:phosphor-icons/phosphor-web",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
