@@ -29,7 +29,7 @@ Phosphor is available as an icon font and a React package, which can be sourced 
 
 ### React
 
-- **Flex or flow** – Phosphor's intuitive but powerful API can style the `color`, `size`, and `weight` of an icon with a few keystrokes, or directly manipulate the SVG at runtime through render props to do some amazing things! Check out some examples on [Github](https://github.com/rektdeckard/phosphor-react).
+- **Flex or flow** – Phosphor's intuitive but powerful API can style the `color`, `size`, and `weight` of an icon with a few keystrokes, or directly manipulate the SVG at runtime through render props to do some amazing things! Check out some examples on [Github](https://github.com/phosphor-icons/phosphor-react).
 
 ```jsx
 import React from "react";
