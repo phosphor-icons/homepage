@@ -59,6 +59,21 @@ a.nav-link:hover:after {
   flex-wrap: wrap;
 }
 
+#cutting-mat {
+  position: absolute;
+  /* transform: translate(120px, 824px); */
+}
+
+#receipt {
+  position: absolute;
+  transform: translate(-116px, 136px);
+}
+
+#calculator {
+  position: absolute;
+  transform: translate(724px, 240px);
+}
+
 @media screen and (max-width: 759px) {
   .intro h2 {
     font-size: 40px;
@@ -111,21 +126,6 @@ a.nav-link:hover:after {
     position: absolute;
     transform: translate(672px, -900px);
   }
-
-  #cutting-mat {
-    position: absolute;
-    transform: translate(96px, 766px);
-  }
-
-  #calculator {
-    position: absolute;
-    transform: translate(632px, 938px);
-  }
-
-  #receipt {
-    position: absolute;
-    transform: translate(-96px, 958px);
-  }
 }
 
 @media screen and (min-width: 760px) and (max-width: 1023px) {
@@ -177,20 +177,5 @@ a.nav-link:hover:after {
   #paperclips {
     position: absolute;
     transform: translate(982px, 621px);
-  }
-
-  #cutting-mat {
-    position: absolute;
-    transform: translate(120px, 824px);
-  }
-
-  #receipt {
-    position: absolute;
-    transform: translate(-16px, 1016px);
-  }
-
-  #calculator {
-    position: absolute;
-    transform: translate(924px, 940px);
   }
 }

@@ -89,6 +89,91 @@ const Header: React.FC<HeaderProps> = () => {
               Github
             </a>
           </div>
+          {hovered === "cutting-mat" ? (
+          <motion.img
+            id="cutting-mat"
+            key="cutting-mat-spec"
+            className="inspectable"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={illustrationVariants}
+            // onHoverStart={() => setHovered("cutting-mat")}
+            onHoverEnd={clearHover}
+            src={cuttingMatSpec}
+            alt=""
+          />
+        ) : (
+          <motion.img
+            id="cutting-mat"
+            key="cutting-mat"
+            className="inspectable"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={illustrationVariants}
+            onHoverStart={() => setHovered("cutting-mat")}
+            // onHoverEnd={clearHover}
+            src={cuttingMat}
+            alt=""
+          />
+        )}
+        {hovered === "receipt" ? (
+          <motion.img
+            id="receipt"
+            key="receipt-spec"
+            className="inspectable"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={illustrationVariants}
+            // onHoverStart={() => setHovered("receipt")}
+            onHoverEnd={clearHover}
+            src={receiptSpec}
+            alt=""
+          />
+        ) : (
+          <motion.img
+            id="receipt"
+            key="receipt"
+            className="inspectable"
+            initial="visible"
+            variants={illustrationVariants}
+            onHoverStart={() => setHovered("receipt")}
+            // onHoverEnd={clearHover}
+            src={receipt}
+            alt=""
+          />
+        )}
+        {hovered === "calculator" ? (
+          <motion.img
+            id="calculator"
+            key="calculator-spec"
+            className="inspectable"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={illustrationVariants}
+            // onHoverStart={() => setHovered("calculator")}
+            onHoverEnd={clearHover}
+            src={calculatorSpec}
+            alt=""
+          />
+        ) : (
+          <motion.img
+            id="calculator"
+            key="calculator"
+            className="inspectable"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={illustrationVariants}
+            onHoverStart={() => setHovered("calculator")}
+            // onHoverEnd={clearHover}
+            src={calculator}
+            alt=""
+          />
+        )}
         </div>
         <AnimatePresence>
           {hovered === "tablet" ? (
@@ -175,91 +260,6 @@ const Header: React.FC<HeaderProps> = () => {
               onHoverStart={() => setHovered("warning")}
               // onHoverEnd={clearHover}
               src={warning}
-              alt=""
-            />
-          )}
-          {hovered === "cutting-mat" ? (
-            <motion.img
-              id="cutting-mat"
-              key="cutting-mat-spec"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              // onHoverStart={() => setHovered("cutting-mat")}
-              onHoverEnd={clearHover}
-              src={cuttingMatSpec}
-              alt=""
-            />
-          ) : (
-            <motion.img
-              id="cutting-mat"
-              key="cutting-mat"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              onHoverStart={() => setHovered("cutting-mat")}
-              // onHoverEnd={clearHover}
-              src={cuttingMat}
-              alt=""
-            />
-          )}
-          {hovered === "receipt" ? (
-            <motion.img
-              id="receipt"
-              key="receipt-spec"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              // onHoverStart={() => setHovered("receipt")}
-              onHoverEnd={clearHover}
-              src={receiptSpec}
-              alt=""
-            />
-          ) : (
-            <motion.img
-              id="receipt"
-              key="receipt"
-              className="inspectable"
-              initial="visible"
-              variants={illustrationVariants}
-              onHoverStart={() => setHovered("receipt")}
-              // onHoverEnd={clearHover}
-              src={receipt}
-              alt=""
-            />
-          )}
-          {hovered === "calculator" ? (
-            <motion.img
-              id="calculator"
-              key="calculator-spec"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              // onHoverStart={() => setHovered("calculator")}
-              onHoverEnd={clearHover}
-              src={calculatorSpec}
-              alt=""
-            />
-          ) : (
-            <motion.img
-              id="calculator"
-              key="calculator"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              onHoverStart={() => setHovered("calculator")}
-              // onHoverEnd={clearHover}
-              src={calculator}
               alt=""
             />
           )}
