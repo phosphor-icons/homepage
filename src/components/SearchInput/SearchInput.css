@@ -39,3 +39,7 @@
 .search-bar input::placeholder {
   color: black;
 }
+
+.clear-icon {
+  cursor: pointer;
+}

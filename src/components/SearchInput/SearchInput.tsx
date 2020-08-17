@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { MagnifyingGlass } from "phosphor-react";
+import { MagnifyingGlass, X } from "phosphor-react";
 
 import { searchQueryAtom } from "../../state/atoms";
 import "./SearchInput.css";
@@ -25,6 +25,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
         placeholder="Search for an icon"
         onChange={handleSearchChange}
       />
+      {query && <X className="clear-icon" size={18} onClick={() => setQuery("")} />}
     </div>
   );
 };
