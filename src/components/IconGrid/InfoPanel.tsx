@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { saveAs } from "file-saver";
 import {
   Icon,
-  ArrowUpRightCircle,
   Copy,
-  Prohibit,
+  X,
   CheckCircle,
+  ArchiveDiskDot,
 } from "phosphor-react";
 
 import {
@@ -116,7 +116,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
               {copied === "html" ? (
                 <CheckCircle size={24} color="#1FA647" weight="fill" />
               ) : (
-                <Copy size={24} color="currentColor" weight="regular" />
+                <Copy size={24} color="currentColor" weight="fill" />
               )}
             </button>
           </pre>
@@ -132,7 +132,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
               {copied === "react" ? (
                 <CheckCircle size={24} color="#1FA647" weight="fill" />
               ) : (
-                <Copy size={24} color="currentColor" weight="regular" />
+                <Copy size={24} color="currentColor" weight="fill" />
               )}
             </button>
           </pre>
@@ -142,10 +142,10 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
             style={{ color: isDark ? "white" : "black" }}
             onClick={handleDownloadSVG}
           >
-            <ArrowUpRightCircle
+            <ArchiveDiskDot
               size={32}
               color="currentColor"
-              weight="regular"
+              weight="fill"
             />{" "}
             Download SVG
           </button>
@@ -163,7 +163,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
               <Copy
                 size={32}
                 color="currentColor"
-                weight="regular"
+                weight="fill"
               />
             )}
             {copied === "svg" ? "Copied!" : "Copy SVG"}
@@ -171,11 +171,11 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
         </div>
       </div>
       <div className="close">
-        <Prohibit
+        <X
           className="close-icon"
           color="currentColor"
           size={32}
-          weight="regular"
+          weight="fill"
           onClick={() => setOpen(false)}
         />
       </div>
