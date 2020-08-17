@@ -101,7 +101,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
       <div className="icon-usage">
         <div className="snippet">
           HTML/CSS
-          <pre>
+          <pre tabIndex={0}>
             {snippets.html}
             <button
               title="Copy snippet"
@@ -117,7 +117,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
         </div>
         <div className="snippet">
           React
-          <pre>
+          <pre tabIndex={0}>
             {snippets.react}
             <button
               title="Copy snippet"
@@ -154,10 +154,12 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
       </div>
       <X
         className="close-icon"
+        tabIndex={0}
         color="currentColor"
         size={32}
         weight="fill"
         onClick={() => setOpen(false)}
+        onKeyDown={(e) => {e.key === "Enter" && setOpen(false)}}
       />
     </motion.section>
   );

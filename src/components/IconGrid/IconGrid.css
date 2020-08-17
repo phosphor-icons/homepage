@@ -87,10 +87,27 @@
 .snippet {
   margin-bottom: 24px;
 }
+
 .snippet pre {
   text-overflow: ellipsis;
   color: black;
+  user-select: all;
+  -moz-user-select: all;
+  -webkit-user-select: all;
 }
+
+.snippet pre:focus {
+  animation: select 50ms step-end forwards;
+}
+
+@keyframes select {
+  to {
+    user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
 .snippet button {
   background-color: transparent;
   margin: 0;
