@@ -2,13 +2,7 @@ import React, { useRef } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
 import { saveAs } from "file-saver";
-import {
-  Icon,
-  Copy,
-  X,
-  CheckCircle,
-  ArchiveDiskDot,
-} from "phosphor-react";
+import { Icon, Copy, X, CheckCircle, ArchiveDiskDot } from "phosphor-react";
 
 import {
   styleQueryAtom,
@@ -54,9 +48,9 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
     html: `<i class="ph-${name}${
       weight === "regular" ? "" : `-${weight}`
     }"></i>`,
-    react: `<${Icon.displayName} size={${size}} ${color !== "#000000" ? `color="${color}" ` : ""}${
-      weight === "regular" ? "" : `weight="${weight}" `
-    }/>`,
+    react: `<${Icon.displayName} size={${size}} ${
+      color !== "#000000" ? `color="${color}" ` : ""
+    }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
   };
 
   const handleCopySnippet = (
@@ -142,11 +136,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
             style={{ color: isDark ? "white" : "black" }}
             onClick={handleDownloadSVG}
           >
-            <ArchiveDiskDot
-              size={32}
-              color="currentColor"
-              weight="fill"
-            />{" "}
+            <ArchiveDiskDot size={32} color="currentColor" weight="fill" />{" "}
             Download SVG
           </button>
           <button
@@ -154,31 +144,21 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
             onClick={handleCopySVG}
           >
             {copied === "svg" ? (
-              <CheckCircle
-                size={32}
-                color="#1FA647"
-                weight="fill"
-              />
+              <CheckCircle size={32} color="#1FA647" weight="fill" />
             ) : (
-              <Copy
-                size={32}
-                color="currentColor"
-                weight="fill"
-              />
+              <Copy size={32} color="currentColor" weight="fill" />
             )}
             {copied === "svg" ? "Copied!" : "Copy SVG"}
           </button>
         </div>
       </div>
-      <div className="close">
-        <X
-          className="close-icon"
-          color="currentColor"
-          size={32}
-          weight="fill"
-          onClick={() => setOpen(false)}
-        />
-      </div>
+      <X
+        className="close-icon"
+        color="currentColor"
+        size={32}
+        weight="fill"
+        onClick={() => setOpen(false)}
+      />
     </motion.section>
   );
 };
