@@ -16,7 +16,7 @@ header img {
   justify-content: flex-start;
   /* gap: 56px; */
   /* column-gap: 56px; */
-  margin: 48px 0;
+  margin: 48px 0 32px;
 }
 
 a.nav-link:not(:last-child) {
@@ -27,6 +27,7 @@ a.nav-link {
   text-decoration: none;
   position: relative;
   color: black;
+  margin-bottom: 16px;
 }
 
 a.nav-link:after {
@@ -55,7 +56,7 @@ a.nav-link:hover:after {
 }
 
 .button-container {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -66,20 +67,12 @@ a.nav-link:hover:after {
 
 #receipt {
   position: absolute;
-  transform: translate(-116px, 136px);
+  transform: translate(-138px, 190px);
 }
 
 #calculator {
   position: absolute;
-  transform: translate(724px, 240px);
-}
-
-@media screen and (max-width: 759px) {
-  .intro h2 {
-    font-size: 40px;
-    line-height: 52px;
-    margin-bottom: 32px;
-  }
+  transform: translate(800px, 240px);
 }
 
 /* Illustrations remain at same layout up to 1024px */
@@ -125,6 +118,11 @@ a.nav-link:hover:after {
   #tablet {
     position: absolute;
     transform: translate(672px, -900px);
+  }
+
+  #calculator {
+    position: absolute;
+    transform: translate(534px, 240px);
   }
 }
 
@@ -177,5 +175,13 @@ a.nav-link:hover:after {
   #paperclips {
     position: absolute;
     transform: translate(982px, 621px);
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .intro h2 {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 32px;
   }
 }
