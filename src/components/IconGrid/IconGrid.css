@@ -50,7 +50,8 @@
   margin: 0px;
   border-radius: 16px;
   background-color: rgba(163, 159, 171, 0.1);
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 @media screen and (max-width: 1023px) {
@@ -89,6 +90,8 @@
 }
 
 .snippet pre {
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
   text-overflow: ellipsis;
   color: black;
   user-select: all;
