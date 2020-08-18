@@ -20,7 +20,7 @@ export const filteredQueryResultsSelector = selector<Readonly<IconEntry[]>>({
 
     if (!query && !style) return icons;
 
-    return await new Promise((resolve) =>
+    return new Promise((resolve) =>
       resolve(icons.filter((icon) => isQueryMatch(icon, query)))
     );
   },
@@ -34,7 +34,7 @@ export const categorizedQueryResultsSelector = selector<
   key: "categorizedQueryResultsSelector",
   get: async ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);
-    return await new Promise((resolve) =>
+    return new Promise((resolve) =>
       resolve(
         filteredResults.reduce<CategorizedIcons>((acc, curr) => {
           curr.categories.forEach((category) => {
@@ -55,7 +55,7 @@ export const singleCategoryQueryResultsSelector = selectorFamily<
   key: "singleCategoryQueryResultsSelector",
   get: (category: IconCategory) => async ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);
-    return await new Promise((resolve) =>
+    return new Promise((resolve) =>
       resolve(
         filteredResults.filter((icon) => icon.categories.includes(category))
       )

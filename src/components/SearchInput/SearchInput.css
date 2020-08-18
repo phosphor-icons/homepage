@@ -43,3 +43,8 @@
 .clear-icon {
   cursor: pointer;
 }
+
+.wait-icon {
+  cursor: wait;
+  /* opacity: 0.5; */
+}
