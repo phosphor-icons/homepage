@@ -31,7 +31,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
         type="text"
         autoComplete="off"
         value={value}
-        placeholder="Search for an icon"
+        placeholder="Search"
         onChange={({ currentTarget }) => setValue(currentTarget.value)}
       />
       {value ? (

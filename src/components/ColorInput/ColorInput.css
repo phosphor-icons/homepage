@@ -23,11 +23,10 @@
 input.color-input {
   position: relative;
   height: 100%;
-  width: 96%;
+  width: 100%;
   box-sizing: border-box;
   border: none;
   border-radius: 8px;
-  margin: 0 0 0 4px;
   padding: 0;
   cursor: pointer;
 }

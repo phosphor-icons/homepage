@@ -14,9 +14,13 @@ menu.toolbar {
 .toolbar-contents {
   width: 83.33%;
   max-width: 1120px;
-  padding: 8px 0;
+  padding: 0 0 8px;
   display: flex;
   flex-flow: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+.toolbar-contents > * {
+  margin: 8px 4px 0;
 }

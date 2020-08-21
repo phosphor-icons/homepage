@@ -19,13 +19,18 @@
   width: 176px !important;
   height: 48px !important;
   justify-content: flex-start;
-  margin: 0 4px;
   padding: 0 24px !important;
   color: white;
   border-radius: 8px !important;
   background-color: rgba(255, 255, 255, 0.05);
   font-size: 16px;
   border: none !important;
+}
+
+@media screen and (max-width: 558px) {
+  .react-dropdown-select {
+    width: 100% !important;
+  }
 }
 
 .react-dropdown-select-content {
