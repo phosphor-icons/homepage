@@ -72,7 +72,7 @@ a.nav-link:hover:after {
 
 #calculator {
   position: absolute;
-  transform: translate(800px, 240px);
+  transform: translate(800px, 112px);
 }
 
 /* Illustrations remain at same layout up to 1024px */

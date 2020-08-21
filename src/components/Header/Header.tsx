@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { ArrowUpRightCircle, ArrowDownCircle } from "phosphor-react";
 
 import "./Header.css";
@@ -40,9 +40,6 @@ const handleScrollToIcons = () => {
 };
 
 const Header: React.FC<HeaderProps> = () => {
-  const [hovered, setHovered] = useState<string | false>(false);
-  const clearHover = () => setHovered(false);
-
   return (
     <header>
       <motion.div
@@ -89,181 +86,83 @@ const Header: React.FC<HeaderProps> = () => {
               Github
             </a>
           </div>
-          {hovered === "cutting-mat" ? (
-          <motion.img
+          <img
             id="cutting-mat"
-            key="cutting-mat-spec"
             className="inspectable"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={illustrationVariants}
-            // onHoverStart={() => setHovered("cutting-mat")}
-            onHoverEnd={clearHover}
             src={cuttingMatSpec}
             alt=""
           />
-        ) : (
           <motion.img
             id="cutting-mat"
-            key="cutting-mat"
             className="inspectable"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
             variants={illustrationVariants}
-            onHoverStart={() => setHovered("cutting-mat")}
-            // onHoverEnd={clearHover}
+            initial="visible"
+            whileHover="hidden"
             src={cuttingMat}
             alt=""
           />
-        )}
-        {hovered === "receipt" ? (
+          <img id="receipt" className="inspectable" src={receiptSpec} alt="" />
           <motion.img
             id="receipt"
-            key="receipt-spec"
             className="inspectable"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
             variants={illustrationVariants}
-            // onHoverStart={() => setHovered("receipt")}
-            onHoverEnd={clearHover}
-            src={receiptSpec}
-            alt=""
-          />
-        ) : (
-          <motion.img
-            id="receipt"
-            key="receipt"
-            className="inspectable"
             initial="visible"
-            variants={illustrationVariants}
-            onHoverStart={() => setHovered("receipt")}
-            // onHoverEnd={clearHover}
+            whileHover="hidden"
             src={receipt}
             alt=""
           />
-        )}
-        {hovered === "calculator" ? (
-          <motion.img
+          <img
             id="calculator"
-            key="calculator-spec"
             className="inspectable"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={illustrationVariants}
-            // onHoverStart={() => setHovered("calculator")}
-            onHoverEnd={clearHover}
             src={calculatorSpec}
             alt=""
           />
-        ) : (
           <motion.img
             id="calculator"
-            key="calculator"
             className="inspectable"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
             variants={illustrationVariants}
-            onHoverStart={() => setHovered("calculator")}
-            // onHoverEnd={clearHover}
+            initial="hidden"
+            whileHover="hidden"
             src={calculator}
             alt=""
           />
-        )}
         </div>
-        <AnimatePresence>
-          {hovered === "tablet" ? (
-            <motion.img
-              id="tablet"
-              key="tablet-spec"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              // onHoverStart={() => setHovered("tablet")}
-              onHoverEnd={clearHover}
-              src={tabletSpec}
-              alt=""
-            />
-          ) : (
-            <motion.img
-              id="tablet"
-              key="tablet"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              onHoverStart={() => setHovered("tablet")}
-              // onHoverEnd={clearHover}
-              src={tablet}
-              alt=""
-            />
-          )}
-          {hovered === "billiard-ball" ? (
-            <motion.img
-              id="billiard-ball"
-              key="billiard-ball-spec"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              // onHoverStart={() => setHovered("billiard-ball")}
-              onHoverEnd={clearHover}
-              src={billiardBallSpec}
-              alt=""
-            />
-          ) : (
-            <motion.img
-              id="billiard-ball"
-              key="billiard-ball"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              onHoverStart={() => setHovered("billiard-ball")}
-              // onHoverEnd={clearHover}
-              src={billiardBall}
-              alt=""
-            />
-          )}
-          {hovered === "warning" ? (
-            <motion.img
-              id="warning"
-              key="warning-spec"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              // onHoverStart={() => setHovered("warning")}
-              onHoverEnd={clearHover}
-              src={warningSpec}
-              alt=""
-            />
-          ) : (
-            <motion.img
-              id="warning"
-              key="warning"
-              className="inspectable"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={illustrationVariants}
-              onHoverStart={() => setHovered("warning")}
-              // onHoverEnd={clearHover}
-              src={warning}
-              alt=""
-            />
-          )}
-        </AnimatePresence>
+        <img id="tablet" className="inspectable" src={tabletSpec} alt="" />
+        <motion.img
+          id="tablet"
+          className="inspectable"
+          variants={illustrationVariants}
+          initial="hidden"
+          whileHover="hidden"
+          src={tablet}
+          alt=""
+        />
+        <img
+          id="billiard-ball"
+          className="inspectable"
+          src={billiardBallSpec}
+          alt=""
+        />
+        <motion.img
+          id="billiard-ball"
+          className="inspectable"
+          variants={illustrationVariants}
+          initial="hidden"
+          whileHover="hidden"
+          src={billiardBall}
+          alt=""
+        />
+
+        <img id="warning" className="inspectable" src={warningSpec} alt="" />
+        <motion.img
+          id="warning"
+          className="inspectable"
+          variants={illustrationVariants}
+          initial="hidden"
+          whileHover="hidden"
+          src={warning}
+          alt=""
+        />
       </motion.div>
     </header>
   );

@@ -5,6 +5,12 @@ footer {
   overflow: hidden;
 }
 
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+}
+
 #back-to-top-button {
   width: 140px;
   height: 140px;
