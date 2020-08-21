@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart } from "phosphor-react";
 
@@ -18,6 +18,8 @@ const variants = {
 };
 
 const Footer: React.FC<FooterProps> = () => {
+  const [phoneHovered, setPhoneHovered] = useState<boolean>(false);
+
   return (
     <footer>
       <div className="container">
@@ -89,13 +91,25 @@ const Footer: React.FC<FooterProps> = () => {
               <img src={uArrowUpLeft} alt="" />
             </button>
           </div>
-          <img id="phone" className="inspectable" src={phoneSpec} alt="" />
+          {phoneHovered && (
+            <motion.img
+              id="phone"
+              className="inspectable"
+              variants={variants}
+              initial="hidden"
+              animate={phoneHovered ? "visible" : "hidden"}
+              src={phoneSpec}
+              alt=""
+            />
+          )}
           <motion.img
             id="phone"
             className="inspectable"
             variants={variants}
             initial="visible"
             whileHover="hidden"
+            onHoverStart={() => setPhoneHovered(true)}
+            onHoverEnd={() => setPhoneHovered(false)}
             src={phone}
             alt=""
           />
