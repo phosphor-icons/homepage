@@ -24,3 +24,11 @@ menu.toolbar {
 .toolbar-contents > * {
   margin: 8px 4px 0;
 }
+
+@media screen and (max-width: 558px) {
+  .toolbar-contents {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}

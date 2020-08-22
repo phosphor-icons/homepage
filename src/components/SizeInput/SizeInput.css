@@ -27,6 +27,12 @@
   outline: none; /* Remove outline */
 }
 
+@media screen and (max-width: 558px) {
+  .size-bar input {
+    margin: 0 auto;
+  }
+}
+
 .size-bar input::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
