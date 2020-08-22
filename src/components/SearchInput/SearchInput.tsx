@@ -11,7 +11,7 @@ type SearchInputProps = {};
 const SearchInput: React.FC<SearchInputProps> = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
-  void(query);
+  void query;
 
   const [isReady] = useDebounce(() => setQuery(value), 250, [value]);
 
@@ -33,6 +33,9 @@ const SearchInput: React.FC<SearchInputProps> = () => {
         value={value}
         placeholder="Search"
         onChange={({ currentTarget }) => setValue(currentTarget.value)}
+        onKeyPress={({ currentTarget, key }) =>
+          key === "Enter" && currentTarget.blur()
+        }
       />
       {value ? (
         isReady() ? (
