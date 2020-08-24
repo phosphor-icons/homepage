@@ -1,22 +1,13 @@
-/* @font-face {
-  font-family: Manrope;
-  src: url('https://fonts.googleapis.com/css2?family=Manrope') format('woff2');
-} */
-
-html {
+body {
+  margin: 0px;
   font-variant-ligatures: common-ligatures;
-  /* -webkit-font-smoothing: antialiased; */
-/* -moz-osx-font-smoothing: grayscale; */
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 ::selection {
   color: white;
   background-color: black;
-}
-
-body {
-  margin: 0px;
-  font-family: "Manrope";
 }
 
 h2 {
@@ -25,7 +16,7 @@ h2 {
 
 pre,
 code {
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", "Courier New", monospace;
   font-size: 14px;
   color: "black";
 }
@@ -36,11 +27,12 @@ pre {
   margin: 12px 0px;
   background-color: white;
   border-radius: 6px;
-  border: 1px solid #E1D4D7;
+  border: 1px solid #e1d4d7;
 }
 
 input {
-  font-family: "Manrope";
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 button {
@@ -56,7 +48,8 @@ button.main-button {
   padding: 0 48px 0 40px;
   background-color: white;
   border-radius: 8px;
-  font-family: "Manrope";
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
@@ -90,7 +83,7 @@ a.main-link {
 }
 
 a.main-link:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
