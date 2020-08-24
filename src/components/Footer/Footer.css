@@ -135,10 +135,10 @@ footer {
   }
   
   #phone {
-    position: relative;
-    /* top: 0; */
-    /* left: 0; */
-    transform: translate(-80px, 16px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-80px, 476px);
   }
 
   #command {
