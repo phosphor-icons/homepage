@@ -442,6 +442,8 @@ export const icons: Readonly<IconEntry[]> = [
       "arrowhead",
       "redo",
       "refreshing",
+      "sync",
+      "synchronize",
     ],
     Icon: Icon.ArrowsClockwise,
   },
