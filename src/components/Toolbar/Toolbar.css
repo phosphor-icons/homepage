@@ -1,6 +1,6 @@
 menu.toolbar {
   position: sticky;
-  top: 0px;
+  top: -1px;
   padding: 0;
   margin: 0;
   background-color: #35313d;
