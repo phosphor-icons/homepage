@@ -69,7 +69,6 @@ const StyleInput: React.FC<StyleInputProps> = () => {
           className={`react-dropdown-select-item ${
             itemIndex === cursor ? "react-dropdown-select-item-active" : ""
           }`}
-          tabIndex={-1}
           onClick={() => methods.addItem(item)}
         >
           {item.icon}
