@@ -42,12 +42,7 @@ const handleScrollToIcons = () => {
 const Header: React.FC<HeaderProps> = () => {
   return (
     <header>
-      <motion.div
-        className="image-container"
-        variants={illustrationVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      <div className="image-container">
         <img src={markerPurple} id="marker-purple" alt="" />
         <img src={paperclips} id="paperclips" alt="" />
         <div className="intro">
@@ -123,7 +118,7 @@ const Header: React.FC<HeaderProps> = () => {
             id="calculator"
             className="inspectable"
             variants={illustrationVariants}
-            initial="hidden"
+            initial="visible"
             whileHover="hidden"
             whileTap="hidden"
             src={calculator}
@@ -135,7 +130,7 @@ const Header: React.FC<HeaderProps> = () => {
           id="tablet"
           className="inspectable"
           variants={illustrationVariants}
-          initial="hidden"
+          initial="visible"
           whileHover="hidden"
           whileTap="hidden"
           src={tablet}
@@ -151,7 +146,7 @@ const Header: React.FC<HeaderProps> = () => {
           id="billiard-ball"
           className="inspectable"
           variants={illustrationVariants}
-          initial="hidden"
+          initial="visible"
           whileHover="hidden"
           whileTap="hidden"
           src={billiardBall}
@@ -163,13 +158,13 @@ const Header: React.FC<HeaderProps> = () => {
           id="warning"
           className="inspectable"
           variants={illustrationVariants}
-          initial="hidden"
+          initial="visible"
           whileHover="hidden"
           whileTap="hidden"
           src={warning}
           alt=""
         />
-      </motion.div>
+      </div>
     </header>
   );
 };
