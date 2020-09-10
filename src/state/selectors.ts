@@ -1,6 +1,7 @@
 import { selector, selectorFamily } from "recoil";
+import TinyColor from "tinycolor2";
 
-import { searchQueryAtom, styleQueryAtom } from "./atoms";
+import { searchQueryAtom, iconStyleAtom, iconColorAtom } from "./atoms";
 import { IconEntry, IconCategory } from "../lib";
 import { icons } from "../lib/icons";
 
@@ -16,7 +17,7 @@ export const filteredQueryResultsSelector = selector<Readonly<IconEntry[]>>({
   key: "filteredQueryResultsSelector",
   get: async ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();
-    const style = get(styleQueryAtom);
+    const style = get(iconStyleAtom);
 
     if (!query && !style) return icons;
 
@@ -61,4 +62,9 @@ export const singleCategoryQueryResultsSelector = selectorFamily<
       )
     );
   },
+});
+
+export const isDarkThemeSelector = selector<boolean>({
+  key: "isDarkThemeSelector",
+  get: ({ get }) => TinyColor(get(iconColorAtom)).isLight(),
 });

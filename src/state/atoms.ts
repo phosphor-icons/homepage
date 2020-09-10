@@ -6,7 +6,7 @@ export const searchQueryAtom = atom<string>({
   default: "",
 });
 
-export const styleQueryAtom = atom<IconStyle>({
+export const iconStyleAtom = atom<IconStyle>({
   key: "styleQueryAtom",
   default: IconStyle.REGULAR,
 });

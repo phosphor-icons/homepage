@@ -5,7 +5,7 @@ import { saveAs } from "file-saver";
 import { Icon, Copy, X, CheckCircle, ArchiveDiskDot } from "phosphor-react";
 
 import {
-  styleQueryAtom,
+  iconStyleAtom,
   iconSizeAtom,
   iconColorAtom,
   iconPreviewOpenAtom,
@@ -37,7 +37,7 @@ interface InfoPanelProps {
 
 const InfoPanel: React.FC<InfoPanelProps> = (props) => {
   const { index, spans, isDark, name, Icon } = props;
-  const weight = useRecoilValue(styleQueryAtom);
+  const weight = useRecoilValue(iconStyleAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const setOpen = useSetRecoilState(iconPreviewOpenAtom);

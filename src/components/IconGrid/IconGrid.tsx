@@ -2,27 +2,26 @@ import React, { useRef, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { useWindowSize } from "react-use";
-import TinyColor from "tinycolor2";
 import { IconContext, Warning } from "phosphor-react";
 
 import {
-  styleQueryAtom,
+  iconStyleAtom,
   iconSizeAtom,
   iconColorAtom,
   searchQueryAtom,
 } from "../../state/atoms";
-import { filteredQueryResultsSelector } from "../../state/selectors";
+import { filteredQueryResultsSelector, isDarkThemeSelector } from "../../state/selectors";
 import GridItem from "./IconGridItem";
 import "./IconGrid.css";
 
 type IconGridProps = {};
 
-const IconGridAnimated: React.FC<IconGridProps> = () => {
-  const weight = useRecoilValue(styleQueryAtom);
+const IconGrid: React.FC<IconGridProps> = () => {
+  const weight = useRecoilValue(iconStyleAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const query = useRecoilValue(searchQueryAtom);
-  const isDark = TinyColor(color).isLight();
+  const isDark = useRecoilValue(isDarkThemeSelector);
 
   const { width } = useWindowSize();
   const spans = Math.floor(Math.min(width - 32, 1120) / 168);
@@ -77,4 +76,4 @@ const IconGridAnimated: React.FC<IconGridProps> = () => {
   );
 };
 
-export default IconGridAnimated;
+export default IconGrid;

@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import Select from "react-dropdown-select";
 import { PencilLine } from "phosphor-react";
 
-import { styleQueryAtom } from "../../state/atoms";
+import { iconStyleAtom } from "../../state/atoms";
 import { IconStyle } from "../../lib";
 import "./StyleInput.css";
 
@@ -43,7 +43,7 @@ const options = [
 type StyleInputProps = {};
 
 const StyleInput: React.FC<StyleInputProps> = () => {
-  const [style, setStyle] = useRecoilState(styleQueryAtom);
+  const [style, setStyle] = useRecoilState(iconStyleAtom);
   void style;
 
   // const handleStyleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
