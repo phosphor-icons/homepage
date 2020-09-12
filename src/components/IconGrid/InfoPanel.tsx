@@ -15,7 +15,7 @@ import useTransientState from "../../hooks/useTransientState";
 const infoVariants = {
   open: {
     opacity: 1,
-    height: 396,
+    height: 496,
     margin: 4,
     // transition: { stiffness: 600, damping: 32, duration: 0.2 },
   },
@@ -51,11 +51,14 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
     react: `<${Icon.displayName} size={${size}} ${
       color !== "#000000" ? `color="${color}" ` : ""
     }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
+    vue: `<Ph${Icon.displayName} :size="${size}" ${
+      color !== "#000000" ? `color="${color}" ` : ""
+    }${weight === "regular" ? "" : `weight="${weight}" `}/>`
   };
 
   const handleCopySnippet = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    type: "html" | "react"
+    type: "html" | "react" | "vue"
   ) => {
     event.currentTarget.blur();
     setCopied(type);
@@ -124,6 +127,22 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
               onClick={(e) => handleCopySnippet(e, "react")}
             >
               {copied === "react" ? (
+                <CheckCircle size={24} color="#1FA647" weight="fill" />
+              ) : (
+                <Copy size={24} color="currentColor" weight="fill" />
+              )}
+            </button>
+          </pre>
+        </div>
+        <div className="snippet">
+          Vue
+          <pre tabIndex={0}>
+            {snippets.vue}
+            <button
+              title="Copy snippet"
+              onClick={(e) => handleCopySnippet(e, "vue")}
+            >
+              {copied === "vue" ? (
                 <CheckCircle size={24} color="#1FA647" weight="fill" />
               ) : (
                 <Copy size={24} color="currentColor" weight="fill" />
