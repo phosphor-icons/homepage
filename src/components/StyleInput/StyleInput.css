@@ -50,18 +50,18 @@
   box-shadow: none !important;
 }
 
-.react-dropdown-select-type-single {
-  /* height: 100% !important; */
-}
+/* .react-dropdown-select-type-single {
+  height: 100% !important;
+} */
 
-.react-dropdown-select-clear,
+/* .react-dropdown-select-clear,
 .react-dropdown-select-dropdown-handle {
-  /* color: #fff; */
-}
+  color: #fff;
+} */
 
-.react-dropdown-select-option {
-  /* border: 1px solid #000; */
-}
+/* .react-dropdown-select-option {
+  border: 1px solid #000;
+} */
 
 .react-dropdown-select-item {
   color: #333;
