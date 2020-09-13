@@ -38,6 +38,7 @@
   appearance: none;
   width: 14px; /* Set a specific slider handle width */
   height: 14px; /* Slider handle height */
+  padding: 6px;
   border-radius: 50%;
   background: white; /* Green background */
   cursor: pointer; /* Cursor on hover */
@@ -47,6 +48,7 @@
 .size-bar input::-moz-range-thumb {
   width: 14px; /* Set a specific slider handle width */
   height: 14px; /* Slider handle height */
+  padding: 6px;
   background: black; /* Green background */
   cursor: pointer; /* Cursor on hover */
   transition: height 0.1s, width 0.1s;
@@ -56,7 +58,6 @@
   outline: none;
   width: 20px; /* Set a specific slider handle width */
   height: 20px; /* Slider handle height */
-  transition: height 0.1s, width 0.1s;
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
@@ -64,6 +65,5 @@
   outline: none;
   width: 20px; /* Set a specific slider handle width */
   height: 20px; /* Slider handle height */
-  transition: height 0.1s, width 0.1s;
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
 }
