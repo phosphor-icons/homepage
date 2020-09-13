@@ -10,7 +10,10 @@ import {
   iconColorAtom,
   searchQueryAtom,
 } from "../../state/atoms";
-import { filteredQueryResultsSelector, isDarkThemeSelector } from "../../state/selectors";
+import {
+  filteredQueryResultsSelector,
+  isDarkThemeSelector,
+} from "../../state/selectors";
 import GridItem from "./IconGridItem";
 import "./IconGrid.css";
 
@@ -37,15 +40,19 @@ const IconGrid: React.FC<IconGridProps> = () => {
 
   if (!filteredQueryResults.length)
     return (
-      <motion.div
-        className="empty-list"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-      >
-        <Warning size={92} color="currentColor" weight="fill" />
-        <p>{`No results for '${query}'`}</p>
-      </motion.div>
+      <div style={isDark ? { backgroundColor: "#35313D", color: "white" } : {}}>
+        <motion.div
+          className="empty-list"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Warning size={128} color="currentColor" weight="fill" />
+          <p>
+            No results for '<code>{query}</code>'
+          </p>
+        </motion.div>
+      </div>
     );
 
   return (
