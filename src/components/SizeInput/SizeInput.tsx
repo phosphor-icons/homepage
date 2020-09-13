@@ -35,6 +35,7 @@ const SizeInput: React.FC<SizeInputProps> = () => {
       <label htmlFor="size-input">{`${size}px`}</label>
       <input
         id="size-input"
+        name="size-input"
         value={size}
         type="range"
         title={size.toString()}
