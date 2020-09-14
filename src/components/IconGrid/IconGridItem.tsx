@@ -21,7 +21,6 @@ interface IconGridItemProps extends IconProps {
   originOffset: MutableRefObject<{ top: number; left: number }>;
 }
 
-// const whileTap = { boxShadow: "0 0 0 6px rgba(163, 159, 171, 0.1)" };
 const transition = { duration: 0.2 };
 const originIndex = 0;
 const delayPerPixel = 0.0004;
@@ -67,6 +66,7 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
     const d = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
     delayRef.current = d * delayPerPixel;
   }, [originOffset]);
+
   return (
     <>
       <motion.div

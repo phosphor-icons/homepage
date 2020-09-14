@@ -25,19 +25,17 @@ const illustrationVariants = {
   visible: { opacity: 1, transition: { duration: 0.2 } },
 };
 
-const handleGetStarted = () => {
+const handleGetStarted = () =>
   window.open(
     "https://github.com/phosphor-icons/phosphor-web#phosphor-icons",
     "_blank",
     "noopener noreferrer"
   );
-};
 
-const handleScrollToIcons = () => {
+const handleScrollToIcons = () =>
   document
     .getElementById("toolbar")
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
-};
 
 const Header: React.FC<HeaderProps> = () => {
   return (
@@ -62,7 +60,11 @@ const Header: React.FC<HeaderProps> = () => {
             </button>
           </div>
           <div className="links">
-            <a className="nav-link" href="#">
+            <a
+              className="nav-link"
+              href={`${process.env.PUBLIC_URL}/favicon.ico`}
+              download
+            >
               Download all
             </a>
             <a

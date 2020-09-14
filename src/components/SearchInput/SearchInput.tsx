@@ -29,6 +29,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
         id="search-input"
         aria-label="Search for an icon"
         type="text"
+        autoCapitalize="off"
         autoComplete="off"
         value={value}
         placeholder="Search"

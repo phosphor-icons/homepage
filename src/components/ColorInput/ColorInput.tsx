@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 import { iconColorAtom } from "../../state/atoms";
@@ -12,12 +12,15 @@ const ColorInput: React.FC<ColorInputProps> = () => {
   const [color, setColor] = useRecoilState(iconColorAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
 
-  const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { value: color },
-    } = event;
-    if (color[0] === "#") setColor(color);
-  };
+  const handleColorChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { value: color },
+      } = event;
+      if (color[0] === "#") setColor(color);
+    },
+    [setColor]
+  );
 
   const throttledColorChange = useThrottled(handleColorChange, 100, [
     handleColorChange,

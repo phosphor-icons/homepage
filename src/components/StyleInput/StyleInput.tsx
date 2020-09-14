@@ -1,5 +1,5 @@
 import React from "react";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import Select from "react-dropdown-select";
 import { PencilLine } from "phosphor-react";
 
@@ -7,7 +7,9 @@ import { iconStyleAtom } from "../../state/atoms";
 import { IconStyle } from "../../lib";
 import "./StyleInput.css";
 
-const options = [
+type WeightOption = { key: string; value: IconStyle; icon: JSX.Element };
+
+const options: WeightOption[] = [
   {
     key: "Thin",
     value: IconStyle.THIN,
@@ -43,12 +45,10 @@ const options = [
 type StyleInputProps = {};
 
 const StyleInput: React.FC<StyleInputProps> = () => {
-  const [style, setStyle] = useRecoilState(iconStyleAtom);
-  void style;
+  const setStyle = useSetRecoilState(iconStyleAtom);
 
-  // const handleStyleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-  //   setStyle(event.target.value as IconStyle);
-  // };
+  const handleStyleChange = (values: WeightOption[]) =>
+    setStyle(values[0].value as IconStyle);
 
   return (
     <Select
@@ -56,7 +56,7 @@ const StyleInput: React.FC<StyleInputProps> = () => {
       values={[options[2]]}
       searchable={false}
       labelField="key"
-      onChange={(values) => setStyle(values[0].value as IconStyle)}
+      onChange={handleStyleChange}
       itemRenderer={({
         item,
         itemIndex,
