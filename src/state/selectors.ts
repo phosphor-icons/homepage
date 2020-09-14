@@ -15,7 +15,7 @@ const isQueryMatch = (icon: IconEntry, query: string): boolean => {
 
 export const filteredQueryResultsSelector = selector<Readonly<IconEntry[]>>({
   key: "filteredQueryResultsSelector",
-  get: async ({ get }) => {
+  get: ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();
     const style = get(iconStyleAtom);
 
@@ -33,7 +33,7 @@ export const categorizedQueryResultsSelector = selector<
   Readonly<CategorizedIcons>
 >({
   key: "categorizedQueryResultsSelector",
-  get: async ({ get }) => {
+  get: ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);
     return new Promise((resolve) =>
       resolve(
@@ -54,7 +54,7 @@ export const singleCategoryQueryResultsSelector = selectorFamily<
   IconCategory
 >({
   key: "singleCategoryQueryResultsSelector",
-  get: (category: IconCategory) => async ({ get }) => {
+  get: (category: IconCategory) => ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);
     return new Promise((resolve) =>
       resolve(
