@@ -2,19 +2,15 @@ import React, { useRef, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { useWindowSize } from "react-use";
-import { IconContext, Warning } from "phosphor-react";
+import { IconContext } from "phosphor-react";
 
-import {
-  iconStyleAtom,
-  iconSizeAtom,
-  iconColorAtom,
-  searchQueryAtom,
-} from "../../state/atoms";
+import { iconStyleAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
 import {
   filteredQueryResultsSelector,
   isDarkThemeSelector,
 } from "../../state/selectors";
 import GridItem from "./IconGridItem";
+import Warn from "../Warn/Warn";
 import "./IconGrid.css";
 
 type IconGridProps = {};
@@ -23,7 +19,6 @@ const IconGrid: React.FC<IconGridProps> = () => {
   const weight = useRecoilValue(iconStyleAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
-  const query = useRecoilValue(searchQueryAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
 
   const { width } = useWindowSize();
@@ -38,22 +33,7 @@ const IconGrid: React.FC<IconGridProps> = () => {
     controls.start("visible");
   }, [controls, filteredQueryResults]);
 
-  if (!filteredQueryResults.length)
-    return (
-      <div style={isDark ? { backgroundColor: "#35313D", color: "white" } : {}}>
-        <motion.div
-          className="empty-list"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Warning size={128} color="currentColor" weight="fill" />
-          <p>
-            No results for '<code>{query}</code>'
-          </p>
-        </motion.div>
-      </div>
-    );
+  if (!filteredQueryResults.length) return <Warn />;
 
   return (
     <IconContext.Provider value={{ weight, size, color, mirrored: false }}>
