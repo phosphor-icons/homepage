@@ -1,6 +1,6 @@
 {
   "name": "phosphor-web",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "GPL-3.0",
   "homepage": "https://phosphor-icons.github.io/phosphor-web",
   "author": {
@@ -19,7 +19,7 @@
     "UX"
   ],
   "repository": "github:phosphor-icons/phosphor-web",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -35,7 +35,7 @@
     "file-saver": "^2.0.2",
     "framer-motion": "^2.1.0",
     "gh-pages": "^3.1.0",
-    "phosphor-react": "^0.2.1",
+    "phosphor-react": "^0.2.2",
     "react": "^17.0.0-rc.0",
     "react-dom": "^17.0.0-rc.0",
     "react-dropdown-select": "^4.4.2",
