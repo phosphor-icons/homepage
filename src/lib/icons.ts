@@ -3086,13 +3086,13 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "trash",
     categories: [IconCategory.DOCUMENT, IconCategory.SYSTEM],
-    tags: ["garbage", "delete", "destroy", "recycle", "recycling"],
+    tags: ["garbage", "remove", "delete", "destroy", "recycle", "recycling"],
     Icon: Icon.Trash,
   },
   {
     name: "trash-handle",
     categories: [IconCategory.DOCUMENT, IconCategory.SYSTEM],
-    tags: ["garbage", "delete", "destroy", "recycle", "recycling"],
+    tags: ["garbage", "remove", "delete", "destroy", "recycle", "recycling"],
     Icon: Icon.TrashHandle,
   },
   {

@@ -5,6 +5,8 @@ import Header from "../Header/Header";
 import Toolbar from "../Toolbar/Toolbar";
 import IconGrid from "../IconGrid/IconGrid";
 import Footer from "../Footer/Footer";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
+import Warn from "../Warn/Warn";
 
 const App: React.FC<any> = () => {
   return (
@@ -12,9 +14,11 @@ const App: React.FC<any> = () => {
       <Header />
       <main>
         <Toolbar />
-        <Suspense fallback={<div>Loading...</div>}>
-          <IconGrid />
-        </Suspense>
+        <ErrorBoundary fallback={<Warn message="Search error"/>}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <IconGrid />
+          </Suspense>
+        </ErrorBoundary>
       </main>
       <Footer />
     </>
