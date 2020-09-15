@@ -1,28 +1,25 @@
 import { selector, selectorFamily } from "recoil";
 import TinyColor from "tinycolor2";
+import Fuse from "fuse.js";
 
-import { searchQueryAtom, iconStyleAtom, iconColorAtom } from "./atoms";
+import { searchQueryAtom, iconColorAtom } from "./atoms";
 import { IconEntry, IconCategory } from "../lib";
 import { icons } from "../lib/icons";
 
-const isQueryMatch = (icon: IconEntry, query: string): boolean => {
-  return (
-    icon.name.includes(query) ||
-    icon.tags.some((tag) => tag.toLowerCase().includes(query)) ||
-    icon.categories.some((category) => category.toLowerCase().includes(query))
-  );
-};
+const fuse = new Fuse(icons, {
+  keys: [{ name: "name", weight: 2 }, "tags", "categories"],
+  threshold: 0.2, // Tweak this to what feels like the right number of results
+  // shouldSort: false, // We may want to sort if we find too many results?
+});
 
 export const filteredQueryResultsSelector = selector<Readonly<IconEntry[]>>({
   key: "filteredQueryResultsSelector",
   get: ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();
-    const style = get(iconStyleAtom);
-
-    if (!query && !style) return icons;
+    if (!query) return icons;
 
     return new Promise((resolve) =>
-      resolve(icons.filter((icon) => isQueryMatch(icon, query)))
+      resolve(fuse.search(query).map((value) => value.item))
     );
   },
 });
