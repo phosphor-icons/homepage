@@ -4,19 +4,19 @@ import { motion, useAnimation } from "framer-motion";
 import { useWindowSize } from "react-use";
 import { IconContext } from "phosphor-react";
 
-import { iconStyleAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
+import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
 import {
   filteredQueryResultsSelector,
   isDarkThemeSelector,
 } from "../../state/selectors";
-import GridItem from "./IconGridItem";
+import IconGridItem from "./IconGridItem";
 import Warn from "../Warn/Warn";
 import "./IconGrid.css";
 
 type IconGridProps = {};
 
 const IconGrid: React.FC<IconGridProps> = () => {
-  const weight = useRecoilValue(iconStyleAtom);
+  const weight = useRecoilValue(iconWeightAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
@@ -48,7 +48,7 @@ const IconGrid: React.FC<IconGridProps> = () => {
           variants={{}}
         >
           {filteredQueryResults.map((iconEntry, index) => (
-            <GridItem
+            <IconGridItem
               key={index}
               index={index}
               spans={spans}

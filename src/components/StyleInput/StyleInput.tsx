@@ -3,7 +3,7 @@ import { useSetRecoilState } from "recoil";
 import Select from "react-dropdown-select";
 import { PencilLine } from "phosphor-react";
 
-import { iconStyleAtom } from "../../state/atoms";
+import { iconWeightAtom } from "../../state/atoms";
 import { IconStyle } from "../../lib";
 import "./StyleInput.css";
 
@@ -45,7 +45,7 @@ const options: WeightOption[] = [
 type StyleInputProps = {};
 
 const StyleInput: React.FC<StyleInputProps> = () => {
-  const setStyle = useSetRecoilState(iconStyleAtom);
+  const setStyle = useSetRecoilState(iconWeightAtom);
 
   const handleStyleChange = (values: WeightOption[]) =>
     setStyle(values[0].value as IconStyle);

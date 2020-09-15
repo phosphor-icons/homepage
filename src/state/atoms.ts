@@ -6,8 +6,8 @@ export const searchQueryAtom = atom<string>({
   default: "",
 });
 
-export const iconStyleAtom = atom<IconStyle>({
-  key: "styleQueryAtom",
+export const iconWeightAtom = atom<IconStyle>({
+  key: "iconWeightAtom",
   default: IconStyle.REGULAR,
 });
 
