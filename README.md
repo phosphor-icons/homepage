@@ -74,7 +74,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ### Vue
 
-- **Parity** – As with React, you can manipulate the `color`, `size`, and `weight` of an icon with a few keystrokes, or provide default styles to all icons via the `provide/inject` API. It is fully tree-shakable and ready to use right away. Check out the full documentation on the [phosphor-vue](https://github.com/phosphor-icons/phosphor-react) repo page.
+- **Parity** – As with React, you can manipulate the `color`, `size`, and `weight` of an icon with a few keystrokes, or provide default styles to all icons via the `provide/inject` API. It is fully tree-shakable and ready to use right away. Check out the full documentation on the [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) repo page.
 
 ```html
 <template>
