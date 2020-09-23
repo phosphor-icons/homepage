@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
 import { saveAs } from "file-saver";
-import { Icon, Copy, X, CheckCircle, ArchiveDiskDot } from "phosphor-react";
+import { Icon, Copy, X, CheckCircle, Download } from "phosphor-react";
 
 import {
   iconWeightAtom,
@@ -155,7 +155,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
             style={{ color: isDark ? "white" : "black" }}
             onClick={handleDownloadSVG}
           >
-            <ArchiveDiskDot size={32} color="currentColor" weight="fill" />{" "}
+            <Download size={32} color="currentColor" weight="fill" />{" "}
             Download SVG
           </button>
           <button
