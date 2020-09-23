@@ -9,7 +9,7 @@ import { icons } from "../lib/icons";
 const fuse = new Fuse(icons, {
   keys: [{ name: "name", weight: 2 }, "tags", "categories"],
   threshold: 0.2, // Tweak this to what feels like the right number of results
-  // shouldSort: false, // We may want to sort if we find too many results?
+  // shouldSort: false,
 });
 
 export const filteredQueryResultsSelector = selector<Readonly<IconEntry[]>>({
