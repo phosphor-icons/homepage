@@ -1,7 +1,7 @@
 import * as Icon from "phosphor-react";
 import { IconEntry, IconCategory } from ".";
 
-export const icons: Readonly<IconEntry[]> = [
+export const icons: ReadonlyArray<IconEntry> = [
   {
     name: "activity",
     categories: [IconCategory.DEVICE, IconCategory.HEALTH],
@@ -25,7 +25,7 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "airplay",
     categories: [IconCategory.MEDIA, IconCategory.SYSTEM],
-    tags: ["apple airplay", "screencasting", "television", "tv"],
+    tags: ["apple", "screencasting", "television", "tv"],
     Icon: Icon.Airplay,
   },
   {
@@ -94,20 +94,18 @@ export const icons: Readonly<IconEntry[]> = [
     ],
     Icon: Icon.ArchiveTray,
   },
-  {
-    name: "arrow-leap-left",
-    // name: "arrow-arc-left",
-    categories: [IconCategory.OTHER],
-    tags: ["arrows", "directional", "pointer", "pointing", "arrowhead"],
-    Icon: Icon.ArrowLeapLeft,
-  },
-  {
-    name: "arrow-leap-right",
-    // name: "arrow-arc-right",
-    categories: [IconCategory.OTHER],
-    tags: ["arrows", "directional", "pointer", "pointing", "arrowhead"],
-    Icon: Icon.ArrowLeapRight,
-  },
+  // {
+  //   name: "arrow-arc-left",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["arrows", "directional", "pointer", "pointing", "arrowhead"],
+  //   Icon: Icon.ArrowLeapLeft,
+  // },
+  // {
+  //   name: "arrow-arc-right",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["arrows", "directional", "pointer", "pointing", "arrowhead"],
+  //   Icon: Icon.ArrowLeapRight,
+  // },
   {
     name: "arrow-bend-left-up",
     categories: [IconCategory.OTHER],
@@ -156,6 +154,18 @@ export const icons: Readonly<IconEntry[]> = [
     tags: ["arrows", "directional", "pointer", "pointing", "arrowhead"],
     Icon: Icon.ArrowBendDownRight,
   },
+  // {
+  //   name: "arrow-bend-double-left",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["arrows", "directional", "pointer", "pointing", "arrowhead"],
+  //   Icon: Icon.ArrowDoubleBendUpLeft,
+  // },
+  // {
+  //   name: "arrow-bend-double-right",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["arrows", "directional", "pointer", "pointing", "arrowhead"],
+  //   Icon: Icon.ArrowDoubleBendUpRight,
+  // },
   {
     name: "arrow-circle-up",
     categories: [IconCategory.OTHER],
@@ -491,7 +501,7 @@ export const icons: Readonly<IconEntry[]> = [
     Icon: Icon.ArrowsLeftRight,
   },
   // {
-  //   name: "arrows-inward",
+  //   name: "arrows-in",
   //   categories: [IconCategory.OTHER],
   //   tags: [
   //     "directional",
@@ -501,10 +511,10 @@ export const icons: Readonly<IconEntry[]> = [
   //     "collapse",
   //     "minimize",
   //   ],
-  //   Icon: Icon.ArrowsInward,
+  //   Icon: Icon.ArrowsIn,
   // },
   // {
-  //   name: "arrows-inward-cardinal",
+  //   name: "arrows-in-cardinal",
   //   categories: [IconCategory.OTHER],
   //   tags: [
   //     "directional",
@@ -515,10 +525,10 @@ export const icons: Readonly<IconEntry[]> = [
   //     "minimize",
   //     "resize",
   //   ],
-  //   Icon: Icon.ArrowsInwardCardinal,
+  //   Icon: Icon.ArrowsInCardinal,
   // },
   // {
-  //   name: "arrows-inward-simple",
+  //   name: "arrows-in-simple",
   //   categories: [IconCategory.OTHER],
   //   tags: [
   //     "directional",
@@ -529,62 +539,62 @@ export const icons: Readonly<IconEntry[]> = [
   //     "minimize",
   //     "resize",
   //   ],
-  //   Icon: Icon.ArrowsInwardSimple,
+  //   Icon: Icon.ArrowsInSimple,
   // },
-  {
-    name: "arrows-outward",
-    categories: [IconCategory.OTHER],
-    tags: [
-      "directional",
-      "pointer",
-      "pointing",
-      "arrowhead",
-      "expand",
-      "fullscreen",
-      "resize",
-    ],
-    Icon: Icon.ArrowsOutward,
-  },
-  {
-    name: "arrows-outward-cardinal",
-    categories: [IconCategory.OTHER],
-    tags: [
-      "directional",
-      "pointer",
-      "pointing",
-      "arrowhead",
-      "expand",
-      "fullscreen",
-      "pan",
-      "move",
-    ],
-    Icon: Icon.ArrowsOutwardCardinal,
-  },
-  {
-    name: "arrows-outward-simple",
-    categories: [IconCategory.OTHER],
-    tags: [
-      "directional",
-      "pointer",
-      "pointing",
-      "arrowhead",
-      "expand",
-      "fullscreen",
-      "resize",
-    ],
-    Icon: Icon.ArrowsOutwardSimple,
-  },
+  // {
+  //   name: "arrows-out",
+  //   categories: [IconCategory.OTHER],
+  //   tags: [
+  //     "directional",
+  //     "pointer",
+  //     "pointing",
+  //     "arrowhead",
+  //     "expand",
+  //     "fullscreen",
+  //     "resize",
+  //   ],
+  //   Icon: Icon.ArrowsOut,
+  // },
+  // {
+  //   name: "arrows-out-cardinal",
+  //   categories: [IconCategory.OTHER],
+  //   tags: [
+  //     "directional",
+  //     "pointer",
+  //     "pointing",
+  //     "arrowhead",
+  //     "expand",
+  //     "fullscreen",
+  //     "pan",
+  //     "move",
+  //   ],
+  //   Icon: Icon.ArrowsOutCardinal,
+  // },
+  // {
+  //   name: "arrows-out-simple",
+  //   categories: [IconCategory.OTHER],
+  //   tags: [
+  //     "directional",
+  //     "pointer",
+  //     "pointing",
+  //     "arrowhead",
+  //     "expand",
+  //     "fullscreen",
+  //     "resize",
+  //   ],
+  //   Icon: Icon.ArrowsOutSimple,
+  // },
+  // {
+  //   name: "article",
+  //   categories: [IconCategory.MEDIA, IconCategory.OTHER],
+  //   tags: ["reading", "writing", "journals", "periodicals", "text", "newspaper"],
+  //   Icon: Icon.Article,
+  // },
   {
     name: "asterisk",
     categories: [IconCategory.OTHER],
     tags: ["star", "wildcard", "bullet point", "6"],
     Icon: Icon.Asterisk,
-  },
-  {
-    name: "asterisk-eight",
-    categories: [IconCategory.OTHER],
-    tags: ["star", "wildcard", "bullet point", "8"],
-    Icon: Icon.AsteriskEight,
   },
   {
     name: "at",
@@ -625,7 +635,7 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "barcode",
     categories: [IconCategory.BUSINESS],
-    tags: ["upc", "products", "shopping", "scanner"],
+    tags: ["upc", "qr", "products", "shopping", "scanner"],
     Icon: Icon.Barcode,
   },
   {
@@ -719,6 +729,7 @@ export const icons: Readonly<IconEntry[]> = [
       "silenced",
       "ringer",
       "calls",
+      "disabled",
     ],
     Icon: Icon.BellSlash,
   },
@@ -751,6 +762,7 @@ export const icons: Readonly<IconEntry[]> = [
       "events",
       "silent",
       "silenced",
+      "disabled",
     ],
     Icon: Icon.BellSimpleSlash,
   },
@@ -979,6 +991,30 @@ export const icons: Readonly<IconEntry[]> = [
     tags: ["directional", "pointer", "pointing", "arrowhead"],
     Icon: Icon.CaretRight,
   },
+  // {
+  //   name: "caret-double-up",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["directional", "pointer", "pointing", "arrowhead"],
+  //   Icon: Icon.CaretDoubleUp,
+  // },
+  // {
+  //   name: "caret-double-down",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["directional", "pointer", "pointing", "arrowhead"],
+  //   Icon: Icon.CaretDoubleDown,
+  // },
+  // {
+  //   name: "caret-double-left",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["directional", "pointer", "pointing", "arrowhead"],
+  //   Icon: Icon.CaretDoubleLeft,
+  // },
+  // {
+  //   name: "caret-double-right",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["directional", "pointer", "pointing", "arrowhead"],
+  //   Icon: Icon.CaretDoubleRight,
+  // },
   {
     name: "caret-circle-up",
     categories: [IconCategory.OTHER],
@@ -1445,6 +1481,12 @@ export const icons: Readonly<IconEntry[]> = [
     Icon: Icon.CloudSnow,
   },
   {
+    name: "club",
+    categories: [IconCategory.OTHER],
+    tags: ["clubs", "suits", "cards", "gambling", "casino", "games", "gaming"],
+    Icon: Icon.Diamond,
+  },
+  {
     name: "code",
     categories: [IconCategory.DEVELOPMENT, IconCategory.EDITOR],
     tags: ["angle brackets", "angle braces", "snippets"],
@@ -1547,7 +1589,7 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "cursor",
     categories: [IconCategory.DESIGN, IconCategory.SYSTEM],
-    tags: ["ponter", "arrowhead", "mouse", "click"],
+    tags: ["pointer", "arrowhead", "mouse", "click"],
     Icon: Icon.Cursor,
   },
   {
@@ -1589,7 +1631,18 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "diamond",
     categories: [IconCategory.OTHER],
-    tags: ["rectangle", "shapes", "polygons", "diamonds", "suits", "cards"],
+    tags: [
+      "rectangle",
+      "shapes",
+      "polygons",
+      "diamonds",
+      "suits",
+      "cards",
+      "gambling",
+      "casino",
+      "games",
+      "gaming",
+    ],
     Icon: Icon.Diamond,
   },
   // {
@@ -1892,6 +1945,7 @@ export const icons: Readonly<IconEntry[]> = [
       "visibility",
       "invisible",
       "eyelashes",
+      "disabled",
     ],
     Icon: Icon.EyeSlash,
   },
@@ -1938,7 +1992,7 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "fast-forward",
     categories: [IconCategory.MEDIA, IconCategory.SYSTEM],
-    tags: ["seek", "scrub", "scan", "ahead"],
+    tags: ["audio", "music", "seek", "scrub", "scan", "ahead", "skip"],
     Icon: Icon.FastForward,
   },
   {
@@ -2394,6 +2448,24 @@ export const icons: Readonly<IconEntry[]> = [
     Icon: Icon.Globe,
   },
   {
+    name: "globe-simple",
+    categories: [IconCategory.MAP],
+    tags: [
+      "world",
+      "global",
+      "planet",
+      "circle",
+      "round",
+      "internationalization",
+      "i18n",
+      "languages",
+      "country",
+      "countries",
+      "geography",
+    ],
+    Icon: Icon.GlobeSimple,
+  },
+  {
     name: "globe-hemisphere-eastern",
     categories: [IconCategory.MAP],
     tags: [
@@ -2434,24 +2506,6 @@ export const icons: Readonly<IconEntry[]> = [
       "south america",
     ],
     Icon: Icon.GlobeHemisphereWestern,
-  },
-  {
-    name: "globe-simple",
-    categories: [IconCategory.MAP],
-    tags: [
-      "world",
-      "global",
-      "planet",
-      "circle",
-      "round",
-      "internationalization",
-      "i18n",
-      "languages",
-      "country",
-      "countries",
-      "geography",
-    ],
-    Icon: Icon.GlobeSimple,
   },
   {
     name: "globe-stand",
@@ -2527,6 +2581,40 @@ export const icons: Readonly<IconEntry[]> = [
     tags: ["suitcases", "valises", "baggage", "purses"],
     Icon: Icon.Handbag,
   },
+  // {
+  //   name: "hard-drive",
+  //   categories: [IconCategory.DEVICE, IconCategory.SYSTEM],
+  //   tags: [
+  //     "saved",
+  //     "saving",
+  //     "archived",
+  //     "archiving",
+  //     "archival",
+  //     "hard disk",
+  //     "storage",
+  //     "hdd",
+  //     "servers",
+  //     "databases",
+  //   ],
+  //   Icon: Icon.HardDrive,
+  // },
+  // {
+  //   name: "hard-drives",
+  //   categories: [IconCategory.DEVICE, IconCategory.SYSTEM],
+  //   tags: [
+  //     "saved",
+  //     "saving",
+  //     "archived",
+  //     "archiving",
+  //     "archival",
+  //     "hard disk",
+  //     "storage",
+  //     "hdd",
+  //     "servers",
+  //     "databases",
+  //   ],
+  //   Icon: Icon.HardDrives,
+  // },
   {
     name: "hash",
     categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
@@ -2581,6 +2669,10 @@ export const icons: Readonly<IconEntry[]> = [
       "favorited",
       "suits",
       "cards",
+      "gambling",
+      "casino",
+      "games",
+      "gaming",
     ],
     Icon: Icon.Heart,
   },
@@ -2601,6 +2693,10 @@ export const icons: Readonly<IconEntry[]> = [
       "favorited",
       "suits",
       "cards",
+      "gambling",
+      "casino",
+      "games",
+      "gaming",
     ],
     Icon: Icon.HeartStraight,
   },
@@ -2825,6 +2921,22 @@ export const icons: Readonly<IconEntry[]> = [
     ],
     Icon: Icon.Jeep,
   },
+  // {
+  //   name: "key",
+  //   categories: [IconCategory.OTHER],
+  //   tags: [
+  //     "padlock",
+  //     "security",
+  //     "secured",
+  //     "authentication",
+  //     "authenticated",
+  //     "login",
+  //     "locked",
+  //     "encrypted",
+  //     "encryption",
+  //   ],
+  //   Icon: Icon.Key,
+  // },
   {
     name: "keyboard",
     categories: [IconCategory.DEVICE, IconCategory.SYSTEM],
@@ -2881,18 +2993,36 @@ export const icons: Readonly<IconEntry[]> = [
     tags: ["anchor", "hyperlink", "hypertext", "chains", "chained"],
     Icon: Icon.Link,
   },
+  // {
+  //   name: "link-break",
+  //   categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
+  //   tags: ["anchor", "hyperlink", "hypertext", "chains", "chained", "errors", "broken"],
+  //   Icon: Icon.LinkBreak,
+  // },
   {
     name: "link-simple",
     categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["anchor", "hyperlink", "hypertext", "chains", "chained"],
     Icon: Icon.LinkSimple,
   },
+  // {
+  //   name: "link-simple-break",
+  //   categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
+  //   tags: ["anchor", "hyperlink", "hypertext", "chains", "chained", "errors", "broken"],
+  //   Icon: Icon.LinkSimpleBreak,
+  // },
   {
     name: "link-simple-horizontal",
     categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["anchor", "hyperlink", "hypertext", "chains", "chained"],
     Icon: Icon.LinkSimpleHorizontal,
   },
+  // {
+  //   name: "link-simple-horizontal-break",
+  //   categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
+  //   tags: ["anchor", "hyperlink", "hypertext", "chains", "chained", "errors", "broken"],
+  //   Icon: Icon.LinkSimpleHorizontalBreak,
+  // },
   {
     name: "linkedin",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
@@ -3280,17 +3410,17 @@ export const icons: Readonly<IconEntry[]> = [
     tags: ["songs", "audio", "playlist", "albums"],
     Icon: Icon.MusicNotesSimple,
   },
+  // {
+  //   name: "navigation-arrow",
+  //   categories: [IconCategory.MAP, IconCategory.OTHER],
+  //   tags: ["location", "directions", "compass", "gps"],
+  //   Icon: Icon.NavigationArrow,
+  // },
   {
     name: "newspaper",
     categories: [IconCategory.MEDIA, IconCategory.OTHER],
     tags: ["reading", "writing", "journals", "periodicals"],
     Icon: Icon.Newspaper,
-  },
-  {
-    name: "newspaper-fold",
-    categories: [IconCategory.MEDIA, IconCategory.OTHER],
-    tags: ["reading", "writing", "journals", "periodicals"],
-    Icon: Icon.NewspaperFold,
   },
   // {
   //   name: "newspaper-clipping",
@@ -3847,7 +3977,15 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "path",
     categories: [IconCategory.DESIGN, IconCategory.MAP],
-    tags: ["transit", "travel", "trail", "destination"],
+    tags: [
+      "transit",
+      "travel",
+      "trail",
+      "gps",
+      "navigation",
+      "route",
+      "destination",
+    ],
     Icon: Icon.Path,
   },
   {
@@ -4105,7 +4243,7 @@ export const icons: Readonly<IconEntry[]> = [
   {
     name: "qr-code",
     categories: [IconCategory.BUSINESS],
-    tags: ["upc", "products", "shopping", "scanner"],
+    tags: ["upc", "barcode", "products", "shopping", "scanner"],
     Icon: Icon.QrCode,
   },
   {
@@ -4177,12 +4315,25 @@ export const icons: Readonly<IconEntry[]> = [
       "seek",
       "scrub",
       "scan",
+      "skip",
       "back",
       "backwards",
       "reverse",
     ],
     Icon: Icon.Rewind,
   },
+  // {
+  //   name: "rocket",
+  //   categories: [IconCategory.DEVELOPMENT, IconCategory.OTHER],
+  //   tags: ["spaceship", "launch", "deployment", "rocketship"],
+  //   Icon: Icon.Rocket,
+  // },
+  // {
+  //   name: "rocket-launch",
+  //   categories: [IconCategory.DEVELOPMENT, IconCategory.OTHER],
+  //   tags: ["spaceship", "flying", "blastoff", "deployment", "rocketship"],
+  //   Icon: Icon.RocketLaunch,
+  // },
   {
     name: "rss",
     categories: [
@@ -4212,7 +4363,7 @@ export const icons: Readonly<IconEntry[]> = [
   // {
   //   name: "screencast",
   //   categories: [IconCategory.MEDIA, IconCategory.SYSTEM],
-  //   tags: ["apple airplay", "screencasting", "television", "tv"],
+  //   tags: ["apple", "airplay", "screencasting", "television", "tv"],
   //   Icon: Icon.Screencast,
   // },
   {
@@ -4292,6 +4443,7 @@ export const icons: Readonly<IconEntry[]> = [
       "unlocked",
       "unencrypted",
       "encryption",
+      "disabled",
     ],
     Icon: Icon.ShieldSlash,
   },
@@ -4525,6 +4677,12 @@ export const icons: Readonly<IconEntry[]> = [
     tags: ["sorted", "sorting", "decreasing", "z to a", "arrows"],
     Icon: Icon.SortDescending,
   },
+  // {
+  //   name: "spade",
+  //   categories: [IconCategory.OTHER],
+  //   tags: ["spades", "suits", "cards", "gambling", "casino", "games", "gaming"],
+  //   Icon: Icon.Spade,
+  // },
   {
     name: "speaker-high",
     categories: [IconCategory.MEDIA, IconCategory.SYSTEM],
@@ -5216,5 +5374,3 @@ export const icons: Readonly<IconEntry[]> = [
     Icon: Icon.Youtube,
   },
 ];
-
-console.log(icons.length);
