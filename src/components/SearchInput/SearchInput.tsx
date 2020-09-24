@@ -27,6 +27,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
       <MagnifyingGlass size={24} />
       <input
         id="search-input"
+        title="Search for icon names, categories, or keywords"
         aria-label="Search for an icon"
         type="text"
         autoCapitalize="off"
