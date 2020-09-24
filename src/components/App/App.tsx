@@ -10,7 +10,7 @@ import Warn from "../Warn/Warn";
 
 const App: React.FC<any> = () => {
   return (
-    <>
+    <React.StrictMode>
       <Header />
       <main>
         <Toolbar />
@@ -21,7 +21,7 @@ const App: React.FC<any> = () => {
         </ErrorBoundary>
       </main>
       <Footer />
-    </>
+    </React.StrictMode>
   );
 };
 
