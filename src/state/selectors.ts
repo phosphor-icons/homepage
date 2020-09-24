@@ -13,7 +13,7 @@ const fuse = new Fuse(icons, {
   useExtendedSearch: true,
 });
 
-export const filteredQueryResultsSelector = selector<Readonly<IconEntry[]>>({
+export const filteredQueryResultsSelector = selector<ReadonlyArray<IconEntry>>({
   key: "filteredQueryResultsSelector",
   get: ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();
@@ -48,7 +48,7 @@ export const categorizedQueryResultsSelector = selector<
 });
 
 export const singleCategoryQueryResultsSelector = selectorFamily<
-  Readonly<IconEntry[]>,
+  ReadonlyArray<IconEntry>,
   IconCategory
 >({
   key: "singleCategoryQueryResultsSelector",
