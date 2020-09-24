@@ -79,7 +79,6 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
           backgroundColor: isOpen ? "rgba(163, 159, 171, 0.1)" : undefined,
         }}
         custom={delayRef}
-        // whileTap={whileTap}
         transition={transition}
         variants={itemVariants}
         onKeyPress={(e) => e.key === "Enter" && handleOpen()}

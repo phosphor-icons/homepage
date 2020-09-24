@@ -63,8 +63,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
     event.currentTarget.blur();
     setCopied(type);
     const data = snippets[type];
-    // if (!navigator.clipboard) throw new Error("no clipboard!");
-    data && void(navigator.clipboard?.writeText(data));
+    data && void navigator.clipboard?.writeText(data);
   };
 
   const handleDownloadSVG = (
@@ -81,7 +80,7 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
   ) => {
     event.currentTarget.blur();
     setCopied("svg");
-    ref.current && void(navigator.clipboard?.writeText(ref.current.outerHTML));
+    ref.current && void navigator.clipboard?.writeText(ref.current.outerHTML);
   };
 
   return (

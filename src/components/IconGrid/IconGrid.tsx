@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
-import { useWindowSize } from "react-use";
 import { IconContext } from "phosphor-react";
 
 import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
@@ -9,6 +8,7 @@ import {
   filteredQueryResultsSelector,
   isDarkThemeSelector,
 } from "../../state/selectors";
+import useGridSpans from "../../hooks/useGridSpans";
 import IconGridItem from "./IconGridItem";
 import Warn from "../Warn/Warn";
 import "./IconGrid.css";
@@ -20,9 +20,7 @@ const IconGrid: React.FC<IconGridProps> = () => {
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
-
-  const { width } = useWindowSize();
-  const spans = Math.floor(Math.min(width - 32, 1120) / 168);
+  const spans = useGridSpans();
 
   const filteredQueryResults = useRecoilValue(filteredQueryResultsSelector);
 
