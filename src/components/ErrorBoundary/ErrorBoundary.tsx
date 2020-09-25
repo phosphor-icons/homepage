@@ -19,7 +19,7 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
   }
 
   componentDidCatch(error: any, info: ErrorInfo) {
-    void(error);
+    void error;
     console.info(info);
   }
 
