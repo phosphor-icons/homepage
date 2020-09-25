@@ -59,7 +59,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 <template>
   <div>
     <PhHorse />
-    <PhHeart />
+    <PhHeart :size="32" color="hotpink" weight="fill" />
     <PhCube />
   </div>
 </template>
