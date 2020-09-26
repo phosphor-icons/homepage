@@ -12,6 +12,10 @@
   font-size: 16px;
 }
 
+.size-bar label {
+  width: 40px;
+}
+
 .size-bar:focus-within {
   outline: none;
 }
@@ -36,9 +40,9 @@
 .size-bar input::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 14px; /* Set a specific slider handle width */
-  height: 14px; /* Slider handle height */
-  padding: 6px;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  margin: 6px;
   border-radius: 50%;
   background: white; /* Green background */
   cursor: pointer; /* Cursor on hover */
@@ -46,24 +50,26 @@
 }
 
 .size-bar input::-moz-range-thumb {
-  width: 14px; /* Set a specific slider handle width */
-  height: 14px; /* Slider handle height */
-  padding: 6px;
-  background: black; /* Green background */
+  appearance: none;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  margin: 6px;
+  border-radius: 50%;
+  background: white; /* Green background */
   cursor: pointer; /* Cursor on hover */
   transition: height 0.1s, width 0.1s;
 }
 
 .size-bar input:focus::-moz-range-thumb {
   outline: none;
-  width: 20px; /* Set a specific slider handle width */
-  height: 20px; /* Slider handle height */
+  width: 24px; /* Set a specific slider handle width */
+  height: 24px; /* Slider handle height */
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
 .size-bar input:focus::-webkit-slider-thumb {
   outline: none;
-  width: 20px; /* Set a specific slider handle width */
-  height: 20px; /* Slider handle height */
+  width: 24px; /* Set a specific slider handle width */
+  height: 24px; /* Slider handle height */
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
 }

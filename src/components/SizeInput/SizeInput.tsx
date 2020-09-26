@@ -7,12 +7,10 @@ import "./SizeInput.css";
 type SizeInputProps = {};
 
 const handleFocus = (event: React.UIEvent<HTMLInputElement>) => {
-  event.preventDefault();
   event.currentTarget.focus();
 };
 
 const handleBlur = (event: React.UIEvent<HTMLInputElement>) => {
-  event.preventDefault();
   event.currentTarget.blur();
 };
 
