@@ -39,6 +39,7 @@ const IconGrid: React.FC<IconGridProps> = () => {
         className="grid-container"
         style={{ backgroundColor: isDark ? "#35313D" : "" }}
       >
+        <i id="beacon" className="beacon" />
         <motion.div
           className="grid"
           initial="hidden"

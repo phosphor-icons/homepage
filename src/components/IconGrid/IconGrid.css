@@ -155,3 +155,8 @@
   padding: 0 16px 4px;
   min-height: 80vh;
 }
+
+.beacon {
+  position: relative;
+  top: -64px;
+}

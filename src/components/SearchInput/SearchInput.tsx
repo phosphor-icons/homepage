@@ -13,7 +13,17 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   const [query, setQuery] = useRecoilState(searchQueryAtom);
   void query;
 
-  const [isReady] = useDebounce(() => setQuery(value), 250, [value]);
+  const [isReady] = useDebounce(
+    () => {
+      setQuery(value);
+      value &&
+        void document
+          .getElementById("beacon")
+          ?.scrollIntoView({ block: "start", behavior: "smooth" });
+    },
+    250,
+    [value]
+  );
 
   const handleCancelSearch = () => {
     setValue("");
