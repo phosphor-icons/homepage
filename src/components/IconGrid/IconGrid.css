@@ -121,6 +121,10 @@
   cursor: pointer;
 }
 
+.snippet button:disabled {
+  cursor: not-allowed;
+}
+
 .button-row {
   display: flex;
 }

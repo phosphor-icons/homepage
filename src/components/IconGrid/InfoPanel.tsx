@@ -45,15 +45,18 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
   const ref = useRef<SVGSVGElement>(null);
 
   const snippets = {
-    html: `<i class="ph-${name}${
-      weight === "regular" ? "" : `-${weight}`
-    }"></i>`,
+    html:
+      weight === "duotone"
+        ? "This weight is not yet supported"
+        : `<i class="ph-${name}${
+            weight === "regular" ? "" : `-${weight}`
+          }"></i>`,
     react: `<${Icon.displayName} size={${size}} ${
       color !== "#000000" ? `color="${color}" ` : ""
     }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
     vue: `<Ph${Icon.displayName} :size="${size}" ${
       color !== "#000000" ? `color="${color}" ` : ""
-    }${weight === "regular" ? "" : `weight="${weight}" `}/>`
+    }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
   };
 
   const handleCopySnippet = (
@@ -102,22 +105,6 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
       </div>
       <div className="icon-usage">
         <div className="snippet">
-          HTML/CSS
-          <pre tabIndex={0}>
-            {snippets.html}
-            <button
-              title="Copy snippet"
-              onClick={(e) => handleCopySnippet(e, "html")}
-            >
-              {copied === "html" ? (
-                <CheckCircle size={24} color="#1FA647" weight="fill" />
-              ) : (
-                <Copy size={24} color="currentColor" weight="fill" />
-              )}
-            </button>
-          </pre>
-        </div>
-        <div className="snippet">
           React
           <pre tabIndex={0}>
             {snippets.react}
@@ -149,13 +136,33 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
             </button>
           </pre>
         </div>
+        <div className="snippet">
+          HTML/CSS
+          <pre
+            tabIndex={0}
+            style={weight === "duotone" ? { color: "#B7B7B7" } : {}}
+          >
+            {snippets.html}
+            <button
+              title="Copy snippet"
+              onClick={(e) => handleCopySnippet(e, "html")}
+              disabled={weight === "duotone"}
+            >
+              {copied === "html" ? (
+                <CheckCircle size={24} color="#1FA647" weight="fill" />
+              ) : (
+                <Copy size={24} color="currentColor" weight="fill" />
+              )}
+            </button>
+          </pre>
+        </div>
         <div className="button-row">
           <button
             style={{ color: isDark ? "white" : "black" }}
             onClick={handleDownloadSVG}
           >
-            <Download size={32} color="currentColor" weight="fill" />{" "}
-            Download SVG
+            <Download size={32} color="currentColor" weight="fill" /> Download
+            SVG
           </button>
           <button
             style={{ color: isDark ? "white" : "black" }}
@@ -177,7 +184,9 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
         size={32}
         weight="fill"
         onClick={() => setOpen(false)}
-        onKeyDown={(e) => {e.key === "Enter" && setOpen(false)}}
+        onKeyDown={(e) => {
+          e.key === "Enter" && setOpen(false);
+        }}
       />
     </motion.section>
   );
