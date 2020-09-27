@@ -1,6 +1,6 @@
 # Phosphor Icons
 
-Phosphor is a kickass and dead-simple set of open-source icons for web and digital media. We aim to provide variety, consistency, and above all, ease-of-use for digital content creators of all kinds. The complete list of icons can be found on [our website](https://phosphoricons.com).
+Phosphor is a kickass and dead-simple set of open-source icons for web and digital media. We aim to provide variety, consistency, and above all, ease-of-use for digital content creators of all kinds. A complete list of icons can be found on [our website](https://phosphoricons.com).
 
 ## For developers
 
@@ -19,7 +19,7 @@ Phosphor is available as a [one-liner](https://github.com/phosphor-icons/phospho
   <body>
     <i class="ph-smiley"></i>
     <i class="ph-heart-fill" style="color: hotpink"></i>
-    <i class="ph-cube-duotone"></i>
+    <i class="ph-cube-thin"></i>
   </body>
 </html>
 ```
@@ -77,7 +77,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 </script>
 ```
 
-> **Note:** Due to possible namespace collisions with built-in html elements, compononent names in the Vue library are prefixed with `Ph`, but otherwise follow the same naming conventions.
+> **Note:** Due to possible namespace collisions with built-in HTML elements, compononent names in the Vue library are prefixed with `Ph`, but otherwise follow the same naming conventions.
 
 ## For designers
 
@@ -92,6 +92,12 @@ Download our [asset kit](https://www.phosphoricons.com/assets/phosphor.zip) to s
 - **Sketch**
 - **Illustrator**
 - **Figma** -->
+
+## Related Projects
+
+- [phosphor-react](https://github.com/phosphor-icons/phosphor-react) ▲ Phosphor icon component library for React
+- [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) ▲ Phosphor icon component library for Vue
+- [phosphor-icons](https://github.com/phosphor-icons/phosphor-icons) ▲ Phosphor icons for Vanilla JS
 
 ## License
 
