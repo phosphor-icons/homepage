@@ -24,6 +24,7 @@
   font-size: 16px;
   color: white;
   background-color: transparent !important;
+  text-overflow: ellipsis;
 }
 
 ::placeholder {
