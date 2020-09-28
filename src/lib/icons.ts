@@ -2607,7 +2607,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.GlobeSimple,
   },
   {
-    name: "globe-hemisphere-eastern",
+    name: "globe-hemisphere-east",
     categories: [IconCategory.MAP],
     tags: [
       "world",
@@ -2626,10 +2626,10 @@ export const icons: ReadonlyArray<IconEntry> = [
       "asia",
       "australia",
     ],
-    Icon: Icon.GlobeHemisphereEastern,
+    Icon: Icon.GlobeHemisphereEast,
   },
   {
-    name: "globe-hemispehere-western",
+    name: "globe-hemispehere-west",
     categories: [IconCategory.MAP],
     tags: [
       "world",
@@ -2646,7 +2646,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       "north america",
       "south america",
     ],
-    Icon: Icon.GlobeHemisphereWestern,
+    Icon: Icon.GlobeHemisphereWest,
   },
   {
     name: "globe-stand",
