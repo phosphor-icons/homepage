@@ -125,7 +125,6 @@ const Footer: React.FC<FooterProps> = () => {
             variants={variants}
             initial="visible"
             whileHover="hidden"
-            whileTap="hidden"
             src={commandKey}
             alt=""
           />

@@ -95,7 +95,6 @@ const Header: React.FC<HeaderProps> = () => {
             variants={illustrationVariants}
             initial="visible"
             whileHover="hidden"
-            whileTap="hidden"
             src={cuttingMat}
             alt=""
           />
@@ -106,7 +105,6 @@ const Header: React.FC<HeaderProps> = () => {
             variants={illustrationVariants}
             initial="visible"
             whileHover="hidden"
-            whileTap="hidden"
             src={receipt}
             alt=""
           />
@@ -122,7 +120,6 @@ const Header: React.FC<HeaderProps> = () => {
             variants={illustrationVariants}
             initial="visible"
             whileHover="hidden"
-            whileTap="hidden"
             src={calculator}
             alt=""
           />
@@ -134,7 +131,6 @@ const Header: React.FC<HeaderProps> = () => {
           variants={illustrationVariants}
           initial="visible"
           whileHover="hidden"
-          whileTap="hidden"
           src={tablet}
           alt=""
         />
@@ -150,7 +146,6 @@ const Header: React.FC<HeaderProps> = () => {
           variants={illustrationVariants}
           initial="visible"
           whileHover="hidden"
-          whileTap="hidden"
           src={billiardBall}
           alt=""
         />
@@ -162,7 +157,6 @@ const Header: React.FC<HeaderProps> = () => {
           variants={illustrationVariants}
           initial="visible"
           whileHover="hidden"
-          whileTap="hidden"
           src={warning}
           alt=""
         />
