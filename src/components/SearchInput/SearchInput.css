@@ -49,16 +49,12 @@
 }
 
 @media screen and (max-width: 558px) {
-  .search-bar svg {
+  #search-icon {
     display: none;
   }
 
   .search-bar input {
     margin-left: 0;
     width: 60%;
-  }
-
-  .wait-icon {
-    display: none;
   }
 }

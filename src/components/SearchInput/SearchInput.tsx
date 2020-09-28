@@ -34,7 +34,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
 
   return (
     <div className="search-bar">
-      <MagnifyingGlass size={24} />
+      <MagnifyingGlass id="search-icon" size={24} />
       <input
         id="search-input"
         title="Search for icon names, categories, or keywords"
