@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = () => {
             className="main-button"
             onClick={() =>
               window.open(
-                "https://paypal.me/TobiasFried",
+                "https://paypal.me/minoraxis",
                 "_blank",
                 "noopener noreferrer"
               )

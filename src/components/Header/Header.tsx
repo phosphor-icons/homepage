@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = () => {
             >
               Request
             </a>
-            <a className="nav-link" href="https://paypal.me/TobiasFried">
+            <a className="nav-link" href="https://paypal.me/minoraxis">
               Donate
             </a>
             <a
