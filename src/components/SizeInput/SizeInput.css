@@ -35,6 +35,10 @@
   .size-bar input {
     margin: 0 auto;
   }
+
+  .size-bar label {
+    display: none;
+  }
 }
 
 .size-bar input::-webkit-slider-thumb {

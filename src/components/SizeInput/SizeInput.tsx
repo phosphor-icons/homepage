@@ -37,7 +37,6 @@ const SizeInput: React.FC<SizeInputProps> = () => {
         name="size-input"
         value={size}
         type="range"
-        title={size.toString()}
         min={16}
         max={96}
         onChange={handleSizeChange}
