@@ -25,7 +25,7 @@ const Warn: React.FC<WarnProps> = ({ message }) => {
         <SmileyXEyes size={128} color="#615C68" weight="duotone" />
         {message ?? (
           <p>
-            No results for '<code>{query}</code>'
+            No results for "<code>{query}</code>"
           </p>
         )}
       </motion.div>
