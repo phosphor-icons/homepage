@@ -10,7 +10,6 @@ import { IconProps, Icon } from "phosphor-react";
 
 import { iconPreviewOpenAtom } from "../../state/atoms";
 import InfoPanel from "./InfoPanel";
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 
 interface IconGridItemProps extends IconProps {
   index: number;
@@ -87,11 +86,9 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
         <Icon />
         <p>{name}</p>
       </motion.div>
-      <ErrorBoundary>
         <AnimatePresence initial={false}>
           {isOpen && <InfoPanel {...props} />}
         </AnimatePresence>
-      </ErrorBoundary>
     </>
   );
 };
