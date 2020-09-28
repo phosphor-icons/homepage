@@ -1,6 +1,6 @@
 # Phosphor Icons
 
-Phosphor is a kickass and dead-simple set of open-source icons for web and digital media. We aim to provide variety, consistency, and above all, ease-of-use for digital content creators of all kinds. A complete list of icons can be found on [our website](https://phosphoricons.com).
+Phosphor Icons is a flexible icon family in 6 weights. We aim to provide consistency, variety, and above all, ease-of-use for creators of all kinds. Browse the library on [our website](https://phosphoricons.com).
 
 ## For developers
 
