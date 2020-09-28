@@ -158,6 +158,15 @@
   justify-content: center;
   padding: 0 16px 4px;
   min-height: 80vh;
+  max-width: 1120px;
+  margin: auto;
+}
+
+.empty-list p {
+  max-width: 720px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .beacon {
