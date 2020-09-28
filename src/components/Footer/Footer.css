@@ -43,7 +43,7 @@ footer {
     top: 0;
     left: 0;
     transform: translate(-140px, 470px);
-    touch-action: none;
+    touch-action: pan-y;
   }
 }
 
