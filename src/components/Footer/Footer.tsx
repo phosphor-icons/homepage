@@ -62,12 +62,7 @@ const Footer: React.FC<FooterProps> = () => {
             This website is set in{" "}
             <a className="main-link" href="https://manropefont.com/">
               Manrope
-            </a>{" "}
-            by{" "}
-            <a className="main-link" href="https://gent.media/">
-              Mikhail Sharanda
             </a>
-            .
             <br />
             See also:{" "}
             <a
