@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = () => {
           <div className="links">
             <a
               className="nav-link"
-              href={`${process.env.PUBLIC_URL}/favicon.ico`}
+              href="https://phosphoricons.com/assets/phosphor-icons.zip"
               download
             >
               Download all
