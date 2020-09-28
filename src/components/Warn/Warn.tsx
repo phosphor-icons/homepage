@@ -4,7 +4,7 @@ import { useRecoilValue } from "recoil";
 
 import { isDarkThemeSelector } from "../../state/selectors";
 import { searchQueryAtom } from "../../state/atoms";
-import { Warning } from "phosphor-react";
+import { SmileyXEyes } from "phosphor-react";
 
 interface WarnProps {
   message?: string;
@@ -22,7 +22,7 @@ const Warn: React.FC<WarnProps> = ({ message }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Warning size={128} color="currentColor" weight="fill" />
+        <SmileyXEyes size={128} color="#615C68" weight="duotone" />
         {message ?? (
           <p>
             No results for '<code>{query}</code>'
