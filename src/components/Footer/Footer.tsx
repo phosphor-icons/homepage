@@ -24,69 +24,7 @@ const Footer: React.FC<FooterProps> = () => {
     <footer>
       <div className="container">
         <div className="outro">
-          <h2>
-            Phosphor is free and open source software. If you enjoy these icons,
-            please support us with a donation.
-          </h2>
-          <button
-            className="main-button"
-            onClick={() =>
-              window.open(
-                "https://paypal.me/minoraxis",
-                "_blank",
-                "noopener noreferrer"
-              )
-            }
-          >
-            <Heart size={24} weight="fill" />
-            Buy us a coffee
-          </button>
-          <p className="fine-print">
-            Copyright © 2020 Phosphor Icons
-            <br />
-            Designed by{" "}
-            <a className="main-link" href="https://helenazhang.com">
-              Helena Zhang
-            </a>{" "}
-            + built by{" "}
-            <a className="main-link" href="https://tobiasfried.com">
-              Tobias Fried
-            </a>{" "}
-            <span
-              role="img"
-              aria-label="Emoji of woman technologist, man technologist, and cat"
-            >
-              👩🏻‍💻👨‍💻🐈
-            </span>
-            <br />
-            This website is set in{" "}
-            <a className="main-link" href="https://manropefont.com/">
-              Manrope
-            </a>
-            <br />
-            See also:{" "}
-            <a
-              className="main-link"
-              href="https://play.google.com/store/apps/details?id=com.tobiasfried.phosphor"
-            >
-              Phosphor for Android
-            </a>
-          </p>
-          <div id="back-to-top">
-            <button
-              id="back-to-top-button"
-              aria-label="back-to-top button"
-              className="main-button"
-              onClick={() => {
-                document
-                  .getElementById("root")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
-            >
-              <img src={uArrowUpLeft} alt="" />
-            </button>
-          </div>
-          {phoneHovered && (
+        {phoneHovered && (
             <motion.img
               id="phone"
               className="inspectable"
@@ -108,6 +46,83 @@ const Footer: React.FC<FooterProps> = () => {
             src={phone}
             alt=""
           />
+          <div className="outro-content">
+            <h2>
+              Phosphor is free and open source, licensed under{" "}
+              <a
+                className="main-link"
+                href="Phosphor Icons is a flexible icon family in 6 weights. We aim to provide consistency, variety, and above all, ease-of-use for creators of all kinds. Browse the library on our website"
+              >
+                GNU GPL-3.0
+              </a>
+              . If you enjoy these icons, please support us with a donation.
+            </h2>
+            <button
+              className="main-button"
+              onClick={() =>
+                window.open(
+                  "https://paypal.me/minoraxis",
+                  "_blank",
+                  "noopener noreferrer"
+                )
+              }
+            >
+              <Heart size={24} weight="fill" />
+              Buy us a coffee
+            </button>
+            <p className="fine-print">
+              Copyright © 2020 Phosphor Icons
+              <br />
+              Designed by{" "}
+              <a className="main-link" href="https://helenazhang.com">
+                Helena Zhang
+              </a>{" "}
+              + built by{" "}
+              <a className="main-link" href="https://tobiasfried.com">
+                Tobias Fried
+              </a>{" "}
+              <span
+                role="img"
+                aria-label="Emoji of woman technologist, man technologist, and cat"
+              >
+                👩🏻‍💻👨‍💻🐈
+              </span>
+              <br />
+              Contact us at{" "}
+              <a className="main-link" href="mailto:hello@phosphoricons.com">
+                hello@phosphoricons.com
+              </a>
+            </p>
+            <p>
+              See also:{" "}
+              <a
+                className="main-link"
+                href="https://play.google.com/store/apps/details?id=com.tobiasfried.phosphor"
+              >
+                Phosphor for Android
+              </a>
+            </p>
+            <p>
+              Type set in{" "}
+              <a className="main-link" href="https://manropefont.com/">
+                Manrope
+              </a>
+            </p>
+          </div>
+          <div id="back-to-top">
+            <button
+              id="back-to-top-button"
+              aria-label="back-to-top button"
+              className="main-button"
+              onClick={() => {
+                document
+                  .getElementById("root")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
+              <img src={uArrowUpLeft} alt="" />
+            </button>
+          </div>
           <img
             id="command"
             className="inspectable"

@@ -18,6 +18,11 @@ footer {
   border-radius: 50%;
 }
 
+.outro-content {
+  /* pointer-events: none; */
+  z-index: 2;
+}
+
 @media screen and (max-width: 759px) {
   .outro h2 {
     font-size: 28px;
@@ -35,15 +40,14 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(324px, 510px);
+    transform: translate(324px, 610px);
   }
   
   #phone {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(-140px, 470px);
-    touch-action: pan-y;
+    transform: translate(-140px, 570px);
   }
 }
 
