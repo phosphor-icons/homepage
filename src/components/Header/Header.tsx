@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { ArrowCircleUpRight, ArrowCircleDown } from "phosphor-react";
 
 import "./Header.css";
@@ -19,11 +18,6 @@ import calculator from "../../assets/calculator.svg";
 import calculatorSpec from "../../assets/calculator-spec.svg";
 
 type HeaderProps = {};
-
-const illustrationVariants = {
-  hidden: { opacity: 0, transition: { duration: 0.2 } },
-  visible: { opacity: 1, transition: { duration: 0.2 } },
-};
 
 const handleGetStarted = () =>
   window.open(
@@ -45,7 +39,9 @@ const Header: React.FC<HeaderProps> = () => {
         <img src={paperclips} id="paperclips" alt="" />
         <div className="intro">
           <h2>
-            Phosphor is a flexible icon family in 6 weights — for interfaces, presentations, felicitations...
+            Phosphor is a flexible icon family for interfaces, presentations — 
+            <wbr />
+            whatever, really.
           </h2>
           <div className="button-container">
             <button className="main-button" onClick={handleGetStarted}>
@@ -82,83 +78,35 @@ const Header: React.FC<HeaderProps> = () => {
               Github
             </a>
           </div>
+          <img id="cutting-mat" src={cuttingMatSpec} alt="" />
           <img
             id="cutting-mat"
-            className="inspectable"
-            src={cuttingMatSpec}
-            alt=""
-          />
-          <motion.img
-            id="cutting-mat"
-            className="inspectable"
-            variants={illustrationVariants}
-            initial="visible"
-            whileHover="hidden"
+            className="inspectable xray"
             src={cuttingMat}
             alt=""
           />
-          <img id="receipt" className="inspectable" src={receiptSpec} alt="" />
-          <motion.img
-            id="receipt"
-            className="inspectable"
-            variants={illustrationVariants}
-            initial="visible"
-            whileHover="hidden"
-            src={receipt}
-            alt=""
-          />
+          <img id="receipt" src={receiptSpec} alt="" />
+          <img id="receipt" className="inspectable xray" src={receipt} alt="" />
+          <img id="calculator" src={calculatorSpec} alt="" />
           <img
             id="calculator"
-            className="inspectable"
-            src={calculatorSpec}
-            alt=""
-          />
-          <motion.img
-            id="calculator"
-            className="inspectable"
-            variants={illustrationVariants}
-            initial="visible"
-            whileHover="hidden"
+            className="inspectable xray"
             src={calculator}
             alt=""
           />
         </div>
-        <img id="tablet" className="inspectable" src={tabletSpec} alt="" />
-        <motion.img
-          id="tablet"
-          className="inspectable"
-          variants={illustrationVariants}
-          initial="visible"
-          whileHover="hidden"
-          src={tablet}
-          alt=""
-        />
+        <img id="tablet" src={tabletSpec} alt="" />
+        <img id="tablet" className="inspectable xray" src={tablet} alt="" />
+        <img id="billiard-ball" src={billiardBallSpec} alt="" />
         <img
           id="billiard-ball"
-          className="inspectable"
-          src={billiardBallSpec}
-          alt=""
-        />
-        <motion.img
-          id="billiard-ball"
-          className="inspectable"
-          variants={illustrationVariants}
-          initial="visible"
-          whileHover="hidden"
+          className="inspectable xray"
           src={billiardBall}
           alt=""
         />
 
-        <img id="warning" className="inspectable" src={warningSpec} alt="" />
-        <motion.img
-          id="warning"
-          className="inspectable"
-          variants={illustrationVariants}
-          initial="visible"
-          whileHover="hidden"
-          src={warning}
-          alt=""
-        />
+        <img id="warning" src={warningSpec} alt="" />
+        <img id="warning" className="inspectable xray" src={warning} alt="" />
       </div>
     </header>
   );

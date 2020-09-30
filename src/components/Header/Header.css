@@ -48,6 +48,15 @@ a.nav-link:hover:after {
   cursor: cell;
 }
 
+.xray {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.xray:hover {
+  opacity: 0;
+}
+
 .image-container {
   position: relative;
   width: 100%;
