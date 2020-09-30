@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = () => {
     <footer>
       <div className="container">
         <div className="outro">
-        {phoneHovered && (
+          {phoneHovered && (
             <motion.img
               id="phone"
               className="inspectable"
@@ -51,7 +51,7 @@ const Footer: React.FC<FooterProps> = () => {
               Phosphor is free and open source, licensed under{" "}
               <a
                 className="main-link"
-                href="Phosphor Icons is a flexible icon family in 6 weights. We aim to provide consistency, variety, and above all, ease-of-use for creators of all kinds. Browse the library on our website"
+                href="https://www.gnu.org/licenses/gpl-3.0.en.html"
               >
                 GNU GPL-3.0
               </a>
@@ -123,18 +123,10 @@ const Footer: React.FC<FooterProps> = () => {
               <img src={uArrowUpLeft} alt="" />
             </button>
           </div>
+          <img id="command" src={commandKeySpec} alt="" />
           <img
             id="command"
-            className="inspectable"
-            src={commandKeySpec}
-            alt=""
-          />
-          <motion.img
-            id="command"
-            className="inspectable"
-            variants={variants}
-            initial="visible"
-            whileHover="hidden"
+            className="inspectable xray"
             src={commandKey}
             alt=""
           />
