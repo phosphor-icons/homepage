@@ -49,7 +49,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   {
     name: "aperture",
     categories: [IconCategory.DEVICE, IconCategory.MEDIA],
-    tags: ["photography", "pictures", "lens"],
+    tags: ["photography", "cameras", "pictures", "lens"],
     Icon: Icon.Aperture,
   },
   {
@@ -1610,7 +1610,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "club",
     categories: [IconCategory.OTHER],
     tags: ["clubs", "suits", "cards", "gambling", "casino", "games", "gaming"],
-    Icon: Icon.Diamond,
+    Icon: Icon.Club,
   },
   {
     name: "code",
