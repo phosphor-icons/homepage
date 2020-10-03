@@ -44,7 +44,6 @@ button {
 
 button.main-button {
   height: 64px;
-  margin: 16px 24px 0 0;
   padding: 0 48px 0 40px;
   background-color: white;
   border-radius: 8px;

@@ -1,33 +1,81 @@
 header {
   width: 100%;
-  height: 1434px;
   background-color: #ffd171;
   overflow: hidden;
 }
 
-header img {
-  user-select: none;
+.header-contents {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1366px;
+  min-width: 360px;
+  margin: auto;
+}
+
+.illustrations-top {
+  position: relative;
+}
+
+.illustrations-bottom {
+  position: relative;
+}
+
+.intro {
+  margin: 0 8%;
+  max-width: 666px;
+}
+
+.intro h2 {
+  font-size: 40px;
+  line-height: 52px;
+  margin: 0 0 32px;
+}
+
+.inspectable {
+  cursor: cell;
+}
+
+.xray {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.xray:hover {
+  opacity: 0;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .links {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  /* gap: 56px; */
-  /* column-gap: 56px; */
-  margin: 48px 0 32px;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: 72px;
+  margin: 56px 0 64px;
+  max-height: 144px;
 }
 
-a.nav-link:not(:last-child) {
-  margin-right: 56px;
+.links > div {
+  margin: 0 0 24px 0;
+  display: flex;
+  align-items: center;
+}
+
+.links svg {
+  margin-right: 12px;
 }
 
 a.nav-link {
   text-decoration: none;
   position: relative;
   color: black;
-  margin-bottom: 16px;
 }
 
 a.nav-link:after {
@@ -44,153 +92,155 @@ a.nav-link:hover:after {
   width: 100%;
 }
 
-.inspectable {
-  cursor: cell;
+#paperclips-three {
+  display: none;
 }
 
-.xray {
-  opacity: 1;
-  transition: opacity 200ms ease;
-}
-
-.xray:hover {
-  opacity: 0;
-}
-
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-}
-
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#cutting-mat {
-  position: absolute;
-  /* transform: translate(120px, 824px); */
-}
-
-#receipt {
-  position: absolute;
-  transform: translate(-138px, 190px);
-}
-
-#calculator {
-  position: absolute;
-  transform: translate(800px, 112px);
-}
-
-/* Illustrations remain at same layout up to 1024px */
-@media screen and (max-width: 1023px) {
-  .intro {
-    margin: 0 10%;
-    position: absolute;
-    transform: translate(0, 382px);
-  }
-
-  .intro h2 {
-    font-size: 40px;
-    line-height: 52px;
-    margin-bottom: 32px;
+@media screen and (max-width: 1239px) {
+  .illustrations-top {
+    height: 382px;
   }
 
   #marker-purple {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(40px, -158px);
+    left: 28px;
+    top: -158px;
   }
 
   #billiard-ball {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(130px, -98px);
+    left: 132px;
+    top: -98px;
   }
 
   #paperclips {
     position: absolute;
-    transform: translate(176px, 152px);
+    left: 110px;
+    top: 152px;
   }
 
   #warning {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(398px, -116px);
+    left: 394px;
+    top: -304px;
   }
 
   #tablet {
     position: absolute;
-    transform: translate(672px, -900px);
+    left: 672px;
+    top: -900px;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1239px) {
+  .intro {
+    margin: 0 auto;
+  }
+
+  .illustrations-bottom {
+    height: 612px;
+  }
+
+  #cutting-mat {
+    position: absolute;
+    left: 96px;
+  }
+
+  #receipt {
+    position: absolute;
+    left: -36px;
+    top: 190px;
   }
 
   #calculator {
     position: absolute;
-    transform: translate(534px, 240px);
+    left: 632px;
+    top: 170px;
   }
 }
 
-@media screen and (min-width: 760px) and (max-width: 1023px) {
-  .intro h2 {
-    font-size: 40px;
-    line-height: 52px;
-    margin-bottom: 32px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .image-container {
-    width: 1366px;
-  }
-
+@media screen and (min-width: 1240px) {
   .intro {
-    margin: 0;
-    width: 660px;
-    position: absolute;
-    transform: translate(144px, 386px);
+    margin: 0 auto 0 140px;
   }
 
-  .intro h2 {
-    font-size: 40px;
-    line-height: 50px;
-    margin-bottom: 32px;
+  .illustrations-top {
+    height: 386px;
+  }
+
+  .illustrations-bottom {
+    height: 606px;
   }
 
   #marker-purple {
     position: absolute;
-    transform: translate(144px, -158px);
-  }
-
-  #tablet {
-    position: absolute;
-    transform: translate(578px, -900px);
+    left: 144px;
+    top: -158px;
   }
 
   #billiard-ball {
     position: absolute;
-    transform: translate(918px, 360px);
+    left: 900px;
+    top: 400px;
+  }
+
+  #paperclips {
+    display: none;
+  }
+
+  #paperclips-three {
+    display: initial;
+    position: absolute;
+    left: 724px;
+    top: 694px;
   }
 
   #warning {
     position: absolute;
-    transform: translate(1184px, 424px);
+    left: 1170px;
+    top: 400px;
   }
 
-  #paperclips {
+  #tablet {
     position: absolute;
-    transform: translate(982px, 621px);
+    left: 578px;
+    top: -900px;
+  }
+
+  #cutting-mat {
+    position: absolute;
+    left: 120px;
+  }
+
+  #receipt {
+    position: absolute;
+    left: -16px;
+    top: 190px;
+  }
+
+  #calculator {
+    position: absolute;
+    left: 924px;
+    top: 114px;
   }
 }
 
-@media screen and (max-width: 759px) {
+@media screen and (max-width: 719px) {
   .intro h2 {
     font-size: 28px;
-    line-height: 38px;
-    margin-bottom: 32px;
+    line-height: 40px;
+  }
+
+  .illustrations-top {
+    height: 352px;
+  }
+
+  .illustrations-bottom {
+    display: none;
+  }
+
+  .links {
+    display: block;
+    max-height: initial;
   }
 }

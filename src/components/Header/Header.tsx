@@ -1,9 +1,14 @@
 import React from "react";
-import { ArrowCircleUpRight, ArrowCircleDown } from "phosphor-react";
+import {
+  ArrowCircleUpRight,
+  ArrowCircleDown,
+  ArrowElbowDownRight,
+} from "phosphor-react";
 
 import "./Header.css";
 import markerPurple from "../../assets/marker-purple.svg";
-import paperclips from "../../assets/paperclips.svg";
+import paperclips from "../../assets/paperclips-header-mobile.svg";
+import paperclipsThree from "../../assets/paperclips-header.svg";
 import tablet from "../../assets/tablet.svg";
 import tabletSpec from "../../assets/tablet-spec.svg";
 import billiardBall from "../../assets/billiard-ball.svg";
@@ -34,9 +39,24 @@ const handleScrollToIcons = () =>
 const Header: React.FC<HeaderProps> = () => {
   return (
     <header>
-      <div className="image-container">
-        <img src={markerPurple} id="marker-purple" alt="" />
-        <img src={paperclips} id="paperclips" alt="" />
+      <div className="header-contents">
+        <div className="illustrations-top">
+          <img src={markerPurple} id="marker-purple" alt="" />
+          <img src={paperclips} id="paperclips" alt="" />
+          <img src={paperclipsThree} id="paperclips-three" alt="" />
+          <img id="tablet" src={tabletSpec} alt="" />
+          <img id="tablet" className="inspectable xray" src={tablet} alt="" />
+          <img id="billiard-ball" src={billiardBallSpec} alt="" />
+          <img
+            id="billiard-ball"
+            className="inspectable xray"
+            src={billiardBall}
+            alt=""
+          />
+
+          <img id="warning" src={warningSpec} alt="" />
+          <img id="warning" className="inspectable xray" src={warning} alt="" />
+        </div>
         <div className="intro">
           <h2>
             Phosphor is a flexible icon family for interfaces, presentations — 
@@ -48,36 +68,67 @@ const Header: React.FC<HeaderProps> = () => {
               <ArrowCircleUpRight size={24} weight="fill" />
               See the docs
             </button>
-
             <button className="main-button" onClick={handleScrollToIcons}>
               <ArrowCircleDown size={24} weight="fill" />
               Explore icons
             </button>
           </div>
           <div className="links">
-            <a
-              className="nav-link"
-              href="https://phosphoricons.com/assets/phosphor-icons.zip"
-              download
-            >
-              Download all
-            </a>
-            <a
-              className="nav-link"
-              href="https://github.com/phosphor-icons/phosphor-web/issues"
-            >
-              Request
-            </a>
-            <a className="nav-link" href="https://paypal.me/minoraxis">
-              Donate
-            </a>
-            <a
-              className="nav-link"
-              href="https://github.com/phosphor-icons/phosphor-web"
-            >
-              Github
-            </a>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a
+                className="nav-link"
+                href="https://phosphoricons.com/assets/phosphor-icons.zip"
+                download
+              >
+                Download all
+              </a>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a className="nav-link" href="#">
+                Figma library
+              </a>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a className="nav-link" href="#">
+                Figma plugin
+              </a>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a
+                className="nav-link"
+                href="https://github.com/phosphor-icons/phosphor-web/issues"
+              >
+                Request an icon
+              </a>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <span>
+                <a className="nav-link" href="https://paypal.me/minoraxis">
+                  Donate on PayPal
+                </a>
+                {" / "}
+                <a className="nav-link" href="#">
+                  Patreon
+                </a>
+              </span>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a
+                className="nav-link"
+                href="https://github.com/phosphor-icons/phosphor-web"
+              >
+                Github
+              </a>
+            </div>
           </div>
+        </div>
+        <div className="illustrations-bottom">
           <img id="cutting-mat" src={cuttingMatSpec} alt="" />
           <img
             id="cutting-mat"
@@ -95,18 +146,6 @@ const Header: React.FC<HeaderProps> = () => {
             alt=""
           />
         </div>
-        <img id="tablet" src={tabletSpec} alt="" />
-        <img id="tablet" className="inspectable xray" src={tablet} alt="" />
-        <img id="billiard-ball" src={billiardBallSpec} alt="" />
-        <img
-          id="billiard-ball"
-          className="inspectable xray"
-          src={billiardBall}
-          alt=""
-        />
-
-        <img id="warning" src={warningSpec} alt="" />
-        <img id="warning" className="inspectable xray" src={warning} alt="" />
       </div>
     </header>
   );
