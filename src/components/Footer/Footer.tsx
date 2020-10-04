@@ -51,9 +51,9 @@ const Footer: React.FC<FooterProps> = () => {
               Phosphor is free and open source, licensed under{" "}
               <a
                 className="main-link"
-                href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+                href="https://raw.githubusercontent.com/phosphor-icons/phosphor-web/master/LICENSE"
               >
-                GNU GPL-3.0
+                MIT
               </a>
               . If you enjoy these icons, please support us with a donation.
             </h2>

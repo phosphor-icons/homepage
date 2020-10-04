@@ -18,6 +18,14 @@ footer {
   border-radius: 50%;
 }
 
+#command {
+  user-select: none;
+}
+
+#marker-green {
+  user-select: none;
+}
+
 .outro-content {
   /* pointer-events: none; */
   z-index: 2;
@@ -42,7 +50,7 @@ footer {
     left: 0;
     transform: translate(324px, 610px);
   }
-  
+
   #phone {
     position: absolute;
     top: 0;
@@ -70,7 +78,7 @@ footer {
     left: 0;
     transform: translate(544px, 500px);
   }
-  
+
   #phone {
     position: absolute;
     top: 0;
@@ -99,8 +107,6 @@ footer {
     transform: translate(640px, -228px);
   }
 }
-
-
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   footer {
@@ -138,7 +144,7 @@ footer {
     left: 0;
     transform: translate(384px, 512px);
   }
-  
+
   #phone {
     position: absolute;
     top: 0;
@@ -160,26 +166,26 @@ footer {
     position: relative;
     margin: 160px 0 120px 468px;
   }
-  
+
   .outro h2 {
     font-size: 40px;
     line-height: 50px;
     margin-bottom: 32px;
   }
-  
+
   .fine-print {
     margin: 96px 0 0;
     font-size: 20px;
     line-height: 30px;
   }
-  
+
   #back-to-top {
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(-320px, -12px);
   }
-  
+
   #marker-green {
     position: absolute;
     top: 0;
@@ -187,7 +193,7 @@ footer {
     /* x and y-translate is wrong in spec? */
     transform: translate(-208px, 270px);
   }
-  
+
   #phone {
     position: absolute;
     top: 0;
@@ -195,7 +201,7 @@ footer {
     /* y-translate is wrong in spec? */
     transform: translate(-684px, 236px);
   }
-  
+
   #command {
     position: absolute;
     top: 0;
