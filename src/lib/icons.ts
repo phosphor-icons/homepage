@@ -2629,7 +2629,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.GlobeHemisphereEast,
   },
   {
-    name: "globe-hemispehere-west",
+    name: "globe-hemisphere-west",
     categories: [IconCategory.MAP],
     tags: [
       "world",
@@ -4077,7 +4077,16 @@ export const icons: ReadonlyArray<IconEntry> = [
       IconCategory.DEVELOPMENT,
       IconCategory.OTHER,
     ],
-    tags: ["packages", "bundles", "library", "libraries", "shipping"],
+    tags: [
+      "packages",
+      "delivery",
+      "mail",
+      "postal service",
+      "bundles",
+      "library",
+      "libraries",
+      "shipping",
+    ],
     Icon: Icon.Package,
   },
   {

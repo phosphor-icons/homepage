@@ -1,5 +1,5 @@
 .grid-container {
-  padding: 0px 16px 4px;
+  padding: 32px 16px;
   min-height: 80vh;
 }
 
@@ -171,5 +171,5 @@
 
 .beacon {
   position: relative;
-  top: -64px;
+  top: -96px;
 }
