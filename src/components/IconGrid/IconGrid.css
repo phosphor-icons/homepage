@@ -66,17 +66,16 @@
 }
 
 .icon-preview {
-  height: 396px;
   width: 30%;
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top: 72px;
 }
 
 .icon-preview p {
-  margin: 12px 0 0;
+  margin: 0;
   font-size: 12px;
   line-height: 16px;
 }
