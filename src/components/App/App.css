@@ -59,6 +59,7 @@ button.main-button {
   transition: all 0.2s ease;
   cursor: pointer;
   user-select: none;
+  margin: 0 24px 24px 0;
 }
 
 button.main-button:active {
@@ -71,8 +72,18 @@ button.main-button:focus {
   outline: none;
 }
 
+/* button.main-button:not(:last-child) {
+  margin: 0 24px 24px 0;
+} */
+
 button.main-button svg {
   margin-right: 12px;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 24px; */
 }
 
 a.main-link {
@@ -93,4 +104,45 @@ a.main-link:after {
 
 a.main-link:hover:after {
   width: 0%;
+}
+
+.links {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: 72px;
+  margin: 32px 0 64px;
+  max-height: 144px;
+}
+
+.links > div {
+  margin: 0 0 24px 0;
+  display: flex;
+  align-items: center;
+}
+
+.links svg {
+  margin-right: 12px;
+}
+
+a.nav-link {
+  text-decoration: none;
+  position: relative;
+  color: black;
+}
+
+a.nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  border-bottom: 1px solid black;
+  transition: 0.2s;
+}
+
+a.nav-link:hover:after {
+  width: 100%;
 }

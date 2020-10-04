@@ -1,14 +1,5 @@
 footer {
-  width: 100%;
-  position: relative;
   background-color: #925bff;
-  overflow: hidden;
-}
-
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: auto;
 }
 
 #back-to-top-button {
@@ -18,189 +9,146 @@ footer {
   border-radius: 50%;
 }
 
-.outro-content {
-  /* pointer-events: none; */
-  z-index: 2;
+#back-to-top-button img {
+  pointer-events: none;
 }
 
-@media screen and (max-width: 759px) {
-  .outro h2 {
-    font-size: 28px;
-    line-height: 38px;
-    margin-bottom: 32px;
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  margin: auto;
+}
+
+.outro {
+  position: relative;
+  max-width: 666px;
+  margin: 0 8% 0;
+  padding-top: 72px;
+  /* overflow: hidden; */
+}
+
+.outro p {
+  font-size: 28px;
+  line-height: 40px;
+  margin: 0 0 32px;
+}
+
+footer .links {
+  margin: 56px 0 48px;
+}
+
+.fine-print {
+  position: relative;
+  margin: 72px 0 0;
+  padding-bottom: 32px;
+  overflow: hidden;
+}
+
+.fine-print p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.illustrations-footer {
+  display: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 719px) {
+  #back-to-top-button {
+    position: sticky;
+    top: calc(100% - 64px);
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin: 16px;
+    z-index: 1;
   }
 
-  .fine-print {
-    margin: 80px 0 0;
-    font-size: 16px;
-    line-height: 24px;
+  #back-to-top-button img {
+    width: 24px;
+    height: 24px;
+  }
+
+  footer .links {
+    margin: 0 0 64px;
+  }
+
+  #command {
+    display: none;
   }
 
   #marker-green {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(324px, 610px);
+    display: none;
   }
-  
-  #phone {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-140px, 570px);
+
+  .illustrations-footer {
+    max-width: 100%;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
   }
 }
 
-@media screen and (min-width: 760px) and (max-width: 1023px) {
-  .outro h2 {
-    font-size: 40px;
-    line-height: 50px;
-    margin-bottom: 32px;
-  }
-
-  .fine-print {
-    margin: 80px 0 0;
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  #marker-green {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(544px, 500px);
-  }
-  
-  #phone {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(80px, 480px);
-  }
-}
-
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 720px) {
   .outro {
-    position: relative;
-    margin: 292px 10% 292px;
+    margin: 0 auto;
   }
 
-  #back-to-top {
+  .fine-print {
+    margin-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  #back-to-top-button {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-48px, -196px);
+    left: 70px;
+    top: -56px;
+  }
+
+  #marker-green {
+    position: absolute;
+    left: 678px;
+    top: -218px;
   }
 
   #command {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(640px, -228px);
+    right: -16px;
+    top: 144px;
   }
 }
 
-
-
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
-  footer {
-    height: 920px;
-  }
-
+@media screen and (min-width: 1239px) {
   .outro {
-    position: relative;
-    width: 666px;
-    margin: 160px auto 324px;
+    margin-left: 462px;
   }
 
-  .outro h2 {
-    font-size: 40px;
-    line-height: 50px;
-    margin-bottom: 32px;
-  }
-
-  .fine-print {
-    margin: 96px 0 0;
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  #back-to-top {
+  #back-to-top-button {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-212px, 0);
-  }
-
-  #marker-green {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(384px, 512px);
-  }
-  
-  #phone {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-80px, 476px);
+    left: 190px;
+    top: 276px;
   }
 
   #command {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(706px, 360px);
+    left: 732px;
+    top: 512px;
   }
-}
 
-@media screen and (min-width: 1280px) {
-  .outro {
-    width: 660px;
-    position: relative;
-    margin: 160px 0 120px 468px;
-  }
-  
-  .outro h2 {
-    font-size: 40px;
-    line-height: 50px;
-    margin-bottom: 32px;
-  }
-  
-  .fine-print {
-    margin: 96px 0 0;
-    font-size: 20px;
-    line-height: 30px;
-  }
-  
-  #back-to-top {
+  .illustrations-footer {
+    display: initial;
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-320px, -12px);
-  }
-  
-  #marker-green {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* x and y-translate is wrong in spec? */
-    transform: translate(-208px, 270px);
-  }
-  
-  #phone {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* y-translate is wrong in spec? */
-    transform: translate(-684px, 236px);
-  }
-  
-  #command {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* y-translate is wrong in spec? */
-    transform: translate(744px, 352px);
+    left: -240px;
+    top: 656px;
+    height: 584px;
+    overflow: hidden;
   }
 }

@@ -1,62 +1,116 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Heart } from "phosphor-react";
+import React from "react";
+import { ArrowElbowDownRight, Coffee, Heart } from "phosphor-react";
 
 import uArrowUpLeft from "../../assets/u-arrow-up-left.svg";
 import markerGreen from "../../assets/marker-green.svg";
-import phone from "../../assets/phone.svg";
-import phoneSpec from "../../assets/phone-spec.svg";
+import postIt from "../../assets/footer-mobile.svg";
 import commandKey from "../../assets/command-key.svg";
 import commandKeySpec from "../../assets/command-key-spec.svg";
 import "./Footer.css";
 
 type FooterProps = {};
 
-const variants = {
-  hidden: { opacity: 0, transition: { duration: 0.2 } },
-  visible: { opacity: 1, transition: { duration: 0.2 } },
-};
-
 const Footer: React.FC<FooterProps> = () => {
-  const [phoneHovered, setPhoneHovered] = useState<boolean>(false);
-
   return (
     <footer>
       <div className="container">
+        <button
+          id="back-to-top-button"
+          aria-label="back-to-top button"
+          className="main-button"
+          onClick={() => {
+            document
+              .getElementById("root")
+              ?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+        >
+          <img src={uArrowUpLeft} alt="" />
+        </button>
         <div className="outro">
-          {phoneHovered && (
-            <motion.img
-              id="phone"
-              className="inspectable"
-              variants={variants}
-              initial="hidden"
-              animate={phoneHovered ? "visible" : "hidden"}
-              src={phoneSpec}
-              alt=""
-            />
-          )}
-          <motion.img
-            id="phone"
-            className="inspectable"
-            variants={variants}
-            initial="visible"
-            whileHover="hidden"
-            onHoverStart={() => setPhoneHovered(true)}
-            onHoverEnd={() => setPhoneHovered(false)}
-            src={phone}
+          <img id="command" src={commandKeySpec} alt="" />
+          <img
+            id="command"
+            className="inspectable xray"
+            src={commandKey}
             alt=""
           />
-          <div className="outro-content">
-            <h2>
-              Phosphor is free and open source, licensed under{" "}
+          <div className="links">
+            <div>
+              <ArrowElbowDownRight size={24} />
               <a
-                className="main-link"
-                href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+                className="nav-link"
+                href="https://phosphoricons.com/assets/phosphor-icons.zip"
+                download
               >
-                GNU GPL-3.0
+                Download all
               </a>
-              . If you enjoy these icons, please support us with a donation.
-            </h2>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a className="nav-link" href="#">
+                Figma library
+              </a>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a className="nav-link" href="#">
+                Figma plugin
+              </a>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a
+                className="nav-link"
+                href="https://github.com/phosphor-icons/phosphor-web/issues"
+              >
+                Request an icon
+              </a>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <span>
+                <a className="nav-link" href="https://paypal.me/minoraxis">
+                  Donate on PayPal
+                </a>
+                {" / "}
+                <a className="nav-link" href="#">
+                  Patreon
+                </a>
+              </span>
+            </div>
+            <div>
+              <ArrowElbowDownRight size={24} />
+              <a
+                className="nav-link"
+                href="https://github.com/phosphor-icons/phosphor-web"
+              >
+                Github
+              </a>
+            </div>
+          </div>
+          <p>
+            We designed the icon library we always wanted to use. Easy to pick
+            up and plug in. Truly consistent in style and scale. Flexible to
+            multiple sizes and weights. Reserved enough to be multi-purpose, but
+            a little quirky, too.
+          </p>
+          <p>
+            We're thankful for the open-source tools we've benefited from and
+            this is our small contribution towards a collaborative digital
+            community.
+          </p>
+          <p>
+            Phosphor is licensed under{" "}
+            <a
+              className="main-link"
+              href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+            >
+              GNU GPL-3.0
+            </a>
+            , free to use without attribution. If you enjoy these icons, please
+            support us with a donation.
+          </p>
+          <div className="button-container">
             <button
               className="main-button"
               onClick={() =>
@@ -67,70 +121,55 @@ const Footer: React.FC<FooterProps> = () => {
                 )
               }
             >
-              <Heart size={24} weight="fill" />
+              <Coffee size={24} weight="fill" />
               Buy us a coffee
             </button>
-            <p className="fine-print">
-              Copyright © 2020 Phosphor Icons
-              <br />
-              Designed by{" "}
+            <button
+              className="main-button"
+              onClick={() => window.open("#", "_blank", "noopener noreferrer")}
+            >
+              <Heart size={24} weight="fill" />
+              Become a patron
+            </button>
+          </div>
+          <div className="fine-print">
+            <p>
+              Copyright © 2020 Phosphor Icons. Phosphor Icons is designed by{" "}
               <a className="main-link" href="https://helenazhang.com">
                 Helena Zhang
               </a>{" "}
-              + built by{" "}
+              and built by{" "}
               <a className="main-link" href="https://tobiasfried.com">
-                Tobias Fried
+                Toby Fried
               </a>{" "}
               <span
                 role="img"
                 aria-label="Emoji of woman technologist, man technologist, and cat"
               >
-                👩🏻‍💻👨‍💻🐈
+                🙇🏻‍♀️👨‍💻🐈
               </span>
-              <br />
-              Contact us at{" "}
+              . Contact us at{" "}
               <a className="main-link" href="mailto:hello@phosphoricons.com">
                 hello@phosphoricons.com
               </a>
-            </p>
-            <p>
-              See also:{" "}
+              . Check out our sister project:{" "}
               <a
                 className="main-link"
                 href="https://play.google.com/store/apps/details?id=com.tobiasfried.phosphor"
               >
                 Phosphor for Android
               </a>
-            </p>
-            <p>
-              Type set in{" "}
+              . Type set in{" "}
               <a className="main-link" href="https://manropefont.com/">
                 Manrope
-              </a>
+              </a>{" "}
+              by Mikhail Sharanda.
             </p>
+            <img id="marker-green" src={markerGreen} alt="" />
           </div>
-          <div id="back-to-top">
-            <button
-              id="back-to-top-button"
-              aria-label="back-to-top button"
-              className="main-button"
-              onClick={() => {
-                document
-                  .getElementById("root")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
-            >
-              <img src={uArrowUpLeft} alt="" />
-            </button>
-          </div>
-          <img id="command" src={commandKeySpec} alt="" />
-          <img
-            id="command"
-            className="inspectable xray"
-            src={commandKey}
-            alt=""
-          />
-          <img id="marker-green" src={markerGreen} alt="" />
+        </div>
+        <div className="illustrations-footer">
+          <img id="post-it" src={postIt} width="878" height="667" alt="" />
         </div>
       </div>
     </footer>
