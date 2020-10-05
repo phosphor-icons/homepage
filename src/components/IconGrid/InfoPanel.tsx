@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
+import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
 import { Icon, Copy, X, CheckCircle, Download } from "phosphor-react";
 
@@ -12,20 +13,31 @@ import {
 } from "../../state/atoms";
 import useTransientState from "../../hooks/useTransientState";
 
-const infoVariants = {
+const panelVariants = {
   open: {
     opacity: 1,
-    height: 496,
-    margin: 4,
+    height: "100%",
+    marginTop: 4,
+    marginBottom: 4,
     // transition: { stiffness: 600, damping: 32, duration: 0.2 },
   },
   collapsed: {
     opacity: 0,
     height: 0,
-    margin: 0,
+    marginTop: 0,
+    marginBottom: 0,
     // transition: { stiffness: 600, damping: 32, duration: 0.2 },
   },
 };
+
+const contentVariants = {
+  open: { opacity: 1, transition: { duration: 0.2 } },
+  collapsed: { opacity: 0, transition: { duration: 0.1 } },
+};
+
+const buttonColor = "#35313D";
+const successColor = "#1FA647";
+const disabledColor = "#B7B7B7";
 
 interface InfoPanelProps {
   index: number;
@@ -43,6 +55,12 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
   const setOpen = useSetRecoilState(iconPreviewOpenAtom);
   const [copied, setCopied] = useTransientState<string | false>(false, 2000);
   const ref = useRef<SVGSVGElement>(null);
+
+  const buttonBarStyle = { color: isDark ? "white" : buttonColor };
+  const snippetButtonStyle =
+    weight === "duotone"
+      ? { color: disabledColor, "user-select": "none" }
+      : { color: buttonColor };
 
   const snippets = {
     html:
@@ -69,6 +87,14 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
     data && void navigator.clipboard?.writeText(data);
   };
 
+  const handleCopySVG = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.currentTarget.blur();
+    setCopied("svg");
+    ref.current && void navigator.clipboard?.writeText(ref.current.outerHTML);
+  };
+
   const handleDownloadSVG = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -78,12 +104,16 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
     saveAs(blob, `${name}${weight === "regular" ? "" : `-${weight}`}.svg`);
   };
 
-  const handleCopySVG = (
+  const handleDownloadPNG = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.currentTarget.blur();
-    setCopied("svg");
-    ref.current && void navigator.clipboard?.writeText(ref.current.outerHTML);
+    if (!ref.current?.outerHTML) return;
+    Svg2Png.save(
+      ref.current,
+      `${name}${weight === "regular" ? "" : `-${weight}`}.png`,
+      { scaleX: 1.334, scaleY: 1.334 }
+    );
   };
 
   return (
@@ -91,31 +121,41 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
       className="info-box"
       animate="open"
       exit="collapsed"
-      variants={infoVariants}
+      variants={panelVariants}
       style={{
         order: index + (spans - (index % spans)),
         color: isDark ? "white" : "black",
       }}
     >
-      <div className="icon-preview">
-        <div>
-          <Icon ref={ref} color={color} weight={weight} size={192} />
-          <p>{name}</p>
-        </div>
-      </div>
-      <div className="icon-usage">
+      <motion.div
+        initial="collapsed"
+        animate="open"
+        exit="collapsed"
+        variants={contentVariants}
+        className="icon-preview"
+      >
+        <Icon ref={ref} color={color} weight={weight} size={192} />
+        <p>{name}</p>
+      </motion.div>
+      <motion.div
+        initial="collapsed"
+        animate="open"
+        exit="collapsed"
+        variants={contentVariants}
+        className="icon-usage"
+      >
         <div className="snippet">
           React
           <pre tabIndex={0}>
-            {snippets.react}
+            <span>{snippets.react}</span>
             <button
               title="Copy snippet"
               onClick={(e) => handleCopySnippet(e, "react")}
             >
               {copied === "react" ? (
-                <CheckCircle size={24} color="#1FA647" weight="fill" />
+                <CheckCircle size={24} color={successColor} weight="fill" />
               ) : (
-                <Copy size={24} color="currentColor" weight="fill" />
+                <Copy size={24} color={buttonColor} weight="fill" />
               )}
             </button>
           </pre>
@@ -123,71 +163,78 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
         <div className="snippet">
           Vue
           <pre tabIndex={0}>
-            {snippets.vue}
+            <span>{snippets.vue}</span>
             <button
               title="Copy snippet"
               onClick={(e) => handleCopySnippet(e, "vue")}
             >
               {copied === "vue" ? (
-                <CheckCircle size={24} color="#1FA647" weight="fill" />
+                <CheckCircle size={24} color={successColor} weight="fill" />
               ) : (
-                <Copy size={24} color="currentColor" weight="fill" />
+                <Copy size={24} color={buttonColor} weight="fill" />
               )}
             </button>
           </pre>
         </div>
         <div className="snippet">
           HTML/CSS
-          <pre
-            tabIndex={0}
-            style={weight === "duotone" ? { color: "#B7B7B7" } : {}}
-          >
-            {snippets.html}
+          <pre tabIndex={0} style={snippetButtonStyle}>
+            <span>{snippets.html}</span>
             <button
               title="Copy snippet"
               onClick={(e) => handleCopySnippet(e, "html")}
               disabled={weight === "duotone"}
+              style={snippetButtonStyle}
             >
               {copied === "html" ? (
-                <CheckCircle size={24} color="#1FA647" weight="fill" />
+                <CheckCircle size={24} color={successColor} weight="fill" />
               ) : (
-                <Copy size={24} color="currentColor" weight="fill" />
+                <Copy
+                  size={24}
+                  color={snippetButtonStyle.color}
+                  weight="fill"
+                />
               )}
             </button>
           </pre>
         </div>
         <div className="button-row">
-          <button
-            style={{ color: isDark ? "white" : "black" }}
-            onClick={handleDownloadSVG}
-          >
+          <button style={buttonBarStyle} onClick={handleDownloadPNG}>
+            <Download size={32} color="currentColor" weight="fill" /> Download
+            PNG
+          </button>
+          <button style={buttonBarStyle} onClick={handleDownloadSVG}>
             <Download size={32} color="currentColor" weight="fill" /> Download
             SVG
           </button>
-          <button
-            style={{ color: isDark ? "white" : "black" }}
-            onClick={handleCopySVG}
-          >
+          <button style={buttonBarStyle} onClick={handleCopySVG}>
             {copied === "svg" ? (
-              <CheckCircle size={32} color="#1FA647" weight="fill" />
+              <CheckCircle size={32} color={successColor} weight="fill" />
             ) : (
               <Copy size={32} color="currentColor" weight="fill" />
             )}
             {copied === "svg" ? "Copied!" : "Copy SVG"}
           </button>
         </div>
-      </div>
-      <X
-        className="close-icon"
-        tabIndex={0}
-        color="currentColor"
-        size={32}
-        weight="fill"
-        onClick={() => setOpen(false)}
-        onKeyDown={(e) => {
-          e.key === "Enter" && setOpen(false);
-        }}
-      />
+      </motion.div>
+      <motion.span
+        initial="collapsed"
+        animate="open"
+        exit="collapsed"
+        variants={contentVariants}
+      >
+        <X
+          className="close-icon"
+          tabIndex={0}
+          color={buttonBarStyle.color}
+          size={32}
+          weight="fill"
+          onClick={() => setOpen(false)}
+          onKeyDown={(e) => {
+            e.key === "Enter" && setOpen(false);
+          }}
+        />
+      </motion.span>
     </motion.section>
   );
 };

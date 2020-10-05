@@ -28,6 +28,7 @@ pre {
   background-color: white;
   border-radius: 6px;
   border: 1px solid #e1d4d7;
+  white-space: pre-wrap;
 }
 
 input {

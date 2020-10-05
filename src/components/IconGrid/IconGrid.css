@@ -48,11 +48,9 @@
   display: flex;
   width: 100%;
   height: 0px;
-  margin: 0px;
+  margin: 0 4px;
   border-radius: 16px;
   background-color: rgba(163, 159, 171, 0.1);
-  overflow-y: hidden;
-  overflow-x: auto;
 }
 
 @media screen and (max-width: 1023px) {
@@ -90,8 +88,8 @@
 }
 
 .snippet pre {
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
+  display: flex;
+  align-items: center;
   text-overflow: ellipsis;
   color: black;
   user-select: all;
@@ -111,12 +109,15 @@
   }
 }
 
+.snippet span {
+  flex: 1;
+}
+
 .snippet button {
   background-color: transparent;
   margin: 0;
   padding: 0;
   height: 24px;
-  float: right;
   cursor: pointer;
 }
 
@@ -126,6 +127,7 @@
 
 .button-row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .button-row button {
