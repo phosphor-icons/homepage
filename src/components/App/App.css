@@ -65,7 +65,6 @@ button.main-button {
 
 button.main-button:active {
   transform: translate(4px, 4px);
-  /* background-color: #DDDDDD; */
   box-shadow: 0 0 0 0 black;
 }
 

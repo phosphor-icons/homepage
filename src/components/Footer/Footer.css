@@ -7,6 +7,7 @@ footer {
   height: 140px;
   margin: 0;
   border-radius: 50%;
+  z-index: 2;
 }
 
 #back-to-top-button img {
@@ -25,7 +26,6 @@ footer {
   max-width: 666px;
   margin: 0 8% 0;
   padding-top: 72px;
-  /* overflow: hidden; */
 }
 
 .outro p {
@@ -68,7 +68,6 @@ footer .links {
     height: 48px;
     padding: 0;
     margin: 16px;
-    z-index: 1;
   }
 
   #back-to-top-button img {
@@ -121,7 +120,7 @@ footer .links {
 
   #command {
     position: absolute;
-    right: -16px;
+    right: -48px;
     top: 144px;
   }
 }
@@ -137,11 +136,11 @@ footer .links {
     top: 276px;
   }
 
-  #command {
+  /* #command {
     position: absolute;
-    left: 732px;
-    top: 512px;
-  }
+    left: 532px;
+    top: 150px;
+  } */
 
   .illustrations-footer {
     display: initial;
