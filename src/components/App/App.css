@@ -14,6 +14,13 @@ h2 {
   font-weight: 400;
 }
 
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
 pre,
 code {
   font-family: "IBM Plex Mono", "Courier New", monospace;
@@ -60,6 +67,8 @@ button.main-button {
   transition: all 0.2s ease;
   cursor: pointer;
   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
   margin: 0 24px 24px 0;
 }
 

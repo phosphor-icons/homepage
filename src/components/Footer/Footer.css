@@ -10,10 +10,6 @@ footer {
   z-index: 2;
 }
 
-#back-to-top-button img {
-  pointer-events: none;
-}
-
 .container {
   position: relative;
   width: 100%;
@@ -53,6 +49,8 @@ footer .links {
 .illustrations-footer {
   display: none;
   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
   pointer-events: none;
 }
 
@@ -120,7 +118,7 @@ footer .links {
 
   #command {
     position: absolute;
-    right: -48px;
+    right: -18px;
     top: 144px;
   }
 }
