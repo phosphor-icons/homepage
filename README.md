@@ -101,4 +101,4 @@ Download our [asset kit](https://www.phosphoricons.com/assets/phosphor-icons.zip
 
 ## License
 
-GPL-3.0 © [Phosphor Icons](https://github.com/phosphor-icons)
+MIT © [Phosphor Icons](https://github.com/phosphor-icons)
