@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IconProps, Icon } from "phosphor-react";
 
 import { iconPreviewOpenAtom } from "../../state/atoms";
-import InfoPanel from "./InfoPanel";
+import DetailsPanel from "./DetailsPanel";
 
 interface IconGridItemProps extends IconProps {
   index: number;
@@ -87,7 +87,7 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
         <p>{name}</p>
       </motion.div>
         <AnimatePresence initial={false}>
-          {isOpen && <InfoPanel {...props} />}
+          {isOpen && <DetailsPanel {...props} />}
         </AnimatePresence>
     </>
   );

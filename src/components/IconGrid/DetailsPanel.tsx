@@ -47,7 +47,7 @@ interface InfoPanelProps {
   Icon: Icon;
 }
 
-const InfoPanel: React.FC<InfoPanelProps> = (props) => {
+const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
   const { index, spans, isDark, name, Icon } = props;
   const weight = useRecoilValue(iconWeightAtom);
   const size = useRecoilValue(iconSizeAtom);
@@ -239,4 +239,4 @@ const InfoPanel: React.FC<InfoPanelProps> = (props) => {
   );
 };
 
-export default InfoPanel;
+export default DetailsPanel;
