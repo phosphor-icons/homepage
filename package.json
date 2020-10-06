@@ -30,7 +30,7 @@
     "react-dropdown-select": "^4.4.2",
     "react-scripts": "3.4.1",
     "react-use": "^15.3.2",
-    "recoil": "^0.0.10",
+    "recoil": "^0.0.13",
     "svg2png-converter": "^1.0.0",
     "tinycolor2": "^1.4.1"
   },
