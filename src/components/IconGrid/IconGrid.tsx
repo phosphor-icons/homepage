@@ -52,7 +52,7 @@ const IconGrid: React.FC<IconGridProps> = () => {
               index={index}
               spans={spans}
               isDark={isDark}
-              {...iconEntry}
+              entry={iconEntry}
               originOffset={originOffset}
             />
           ))}

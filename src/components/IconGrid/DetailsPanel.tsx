@@ -3,7 +3,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
-import { Icon, Copy, X, CheckCircle, Download } from "phosphor-react";
+import { Copy, X, CheckCircle, Download } from "phosphor-react";
 
 import {
   iconWeightAtom,
@@ -12,6 +12,8 @@ import {
   iconPreviewOpenAtom,
 } from "../../state/atoms";
 import useTransientState from "../../hooks/useTransientState";
+import TagCloud from "./TagCloud";
+import { IconEntry } from "../../lib";
 
 const panelVariants = {
   open: {
@@ -43,12 +45,12 @@ interface InfoPanelProps {
   index: number;
   spans: number;
   isDark: boolean;
-  name: string;
-  Icon: Icon;
+  entry: IconEntry;
 }
 
 const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
-  const { index, spans, isDark, name, Icon } = props;
+  const { index, spans, isDark, entry } = props;
+  const { name, Icon, categories, tags } = entry;
   const weight = useRecoilValue(iconWeightAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
@@ -56,10 +58,12 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
   const [copied, setCopied] = useTransientState<string | false>(false, 2000);
   const ref = useRef<SVGSVGElement>(null);
 
-  const buttonBarStyle = { color: isDark ? "white" : buttonColor };
-  const snippetButtonStyle =
+  const buttonBarStyle: React.CSSProperties = {
+    color: isDark ? "white" : buttonColor,
+  };
+  const snippetButtonStyle: React.CSSProperties =
     weight === "duotone"
-      ? { color: disabledColor, "user-select": "none" }
+      ? { color: disabledColor, userSelect: "none" }
       : { color: buttonColor };
 
   const snippets = {

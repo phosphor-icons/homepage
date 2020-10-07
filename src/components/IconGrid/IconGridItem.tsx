@@ -6,17 +6,16 @@ import React, {
 } from "react";
 import { useRecoilState } from "recoil";
 import { motion, AnimatePresence } from "framer-motion";
-import { IconProps, Icon } from "phosphor-react";
 
 import { iconPreviewOpenAtom } from "../../state/atoms";
 import DetailsPanel from "./DetailsPanel";
+import { IconEntry } from "../../lib";
 
-interface IconGridItemProps extends IconProps {
+interface IconGridItemProps {
   index: number;
   spans: number;
   isDark: boolean;
-  name: string;
-  Icon: Icon;
+  entry: IconEntry;
   originOffset: MutableRefObject<{ top: number; left: number }>;
 }
 
@@ -33,7 +32,8 @@ const itemVariants = {
 };
 
 const IconGridItem: React.FC<IconGridItemProps> = (props) => {
-  const { index, originOffset, name, Icon } = props;
+  const { index, originOffset, entry } = props;
+  const { name, Icon } = entry;
   const [open, setOpen] = useRecoilState(iconPreviewOpenAtom);
   const isOpen = open === name;
   const delayRef = useRef<number>(0);
