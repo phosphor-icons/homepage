@@ -25,11 +25,11 @@
   -moz-user-select: none;
   -webkit-user-select: none;
   cursor: pointer;
+  /* transition: background-color 100ms ease; */
 }
 
 .grid-item:hover {
-  background-color: rgba(163, 159, 171, 0.1);
-  transition: background-color 0.2s;
+  background-color: rgba(163, 159, 171, 0.1); 
 }
 
 .grid-item:focus {
@@ -170,6 +170,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-bottom: 0;
 }
 
 .beacon {
