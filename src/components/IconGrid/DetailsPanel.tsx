@@ -140,6 +140,13 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
       >
         <Icon ref={ref} color={color} weight={weight} size={192} />
         <p>{name}</p>
+        <TagCloud
+          name={name}
+          tags={Array.from(
+            new Set<string>([...categories, ...name.split("-"), ...tags])
+          )}
+          isDark={isDark}
+        />
       </motion.div>
       <motion.div
         initial="collapsed"
