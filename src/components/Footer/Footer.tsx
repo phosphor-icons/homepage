@@ -4,8 +4,8 @@ import { ArrowElbowDownRight, Coffee, Heart } from "phosphor-react";
 import uArrowUpLeft from "../../assets/u-arrow-up-left.svg";
 import markerGreen from "../../assets/marker-green.svg";
 import postIt from "../../assets/footer-mobile.svg";
-import commandKey from "../../assets/command-key.svg";
-import commandKeySpec from "../../assets/command-key-spec.svg";
+// import commandKey from "../../assets/command-key.svg";
+// import commandKeySpec from "../../assets/command-key-spec.svg";
 import "./Footer.css";
 
 type FooterProps = {};
@@ -27,13 +27,13 @@ const Footer: React.FC<FooterProps> = () => {
           <img src={uArrowUpLeft} alt="" />
         </button>
         <div className="outro">
-          <img id="command" src={commandKeySpec} alt="" />
+          {/* <img id="command" src={commandKeySpec} alt="" />
           <img
             id="command"
             className="inspectable xray"
             src={commandKey}
             alt=""
-          />
+          /> */}
           <div className="links">
             <div>
               <ArrowElbowDownRight size={24} />
@@ -100,15 +100,14 @@ const Footer: React.FC<FooterProps> = () => {
             community.
           </p>
           <p>
-            Phosphor is licensed under{" "}
+            Phosphor is free and open-source, licensed under{" "}
             <a
               className="main-link"
               href="https://raw.githubusercontent.com/phosphor-icons/phosphor-web/master/LICENSE"
             >
               MIT
             </a>
-            , free to use without attribution. If you enjoy these icons, please
-            support us with a donation.
+            . If you enjoy these icons, please support us with a donation.
           </p>
           <div className="button-container">
             <button
@@ -134,7 +133,7 @@ const Footer: React.FC<FooterProps> = () => {
           </div>
           <div className="fine-print">
             <p>
-              Copyright © 2020 Phosphor Icons. Phosphor Icons is designed by{" "}
+              Phosphor Icons is designed by{" "}
               <a className="main-link" href="https://helenazhang.com">
                 Helena Zhang
               </a>{" "}
