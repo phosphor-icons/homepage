@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { useDebounce } from "react-use";
 import { MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
@@ -11,7 +11,8 @@ type SearchInputProps = {};
 const SearchInput: React.FC<SearchInputProps> = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
-  void query;
+
+  useEffect(() => void (value !== query && setValue(query)), [query]);
 
   const [isReady] = useDebounce(
     () => {
