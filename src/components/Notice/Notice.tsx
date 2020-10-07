@@ -4,13 +4,14 @@ import { useRecoilValue } from "recoil";
 
 import { isDarkThemeSelector } from "../../state/selectors";
 import { searchQueryAtom } from "../../state/atoms";
-import { SmileyXEyes } from "phosphor-react";
+import { HourglassMedium, Question, SmileyXEyes } from "phosphor-react";
 
-interface WarnProps {
+interface NoticeProps {
   message?: string;
+  type?: "wait" | "help" | "warn" | "none";
 }
 
-const Warn: React.FC<WarnProps> = ({ message }) => {
+const Notice: React.FC<NoticeProps> = ({ message, type = "warn", children }) => {
   const isDark = useRecoilValue(isDarkThemeSelector);
   const query = useRecoilValue(searchQueryAtom);
 
@@ -22,15 +23,24 @@ const Warn: React.FC<WarnProps> = ({ message }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <SmileyXEyes size={128} color="#615C68" weight="duotone" />
+        {type === "wait" && (
+          <HourglassMedium size={128} color="#615C68" weight="duotone" />
+        )}
+        {type === "help" && (
+          <Question size={128} color="#615C68" weight="duotone" />
+        )}
+        {type === "warn" && (
+          <SmileyXEyes size={128} color="#615C68" weight="duotone" />
+        )}
         {message ?? (
           <p>
             No results for "<code>{query}</code>"
           </p>
         )}
+        {children}
       </motion.div>
     </div>
   );
 };
 
-export default Warn;
+export default Notice;
