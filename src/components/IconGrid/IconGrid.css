@@ -29,7 +29,7 @@
 }
 
 .grid-item:hover {
-  background-color: rgba(163, 159, 171, 0.1); 
+  background-color: rgba(163, 159, 171, 0.1);
 }
 
 .grid-item:focus {
@@ -159,7 +159,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 16px 4px;
+  padding: 32px 16px;
   min-height: 80vh;
   max-width: 1120px;
   margin: auto;
