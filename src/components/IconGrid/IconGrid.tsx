@@ -14,7 +14,7 @@ import TagCloud from "./TagCloud";
 import Notice from "../Notice/Notice";
 import "./IconGrid.css";
 
-const defaultSearchTags = ["communication", "design", "editor", "emoji", "maps", "media", "weather"];
+const defaultSearchTags = ["communication", "editor", "emoji", "maps", "weather"];
 
 type IconGridProps = {};
 
