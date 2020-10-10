@@ -112,7 +112,7 @@ const Header: React.FC<HeaderProps> = () => {
                   Donate on PayPal
                 </a>
                 {" / "}
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="https://patreon.com/phosphoricons">
                   Patreon
                 </a>
               </span>
