@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  ArrowCircleUpRight,
-  ArrowCircleDown,
-  ArrowElbowDownRight,
-} from "phosphor-react";
-import { OutboundLink } from "react-ga";
+import { ArrowCircleUpRight, ArrowCircleDown } from "phosphor-react";
 
-import "./Header.css";
 import markerPurple from "../../assets/marker-purple.svg";
 import paperclips from "../../assets/paperclips-header-mobile.svg";
 import paperclipsThree from "../../assets/paperclips-header.svg";
@@ -22,6 +16,8 @@ import receipt from "../../assets/receipt.svg";
 import receiptSpec from "../../assets/receipt-spec.svg";
 import calculator from "../../assets/calculator.svg";
 import calculatorSpec from "../../assets/calculator-spec.svg";
+import Links from "../Links/Links";
+import "./Header.css";
 
 type HeaderProps = {};
 
@@ -74,73 +70,7 @@ const Header: React.FC<HeaderProps> = () => {
               Explore icons
             </button>
           </div>
-          <div className="links">
-            <div>
-              <ArrowElbowDownRight size={24} />
-              <OutboundLink
-                className="nav-link"
-                to="https://phosphoricons.com/assets/phosphor-icons.zip"
-                eventLabel="Download all"
-                download
-                type="application/zip"
-              >
-                Download all
-              </OutboundLink>
-            </div>
-            <div>
-              <ArrowElbowDownRight size={24} />
-              <OutboundLink
-                className="nav-link"
-                to="#"
-                eventLabel="Figma library"
-              >
-                Figma library
-              </OutboundLink>
-            </div>
-            <div>
-              <ArrowElbowDownRight size={24} />
-              <OutboundLink
-                className="nav-link"
-                to="#"
-                eventLabel="Figma plugin"
-              >
-                Figma plugin
-              </OutboundLink>
-            </div>
-            <div>
-              <ArrowElbowDownRight size={24} />
-              <a
-                className="nav-link"
-                href="https://github.com/phosphor-icons/phosphor-web/issues"
-              >
-                Request an icon
-              </a>
-            </div>
-            <div>
-              <ArrowElbowDownRight size={24} />
-              <span>
-                <a className="nav-link" href="https://paypal.me/minoraxis">
-                  Donate on PayPal
-                </a>
-                {" / "}
-                <a
-                  className="nav-link"
-                  href="https://patreon.com/phosphoricons"
-                >
-                  Patreon
-                </a>
-              </span>
-            </div>
-            <div>
-              <ArrowElbowDownRight size={24} />
-              <a
-                className="nav-link"
-                href="https://github.com/phosphor-icons/phosphor-web"
-              >
-                Github
-              </a>
-            </div>
-          </div>
+          <Links />
         </div>
         <div className="illustrations-bottom">
           <img id="cutting-mat" src={cuttingMatSpec} alt="" />

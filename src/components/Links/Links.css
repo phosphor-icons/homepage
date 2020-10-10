@@ -1,0 +1,41 @@
+.links {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  /* column-gap: 72px; */
+  /* -webkit-column-gap: 72px; */
+  margin: 32px 0 64px;
+  max-height: 144px;
+}
+
+.links > div {
+  margin: 0 72px 24px 0;
+  display: flex;
+  align-items: center;
+}
+
+.links svg {
+  margin-right: 12px;
+}
+
+a.nav-link {
+  text-decoration: none;
+  position: relative;
+  color: black;
+}
+
+a.nav-link:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  border-bottom: 1px solid black;
+  transition: 0.2s;
+}
+
+a.nav-link:hover:after {
+  width: 100%;
+}
