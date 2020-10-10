@@ -12,6 +12,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => void (value !== query && setValue(query)), [query]);
 
   const [isReady] = useDebounce(
