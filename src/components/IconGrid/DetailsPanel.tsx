@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
 import { Copy, X, CheckCircle, Download } from "phosphor-react";
+import ReactGA from "react-ga";
 
 import {
   iconWeightAtom,
@@ -57,6 +58,11 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
   const setOpen = useSetRecoilState(iconPreviewOpenAtom);
   const [copied, setCopied] = useTransientState<string | false>(false, 2000);
   const ref = useRef<SVGSVGElement>(null);
+
+  useEffect(
+    () => ReactGA.event({ category: "Grid", action: "Details", label: name }),
+    [name]
+  );
 
   const buttonBarStyle: React.CSSProperties = {
     color: isDark ? "white" : buttonColor,
