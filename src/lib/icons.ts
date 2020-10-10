@@ -2800,7 +2800,6 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "heart",
     categories: [
       IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
       IconCategory.HEALTH,
       IconCategory.OTHER,
     ],
@@ -2824,7 +2823,6 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "heart-straight",
     categories: [
       IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
       IconCategory.HEALTH,
       IconCategory.OTHER,
     ],
@@ -4795,41 +4793,25 @@ export const icons: ReadonlyArray<IconEntry> = [
   },
   {
     name: "smiley",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["face", "smiley", "emoji", "happy", "grinning", "smiling"],
     Icon: Icon.Smiley,
   },
   {
     name: "smiley-blank",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["face", "smiley", "emoji", "unimpressed", "no face"],
     Icon: Icon.SmileyBlank,
   },
   {
     name: "smiley-meh",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["face", "smiley", "emoji", "unimpressed", "neutral"],
     Icon: Icon.SmileyMeh,
   },
   {
     name: "smiley-nervous",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: [
       "face",
       "smiley",
@@ -4845,31 +4827,19 @@ export const icons: ReadonlyArray<IconEntry> = [
   },
   {
     name: "smiley-sad",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["face", "smiley", "emoji", "unhappy", "frowning"],
     Icon: Icon.SmileySad,
   },
   {
     name: "smiley-sticker",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["face", "smiley", "emoji", "happy", "grinning", "smiling"],
     Icon: Icon.SmileySticker,
   },
   {
     name: "smiley-x-eyes",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["face", "smiley", "emoji", "dead", "killed", "unconscious"],
     Icon: Icon.SmileyXEyes,
   },
@@ -5142,21 +5112,13 @@ export const icons: ReadonlyArray<IconEntry> = [
   },
   {
     name: "thumbs-up",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["like", "love", "favorited", "favorites", "emoji"],
     Icon: Icon.ThumbsUp,
   },
   {
     name: "thumbs-down",
-    categories: [
-      IconCategory.COMMUNICATION,
-      IconCategory.DESIGN,
-      IconCategory.OTHER,
-    ],
+    categories: [IconCategory.COMMUNICATION, IconCategory.OTHER],
     tags: ["dislike", "hate", "emoji"],
     Icon: Icon.ThumbsDown,
   },
