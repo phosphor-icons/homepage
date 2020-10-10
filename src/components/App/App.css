@@ -120,13 +120,14 @@ a.main-link:hover:after {
   align-content: flex-start;
   align-items: flex-start;
   justify-content: center;
-  column-gap: 72px;
+  /* column-gap: 72px; */
+  /* -webkit-column-gap: 72px; */
   margin: 32px 0 64px;
   max-height: 144px;
 }
 
 .links > div {
-  margin: 0 0 24px 0;
+  margin: 0 72px 24px 0;
   display: flex;
   align-items: center;
 }
