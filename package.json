@@ -28,6 +28,7 @@
     "react": "^17.0.0-rc.0",
     "react-dom": "^17.0.0-rc.0",
     "react-dropdown-select": "^4.4.2",
+    "react-ga": "^3.1.2",
     "react-scripts": "3.4.1",
     "react-use": "^15.3.2",
     "recoil": "^0.0.13",
