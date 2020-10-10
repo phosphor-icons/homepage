@@ -4,6 +4,7 @@ import {
   ArrowCircleDown,
   ArrowElbowDownRight,
 } from "phosphor-react";
+import { OutboundLink } from "react-ga";
 
 import "./Header.css";
 import markerPurple from "../../assets/marker-purple.svg";
@@ -76,25 +77,35 @@ const Header: React.FC<HeaderProps> = () => {
           <div className="links">
             <div>
               <ArrowElbowDownRight size={24} />
-              <a
+              <OutboundLink
                 className="nav-link"
-                href="https://phosphoricons.com/assets/phosphor-icons.zip"
+                to="https://phosphoricons.com/assets/phosphor-icons.zip"
+                eventLabel="Download all"
                 download
+                type="application/zip"
               >
                 Download all
-              </a>
+              </OutboundLink>
             </div>
             <div>
               <ArrowElbowDownRight size={24} />
-              <a className="nav-link" href="#">
+              <OutboundLink
+                className="nav-link"
+                to="#"
+                eventLabel="Figma library"
+              >
                 Figma library
-              </a>
+              </OutboundLink>
             </div>
             <div>
               <ArrowElbowDownRight size={24} />
-              <a className="nav-link" href="#">
+              <OutboundLink
+                className="nav-link"
+                to="#"
+                eventLabel="Figma plugin"
+              >
                 Figma plugin
-              </a>
+              </OutboundLink>
             </div>
             <div>
               <ArrowElbowDownRight size={24} />
@@ -112,7 +123,10 @@ const Header: React.FC<HeaderProps> = () => {
                   Donate on PayPal
                 </a>
                 {" / "}
-                <a className="nav-link" href="https://patreon.com/phosphoricons">
+                <a
+                  className="nav-link"
+                  href="https://patreon.com/phosphoricons"
+                >
                   Patreon
                 </a>
               </span>
