@@ -36,7 +36,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.Alarm,
   },
   {
-    name: "android",
+    name: "android-logo",
     categories: [
       IconCategory.BRAND,
       IconCategory.COMMUNICATION,
@@ -44,7 +44,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       IconCategory.DEVICE,
       IconCategory.SYSTEM,
     ],
-    tags: ["google", "mobile", "phone", "cellular", "cellphone"],
+    tags: ["logos", "google", "mobile", "phone", "cellular", "cellphone"],
     Icon: Icon.Android,
   },
   {
@@ -2024,9 +2024,9 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.DownloadSimple,
   },
   {
-    name: "dribbble",
+    name: "dribbble-logo",
     categories: [IconCategory.BRAND, IconCategory.HEALTH],
-    tags: ["round", "basketball", "sports", "design"],
+    tags: ["logos", "round", "basketball", "sports", "design"],
     Icon: Icon.Dribbble,
   },
   {
@@ -2098,9 +2098,9 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.EyeClosed,
   },
   {
-    name: "facebook",
+    name: "facebook-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
-    tags: ["social media"],
+    tags: ["logos", "social media"],
     Icon: Icon.Facebook,
   },
   {
@@ -2138,9 +2138,10 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.FastForward,
   },
   {
-    name: "figma",
+    name: "figma-logo",
     categories: [IconCategory.BRAND, IconCategory.DESIGN],
     tags: [
+      "logos",
       "drawing",
       "art",
       "illustration",
@@ -2315,7 +2316,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.FolderOpen,
   },
   {
-    name: "folder-dip",
+    name: "folder-notch",
     categories: [
       IconCategory.DOCUMENT,
       IconCategory.EDITOR,
@@ -2325,7 +2326,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.FolderDip,
   },
   {
-    name: "folder-dip-plus",
+    name: "folder-notch-plus",
     categories: [
       IconCategory.DOCUMENT,
       IconCategory.EDITOR,
@@ -2344,7 +2345,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.FolderDipPlus,
   },
   {
-    name: "folder-dip-minus",
+    name: "folder-notch-minus",
     categories: [
       IconCategory.DOCUMENT,
       IconCategory.EDITOR,
@@ -2354,7 +2355,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.FolderDipMinus,
   },
   {
-    name: "folder-dip-open",
+    name: "folder-notch-open",
     categories: [
       IconCategory.DOCUMENT,
       IconCategory.EDITOR,
@@ -2427,9 +2428,9 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.ForkKnife,
   },
   {
-    name: "framer",
+    name: "framer-logo",
     categories: [IconCategory.BRAND, IconCategory.DESIGN],
-    tags: ["interface", "ui", "motion", "prototype", "prototyping"],
+    tags: ["logos", "interface", "ui", "motion", "prototype", "prototyping"],
     Icon: Icon.Framer,
   },
   {
@@ -2668,15 +2669,16 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.GlobeStand,
   },
   {
-    name: "google",
+    name: "google-logo",
     categories: [IconCategory.BRAND],
-    tags: ["search engine", "phone", "mobile", "android"],
+    tags: ["logos", "search engine", "phone", "mobile", "android"],
     Icon: Icon.Google,
   },
   {
-    name: "google-play",
+    name: "google-play-logo",
     categories: [IconCategory.BRAND, IconCategory.SYSTEM, IconCategory.MEDIA],
     tags: [
+      "logos",
       "games",
       "apps",
       "applications",
@@ -3029,9 +3031,9 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.Info,
   },
   {
-    name: "instagram",
+    name: "instagram-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
-    tags: ["social media", "photography", "camera"],
+    tags: ["logos", "social media", "photography", "camera"],
     Icon: Icon.Instagram,
   },
   {
@@ -3191,9 +3193,9 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.LinkSimpleHorizontalBreak,
   },
   {
-    name: "linkedin",
+    name: "linkedin-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
-    tags: ["jobs", "employment", "social media"],
+    tags: ["logos", "jobs", "employment", "social media"],
     Icon: Icon.Linkedin,
   },
   {
@@ -3451,9 +3453,9 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.Medal,
   },
   {
-    name: "medium",
+    name: "medium-logo",
     categories: [IconCategory.BRAND],
-    tags: ["reading", "writing", "news", "social media"],
+    tags: ["logos", "reading", "writing", "news", "social media"],
     Icon: Icon.Medium,
   },
   {
@@ -4726,7 +4728,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.SignOut,
   },
   {
-    name: "sketch",
+    name: "sketch-logo",
     categories: [IconCategory.DESIGN, IconCategory.OTHER],
     tags: [
       "drawing",
@@ -5301,9 +5303,9 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.Truck,
   },
   {
-    name: "twitter",
+    name: "twitter-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
-    tags: ["social media", "tweets", "birds"],
+    tags: ["logos", "social media", "tweets", "birds"],
     Icon: Icon.Twitter,
   },
   {
@@ -5593,13 +5595,13 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.XSquare,
   },
   {
-    name: "youtube",
+    name: "youtube-logo",
     categories: [
       IconCategory.BRAND,
       IconCategory.COMMUNICATION,
       IconCategory.MEDIA,
     ],
-    tags: ["google", "videos", "movies", "social media"],
+    tags: ["logos", "google", "videos", "movies", "social media"],
     Icon: Icon.Youtube,
   },
 ];
