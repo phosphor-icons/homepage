@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { useDebounce } from "react-use";
 import { MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
+import ReactGA from "react-ga";
 
 import { searchQueryAtom } from "../../state/atoms";
 import "./SearchInput.css";
@@ -12,16 +13,24 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => void (value !== query && setValue(query)), [query]);
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    if (value !== query) {
+      setValue(query);
+      ReactGA.event({ category: "Search", action: "Tag", label: query });
+    }
+  }, [query]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   const [isReady] = useDebounce(
     () => {
-      setQuery(value);
-      value &&
-        void document
-          .getElementById("beacon")
-          ?.scrollIntoView({ block: "start", behavior: "smooth" });
+      if (value !== query) {
+        setQuery(value);
+        !!value && ReactGA.event({ category: "Search", action: "Query", label: value });
+      }
+      !!value && void document
+        .getElementById("beacon")
+        ?.scrollIntoView({ block: "start", behavior: "smooth" });
     },
     250,
     [value]
