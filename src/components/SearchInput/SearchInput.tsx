@@ -15,10 +15,12 @@ const SearchInput: React.FC<SearchInputProps> = () => {
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
+    let isMounted = true;
     if (value !== query) {
-      setValue(query);
+      isMounted && setValue(query);
       ReactGA.event({ category: "Search", action: "Tag", label: query });
     }
+    return () => void (isMounted = false);
   }, [query]);
   /* eslint-enable react-hooks/exhaustive-deps */
 
