@@ -45,7 +45,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       IconCategory.SYSTEM,
     ],
     tags: ["logos", "google", "mobile", "phone", "cellular", "cellphone"],
-    Icon: Icon.Android,
+    Icon: Icon.AndroidLogo,
   },
   {
     name: "aperture",
@@ -1735,6 +1735,27 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.Cursor,
   },
   {
+    name: "database",
+    categories: [
+      IconCategory.DEVICE,
+      IconCategory.DEVELOPMENT,
+      IconCategory.SYSTEM,
+    ],
+    tags: [
+      "saved",
+      "saving",
+      "archived",
+      "archiving",
+      "archival",
+      "hard disk",
+      "storage",
+      "hdd",
+      "servers",
+      "databases",
+    ],
+    Icon: Icon.Database,
+  },
+  {
     name: "device-mobile",
     categories: [IconCategory.DEVICE],
     tags: ["cellphone", "cellular"],
@@ -2027,7 +2048,25 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "dribbble-logo",
     categories: [IconCategory.BRAND, IconCategory.HEALTH],
     tags: ["logos", "round", "basketball", "sports", "design"],
-    Icon: Icon.Dribbble,
+    Icon: Icon.DribbbleLogo,
+  },
+  {
+    name: "drop",
+    categories: [IconCategory.WEATHER, IconCategory.OTHER],
+    tags: ["droplet", "raindrop", "raining", "meteorology", "water"],
+    Icon: Icon.Drop,
+  },
+  {
+    name: "eject",
+    categories: [IconCategory.MEDIA, IconCategory.SYSTEM],
+    tags: ["disconnect"],
+    Icon: Icon.Eject,
+  },
+  {
+    name: "eraser",
+    categories: [IconCategory.DESIGN, IconCategory.EDITOR],
+    tags: ["write", "writing", "editing", "undo", "deleted"],
+    Icon: Icon.Eraser,
   },
   {
     name: "envelope",
@@ -2101,7 +2140,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "facebook-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
     tags: ["logos", "social media"],
-    Icon: Icon.Facebook,
+    Icon: Icon.FacebookLogo,
   },
   {
     name: "faders",
@@ -2150,7 +2189,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       "prototype",
       "prototyping",
     ],
-    Icon: Icon.Figma,
+    Icon: Icon.FigmaLogo,
   },
   {
     name: "file",
@@ -2235,6 +2274,12 @@ export const icons: ReadonlyArray<IconEntry> = [
       "encryption",
     ],
     Icon: Icon.FingerprintSimple,
+  },
+  {
+    name: "fire",
+    categories: [IconCategory.OTHER],
+    tags: ["flame", "burning", "match", "lighter"],
+    Icon: Icon.Fire,
   },
   {
     name: "flag",
@@ -2323,7 +2368,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       IconCategory.SYSTEM,
     ],
     tags: ["directory", "directories", "files", "folders"],
-    Icon: Icon.FolderDip,
+    Icon: Icon.FolderNotch,
   },
   {
     name: "folder-notch-plus",
@@ -2342,7 +2387,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       "new",
       "create",
     ],
-    Icon: Icon.FolderDipPlus,
+    Icon: Icon.FolderNotchPlus,
   },
   {
     name: "folder-notch-minus",
@@ -2352,7 +2397,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       IconCategory.SYSTEM,
     ],
     tags: ["directory", "directories", "files", "delete", "write", "remove"],
-    Icon: Icon.FolderDipMinus,
+    Icon: Icon.FolderNotchMinus,
   },
   {
     name: "folder-notch-open",
@@ -2362,7 +2407,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       IconCategory.SYSTEM,
     ],
     tags: ["directory", "directories", "files", "folders", "load"],
-    Icon: Icon.FolderDipOpen,
+    Icon: Icon.FolderNotchOpen,
   },
   {
     name: "folder-simple",
@@ -2431,7 +2476,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "framer-logo",
     categories: [IconCategory.BRAND, IconCategory.DESIGN],
     tags: ["logos", "interface", "ui", "motion", "prototype", "prototyping"],
-    Icon: Icon.Framer,
+    Icon: Icon.FramerLogo,
   },
   {
     name: "funnel",
@@ -2492,6 +2537,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     categories: [IconCategory.MEDIA],
     tags: ["gifs", ".gif", "giphy"],
     Icon: Icon.Gif,
+  },
+  {
+    name: "gift",
+    categories: [IconCategory.OTHER],
+    tags: ["presents", "holidays", "birthdays"],
+    Icon: Icon.Gift,
   },
   {
     name: "git-branch",
@@ -2672,7 +2723,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "google-logo",
     categories: [IconCategory.BRAND],
     tags: ["logos", "search engine", "phone", "mobile", "android"],
-    Icon: Icon.Google,
+    Icon: Icon.GoogleLogo,
   },
   {
     name: "google-play-logo",
@@ -2688,7 +2739,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       "mobile",
       "android",
     ],
-    Icon: Icon.GooglePlay,
+    Icon: Icon.GooglePlayLogo,
   },
   {
     name: "grid-four",
@@ -3032,7 +3083,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "instagram-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
     tags: ["logos", "social media", "photography", "camera"],
-    Icon: Icon.Instagram,
+    Icon: Icon.InstagramLogo,
   },
   {
     name: "intersect",
@@ -3194,7 +3245,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "linkedin-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
     tags: ["logos", "jobs", "employment", "social media"],
-    Icon: Icon.Linkedin,
+    Icon: Icon.LinkedinLogo,
   },
   {
     name: "list",
@@ -3454,7 +3505,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "medium-logo",
     categories: [IconCategory.BRAND],
     tags: ["logos", "reading", "writing", "news", "social media"],
-    Icon: Icon.Medium,
+    Icon: Icon.MediumLogo,
   },
   {
     name: "megaphone",
@@ -4308,6 +4359,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     Icon: Icon.PhoneX,
   },
   {
+    name: "phosphor-logo",
+    categories: [IconCategory.BRAND],
+    tags: ["logos"],
+    Icon: Icon.PhosphorLogo,
+  },
+  {
     name: "play",
     categories: [IconCategory.MEDIA, IconCategory.SYSTEM],
     tags: ["music", "audio", "resume", "start"],
@@ -4739,7 +4796,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       "gemstone",
       "diamond",
     ],
-    Icon: Icon.Sketch,
+    Icon: Icon.SketchLogo,
   },
   {
     name: "skip-back",
@@ -5268,7 +5325,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "twitter-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
     tags: ["logos", "social media", "tweets", "birds"],
-    Icon: Icon.Twitter,
+    Icon: Icon.TwitterLogo,
   },
   {
     name: "upload",
@@ -5564,7 +5621,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       IconCategory.MEDIA,
     ],
     tags: ["logos", "google", "videos", "movies", "social media"],
-    Icon: Icon.Youtube,
+    Icon: Icon.YoutubeLogo,
   },
 ];
 
