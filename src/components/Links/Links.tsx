@@ -36,7 +36,7 @@ const Links: React.FC<LinksProps> = () => {
         <ArrowElbowDownRight size={24} />
         <OutboundLink
           className="nav-link"
-          to="#"
+          to="https://www.figma.com/community/plugin/892854133443228626/Phosphor-Icons"
           eventLabel="Figma plugin"
           style={{ textDecoration: "line-through" }}
         >
