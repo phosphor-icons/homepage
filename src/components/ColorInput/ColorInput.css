@@ -17,6 +17,8 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
   pointer-events: none;
 }
 

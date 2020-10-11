@@ -1,5 +1,5 @@
 .grid-container {
-  padding: 0px 16px 4px;
+  padding: 32px 16px;
   min-height: 80vh;
 }
 
@@ -22,12 +22,14 @@
   margin: 4px;
   border-radius: 16px;
   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
   cursor: pointer;
+  /* transition: background-color 100ms ease; */
 }
 
 .grid-item:hover {
   background-color: rgba(163, 159, 171, 0.1);
-  transition: background-color 0.2s;
 }
 
 .grid-item:focus {
@@ -48,11 +50,9 @@
   display: flex;
   width: 100%;
   height: 0px;
-  margin: 0px;
+  margin: 0 4px;
   border-radius: 16px;
   background-color: rgba(163, 159, 171, 0.1);
-  overflow-y: hidden;
-  overflow-x: auto;
 }
 
 @media screen and (max-width: 1023px) {
@@ -66,17 +66,16 @@
 }
 
 .icon-preview {
-  height: 396px;
   width: 30%;
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top: 72px;
 }
 
 .icon-preview p {
-  margin: 12px 0 0;
+  margin: 0;
   font-size: 12px;
   line-height: 16px;
 }
@@ -91,8 +90,8 @@
 }
 
 .snippet pre {
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
+  display: flex;
+  align-items: center;
   text-overflow: ellipsis;
   color: black;
   user-select: all;
@@ -112,12 +111,15 @@
   }
 }
 
+.snippet span {
+  flex: 1;
+}
+
 .snippet button {
   background-color: transparent;
   margin: 0;
   padding: 0;
   height: 24px;
-  float: right;
   cursor: pointer;
 }
 
@@ -127,6 +129,7 @@
 
 .button-row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .button-row button {
@@ -156,7 +159,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 16px 4px;
+  padding: 32px 16px;
   min-height: 80vh;
   max-width: 1120px;
   margin: auto;
@@ -167,9 +170,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-bottom: 0;
 }
 
 .beacon {
   position: relative;
-  top: -64px;
+  top: -96px;
 }

@@ -14,11 +14,17 @@ h2 {
   font-weight: 400;
 }
 
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
 pre,
 code {
   font-family: "IBM Plex Mono", "Courier New", monospace;
   font-size: 14px;
-  color: "black";
 }
 
 pre {
@@ -28,6 +34,7 @@ pre {
   background-color: white;
   border-radius: 6px;
   border: 1px solid #e1d4d7;
+  white-space: pre-wrap;
 }
 
 input {
@@ -44,7 +51,6 @@ button {
 
 button.main-button {
   height: 64px;
-  margin: 16px 24px 0 0;
   padding: 0 48px 0 40px;
   background-color: white;
   border-radius: 8px;
@@ -60,11 +66,13 @@ button.main-button {
   transition: all 0.2s ease;
   cursor: pointer;
   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  margin: 0 24px 24px 0;
 }
 
 button.main-button:active {
   transform: translate(4px, 4px);
-  /* background-color: #DDDDDD; */
   box-shadow: 0 0 0 0 black;
 }
 
@@ -72,8 +80,18 @@ button.main-button:focus {
   outline: none;
 }
 
+/* button.main-button:not(:last-child) {
+  margin: 0 24px 24px 0;
+} */
+
 button.main-button svg {
   margin-right: 12px;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 24px; */
 }
 
 a.main-link {

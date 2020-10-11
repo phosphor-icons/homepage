@@ -6,7 +6,11 @@ import Toolbar from "../Toolbar/Toolbar";
 import IconGrid from "../IconGrid/IconGrid";
 import Footer from "../Footer/Footer";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
-import Warn from "../Warn/Warn";
+import Notice from "../Notice/Notice";
+
+const errorFallback = <Notice message="Search error" />;
+// const waitingFallback = <Notice type="wait" message="Loading..." />;
+const waitingFallback = <Notice type="none" message="" />;
 
 const App: React.FC<any> = () => {
   return (
@@ -14,8 +18,8 @@ const App: React.FC<any> = () => {
       <Header />
       <main>
         <Toolbar />
-        <ErrorBoundary fallback={<Warn message="Search error"/>}>
-          <Suspense fallback={<div>Loading...</div>}>
+        <ErrorBoundary fallback={errorFallback}>
+          <Suspense fallback={waitingFallback}>
             <IconGrid />
           </Suspense>
         </ErrorBoundary>

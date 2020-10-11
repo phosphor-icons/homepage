@@ -1,0 +1,32 @@
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 24px;
+}
+
+button.tag-button {
+  margin: 4px;
+  border-radius: 4px;
+  background-color: rgba(194, 186, 196, 0.25);
+  outline: none;
+  cursor: pointer;
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+
+button.tag-button:hover {
+  background-color: rgba(194, 186, 196, 0.7);
+}
+
+button.tag-button:focus {
+  box-shadow: 0 0 0 1px rgba(194, 186, 196, 0.7);
+}
+
+.tag-button code {
+  padding: 4px;
+  font-size: 12px;
+}
+
+.dark {
+  color: white;
+}

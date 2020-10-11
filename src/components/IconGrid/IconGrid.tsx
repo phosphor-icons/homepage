@@ -10,8 +10,11 @@ import {
 } from "../../state/selectors";
 import useGridSpans from "../../hooks/useGridSpans";
 import IconGridItem from "./IconGridItem";
-import Warn from "../Warn/Warn";
+import TagCloud from "./TagCloud";
+import Notice from "../Notice/Notice";
 import "./IconGrid.css";
+
+const defaultSearchTags = ["communication", "editor", "emoji", "maps", "weather"];
 
 type IconGridProps = {};
 
@@ -31,7 +34,13 @@ const IconGrid: React.FC<IconGridProps> = () => {
     controls.start("visible");
   }, [controls, filteredQueryResults]);
 
-  if (!filteredQueryResults.length) return <Warn />;
+  if (!filteredQueryResults.length)
+    return (
+      <Notice>
+        Try searching a category or keyword:
+        <TagCloud name="empty-state" isDark={isDark} tags={defaultSearchTags} />
+      </Notice>
+    );
 
   return (
     <IconContext.Provider value={{ weight, size, color, mirrored: false }}>
@@ -52,7 +61,7 @@ const IconGrid: React.FC<IconGridProps> = () => {
               index={index}
               spans={spans}
               isDark={isDark}
-              {...iconEntry}
+              entry={iconEntry}
               originOffset={originOffset}
             />
           ))}

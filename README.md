@@ -1,3 +1,5 @@
+<img src="/meta/phosphor-mark-tight-yellow.png" width="192" align="right" />
+
 # Phosphor Icons
 
 Phosphor Icons is a flexible icon family in 6 weights. We aim to provide consistency, variety, and above all, ease-of-use for creators of all kinds. Browse the library on [our website](https://phosphoricons.com).
@@ -98,6 +100,7 @@ Download our [asset kit](https://www.phosphoricons.com/assets/phosphor-icons.zip
 - [phosphor-react](https://github.com/phosphor-icons/phosphor-react) ▲ Phosphor icon component library for React
 - [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) ▲ Phosphor icon component library for Vue
 - [phosphor-icons](https://github.com/phosphor-icons/phosphor-icons) ▲ Phosphor icons for Vanilla JS
+- [phosphor-figma](https://github.com/phosphor-icons/phosphor-figma) ▲ Phosphor icons Figma plugin
 
 ## License
 

@@ -1,25 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="246px" height="246px" viewBox="0 0 246 246" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>billiard-ball</title>
-    <defs>
-        <circle id="path-1" cx="120" cy="120" r="120"></circle>
-        <filter x="-1.9%" y="-1.9%" width="103.8%" height="103.8%" filterUnits="objectBoundingBox" id="filter-2">
-            <feOffset dx="9" dy="9" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
-            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
-            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
-        </filter>
-    </defs>
-    <g id="billiard-ball" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g>
-            <circle id="shadow" fill="#35313D" opacity="0.100000001" cx="126" cy="126" r="120"></circle>
-            <g id="body">
-                <use fill="#925BFF" fill-rule="evenodd" xlink:href="#path-1"></use>
-                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-            </g>
-            <g id="4" transform="translate(56.000000, 56.000000)">
-                <path d="M64,10 C93.8177085,10 118,34.1822915 118,64 C118,93.8177085 93.8177085,118 64,118 C34.1822915,118 10,93.8177085 10,64 C10,34.1822915 34.1822915,10 64,10 Z" id="circle" fill="#FFFFFF"></path>
-                <path d="M63.9969207,32.342058 C67.0490461,33.4192787 68.6837704,36.7139781 67.7304533,39.7784541 L67.657942,39.9969207 L58.479,66 L67.9990088,65.9993648 L68,55.996 C68,52.6822915 70.6862915,49.996 74,49.996 C77.2383969,49.996 79.8775718,52.5615749 79.9958615,55.7710617 L80,55.996 L80,87.996 C80,91.3097085 77.3137085,93.996 74,93.996 C70.7616031,93.996 68.1224282,91.4304251 68.0041385,88.2209383 L68,87.996 L67.9990088,77.9993648 L50,78 C45.9341991,78 43.0680996,74.05168 44.2723194,70.212364 L44.342058,70.0030793 L56.342058,36.0030793 C57.4449269,32.8782842 60.8721256,31.2391891 63.9969207,32.342058 Z" fill="#000000" fill-rule="nonzero"></path>
-            </g>
-        </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="246" height="246" viewBox="0 0 246 246">
+  <defs>
+    <circle id="billiard-ball-a" cx="120" cy="120" r="120"/>
+    <filter id="billiard-ball-b" width="103.8%" height="103.8%" x="-1.9%" y="-1.9%" filterUnits="objectBoundingBox">
+      <feOffset dx="9" dy="9" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+      <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="126" cy="126" r="120" fill="#35313D" opacity=".1"/>
+    <use fill="#925BFF" xlink:href="#billiard-ball-a"/>
+    <use fill="#000" filter="url(#billiard-ball-b)" xlink:href="#billiard-ball-a"/>
+    <g transform="translate(56 56)">
+      <path fill="#FFF" d="M64,10 C93.8177085,10 118,34.1822915 118,64 C118,93.8177085 93.8177085,118 64,118 C34.1822915,118 10,93.8177085 10,64 C10,34.1822915 34.1822915,10 64,10 Z"/>
+      <path fill="#000" fill-rule="nonzero" d="M63.9969207,32.342058 C67.0490461,33.4192787 68.6837704,36.7139781 67.7304533,39.7784541 L67.657942,39.9969207 L58.479,66 L67.9990088,65.9993648 L68,55.996 C68,52.6822915 70.6862915,49.996 74,49.996 C77.2383969,49.996 79.8775718,52.5615749 79.9958615,55.7710617 L80,55.996 L80,87.996 C80,91.3097085 77.3137085,93.996 74,93.996 C70.7616031,93.996 68.1224282,91.4304251 68.0041385,88.2209383 L68,87.996 L67.9990088,77.9993648 L50,78 C45.9341991,78 43.0680996,74.05168 44.2723194,70.212364 L44.342058,70.0030793 L56.342058,36.0030793 C57.4449269,32.8782842 60.8721256,31.2391891 63.9969207,32.342058 Z"/>
     </g>
+  </g>
 </svg>
