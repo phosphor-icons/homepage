@@ -1,3 +1,5 @@
+<img src="/meta/phosphor-mark-tight-yellow.png" width="192" align="right" />
+
 # Phosphor Icons
 
 Phosphor Icons is a flexible icon family in 6 weights. We aim to provide consistency, variety, and above all, ease-of-use for creators of all kinds. Browse the library on [our website](https://phosphoricons.com).
