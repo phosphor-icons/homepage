@@ -71,7 +71,13 @@ const Footer: React.FC<FooterProps> = () => {
             </button>
             <button
               className="main-button"
-              onClick={() => window.open("#", "_blank", "noopener noreferrer")}
+              onClick={() =>
+                window.open(
+                  "https://patreon.com/phosphoricons",
+                  "_blank",
+                  "noopener noreferrer"
+                )
+              }
             >
               <Heart size={24} weight="fill" />
               Become a patron
