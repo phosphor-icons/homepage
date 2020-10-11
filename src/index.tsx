@@ -22,79 +22,50 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
-console.log(
-  `%c
+console.log(`
 
-       \\osssssssssss|  %c|+++/:-.
-%c      \\ %c\\shhhhhhhhhh|  %c|oooooooo/.
-%c      |\\ %c\\shhhhhhhhh|  %c|oooooooooo+-
-%c      |y\\ %c\\shhhhhhhh|  %c|oooooooooooo+.
-%c      |hy\\ %c\\shhhhhhh|  %c|oooooooooooooo.
-%c      |hhy\\ %c\\shhhhhh|  %c|oooooooooooooo+
-%c      |hhhy\\ %c\\shhhhh|  %c|ooooooooooooooo.
-%c      |hhhhy\\ %c\\shhhh|  %c|ooooooooooooooo:
-%c      |hhhhhy\\ %c\\shhh|  %c|ooooooooooooooo:
-%c      |hhhhhhy\\ %c\\shh|  %c|ooooooooooooooo.
-%c      |hhhhhhhy\\ %c\\sh|  %c|oooooooooooooo:
-%c      |hhhhhhhhy\\ %c\\s|  %c|ooooooooooooo/
-%c      |hhhhhhhhhy\\ %c\\|  %c|oooooooooooo-
-%c      |hhhhhhhhhhy\\    %c|oooooooooo:
-%c      |hhhhhhhhhhhy\\   %c|oooooo+:.
-%c      |hhhhhhhhhhhhy\\  %c|:+++.'
-%c      ''''''''''''''
-%c      |+++++++++++++|
-      |+++++++++++++|
-      :+++++++++++++|
-       ./+++++++++++|
-        '+++++++++++|
-          '-:+++++++|
-              '---::|
+%c  sphorphosphor  %co%cspho
+%c  s%cphorphosphor  %co%csphorpho%cs
+%c o %cp%chorphosphor  %co%csphorphosph%co
+%ch%co%cs %ch%corphosphor  %co%csphorphosphor%cp
+%ch%cos%cp  %cr%cphosphor  %co%csphorphosphorp%ch
+%ch%cosp%ch  %cp%chosphor  %co%csphorphosphorph%co
+%ch%cosph%co  %ch%cosphor  %co%csphorphosphorph%co
+%ch%cospho%cr  %co%csphor  %co%csphorphosphorph%co
+%ch%cosphor%cp  %cs%cphor  %co%csphorphosphorph%co
+%ch%cosphorph%co  %ch%cor  %co%csphorphosphorp%ch
+%ch%cosphorpho%cs  %co%cr  %co%csphorphosphor%cp
+%ch%cosphorphos%cp  %cr  %co%csphorphosph%co
+%ch%cosphorphosp%ch    %co%csphorphos%cp
+%ch%cosphorphosph%co   %co%cspho%crph
+%c osphorphospho%cr
+%c o%csphorphospho%cr
+%c o%csphorphospho%cr
+%c  s%cphorphospho%cr
+%c    h%corphospho%cr
+%c      r%cphospho%cr
+%c          s%cpho%cr
 
 `,
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #CE93FE;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #925BFF;",
-  "color: #F7AC49;",
-  "color: #1FA647;"
+"color: #8861A8;", "color: #442B78;", "color: #5B399F;",
+"color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #F7AC49;", "color: #65461E;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
+"color: #65461E;", "color: #A17030;", "color: #65461E;", "color: #442B78;", "color: #5B399F;", "color: #442B78;",
+"color: #0E481F;", "color: #0E481E;",
+"color: #0E481F;", "color: #0EA147;", "color: #19873A;",
+"color: #0E481F;", "color: #0EA147;", "color: #19873A;",
+"color: #0E481F;", "color: #0EA147;", "color: #19873A;",
+"color: #0E481F;", "color: #0EA147;", "color: #19873A;",
+"color: #0E481F;", "color: #0EA147;", "color: #19873A;",
+"color: #0E481F;", "color: #0EA147;", "color: #19873A;",
 );
