@@ -2,6 +2,8 @@ import React from "react";
 import { OutboundLink } from "react-ga";
 import { ArrowElbowDownRight } from "phosphor-react";
 
+import { iconCount } from "../../lib/icons";
+
 import "./Links.css";
 
 interface LinksProps {}
@@ -18,7 +20,7 @@ const Links: React.FC<LinksProps> = () => {
           download
           type="application/zip"
         >
-          Download all
+          Download all ({iconCount})
         </OutboundLink>
       </div>
       <div>
@@ -29,7 +31,7 @@ const Links: React.FC<LinksProps> = () => {
           eventLabel="Figma library"
           style={{ textDecoration: "line-through" }}
         >
-          Figma library
+          Add Figma library
         </OutboundLink>
       </div>
       <div>
@@ -40,7 +42,7 @@ const Links: React.FC<LinksProps> = () => {
           eventLabel="Figma plugin"
           style={{ textDecoration: "line-through" }}
         >
-          Figma plugin
+          Add Figma plugin
         </OutboundLink>
       </div>
       <div>
