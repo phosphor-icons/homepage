@@ -1,4 +1,4 @@
-<img src="/meta/phosphor-mark-tight-yellow.png" width="192" align="right" />
+<img src="/meta/phosphor-mark-tight-yellow.png" width="128" align="right" />
 
 # Phosphor Icons
 
