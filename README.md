@@ -2,7 +2,14 @@
 
 # Phosphor Icons
 
-Phosphor Icons is a flexible icon family in 6 weights. We aim to provide consistency, variety, and above all, ease-of-use for creators of all kinds. Browse the library on [our website](https://phosphoricons.com).
+Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really.
+
+- 588 icons and counting
+- 6 weights: **Thin**, **Light**, **Regular**, **Bold**, **Fill**, and **Duotone**
+- Designed at 16 x 16px to read well small and scale up big
+- Raw stroke information retained to fine-tune the style
+
+More ways to use at [phosphoricons.com](https://phosphoricons.com).
 
 ## For developers
 
@@ -80,20 +87,6 @@ ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 > **Note:** Due to possible namespace collisions with built-in HTML elements, compononent names in the Vue library are prefixed with `Ph`, but otherwise follow the same naming conventions.
-
-## For designers
-
-### Raw Assets
-
-Download our [asset kit](https://www.phosphoricons.com/assets/phosphor-icons.zip) to start working with Phosphor Icons in your designs.
-
-- **SVGs** – Individual icon SVGs, in both minified and original formats retaining design-time detail.
-- **Icon Font** – Use the icons as you would text, in print and other applications where full-fledged graphical elements are undesirable.
-
-<!-- ### Source Files
-- **Sketch**
-- **Illustrator**
-- **Figma** -->
 
 ## Related Projects
 
