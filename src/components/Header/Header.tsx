@@ -56,14 +56,14 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
         <div className="intro">
           <h2>
-            Phosphor is a flexible icon family for interfaces, presentations — 
+            Phosphor is a flexible icon family for interfaces, diagrams, presentations — 
             <wbr />
             whatever, really.
           </h2>
           <div className="button-container">
             <button className="main-button" onClick={handleGetStarted}>
               <ArrowCircleUpRight size={24} weight="fill" />
-              See the docs
+              Get started
             </button>
             <button className="main-button" onClick={handleScrollToIcons}>
               <ArrowCircleDown size={24} weight="fill" />

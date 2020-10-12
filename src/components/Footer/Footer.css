@@ -56,21 +56,20 @@ footer .links {
 
 @media screen and (max-width: 719px) {
   #back-to-top-button {
-    position: sticky;
-    top: calc(100% - 64px);
-    float: right;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     padding: 0;
-    margin: 16px;
   }
 
   #back-to-top-button img {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 
   footer .links {

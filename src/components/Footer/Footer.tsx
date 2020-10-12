@@ -26,13 +26,6 @@ const Footer: React.FC<FooterProps> = () => {
           <img src={uArrowUpLeft} alt="" />
         </button>
         <div className="outro">
-          {/* <img id="command" src={commandKeySpec} alt="" />
-          <img
-            id="command"
-            className="inspectable xray"
-            src={commandKey}
-            alt=""
-          /> */}
           <Links />
           <p>
             We designed the icon library we always wanted to use. Easy to pick
@@ -41,7 +34,7 @@ const Footer: React.FC<FooterProps> = () => {
             a little quirky, too.
           </p>
           <p>
-            We're thankful for the open-source tools we've benefited from and
+            We're thankful for the tools we've benefited from and
             this is our small contribution towards a collaborative digital
             community.
           </p>
