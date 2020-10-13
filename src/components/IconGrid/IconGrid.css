@@ -163,6 +163,7 @@
   min-height: 80vh;
   max-width: 1120px;
   margin: auto;
+  white-space: nowrap;
 }
 
 .empty-list p {

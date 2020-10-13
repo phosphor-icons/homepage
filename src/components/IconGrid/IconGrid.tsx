@@ -37,7 +37,7 @@ const IconGrid: React.FC<IconGridProps> = () => {
   if (!filteredQueryResults.length)
     return (
       <Notice>
-        Try searching a category or keyword:
+        <span>Try searching a category or keyword:</span>
         <TagCloud name="empty-state" isDark={isDark} tags={defaultSearchTags} />
       </Notice>
     );
