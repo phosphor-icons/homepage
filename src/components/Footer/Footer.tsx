@@ -35,7 +35,7 @@ const Footer: React.FC<FooterProps> = () => {
           </p>
           <p>
             We're thankful for the tools we've benefited from and
-            this is our small contribution towards a collaborative digital
+            this is our contribution towards a collaborative digital
             community.
           </p>
           <p>
