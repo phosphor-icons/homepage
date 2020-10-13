@@ -46,6 +46,8 @@ console.log(`
 %c      r%cphospho%cr
 %c          s%cpho%cr
 
+%cThanks for your interest in Phosphor <3
+Hire me at https://tobiasfried.com
 `,
 "color: #8861A8;", "color: #442B78;", "color: #5B399F;",
 "color: #8861A8;", "color: #CE93FE;", "color: #442B78;", "color: #925BFF;", "color: #442B78;",
@@ -68,4 +70,5 @@ console.log(`
 "color: #0E481F;", "color: #0EA147;", "color: #19873A;",
 "color: #0E481F;", "color: #0EA147;", "color: #19873A;",
 "color: #0E481F;", "color: #0EA147;", "color: #19873A;",
+"color: #A17030;"
 );
