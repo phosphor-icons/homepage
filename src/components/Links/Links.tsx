@@ -27,24 +27,22 @@ const Links: React.FC<LinksProps> = () => {
         <ArrowElbowDownRight size={24} />
         <OutboundLink
           className="nav-link"
-          to="#"
+          to="https://www.figma.com/file/xMCDSp5g0g7Fw8aMyAdVVr/Phosphor-Icon-Library-0.6.0"
           eventLabel="Figma library"
-          style={{ textDecoration: "line-through" }}
         >
-          Add Figma library
+          Figma library
         </OutboundLink>
       </div>
-      <div>
+      {/* <div>
         <ArrowElbowDownRight size={24} />
         <OutboundLink
           className="nav-link"
           to="https://www.figma.com/community/plugin/892854133443228626/Phosphor-Icons"
           eventLabel="Figma plugin"
-          style={{ textDecoration: "line-through" }}
         >
           Add Figma plugin
         </OutboundLink>
-      </div>
+      </div> */}
       <div>
         <ArrowElbowDownRight size={24} />
         <a
@@ -54,7 +52,7 @@ const Links: React.FC<LinksProps> = () => {
           Request an icon
         </a>
       </div>
-      <div>
+      {/* <div>
         <ArrowElbowDownRight size={24} />
         <span>
           <a className="nav-link" href="https://paypal.me/minoraxis">
@@ -65,6 +63,18 @@ const Links: React.FC<LinksProps> = () => {
             Patreon
           </a>
         </span>
+      </div> */}
+      <div>
+        <ArrowElbowDownRight size={24} />
+        <a className="nav-link" href="https://paypal.me/minoraxis">
+          Donate on PayPal
+        </a>
+      </div>
+      <div>
+        <ArrowElbowDownRight size={24} />
+        <a className="nav-link" href="https://patreon.com/phosphoricons">
+          Support us on Patreon
+        </a>
       </div>
       <div>
         <ArrowElbowDownRight size={24} />
