@@ -23,7 +23,27 @@ const Links: React.FC<LinksProps> = () => {
           Download all ({iconCount})
         </OutboundLink>
       </div>
-      <div>
+       <div>
+        <ArrowElbowDownRight size={24} />
+        <span>
+        <OutboundLink
+          className="nav-link"
+          to="https://www.figma.com/file/xMCDSp5g0g7Fw8aMyAdVVr/Phosphor-Icon-Library-0.6.0"
+          eventLabel="Figma library"
+        >
+          Figma library
+        </OutboundLink>
+        {" / "}
+        <OutboundLink
+          className="nav-link"
+          to="https://www.figma.com/community/plugin/892854133443228626/Phosphor-Icons"
+          eventLabel="Figma plugin"
+        >
+          plugin
+        </OutboundLink>
+        </span>
+      </div>
+      {/* <div>
         <ArrowElbowDownRight size={24} />
         <OutboundLink
           className="nav-link"
@@ -33,14 +53,14 @@ const Links: React.FC<LinksProps> = () => {
           Figma library
         </OutboundLink>
       </div>
-      {/* <div>
+      <div>
         <ArrowElbowDownRight size={24} />
         <OutboundLink
           className="nav-link"
           to="https://www.figma.com/community/plugin/892854133443228626/Phosphor-Icons"
           eventLabel="Figma plugin"
         >
-          Add Figma plugin
+          Figma plugin
         </OutboundLink>
       </div> */}
       <div>
