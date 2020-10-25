@@ -693,7 +693,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   {
     name: "asterisk",
     categories: [IconCategory.COMMUNICATION],
-    tags: ["star", "wildcard", "bullet point", "6"],
+    tags: ["star", "wildcard", "bullet point", "6", "emergency"],
     Icon: Icon.Asterisk,
   },
   {
