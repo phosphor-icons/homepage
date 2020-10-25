@@ -230,7 +230,7 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
             ) : (
               <Copy size={32} color="currentColor" weight="fill" />
             )}
-            {copied === "svg" ? "Copied!" : "Copy to design software"}
+            {copied === "svg" ? "Copied!" : "Copy SVG"}
           </button>
         </div>
       </motion.div>
