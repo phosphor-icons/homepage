@@ -67,7 +67,7 @@ const Links: React.FC<LinksProps> = () => {
         <ArrowElbowDownRight size={24} />
         <a
           className="nav-link"
-          href="https://github.com/phosphor-icons/phosphor-web/issues"
+          href="https://github.com/phosphor-icons/phosphor-home/issues"
         >
           Request an icon
         </a>
@@ -100,9 +100,9 @@ const Links: React.FC<LinksProps> = () => {
         <ArrowElbowDownRight size={24} />
         <a
           className="nav-link"
-          href="https://github.com/phosphor-icons/phosphor-web"
+          href="https://github.com/phosphor-icons/phosphor-home"
         >
-          Github
+          GitHub
         </a>
       </div>
     </div>

@@ -1,6 +1,6 @@
 {
-  "name": "phosphor-web",
-  "version": "1.0.1",
+  "name": "phosphor-home",
+  "version": "1.0.2",
   "license": "MIT",
   "homepage": "https://phosphoricons.com",
   "author": {
@@ -18,8 +18,8 @@
     "UI",
     "UX"
   ],
-  "repository": "github:phosphor-icons/phosphor-web",
-  "private": false,
+  "repository": "github:phosphor-icons/phosphor-home",
+  "private": true,
   "dependencies": {
     "file-saver": "^2.0.2",
     "framer-motion": "^2.1.0",
