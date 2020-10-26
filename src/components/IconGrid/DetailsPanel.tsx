@@ -122,7 +122,7 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
     Svg2Png.save(
       ref.current,
       `${name}${weight === "regular" ? "" : `-${weight}`}.png`,
-      { scaleX: 1.334, scaleY: 1.334 }
+      { scaleX: 2.667, scaleY: 2.667 }
     );
   };
 
