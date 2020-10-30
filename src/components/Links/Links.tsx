@@ -28,7 +28,7 @@ const Links: React.FC<LinksProps> = () => {
         <span>
         <OutboundLink
           className="nav-link"
-          to="https://www.figma.com/file/xMCDSp5g0g7Fw8aMyAdVVr/Phosphor-Icon-Library-0.6.0"
+          to="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
           eventLabel="Figma library"
         >
           Figma library
