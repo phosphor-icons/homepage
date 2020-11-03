@@ -5565,4 +5565,6 @@ if (process.env.NODE_ENV === "development") {
   console.log(`${icons.length} icons`);
 }
 
-export const iconCount = (icons.length * 6).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+export const iconCount = (icons.length * 6)
+  .toString()
+  .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
