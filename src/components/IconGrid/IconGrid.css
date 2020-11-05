@@ -1,6 +1,7 @@
 .grid-container {
   padding: 32px 16px;
   min-height: 80vh;
+  content-visibility: auto;
 }
 
 .grid {
