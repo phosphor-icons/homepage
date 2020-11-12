@@ -1921,14 +1921,15 @@ export const icons: ReadonlyArray<IconEntry> = [
   {
     name: "dots-nine",
     categories: [IconCategory.DESIGN],
-    tags: ["round", "circles", "shapes", "polygons", "9"],
+    tags: ["grid", "circles", "shapes", "polygons", "9"],
     Icon: Icon.DotsNine,
   },
   {
     name: "dots-three",
     categories: [IconCategory.SYSTEM],
     tags: [
-      "round",
+      "menu",
+      "overflow",
       "circles",
       "shapes",
       "polygons",
@@ -1942,7 +1943,8 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "dots-three-vertical",
     categories: [IconCategory.SYSTEM],
     tags: [
-      "round",
+      "menu",
+      "overflow",
       "circles",
       "shapes",
       "polygons",
@@ -1956,7 +1958,8 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "dots-three-outline",
     categories: [IconCategory.SYSTEM],
     tags: [
-      "round",
+      "menu",
+      "overflow",
       "circles",
       "shapes",
       "polygons",
@@ -1970,7 +1973,8 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "dots-three-outline-vertical",
     categories: [IconCategory.SYSTEM],
     tags: [
-      "round",
+      "menu",
+      "overflow",
       "circles",
       "shapes",
       "polygons",
@@ -1984,7 +1988,8 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "dots-three-circle",
     categories: [IconCategory.SYSTEM],
     tags: [
-      "round",
+      "menu",
+      "overflow",
       "circles",
       "shapes",
       "polygons",
@@ -1998,7 +2003,8 @@ export const icons: ReadonlyArray<IconEntry> = [
     name: "dots-three-circle-vertical",
     categories: [IconCategory.SYSTEM],
     tags: [
-      "round",
+      "menu",
+      "overflow",
       "circles",
       "shapes",
       "polygons",
@@ -4055,6 +4061,7 @@ export const icons: ReadonlyArray<IconEntry> = [
     categories: [IconCategory.DEVELOPMENT, IconCategory.OBJECTS],
     tags: [
       "packages",
+      "boxes",
       "delivery",
       "mail",
       "postal service",
