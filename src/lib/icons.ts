@@ -26,7 +26,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "airplane-landing",
   //   categories: [IconCategory.MAP, IconCategory.OBJECTS],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "vehicles",
   //     "airports",
   //     "flights",
@@ -42,7 +42,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "airplane-takeoff",
   //   categories: [IconCategory.MAP, IconCategory.OBJECTS],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "vehicles",
   //     "airports",
   //     "flights",
@@ -70,43 +70,43 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "anchor",
   //   categories: [IconCategory.COMMUNICATION, IconCategory.OBJECTS],
-  //   tags: ["new", "nautical", "boats", "ships", "hope", "safety"],
+  //   tags: ["*new*", "nautical", "boats", "ships", "hope", "safety"],
   //   Icon: Icon.Anchor,
   // },
   // {
   //   name: "align-top",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "alignment", "arrangement", "layout", "flush top"],
+  //   tags: ["*new*", "alignment", "arrangement", "layout", "flush top"],
   //   Icon: Icon.AlignTop,
   // },
   // {
   //   name: "align-bottom",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "alignment", "arrangement", "layout", "flush bottom"],
+  //   tags: ["*new*", "alignment", "arrangement", "layout", "flush bottom"],
   //   Icon: Icon.AlignBottom,
   // },
   // {
   //   name: "align-left",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "alignment", "arrangement", "layout", "flush left"],
+  //   tags: ["*new*", "alignment", "arrangement", "layout", "flush left"],
   //   Icon: Icon.AlignLeft,
   // },
   // {
   //   name: "align-right",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "alignment", "arrangement", "layout", "flush right"],
+  //   tags: ["*new*", "alignment", "arrangement", "layout", "flush right"],
   //   Icon: Icon.AlignRight,
   // },
   // {
   //   name: "align-center-horizontal",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "alignment", "arrangement", "layout", "centered", "middle"],
+  //   tags: ["*new*", "alignment", "arrangement", "layout", "centered", "middle"],
   //   Icon: Icon.AlignCenterHorizontal,
   // },
   // {
   //   name: "align-center-vertical",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "alignment", "arrangement", "layout", "centered", "middle"],
+  //   tags: ["*new*", "alignment", "arrangement", "layout", "centered", "middle"],
   //   Icon: Icon.AlignCenterVertical,
   // },
   {
@@ -129,7 +129,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "apple-logo",
   //   categories: [IconCategory.BRAND],
-  //   tags: ["new", "macintosh", "imac", "iphone", "ipad", "macos", "ios"],
+  //   tags: ["*new*", "macintosh", "imac", "iphone", "ipad", "macos", "ios"],
   //   Icon: Icon.AppleLogo,
   // },
   {
@@ -1019,7 +1019,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "boat",
   //   categories: [IconCategory.MAP, IconCategory.OBJECTS],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "ferry",
   //     "ship",
   //     "vehicles",
@@ -1167,7 +1167,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "calculator",
   //   categories: [IconCategory.DEVELOPMENT, IconCategory.FINANCE, IconCategory.OFFICE, IconCategory.OBJECTS],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "addition",
   //     "sum",
   //     "subtraction",
@@ -1226,7 +1226,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "caps-lock",
   //   categories: [IconCategory.SYSTEM],
-  //   tags: ["new", "keyboard", "capitalize", "shift"],
+  //   tags: ["*new*", "keyboard", "capitalize", "shift"],
   //   Icon: Icon.CapsLock,
   // },
   {
@@ -1342,7 +1342,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "cat",
   //   categories: [IconCategory.NATURE],
-  //   tags: ["new", "pets", "animals", "kitty", "kitten"],
+  //   tags: ["*new*", "pets", "animals", "kitty", "kitten"],
   //   Icon: Icon.Cat,
   // },
   {
@@ -1611,7 +1611,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "checks",
   //   categories: [IconCategory.SYSTEM],
-  //   tags: ["new", "todo", "to-do", "list", "checkbox"],
+  //   tags: ["*new*", "todo", "to-do", "list", "checkbox"],
   //   Icon: Icon.Checks,
   // },
   {
@@ -1740,7 +1740,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "cloud-fog",
   //   categories: [IconCategory.WEATHER],
-  //   tags: ["new", "meteorology", "cloudy", "overcast", "foggy", "misty", "haze", "hazy"],
+  //   tags: ["*new*", "meteorology", "cloudy", "overcast", "foggy", "misty", "haze", "hazy"],
   //   Icon: Icon.CloudFog,
   // },
   {
@@ -1752,7 +1752,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "cloud-moon",
   //   categories: [IconCategory.WEATHER],
-  //   tags: ["new", "meteorology", "cloudy", "partly cloudy", "night", "evening"],
+  //   tags: ["*new*", "meteorology", "cloudy", "partly cloudy", "night", "evening"],
   //   Icon: Icon.CloudMoon,
   // },
   {
@@ -1770,7 +1770,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "cloud-sun",
   //   categories: [IconCategory.WEATHER],
-  //   tags: ["new", "meteorology", "cloudy", "partly cloudy", "partly sunny"],
+  //   tags: ["*new*", "meteorology", "cloudy", "partly cloudy", "partly sunny"],
   //   Icon: Icon.CloudSun,
   // },
   {
@@ -1815,7 +1815,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "coin",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "coins",
   //     "cents",
   //     "money",
@@ -1860,7 +1860,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "copyright",
   //   categories: [IconCategory.COMMERCE, IconCategory.MEDIA],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "©",
   //     "intellectual property",
   //     "copr.",
@@ -1922,7 +1922,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-dollar",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "USD",
   //     "payment",
@@ -1934,7 +1934,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-dollar-simple",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "USD",
   //     "payment",
@@ -1946,7 +1946,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-cny",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "yuan",
   //     "payment",
@@ -1958,7 +1958,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-eur",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "euros",
   //     "payment",
@@ -1970,7 +1970,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-gbp",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "pounds sterling",
   //     "payment",
@@ -1982,7 +1982,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-inr",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "rupees",
   //     "payment",
@@ -1994,7 +1994,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-jpy",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "yen",
   //     "payment",
@@ -2006,7 +2006,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-krw",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "won",
   //     "payment",
@@ -2018,7 +2018,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-rub",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "rubles",
   //     "payment",
@@ -2030,7 +2030,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "currency-circle-dollar",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "money",
   //     "USD",
   //     "payment",
@@ -2065,7 +2065,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "desktop",
   //   categories: [IconCategory.DEVELOPMENT, IconCategory.OBJECTS],
-  //   tags: ["new", "computer", "pc", "imac", "tower"],
+  //   tags: ["*new*", "computer", "pc", "imac", "tower"],
   //   Icon: Icon.Desktop,
   // },
   {
@@ -2124,7 +2124,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "dice",
   //   categories: [IconCategory.OTHER],
-  //   tags: ["new", "die", "rolling", "gamble", "gambling", "casino", "gaming"],
+  //   tags: ["*new*", "die", "rolling", "gamble", "gambling", "casino", "gaming"],
   //   Icon: Icon.Dice,
   // },
   {
@@ -2180,7 +2180,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "dog",
   //   categories: [IconCategory.NATURE],
-  //   tags: ["new", "pets", "animals", "puppy"],
+  //   tags: ["*new*", "pets", "animals", "puppy"],
   //   Icon: Icon.Dog,
   // },
   {
@@ -2407,7 +2407,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   //     IconCategory.EDITOR,
   //     IconCategory.OBJECTS,
   //   ],
-  //   tags: ["new", "colors", "color picker", "sample", "arts"],
+  //   tags: ["*new*", "colors", "color picker", "sample", "arts"],
   //   Icon: Icon.Eyedropper,
   // },
   {
@@ -2558,7 +2558,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "first-aid-kit",
   //   categories: [IconCategory.HEALTH],
-  //   tags: ["new", "bandages", "medical", "injury", "safety", "emergency"],
+  //   tags: ["*new*", "bandages", "medical", "injury", "safety", "emergency"],
   //   Icon: Icon.FirstAidKit,
   // },
   {
@@ -3022,19 +3022,19 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "hand-fist",
   //   categories: [IconCategory.PEOPLE],
-  //   tags: ["new", "pointers", "cursors", "emoji", "power", "protest", "blm"],
+  //   tags: ["*new*", "pointers", "cursors", "emoji", "power", "protest", "blm"],
   //   Icon: Icon.HandFist,
   // },
   // {
   //   name: "hand-grabbing",
   //   categories: [IconCategory.SYSTEM, IconCategory.PEOPLE],
-  //   tags: ["new", "pointers", "cursors", "emoji", "drag", "hold"],
+  //   tags: ["*new*", "pointers", "cursors", "emoji", "drag", "hold"],
   //   Icon: Icon.HandGrabbing,
   // },
   // {
   //   name: "hand-palm",
   //   categories: [IconCategory.SYSTEM, IconCategory.PEOPLE],
-  //   tags: ["new", "pointers", "cursors", "emoji", "palm", "stop", "wait", "hamsa", "5"],
+  //   tags: ["*new*", "pointers", "cursors", "emoji", "palm", "stop", "wait", "hamsa", "5"],
   //   Icon: Icon.HandPalm,
   // },
   {
@@ -3046,7 +3046,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "handshake",
   //   categories: [IconCategory.PEOPLE, IconCategory.COMMERCE],
-  //   tags: ["new", "pointers", "cursors", "emoji", "deal", "agreement"],
+  //   tags: ["*new*", "pointers", "cursors", "emoji", "deal", "agreement"],
   //   Icon: Icon.Handshake,
   // },
   {
@@ -3124,7 +3124,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "headset",
   //   categories: [IconCategory.MEDIA, IconCategory.GAMES, IconCategory.OBJECTS],
-  //   tags: ["new", "music", "audio", "listening", "gaming", "voice chat", "microphone"],
+  //   tags: ["*new*", "music", "audio", "listening", "gaming", "voice chat", "microphone"],
   //   Icon: Icon.Headset,
   // },
   {
@@ -3192,7 +3192,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "hospital",
   //   categories: [IconCategory.HEALTH, IconCategory.MAP],
-  //   tags: ["new", "medical", "injury", "safety", "emergency"],
+  //   tags: ["*new*", "medical", "injury", "safety", "emergency"],
   //   Icon: Icon.Hospital,
   // },
   {
@@ -3424,7 +3424,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "laptop",
   //   categories: [IconCategory.DEVELOPMENT, IconCategory.OBJECTS],
-  //   tags: ["new", "computer", "notebook", "pc", "macbook"],
+  //   tags: ["*new*", "computer", "notebook", "pc", "macbook"],
   //   Icon: Icon.Laptop,
   // },
   {
@@ -3764,7 +3764,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "mask",
   //   categories: [IconCategory.HEALTH],
-  //   tags: ["new", "ppe", "facemask", "covid-19", "coronavirus", "flu", "cold"],
+  //   tags: ["*new*", "ppe", "facemask", "covid-19", "coronavirus", "flu", "cold"],
   //   Icon: Icon.Mask,
   // },
   {
@@ -3883,7 +3883,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "money",
   //   categories: [IconCategory.COMMERCE, IconCategory.FINANCE],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "cash",
   //     "dollars",
   //     "paper bills",
@@ -3922,7 +3922,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "moon-stars",
   //   categories: [IconCategory.NATURE, IconCategory.WEATHER],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "night",
   //     "evening",
   //     "clear",
@@ -4482,7 +4482,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   //     IconCategory.EDITOR,
   //     IconCategory.OBJECTS,
   //   ],
-  //   tags: ["new", "colors", "color picker", "arts"],
+  //   tags: ["*new*", "colors", "color picker", "arts"],
   //   Icon: Icon.PaintBrush,
   // },
   // {
@@ -4492,7 +4492,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   //     IconCategory.EDITOR,
   //     IconCategory.OBJECTS,
   //   ],
-  //   tags: ["new", "fill", "colors", "color picker", "arts"],
+  //   tags: ["*new*", "fill", "colors", "color picker", "arts"],
   //   Icon: Icon.PaintBrushBroad,
   // },
   {
@@ -4581,7 +4581,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   //     IconCategory.OFFICE,
   //     IconCategory.OBJECTS,
   //   ],
-  //   tags: ["new", "attachments", "mail", "email", "office"],
+  //   tags: ["*new*", "attachments", "mail", "email", "office"],
   //   Icon: Icon.PaperclipTilt,
   // },
   {
@@ -4613,7 +4613,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "paw-print",
   //   categories: [IconCategory.NATURE, IconCategory.COMMERCE, IconCategory.HEALTH],
-  //   tags: ["new", "pets", "pet store", "pet shop", "animals", "cat", "dog", "veterinarian"],
+  //   tags: ["*new*", "pets", "pet store", "pet shop", "animals", "cat", "dog", "veterinarian"],
   //   Icon: Icon.PawPrint,
   // },
   {
@@ -4811,7 +4811,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "poker-chip",
   //   categories: [IconCategory.GAMES],
-  //   tags: ["new", "chips", "tokens", "cards", "gambling", "casino"],
+  //   tags: ["*new*", "chips", "tokens", "cards", "gambling", "casino"],
   //   Icon: Icon.PokerChip,
   // },
   {
@@ -4876,7 +4876,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "puzzle-piece",
   //   categories: [IconCategory.GAMES, IconCategory.DEVELOPMENT],
-  //   tags: ["new", "board game", "element", "component", "extension", "plugin"],
+  //   tags: ["*new*", "board game", "element", "component", "extension", "plugin"],
   //   Icon: Icon.PuzzlePiece,
   // },
   {
@@ -4909,13 +4909,13 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "rainbow",
   //   categories: [IconCategory.WEATHER],
-  //   tags: ["new", "meteorology", "rainstorm", "arc", "pride", "LGBTQ+", "leprechaun"],
+  //   tags: ["*new*", "meteorology", "rainstorm", "arc", "pride", "LGBTQ+", "leprechaun"],
   //   Icon: Icon.Rainbow,
   // },
   // {
   //   name: "rainbow-cloud",
   //   categories: [IconCategory.WEATHER],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "meteorology",
   //     "rainstorm",
   //     "cloudy",
@@ -5232,7 +5232,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "skip-back-circle",
   //   categories: [IconCategory.MEDIA],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "music",
   //     "audio",
   //     "seek",
@@ -5254,13 +5254,13 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "skip-forward-circle",
   //   categories: [IconCategory.MEDIA],
-  //   tags: ["new", "music", "audio", "seek", "scrub", "scan", "ahead", "next"],
+  //   tags: ["*new*", "music", "audio", "seek", "scrub", "scan", "ahead", "next"],
   //   Icon: Icon.SkipForwardCircle,
   // },
   // {
   //   name: "slack-logo",
   //   categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
-  //   tags: ["new", "logos", "messaging"],
+  //   tags: ["*new*", "logos", "messaging"],
   //   Icon: Icon.SlackLogo,
   // },
   {
@@ -5346,7 +5346,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "snowflake",
   //   categories: [IconCategory.WEATHER],
-  //   tags: ["new", "meteorology", "snowy", "snowing", "snowstorm"],
+  //   tags: ["*new*", "meteorology", "snowy", "snowing", "snowstorm"],
   //   Icon: Icon.Snowflake,
   // },
   {
@@ -5545,7 +5545,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "sun-horizon",
   //   categories: [IconCategory.NATURE, IconCategory.WEATHER],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "day",
   //     "daytime",
   //     "daylight",
@@ -5564,13 +5564,13 @@ export const icons: ReadonlyArray<IconEntry> = [
   //     IconCategory.EDITOR,
   //     IconCategory.OBJECTS,
   //   ],
-  //   tags: ["new", "colors", "color picker", "samples", "pantone"],
+  //   tags: ["*new*", "colors", "color picker", "samples", "pantone"],
   //   Icon: Icon.Swatches,
   // },
   // {
   //   name: "sword",
   //   categories: [IconCategory.GAMES, IconCategory.OBJECTS],
-  //   tags: ["new", "weapon", "knife", "dagger", "gladius", "video games", "rpg", "gaming"],
+  //   tags: ["*new*", "weapon", "knife", "dagger", "gladius", "video games", "rpg", "gaming"],
   //   Icon: Icon.Sword,
   // },
   {
@@ -5648,43 +5648,43 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "text-bold",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "typography", "typeface", "print", "font", "boldface", "emphasis"],
+  //   tags: ["*new*", "typography", "typeface", "print", "font", "boldface", "emphasis"],
   //   Icon: Icon.TextBold,
   // },
   // {
   //   name: "text-italic",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "typography", "typeface", "print", "font", "slant", "oblique", "stress", "emphasis", "calligraphy"],
+  //   tags: ["*new*", "typography", "typeface", "print", "font", "slant", "oblique", "stress", "emphasis", "calligraphy"],
   //   Icon: Icon.TextItalic,
   // },
   // {
   //   name: "text-underline",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "typography", "typeface", "print", "font", "underscore", "emphasis"],
+  //   tags: ["*new*", "typography", "typeface", "print", "font", "underscore", "emphasis"],
   //   Icon: Icon.TextUnderline,
   // },
   // {
   //   name: "text-strikethrough",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["new", "typography", "typeface", "print", "font", "struck", "remove", "delete", "change"],
+  //   tags: ["*new*", "typography", "typeface", "print", "font", "struck", "remove", "delete", "change"],
   //   Icon: Icon.TextStrikethrough,
   // },
   // {
   //   name: "thermometer",
   //   categories: [IconCategory.WEATHER, IconCategory.HEALTH, IconCategory.OBJECTS],
-  //   tags: ["new", "meteorology", "temperature", "degrees", "°", "celcius", "centigrade", "kelvin", "fahrenheit", "hot", "warm", "cold"],
+  //   tags: ["*new*", "meteorology", "temperature", "degrees", "°", "celcius", "centigrade", "kelvin", "fahrenheit", "hot", "warm", "cold"],
   //   Icon: Icon.Thermometer,
   // },
   // {
   //   name: "thermometer-cold",
   //   categories: [IconCategory.WEATHER, IconCategory.HEALTH, IconCategory.OBJECTS],
-  //   tags: ["new", "meteorology", "temperature", "degrees", "°", "celcius", "centigrade", "kelvin", "fahrenheit"],
+  //   tags: ["*new*", "meteorology", "temperature", "degrees", "°", "celcius", "centigrade", "kelvin", "fahrenheit"],
   //   Icon: Icon.ThermometerCold,
   // },
   // {
   //   name: "thermometer-hot",
   //   categories: [IconCategory.WEATHER, IconCategory.HEALTH, IconCategory.OBJECTS],
-  //   tags: ["new", "meteorology", "temperature", "degrees", "°", "celcius", "centigrade", "kelvin", "fahrenheit", "warm"],
+  //   tags: ["*new*", "meteorology", "temperature", "degrees", "°", "celcius", "centigrade", "kelvin", "fahrenheit", "warm"],
   //   Icon: Icon.ThermometerHot,
   // },
   {
@@ -5804,7 +5804,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "tree-structure",
   //   categories: [IconCategory.DEVELOPMENT],
-  //   tags: ["new", "data structures", "family tree", "genealogy", "hierarchy", "taxonomy"],
+  //   tags: ["*new*", "data structures", "family tree", "genealogy", "hierarchy", "taxonomy"],
   //   Icon: Icon.TreeStructure,
   // },
   {
@@ -5844,7 +5844,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "trophy",
   //   categories: [IconCategory.OBJECTS],
-  //   tags: ["new", "ribbons", "winning", "victory", "awards"],
+  //   tags: ["*new*", "ribbons", "winning", "victory", "awards"],
   //   Icon: Icon.Trophy,
   // },
   {
@@ -6143,13 +6143,13 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "wind",
   //   categories: [IconCategory.WEATHER],
-  //   tags: ["new", "meteorology", "windy", "stormy", "blustery", "gusty"],
+  //   tags: ["*new*", "meteorology", "windy", "stormy", "blustery", "gusty"],
   //   Icon: Icon.Wind,
   // },
   // {
   //   name: "wine-glass",
   //   categories: [IconCategory.COMMERCE, IconCategory.MAP, IconCategory.OBJECTS],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "drinks",
   //     "beverages",
   //     "vineyard",
@@ -6165,7 +6165,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "wrench",
   //   categories: [IconCategory.SYSTEM, IconCategory.OBJECTS],
-  //   tags: ["new",
+  //   tags: ["*new*",
   //     "settings",
   //     "setup",
   //     "preferences",
