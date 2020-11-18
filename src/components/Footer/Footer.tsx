@@ -82,7 +82,7 @@ const Footer: React.FC<FooterProps> = () => {
                 Helena Zhang
               </a>{" "}
               and built by{" "}
-              <a className="main-link" href="https://github.com/rektdeckard">
+              <a className="main-link" href="https://tobiasfried.com">
                 Toby Fried
               </a>{" "}
               <span
