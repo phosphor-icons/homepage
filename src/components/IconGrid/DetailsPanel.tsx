@@ -82,7 +82,10 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
     react: `<${Icon.displayName} size={${size}} ${
       color !== "#000000" ? `color="${color}" ` : ""
     }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
-    vue: `<Ph${Icon.displayName} :size="${size}" ${
+    vue: `<ph${Icon.displayName!!.replace(
+      /([a-z0-9]|(?=[A-Z]))([A-Z])/g,
+      "$1-$2"
+    ).toLowerCase()} :size="${size}" ${
       color !== "#000000" ? `color="${color}" ` : ""
     }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
   };

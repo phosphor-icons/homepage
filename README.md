@@ -4,7 +4,7 @@
 
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really.
 
-- 588 icons and counting
+- 683 icons and counting
 - 6 weights: **Thin**, **Light**, **Regular**, **Bold**, **Fill**, and **Duotone**
 - Designed at 16 x 16px to read well small and scale up big
 - Raw stroke information retained to fine-tune the style
@@ -67,9 +67,9 @@ ReactDOM.render(<App />, document.getElementById("root"));
 ```html
 <template>
   <div>
-    <PhHorse />
-    <PhHeart :size="32" color="hotpink" weight="fill" />
-    <PhCube />
+    <ph-horse />
+    <ph-heart :size="32" color="hotpink" weight="fill" />
+    <ph-cube />
   </div>
 </template>
 
@@ -86,7 +86,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 </script>
 ```
 
-> **Note:** Due to possible namespace collisions with built-in HTML elements, compononent names in the Vue library are prefixed with `Ph`, but otherwise follow the same naming conventions.
+> **Note:** Due to possible namespace collisions with built-in HTML elements, compononent names in the Vue library are prefixed with `Ph`, but otherwise follow the same naming conventions. Both Pascal and kebab-case conventions can be used in templates.
 
 ## Related Projects
 
