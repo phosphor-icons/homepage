@@ -21,7 +21,7 @@ export enum IconCategory {
   FINANCE = "finances",
   GAMES = "games",
   HEALTH = "health & wellness",
-  MAP = "maps & navigation",
+  MAP = "maps & travel",
   MEDIA = "media",
   NATURE = "nature",
   OBJECTS = "objects",
