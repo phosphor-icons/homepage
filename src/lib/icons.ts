@@ -2568,7 +2568,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       "droplet",
       "teardrop",
       "raindrop",
-      "raining",
+      "humidity",
       "water",
       "contrast",
       "brightness",
