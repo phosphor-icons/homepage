@@ -1,6 +1,6 @@
 {
   "name": "phosphor-home",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "license": "MIT",
   "homepage": "https://phosphoricons.com",
   "author": {
@@ -24,7 +24,7 @@
     "file-saver": "^2.0.2",
     "framer-motion": "^2.1.0",
     "fuse.js": "^6.4.1",
-    "phosphor-react": "^1.1.1",
+    "phosphor-react": "^1.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-dropdown-select": "^4.4.2",
