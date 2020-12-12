@@ -1,0 +1,207 @@
+{
+	"Collections": [
+		{
+			"name": "abstract",
+			"preview_url": "https://i.imgur.com/xBCTxrP.png",
+			"preview_thumbnail_url": "https://i.imgur.com/xBCTxrPl.jpg"
+		},
+		{
+			"name": "architecture",
+			"preview_url": "https://i.imgur.com/pdV0KQ1.png",
+			"preview_thumbnail_url": "https://i.imgur.com/pdV0KQ1l.jpg"
+		},
+		{
+			"name": "landscape",
+			"preview_url": "https://i.imgur.com/EEBaeFE.png",
+			"preview_thumbnail_url": "https://i.imgur.com/EEBaeFEl.jpg"
+		},
+		{
+			"name": "minimal",
+			"preview_url": "https://i.imgur.com/peX5qVO.png",
+			"preview_thumbnail_url": "https://i.imgur.com/peX5qVOl.jpg"
+		}
+	],
+	"Wallpapers": [
+		{
+			"name": "Echoes Of",
+			"author": "Zoltan Tasi",
+			"url": "https://i.imgur.com/OVKso33.png",
+			"thumbnail": "https://i.imgur.com/OVKso33l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Gradient #4B",
+			"author": "Luke Chesser",
+			"url": "https://i.imgur.com/iFrJbfE.png",
+			"thumbnail": "https://i.imgur.com/iFrJbfEl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Orthogonal",
+			"author": "Etienne Beauregard",
+			"url": "https://i.imgur.com/cFyjq7V.png",
+			"thumbnail": "https://i.imgur.com/cFyjq7Vl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Filters Through",
+			"author": "Martin Adams",
+			"url": "https://i.imgur.com/r7MFJxM.png",
+			"thumbnail": "https://i.imgur.com/r7MFJxMl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Gehry",
+			"author": "Sascha Yeryomin",
+			"url": "https://i.imgur.com/jf5NX7F.png",
+			"thumbnail": "https://i.imgur.com/jf5NX7Fl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "The Benevolent Corp.",
+			"author": "Alex Iby",
+			"url": "https://i.imgur.com/SrgJtef.png",
+			"thumbnail": "https://i.imgur.com/SrgJtefl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Bokehd",
+			"author": "Kristaps Solims",
+			"url": "https://i.imgur.com/HzU9KSK.png",
+			"thumbnail": "https://i.imgur.com/HzU9KSKl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Confluence",
+			"author": "Ash Edmonds",
+			"url": "https://i.imgur.com/HWwYY1t.png",
+			"thumbnail": "https://i.imgur.com/HWwYY1tl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "What Lies Beyond",
+			"author": "Cheng Feng",
+			"url": "https://i.imgur.com/BjdQkxh.png",
+			"thumbnail": "https://i.imgur.com/BjdQkxhl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Stairstep",
+			"author": "Dawid Sokolowski",
+			"url": "https://i.imgur.com/VXzW2tV.png",
+			"thumbnail": "https://i.imgur.com/VXzW2tVl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Bluesmoke",
+			"author": "Albert Bleeker",
+			"url": "https://i.imgur.com/mrltonO.png",
+			"thumbnail": "https://i.imgur.com/mrltonOl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Tensegrity",
+			"author": "Luca Bravo",
+			"url": "https://i.imgur.com/N69Gk81.png",
+			"thumbnail": "https://i.imgur.com/N69Gk81l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Vertical Integration",
+			"author": "Pawl Czerwinski",
+			"url": "https://i.imgur.com/rWVitPA.png",
+			"thumbnail": "https://i.imgur.com/rWVitPAl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "T",
+			"author": "Joshua Rivera",
+			"url": "https://i.imgur.com/84O8dFa.png",
+			"thumbnail": "https://i.imgur.com/84O8dFal.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Ripples",
+			"author": "Julian Bock",
+			"url": "https://i.imgur.com/T7PwRnh.png",
+			"thumbnail": "https://i.imgur.com/T7PwRnhl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Light Speed",
+			"author": "Adrien Olichon",
+			"url": "https://i.imgur.com/cprtb1M.png",
+			"thumbnail": "https://i.imgur.com/cprtb1Ml.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Dunes at Dusk",
+			"author": "Jeremy Bishop",
+			"url": "https://i.imgur.com/EEBaeFE.png",
+			"thumbnail": "https://i.imgur.com/EEBaeFEl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Black Sand",
+			"author": "Adrien Olichon",
+			"url": "https://i.imgur.com/Yt8zaUn.png",
+			"thumbnail": "https://i.imgur.com/Yt8zaUnl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+
+		{
+			"name": "Interleaved",
+			"author": "Ron Whitaker",
+			"url": "https://i.imgur.com/QQ7WQvD.png",
+			"thumbnail": "https://i.imgur.com/QQ7WQvDl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,architecture"
+		},
+		{
+			"name": "Elliptic",
+			"author": "Tobias van Schneider",
+			"url": "https://i.imgur.com/xBCTxrP.png",
+			"thumbnail": "https://i.imgur.com/xBCTxrPl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,architecture"
+		},
+	]
+}

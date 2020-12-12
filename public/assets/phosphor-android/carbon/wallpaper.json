@@ -1,0 +1,409 @@
+{
+	"Collections": [
+		{
+			"name": "Abstract",
+			"preview_url": "https://i.imgur.com/8DTRYwb.png",
+			"preview_thumbnail_url": "https://i.imgur.com/8DTRYwbl.jpg"
+		},
+		{
+			"name": "Architecture",
+			"preview_url":"https://i.imgur.com/t6BTASJ.png",
+			"preview_thumbnail_url": "https://i.imgur.com/t6BTASJl.jpg"
+		},
+		{
+			"name": "Landscape",
+			"preview_url": "https://i.imgur.com/G8cgftc.png",
+			"preview_thumbnail_url": "https://i.imgur.com/G8cgftcl.jpg"
+		},
+		{
+			"name": "Minimal",
+			"preview_url": "https://i.imgur.com/Srt9bP3.png",
+			"preview_thumbnail_url": "https://i.imgur.com/Srt9bP3l.jpg"
+		},
+		{
+			"name": "Solids",
+			"preview_url": "https://i.imgur.com/fzL4yoj.png",
+			"preview_thumbnail_url": "https://i.imgur.com/fzL4yojl.jpg"
+		}
+	],
+	"Wallpapers": [
+		{
+			"name": "Arctic",
+			"author": "Phosphor",
+			"url": "https://i.imgur.com/4qopfYy.png",
+			"thumbnail": "https://i.imgur.com/4qopfYyl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "solids"
+		},
+		{
+			"name": "Saffron",
+			"author": "Phosphor",
+			"url": "https://i.imgur.com/fzL4yoj.png",
+			"thumbnail": "https://i.imgur.com/fzL4yojl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "solids"
+		},
+		{
+			"name": "Heliotrope",
+			"author": "Phosphor",
+			"url": "https://i.imgur.com/QsrKIjp.png",
+			"thumbnail": "https://i.imgur.com/QsrKIjpl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "solids"
+		},
+		{
+			"name": "Jade",
+			"author": "Phosphor",
+			"url": "https://i.imgur.com/Z29e7f7.png",
+			"thumbnail": "https://i.imgur.com/Z29e7f7l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "solids"
+		},
+		{
+			"name": "Soft Dunes",
+			"author": "Kunj Parekh",
+			"url": "https://i.imgur.com/vIAE5jd.png",
+			"thumbnail": "https://i.imgur.com/vIAE5jdl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscapes"
+		},
+		{
+			"name": "Lake at Dawn",
+			"author": "Max Fuchs",
+			"url": "https://i.imgur.com/4Nmefrv.png",
+			"thumbnail": "https://i.imgur.com/4Nmefrvl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,minimal"
+		},
+		{
+			"name": "Doors of Perception",
+			"author": "Philipp Berndt",
+			"url": "https://i.imgur.com/Srt9bP3.png",
+			"thumbnail": "https://i.imgur.com/Srt9bP3l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "TwoTone",
+			"author": "Samuel Zeller",
+			"url": "https://i.imgur.com/8DTRYwb.png",
+			"thumbnail": "https://i.imgur.com/8DTRYwbl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Empty Court",
+			"author": "35mm",
+			"url": "https://i.imgur.com/rPSLdCD.png",
+			"thumbnail": "https://i.imgur.com/rPSLdCDl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Edge of the Pool",
+			"author": "Autumn Studio",
+			"url": "https://i.imgur.com/qNXWTej.png",
+			"thumbnail": "https://i.imgur.com/qNXWTejl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,minimal"
+		},
+		{
+			"name": "One in the Hand",
+			"author": "Rainon Franco",
+			"url": "https://i.imgur.com/QhW4UDc.png",
+			"thumbnail": "https://i.imgur.com/QhW4UDcl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Solitude",
+			"author": "Braxton Stuntz",
+			"url": "https://i.imgur.com/QlQ9tMO.png",
+			"thumbnail": "https://i.imgur.com/QlQ9tMOl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Double Fault",
+			"author": "Dane Deaner",
+			"url": "https://i.imgur.com/ERMWJSe.png",
+			"thumbnail": "https://i.imgur.com/ERMWJSel.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Lomo 800",
+			"author": "Markus Spiske",
+			"url": "https://i.imgur.com/bHPWGPQ.png",
+			"thumbnail": "https://i.imgur.com/bHPWGPQl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Clothespins",
+			"author": "Plush Design Studio",
+			"url": "https://i.imgur.com/xPyXBL9.png",
+			"thumbnail": "https://i.imgur.com/xPyXBL9l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Memory Tapes",
+			"author": "Imani Clovis",
+			"url": "https://i.imgur.com/cmWuvUT.png",
+			"thumbnail": "https://i.imgur.com/cmWuvUTl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,minimal"
+		},
+		{
+			"name": "Contours in White",
+			"author": "Jean Philippe del Berghe",
+			"url": "https://i.imgur.com/wjxl9xT.png",
+			"thumbnail": "https://i.imgur.com/wjxl9xTl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,minimal"
+		},
+		{
+			"name": "Awaiting Inspiration",
+			"author": "Joanna Kosinska",
+			"url": "https://i.imgur.com/SBtlZmn.png",
+			"thumbnail": "https://i.imgur.com/SBtlZmnl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Succulent",
+			"author": "Khai Sze Ong",
+			"url": "https://i.imgur.com/yDD2wz8.png",
+			"thumbnail": "https://i.imgur.com/yDD2wz8l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Tracks in the Sand",
+			"author": "Ruben Bagues",
+			"url": "https://i.imgur.com/G8cgftc.png",
+			"thumbnail": "https://i.imgur.com/G8cgftcl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape,minimal"
+		},
+		{
+			"name": "Starched Linen",
+			"author": "Annie Spratt",
+			"url": "https://i.imgur.com/W9nAQVR.png",
+			"thumbnail": "https://i.imgur.com/W9nAQVRl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Delamination",
+			"author": "Wesley Tingey",
+			"url": "https://i.imgur.com/VNJ3xWG.png",
+			"thumbnail": "https://i.imgur.com/VNJ3xWGl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Look Up",
+			"author": "Tony Dinh",
+			"url": "https://i.imgur.com/t6BTASJ.png",
+			"thumbnail": "https://i.imgur.com/t6BTASJl.jpgg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture,minimal"
+		},
+		{
+			"name": "Keep to the Right",
+			"author": "hello i m nik",
+			"url": "https://i.imgur.com/SHp6pkv.png",
+			"thumbnail": "https://i.imgur.com/SHp6pkvl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture,minimal"
+		},
+		{
+			"name": "Pink Paper",
+			"author": "Alex Koch",
+			"url": "https://i.imgur.com/OHPR80R.png",
+			"thumbnail": "https://i.imgur.com/OHPR80Rl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Lavender Dunes",
+			"author": "Alex Koch",
+			"url": "https://i.imgur.com/Sb50W4f.png",
+			"thumbnail": "https://i.imgur.com/Sb50W4fl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Cotton Candy Clouds",
+			"author": "Autumn Studio",
+			"url": "https://i.imgur.com/43Vf2hT.png",
+			"thumbnail": "https://i.imgur.com/43Vf2hTl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Pineapple",
+			"author": "Pineaaple Supply Co.",
+			"url": "https://i.imgur.com/YK9TyNk.png",
+			"thumbnail": "https://i.imgur.com/YK9TyNkl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Cuttings",
+			"author": "Alex Loup",
+			"url": "https://i.imgur.com/wp2S7TK.png",
+			"thumbnail": "https://i.imgur.com/wp2S7TKl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Textured Ombre Wall",
+			"author": "Bharath G.S.",
+			"url": "https://i.imgur.com/kxBGzva.png",
+			"thumbnail": "https://i.imgur.com/kxBGzval.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,minimal"
+		},
+		{
+			"name": "The Loading Dock",
+			"author": "Ph. B.",
+			"url": "https://i.imgur.com/NmL5Ldm.png",
+			"thumbnail": "https://i.imgur.com/NmL5Ldml.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Leaning Dwarf Pine",
+			"author": "Caleb George",
+			"url": "https://i.imgur.com/crgckrr.png",
+			"thumbnail": "https://i.imgur.com/crgckrrl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Dunes in Hard Light",
+			"author": "Heather Shevlin",
+			"url": "https://i.imgur.com/LG0G1IO.png",
+			"thumbnail": "https://i.imgur.com/LG0G1IOl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "3 Balloons",
+			"author": "Amy Shamblen",
+			"url": "https://i.imgur.com/5HHCh12.png",
+			"thumbnail": "https://i.imgur.com/5HHCh12l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Bicolor Bricks",
+			"author": "Pawel Czerwinski",
+			"url": "https://i.imgur.com/i4VrEDH.png",
+			"thumbnail": "https://i.imgur.com/i4VrEDHl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Acrid Sky",
+			"author": "W",
+			"url": "https://i.imgur.com/RUSz9mM.png",
+			"thumbnail": "https://i.imgur.com/RUSz9mMl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Salmon Colored Smoke",
+			"author": "Pawel Czerwinski",
+			"url": "https://i.imgur.com/8wehlrT.png",
+			"thumbnail": "https://i.imgur.com/8wehlrTl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,minimal"
+		},
+		{
+			"name": "Polygonal Grid",
+			"author": "Scott Webb",
+			"url": "https://i.imgur.com/voUtZhY.png",
+			"thumbnail": "https://i.imgur.com/voUtZhYl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract,architecture,minimal"
+		},
+		{
+			"name": "Clay Courts",
+			"author": "Ph. B.",
+			"url": "https://i.imgur.com/yd7OmyV.png",
+			"thumbnail": "https://i.imgur.com/yd7OmyVl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Lavender on Yellow",
+			"author": "Mona Eendra",
+			"url": "https://i.imgur.com/p8T1V7N.png",
+			"thumbnail": "https://i.imgur.com/p8T1V7Nl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal,landscape"
+		},
+		{
+			"name": "Whispering Pines",
+			"author": "Mads Schmidt Rasmussen",
+			"url": "https://i.imgur.com/FLkrDVZ.png",
+			"thumbnail": "https://i.imgur.com/FLkrDVZl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "All the Light Touches",
+			"author": "Eberhard Grossgasteiger",
+			"url": "https://i.imgur.com/cwUvsmS.png",
+			"thumbnail": "https://i.imgur.com/cwUvsmSl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		}
+	]
+}

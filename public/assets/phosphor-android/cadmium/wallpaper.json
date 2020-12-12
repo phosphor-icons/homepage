@@ -1,0 +1,242 @@
+{
+	"Collections": [
+		{
+			"name": "abstract",
+			"preview_url": "https://i.imgur.com/xBCTxrP.png",
+			"preview_thumbnail_url": "https://i.imgur.com/xBCTxrPl.jpg"
+		},
+		{
+			"name": "architecture",
+			"preview_url": "https://i.imgur.com/pdV0KQ1.png",
+			"preview_thumbnail_url": "https://i.imgur.com/pdV0KQ1l.jpg"
+		},
+		{
+			"name": "landscape",
+			"preview_url": "https://i.imgur.com/EEBaeFE.png",
+			"preview_thumbnail_url": "https://i.imgur.com/EEBaeFEl.jpg"
+		},
+		{
+			"name": "minimal",
+			"preview_url": "https://i.imgur.com/peX5qVO.png",
+			"preview_thumbnail_url": "https://i.imgur.com/peX5qVOl.jpg"
+		}
+	],
+	"Wallpapers": [
+		{
+			"name": "Antelope Canyon",
+			"author": "Daniel Olah Nvez",
+			"url": "https://i.imgur.com/KYglyUn.png",
+			"thumbnail": "https://i.imgur.com/KYglyUl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Fractured Light",
+			"author": "Chris Limbrick",
+			"url": "https://i.imgur.com/MILbsga.png",
+			"thumbnail": "https://i.imgur.com/MILbsgal.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "The Forest Path",
+			"author": "Kristaps Ungurs",
+			"url": "https://i.imgur.com/95QLblG.png",
+			"thumbnail": "https://i.imgur.com/95QLblGl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Taken",
+			"author": "Touann Gatouillat",
+			"url": "https://i.imgur.com/otCPhH7.png",
+			"thumbnail": "https://i.imgur.com/otCPhH7l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Construct",
+			"author": "Florian Olivo",
+			"url": "https://i.imgur.com/7CxJsXn.png",
+			"thumbnail": "https://i.imgur.com/7CxJsXnl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Redline",
+			"author": "Sergio Ibannez",
+			"url": "https://i.imgur.com/uja4O1m.png",
+			"thumbnail": "https://i.imgur.com/uja4O1ml.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "End Of Line",
+			"author": "Claudio Schwarz-Purzlbaum",
+			"url": "https://i.imgur.com/2ZiqhE3.png",
+			"thumbnail": "https://i.imgur.com/2ZiqhE3l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Downtown",
+			"author": "Van Mendoza",
+			"url": "https://i.imgur.com/sKizrcp.png",
+			"thumbnail": "https://i.imgur.com/sKizrcpl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Omnicorp",
+			"author": "Irina Iriser",
+			"url": "https://i.imgur.com/Zx11fXx.png",
+			"thumbnail": "https://i.imgur.com/Zx11fXxl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Pinball Wizard",
+			"author": "Joey Banks",
+			"url": "https://i.imgur.com/XpVCRrj.png",
+			"thumbnail": "https://i.imgur.com/XpVCRrjl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Chinatown",
+			"author": "Donny Jiang",
+			"url": "https://i.imgur.com/mz8mTVC.png",
+			"thumbnail": "https://i.imgur.com/mz8mTVCl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "FDR Drive",
+			"author": "Donny Jiang",
+			"url": "https://i.imgur.com/elbdmZk.png",
+			"thumbnail": "https://i.imgur.com/elbdmZkl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Through the Fog",
+			"author": "Zhimai Zhang",
+			"url": "https://i.imgur.com/KQIss5a.png",
+			"thumbnail": "https://i.imgur.com/KQIss5al.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Kids Will Play",
+			"author": "Perry C",
+			"url": "https://i.imgur.com/IieNbdS.png",
+			"thumbnail": "https://i.imgur.com/IieNbdSl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "architecture"
+		},
+		{
+			"name": "Double Blind",
+			"author": "Pau Casals",
+			"url": "https://i.imgur.com/kKyn0dW.png",
+			"thumbnail": "https://i.imgur.com/kKyn0dWl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "All-Seeing Eye",
+			"author": "Alex Rainer",
+			"url": "https://i.imgur.com/HtyCalZ.png",
+			"thumbnail": "https://i.imgur.com/HtyCalZl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Methylene",
+			"author": "Pim Myten",
+			"url": "https://i.imgur.com/vOAYeEW.png",
+			"thumbnail": "https://i.imgur.com/vOAYeEWl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Nexus",
+			"author": "Alexander Popov",
+			"url": "https://i.imgur.com/3q2e7N2.png",
+			"thumbnail": "https://i.imgur.com/3q2e7N2l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "minimal"
+		},
+		{
+			"name": "Synthetic",
+			"author": "Leyy M",
+			"url": "https://i.imgur.com/ASKhMFU.png",
+			"thumbnail": "https://i.imgur.com/ASKhMFUl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Nondeterminism",
+			"author": "Alex Perez",
+			"url": "https://i.imgur.com/6dtZBAW.png",
+			"thumbnail": "https://i.imgur.com/6dtZBAWl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "In the Beginning",
+			"author": "Pawel Czerwinski",
+			"url": "https://i.imgur.com/gBSjMh2.png",
+			"thumbnail": "https://i.imgur.com/gBSjMh2l.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "The Swarm",
+			"author": "Vino Li",
+			"url": "https://i.imgur.com/yljYDqp.png",
+			"thumbnail": "https://i.imgur.com/yljYDqpl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "abstract"
+		},
+		{
+			"name": "Moonrise",
+			"author": "Adrian Swancar",
+			"url": "https://i.imgur.com/NiSCb6W.png",
+			"thumbnail": "https://i.imgur.com/NiSCb6Wl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		},
+		{
+			"name": "Cerro",
+			"author": "Tamas Tuzes Katai",
+			"url": "https://i.imgur.com/5u4aM1y.png",
+			"thumbnail": "https://i.imgur.com/5u4aM1yl.jpg",
+			"downloadable": true,
+			"copyright": "CC0",
+			"collections": "landscape"
+		}
+	]
+}
