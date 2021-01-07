@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 
 import "./App.css";
+import Parameters from "../Parameters/Parameters";
 import Header from "../Header/Header";
 import Toolbar from "../Toolbar/Toolbar";
 import IconGrid from "../IconGrid/IconGrid";
@@ -15,6 +16,7 @@ const waitingFallback = <Notice type="none" message="" />;
 const App: React.FC<any> = () => {
   return (
     <React.StrictMode>
+      <Parameters />
       <Header />
       <main>
         <Toolbar />
