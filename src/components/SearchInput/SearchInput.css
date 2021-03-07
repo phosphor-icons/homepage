@@ -55,8 +55,10 @@
 .keys {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
+  user-select: none;
   min-width: 42px;
-  font-size: 0.8em;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 558px) {
