@@ -8,21 +8,18 @@ import ReactGA from "react-ga";
 import { searchQueryAtom } from "../../state/atoms";
 import "./SearchInput.css";
 
+const apple = /iPhone|iPod|iPad|Macintosh|MacIntel|MacPPC/i;
+const isApple = apple.test(window.navigator.platform);
+
+const mobile = /Android|iPhone|iPod|iPad|Opera Mini|IEMobile/i;
+const isMobile = mobile.test(window.navigator.userAgent);
+
 type SearchInputProps = {};
 
 const SearchInput: React.FC<SearchInputProps> = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
   const inputRef = useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
-  const isMobile = useRef<boolean>(false) as MutableRefObject<boolean>;
-  const isApple = useRef<boolean>(false) as MutableRefObject<boolean>;
-
-  useEffect(() => {
-    const apple = /iPhone|iPod|iPad|Macintosh|MacIntel|MacPPC/i;
-    const mobile = /Android|iPhone|iPod|iPad|Opera Mini|IEMobile/i;
-    isApple.current = apple.test(window.navigator.platform);
-    isMobile.current = mobile.test(window.navigator.userAgent);
-  }, [isApple, isMobile]);
 
   useHotkeys("ctrl+k,cmd+k", (e) => {
     e.preventDefault();
@@ -55,7 +52,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
           .getElementById("beacon")
           ?.scrollIntoView({ block: "start", behavior: "smooth" });
     },
-    250,
+    500,
     [value]
   );
 
@@ -84,9 +81,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
           key === "Enter" && currentTarget.blur()
         }
       />
-      {!value && !isMobile.current && (
-        <Keys>{isApple.current ? <Command /> : "Ctrl"} + K</Keys>
-      )}
+      {!value && !isMobile && <Keys>{isApple ? <Command /> : "Ctrl"} + K</Keys>}
       {value ? (
         isReady() ? (
           <X className="clear-icon" size={18} onClick={handleCancelSearch} />
