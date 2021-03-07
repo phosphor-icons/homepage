@@ -15,7 +15,7 @@ export enum IconCategory {
   COMMERCE = "commerce",
   COMMUNICATION = "communications",
   DESIGN = "design",
-  DEVELOPMENT = "development",
+  DEVELOPMENT = "technology & development",
   OFFICE = "office",
   EDITOR = "editor",
   FINANCE = "finances",
