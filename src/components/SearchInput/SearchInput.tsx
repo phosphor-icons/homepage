@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, MutableRefObject } from "react";
 import { useRecoilState } from "recoil";
 import { useDebounce } from "react-use";
-import { MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
+import { useHotkeys } from "react-hotkeys-hook";
+import { Command, MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
 import ReactGA from "react-ga";
 
 import { searchQueryAtom } from "../../state/atoms";
@@ -12,6 +13,24 @@ type SearchInputProps = {};
 const SearchInput: React.FC<SearchInputProps> = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
+  const inputRef = useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
+  const isMobile = useRef<boolean>(false) as MutableRefObject<boolean>;
+  const isApple = useRef<boolean>(false) as MutableRefObject<boolean>;
+
+  useEffect(() => {
+    const apple = /iPhone|iPod|iPad|Macintosh|MacIntel|MacPPC/i;
+    const mobile = /Android|iPhone|iPod|iPad|Opera Mini|IEMobile/i;
+    isApple.current = apple.test(window.navigator.platform);
+    isMobile.current = mobile.test(window.navigator.userAgent);
+  }, [isApple, isMobile]);
+
+  useHotkeys("ctrl+k,cmd+k", (e) => {
+    e.preventDefault();
+    if (!e.repeat) {
+      inputRef.current?.focus();
+      inputRef.current.select();
+    }
+  });
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
@@ -28,11 +47,13 @@ const SearchInput: React.FC<SearchInputProps> = () => {
     () => {
       if (value !== query) {
         setQuery(value);
-        !!value && ReactGA.event({ category: "Search", action: "Query", label: value });
+        !!value &&
+          ReactGA.event({ category: "Search", action: "Query", label: value });
       }
-      !!value && void document
-        .getElementById("beacon")
-        ?.scrollIntoView({ block: "start", behavior: "smooth" });
+      !!value &&
+        void document
+          .getElementById("beacon")
+          ?.scrollIntoView({ block: "start", behavior: "smooth" });
     },
     250,
     [value]
@@ -49,6 +70,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
     <div className="search-bar">
       <MagnifyingGlass id="search-icon" size={24} />
       <input
+        ref={inputRef}
         id="search-input"
         title="Search for icon names, categories, or keywords"
         aria-label="Search for an icon"
@@ -62,6 +84,9 @@ const SearchInput: React.FC<SearchInputProps> = () => {
           key === "Enter" && currentTarget.blur()
         }
       />
+      {!value && !isMobile.current && (
+        <Keys>{isApple.current ? <Command /> : "Ctrl"} + K</Keys>
+      )}
       {value ? (
         isReady() ? (
           <X className="clear-icon" size={18} onClick={handleCancelSearch} />
@@ -72,5 +97,9 @@ const SearchInput: React.FC<SearchInputProps> = () => {
     </div>
   );
 };
+
+const Keys: React.FC<{}> = ({ children }) => (
+  <div className="keys">{children}</div>
+);
 
 export default SearchInput;

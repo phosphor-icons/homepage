@@ -15,11 +15,15 @@
   background-color: white !important;
 }
 
+.search-bar:focus-within .keys {
+  display: none;
+}
+
 .search-bar input {
   height: 100%;
   flex: 1;
   border: none;
-  margin-left: 12px;
+  margin: 0 12px;
   padding: 0;
   font-size: 16px;
   color: white;
@@ -48,6 +52,13 @@
   cursor: wait;
 }
 
+.keys {
+  display: inline-flex;
+  align-items: center;
+  min-width: 42px;
+  font-size: 0.8em;
+}
+
 @media screen and (max-width: 558px) {
   #search-icon {
     display: none;
@@ -56,5 +67,11 @@
   .search-bar input {
     margin-left: 0;
     width: 60%;
+  }
+}
+
+@media screen and (min-width: 858px) and (max-width: 1100px) {
+  .search-bar {
+    flex-basis: 320px;
   }
 }
