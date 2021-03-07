@@ -242,6 +242,7 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
         animate="open"
         exit="collapsed"
         variants={contentVariants}
+        title="Close"
       >
         <X
           className="close-icon"
