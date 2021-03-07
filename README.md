@@ -4,7 +4,7 @@
 
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really.
 
-- 683 icons and counting
+- 770 icons and counting
 - 6 weights: **Thin**, **Light**, **Regular**, **Bold**, **Fill**, and **Duotone**
 - Designed at 16 x 16px to read well small and scale up big
 - Raw stroke information retained to fine-tune the style
@@ -93,6 +93,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 - [phosphor-react](https://github.com/phosphor-icons/phosphor-react) ▲ Phosphor icon component library for React
 - [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) ▲ Phosphor icon component library for Vue
 - [phosphor-icons](https://github.com/phosphor-icons/phosphor-icons) ▲ Phosphor icons for Vanilla JS
+- [phosphor-flutter](https://github.com/phosphor-icons/phosphor-flutter) ▲ Phosphor IconData library for Flutter
 - [phosphor-webcomponents](https://github.com/phosphor-icons/phosphor-webcomponents) ▲ Phosphor icons as Web Components
 - [phosphor-figma](https://github.com/phosphor-icons/phosphor-figma) ▲ Phosphor icons Figma plugin
 
