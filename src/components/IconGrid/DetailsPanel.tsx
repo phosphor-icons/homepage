@@ -20,15 +20,15 @@ const panelVariants = {
   open: {
     opacity: 1,
     height: "100%",
-    marginTop: 4,
-    marginBottom: 4,
+    marginTop: "4px",
+    marginBottom: "4px",
     // transition: { stiffness: 600, damping: 32, duration: 0.2 },
   },
   collapsed: {
     opacity: 0,
-    height: 0,
-    marginTop: 0,
-    marginBottom: 0,
+    height: "0px",
+    marginTop: "0px",
+    marginBottom: "0px",
     // transition: { stiffness: 600, damping: 32, duration: 0.2 },
   },
 };
