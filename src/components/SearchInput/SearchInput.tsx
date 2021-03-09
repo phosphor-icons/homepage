@@ -81,7 +81,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
           key === "Enter" && currentTarget.blur()
         }
       />
-      {!value && !isMobile && <Keys>{isApple ? <Command /> : "Ctrl"} + K</Keys>}
+      {!value && !isMobile && <Keys>{isApple ? <Command /> : "Ctrl + "}K</Keys>}
       {value ? (
         isReady() ? (
           <X className="clear-icon" size={18} onClick={handleCancelSearch} />
