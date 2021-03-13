@@ -22,20 +22,20 @@ const panelVariants = {
     height: "100%",
     marginTop: "4px",
     marginBottom: "4px",
-    // transition: { stiffness: 600, damping: 32, duration: 0.2 },
+    transition: { type: "tween", duration: 0.1 },
   },
   collapsed: {
     opacity: 0,
     height: "0px",
     marginTop: "0px",
     marginBottom: "0px",
-    // transition: { stiffness: 600, damping: 32, duration: 0.2 },
+    transition: { type: "tween", duration: 0.1 },
   },
 };
 
 const contentVariants = {
-  open: { opacity: 1, transition: { duration: 0.2 } },
-  collapsed: { opacity: 0, transition: { duration: 0.1 } },
+  open: { opacity: 1, transition: { duration: 0.2, delay: 0.1 } },
+  collapsed: { opacity: 0, transition: { duration: 0 } },
 };
 
 const buttonColor = "#35313D";
