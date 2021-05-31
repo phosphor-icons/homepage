@@ -15,10 +15,10 @@ h2 {
 }
 
 img {
-  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
+  user-select: none;
 }
 
 pre,
@@ -65,9 +65,10 @@ button.main-button {
   transform: translate(0, 0);
   transition: all 0.2s ease;
   cursor: pointer;
-  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-select: none;
   margin: 0 24px 24px 0;
 }
 

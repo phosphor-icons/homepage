@@ -60,7 +60,7 @@ header {
     top: -158px;
   }
 
-  #billiard-ball {
+  .billiard-ball {
     position: absolute;
     left: 132px;
     top: -98px;
@@ -72,13 +72,13 @@ header {
     top: 152px;
   }
 
-  #warning {
+  .warning {
     position: absolute;
     left: 394px;
     top: -304px;
   }
 
-  #tablet {
+  .tablet {
     position: absolute;
     left: 672px;
     top: -900px;
@@ -94,18 +94,18 @@ header {
     height: 612px;
   }
 
-  #cutting-mat {
+  .cutting-mat {
     position: absolute;
     left: 96px;
   }
 
-  #receipt {
+  .receipt {
     position: absolute;
     left: -36px;
     top: 190px;
   }
 
-  #calculator {
+  .calculator {
     position: absolute;
     left: 632px;
     top: 170px;
@@ -131,7 +131,7 @@ header {
     top: -158px;
   }
 
-  #billiard-ball {
+  .billiard-ball {
     position: absolute;
     left: 900px;
     top: 400px;
@@ -148,30 +148,30 @@ header {
     top: 694px;
   }
 
-  #warning {
+  .warning {
     position: absolute;
     left: 1170px;
     top: 400px;
   }
 
-  #tablet {
+  .tablet {
     position: absolute;
     left: 578px;
     top: -900px;
   }
 
-  #cutting-mat {
+  .cutting-mat {
     position: absolute;
     left: 120px;
   }
 
-  #receipt {
+  .receipt {
     position: absolute;
     left: -16px;
     top: 190px;
   }
 
-  #calculator {
+  .calculator {
     position: absolute;
     left: 924px;
     top: 114px;

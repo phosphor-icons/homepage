@@ -41,22 +41,22 @@ const Header: React.FC<HeaderProps> = () => {
           <img src={markerPurple} id="marker-purple" alt="" />
           <img src={paperclips} id="paperclips" alt="" />
           <img src={paperclipsThree} id="paperclips-three" alt="" />
-          <img id="tablet" src={tabletSpec} alt="" />
-          <img id="tablet" className="inspectable xray" src={tablet} alt="" />
-          <img id="billiard-ball" src={billiardBallSpec} alt="" />
+          <img className="tablet" src={tabletSpec} alt="" />
+          <img className="tablet inspectable xray" src={tablet} alt="" />
+          <img className="billiard-ball" src={billiardBallSpec} alt="" />
           <img
-            id="billiard-ball"
-            className="inspectable xray"
+            className="billiard-ball inspectable xray"
             src={billiardBall}
             alt=""
           />
 
-          <img id="warning" src={warningSpec} alt="" />
-          <img id="warning" className="inspectable xray" src={warning} alt="" />
+          <img className="warning" src={warningSpec} alt="" />
+          <img className="warning inspectable xray" src={warning} alt="" />
         </div>
         <div className="intro">
           <h2>
-            Phosphor is a flexible icon family for interfaces, diagrams, presentations — 
+            Phosphor is a flexible icon family for interfaces, diagrams,
+            presentations — 
             <wbr />
             whatever, really.
           </h2>
@@ -73,19 +73,17 @@ const Header: React.FC<HeaderProps> = () => {
           <Links />
         </div>
         <div className="illustrations-bottom">
-          <img id="cutting-mat" src={cuttingMatSpec} alt="" />
+          <img className="cutting-mat" src={cuttingMatSpec} alt="" />
           <img
-            id="cutting-mat"
-            className="inspectable xray"
+            className="cutting-mat inspectable xray"
             src={cuttingMat}
             alt=""
           />
-          <img id="receipt" src={receiptSpec} alt="" />
-          <img id="receipt" className="inspectable xray" src={receipt} alt="" />
-          <img id="calculator" src={calculatorSpec} alt="" />
+          <img className="receipt" src={receiptSpec} alt="" />
+          <img className="receipt inspectable xray" src={receipt} alt="" />
+          <img className="calculator" src={calculatorSpec} alt="" />
           <img
-            id="calculator"
-            className="inspectable xray"
+            className="calculator inspectable xray"
             src={calculator}
             alt=""
           />

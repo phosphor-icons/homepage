@@ -22,9 +22,9 @@
   justify-content: center;
   margin: 4px;
   border-radius: 16px;
-  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   cursor: pointer;
   /* transition: background-color 100ms ease; */
 }
@@ -95,9 +95,9 @@
   align-items: center;
   text-overflow: ellipsis;
   color: black;
-  user-select: all;
   -moz-user-select: all;
   -webkit-user-select: all;
+  user-select: all;
 }
 
 .snippet pre:focus {
@@ -106,9 +106,9 @@
 
 @keyframes select {
   to {
-    user-select: text;
     -moz-user-select: text;
     -webkit-user-select: text;
+    user-select: text;
   }
 }
 

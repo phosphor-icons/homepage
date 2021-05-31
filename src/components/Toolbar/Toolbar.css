@@ -1,4 +1,5 @@
-menu.toolbar {
+nav.toolbar {
+  position: -webkit-sticky;
   position: sticky;
   top: -1px;
   padding: 0;
