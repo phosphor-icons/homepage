@@ -20,6 +20,7 @@
   -moz-user-select: none;
   -webkit-user-select: none;
   pointer-events: none;
+  text-transform: uppercase;
 }
 
 input.color-input {
