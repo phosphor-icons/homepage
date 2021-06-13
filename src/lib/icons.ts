@@ -16,6 +16,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.Activity,
   },
+  // {
+  //   name: "address-book",
+  //   categories: [IconCategory.COMMUNICATION],
+  //   tags: ["*new*", "contacts", "roledex"],
+  //   Icon: Icons.AddressBook,
+  // },
   {
     name: "airplane",
     categories: [IconCategory.MAP, IconCategory.OBJECTS],
@@ -1024,6 +1030,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.ArticleNyTimes,
   },
+  // {
+  //   name: "artificial-intelligence",
+  //   categories: [IconCategory.DEVELOPMENT],
+  //   tags: ["*new*", "ai", "machine learning", "computer", "robot"],
+  //   Icon: Icons.ArtificialIntelligence,
+  // },
   {
     name: "asterisk",
     categories: [IconCategory.COMMUNICATION],
@@ -1069,6 +1081,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["suitcase", "valise", "baggage", "folders", "portfolio"],
     Icon: Icons.BagSimple,
   },
+  // {
+  //   name: "balloon",
+  //   categories: [IconCategory.OBJECTS],
+  //   tags: ["*new*", "helium", "birthday", "party"],
+  //   Icon: Icons.Balloon,
+  // },
   {
     name: "bandaids",
     categories: [IconCategory.HEALTH],
@@ -1326,6 +1344,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.Bicycle,
   },
+  // {
+  //   name: "bird",
+  //   categories: [IconCategory.NATURE],
+  //   tags: ["*new*", "animals", "pets"],
+  //   Icon: Icons.Bird,
+  // },
   {
     name: "bluetooth",
     categories: [IconCategory.SYSTEM],
@@ -1461,6 +1485,30 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.BookmarksSimple,
   },
+  //  {
+  //    name: "brandy",
+  //    categories: [IconCategory.COMMERCE, IconCategory.MAP, IconCategory.OBJECTS],
+  //    tags: [
+  //      "*new*",
+  //      "drinks",
+  //      "beverages",
+  //      "whiskey",
+  //      "cocktail",
+  //      "places",
+  //      "locations",
+  //      "bars",
+  //      "restaurants",
+  //      "food",
+  //      "dining",
+  //    ],
+  //    Icon: Icons.Brandy,
+  //  },
+  // {
+  //   name: "brain",
+  //   categories: [IconCategory.HEALTH, IconCategory.NATURE],
+  //   tags: ["*new*", "mind", "mental"],
+  //   Icon: Icons.Brain,
+  // },
   {
     name: "briefcase",
     categories: [IconCategory.OFFICE, IconCategory.OBJECTS],
@@ -1670,104 +1718,104 @@ export const icons: ReadonlyArray<IconEntry> = [
   {
     name: "caret-up",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretUp,
   },
   {
     name: "caret-down",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretDown,
   },
   {
     name: "caret-left",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretLeft,
   },
   {
     name: "caret-right",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretRight,
   },
   {
     name: "caret-double-up",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretDoubleUp,
   },
   {
     name: "caret-double-down",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretDoubleDown,
   },
   {
     name: "caret-double-left",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretDoubleLeft,
   },
   {
     name: "caret-double-right",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretDoubleRight,
   },
   {
     name: "caret-circle-up",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretCircleUp,
   },
   {
     name: "caret-circle-down",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretCircleDown,
   },
 
   {
     name: "caret-circle-left",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretCircleLeft,
   },
   {
     name: "caret-circle-right",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretCircleRight,
   },
   {
     name: "caret-circle-double-up",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretCircleDoubleUp,
   },
   {
     name: "caret-circle-double-down",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretCircleDoubleDown,
   },
   {
     name: "caret-circle-double-left",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretCircleDoubleLeft,
   },
   {
     name: "caret-circle-double-right",
     categories: [IconCategory.ARROWS],
-    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead"],
+    tags: ["chevron", "directional", "pointer", "pointing", "arrowhead", "triangle"],
     Icon: Icons.CaretCircleDoubleRight,
   },
   // {
   //   name: "cat",
   //   categories: [IconCategory.NATURE],
-  //   tags: [ "pets", "animals", "kitty", "kitten"],
+  //   tags: [ *new*", "pets", "animals", "kitty", "kitten"],
   //   Icon: Icons.Cat,
   // },
   {
@@ -1886,6 +1934,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.CellSignalX,
   },
+  // {
+  //   name: "certificate",
+  //   categories: [IconCategory.DEVELOPMENT, IconCategory.OFFICE],
+  //   tags: ["*new*", "diploma", "valid", "authentic"],
+  //   Icon: Icons.Certificate,
+  // },
   {
     name: "chalkboard",
     categories: [IconCategory.MAP, IconCategory.OBJECTS],
@@ -2605,6 +2659,26 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["desktop", "pc", "imac"],
     Icon: Icons.ComputerTower,
   },
+  // {
+  //   name: "cookie",
+  //   categories: [IconCategory.MAP, IconCategory.OBJECTS, IconCategory.DEVELOPMENT],
+  //   tags: ["*new*", "privacy", "dessert", "food", "dining",],
+  //   Icon: Icons.Cookie,
+  // },
+  // {
+  //   name: "cooking-pot",
+  //   categories: [IconCategory.MAP, IconCategory.OBJECTS],
+  //   tags: [
+  //     "*new*",
+  //     "stew",
+  //     "kitchen",
+  //     "steaming",
+  //     "restaurants",
+  //     "food",
+  //     "dining",
+  //   ],
+  //   Icon: Icons.CookingPot,
+  // },
   {
     name: "copy",
     categories: [IconCategory.EDITOR, IconCategory.SYSTEM],
@@ -2773,6 +2847,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["pointer", "arrowhead", "mouse", "click"],
     Icon: Icons.Cursor,
   },
+  // {
+  //   name: "cursor-click",
+  //   categories: [IconCategory.DESIGN, IconCategory.SYSTEM],
+  //   tags: ["pointer", "arrowhead", "mouse"],
+  //   Icon: Icons.CursorClick,
+  // },
   {
     name: "database",
     categories: [IconCategory.DEVELOPMENT, IconCategory.SYSTEM],
@@ -2930,7 +3010,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "dog",
   //   categories: [IconCategory.NATURE],
-  //   tags: [ "pets", "animals", "puppy"],
+  //   tags: [ "*new*", "pets", "animals", "puppy"],
   //   Icon: Icons.Dog,
   // },
   {
@@ -3111,12 +3191,24 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.DropHalf,
   },
+  // {
+  //   name: "dropbox-logo",
+  //   categories: [IconCategory.BRAND],
+  //   tags: ["*new*", "cloud", "backup"],
+  //   Icon: Icons.DropboxLogo,
+  // },
   {
     name: "eject",
     categories: [IconCategory.MEDIA],
     tags: ["disconnect"],
     Icon: Icons.Eject,
   },
+  // {
+  //   name: "eject-simple",
+  //   categories: [IconCategory.MEDIA],
+  //   tags: ["*new*", "disconnect"],
+  //   Icon: Icons.EjectSimple,
+  // },
   {
     name: "eraser",
     categories: [IconCategory.DESIGN, IconCategory.EDITOR],
@@ -3179,6 +3271,17 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.Equals,
   },
+  // {
+  //   name: "exam",
+  //   categories: [IconCategory.OBJECTS],
+  //   tags: ["*new*", "test", "classroom",
+  //     "teacher",
+  //     "education",
+  //     "school",
+  //     "college",
+  //     "university",],
+  //   Icon: Icons.Exam,
+  // },
   {
     name: "eye",
     categories: [IconCategory.DESIGN, IconCategory.EDITOR],
@@ -3239,6 +3342,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["logos", "social media"],
     Icon: Icons.FacebookLogo,
   },
+  // {
+  //   name: "factory",
+  //   categories: [IconCategory.COMMERCE, IconCategory.MAP],
+  //   tags: ["*new*", "industry", "manufacture", "buildings", "places", "locations"],
+  //   Icon: Icons.Factory,
+  // },
   {
     name: "faders",
     categories: [IconCategory.MEDIA, IconCategory.SYSTEM],
@@ -3269,6 +3378,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.FadersHorizontal,
   },
+  // {
+  //   name: "fast-forward",
+  //   categories: [IconCategory.MEDIA],
+  //   tags: ["*new*", "audio", "music", "seek", "scrub", "scan", "ahead", "skip"],
+  //   Icon: Icons.FastForward,
+  // },
   {
     name: "fast-forward-circle",
     categories: [IconCategory.MEDIA],
@@ -3340,10 +3455,22 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["documents", "files", "delete", "write", "remove", "-"],
     Icon: Icons.FileMinus,
   },
+  // {
+  //   name: "file-dotted",
+  //   categories: [IconCategory.OFFICE, IconCategory.EDITOR],
+  //   tags: ["*new*", "documents", "files", "browse", "draft", "open"],
+  //   Icon: Icons.FileDotted,
+  // },
+  // {
+  //   name: "file-pdf",
+  //   categories: [IconCategory.OFFICE, IconCategory.EDITOR],
+  //   tags: ["*new*", "documents", "files", "acrobat"],
+  //   Icon: Icons.FilePdf,
+  // },
   {
     name: "file-search",
     categories: [IconCategory.OFFICE, IconCategory.EDITOR],
-    tags: ["documents", "files", "find", "locate", "missing"],
+    tags: ["documents", "files", "find", "locate", "browse", "missing"],
     Icon: Icons.FileSearch,
   },
   {
@@ -3358,6 +3485,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["documents", "files", "cancelled", "deleted", "removed", "errors"],
     Icon: Icons.FileX,
   },
+  // {
+  //   name: "files",
+  //   categories: [IconCategory.OFFICE, IconCategory.EDITOR],
+  //   tags: ["*new*", "documents", "open", "library"],
+  //   Icon: Icons.Files,
+  // },
   {
     name: "fingerprint",
     categories: [IconCategory.SYSTEM],
@@ -3437,6 +3570,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.FirstAidKit,
   },
+  // {
+  //   name: "fish",
+  //   categories: [IconCategory.NATURE],
+  //   tags: ["*new*", "animals", "pets"],
+  //   Icon: Icons.Fish,
+  // },
   {
     name: "flag",
     categories: [IconCategory.OBJECTS, IconCategory.MAP, IconCategory.SYSTEM],
@@ -3475,6 +3614,24 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.FloppyDisk,
   },
+  // {
+  //   name: "flow-line",
+  //   categories: [IconCategory.ARROWS, IconCategory.DESIGN, IconCategory.OFFICE],
+  //   tags: ["*new*", "flowchart", "arrowhead"],
+  //   Icon: Icons.FlowLine,
+  // },
+  // {
+  //   name: "flower",
+  //   categories: [IconCategory.NATURE],
+  //   tags: ["*new*", "plants", "green", "environmental"],
+  //   Icon: Icons.Flower,
+  // },
+  // {
+  //   name: "flower-lotus",
+  //   categories: [IconCategory.NATURE],
+  //   tags: ["*new*", "plants", "green", "environmental", "spirituality"],
+  //   Icon: Icons.FlowerLotus,
+  // },
   {
     name: "folder",
     categories: [IconCategory.OFFICE, IconCategory.EDITOR, IconCategory.SYSTEM],
@@ -3705,6 +3862,36 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.GearSix,
   },
+  // {
+  //   name: "gender-female",
+  //   categories: [IconCategory.PEOPLE],
+  //   tags: ["*new*", "woman", "feminine", "venus"],
+  //   Icon: Icons.GenderFemale,
+  // },
+  // {
+  //   name: "gender-male",
+  //   categories: [IconCategory.PEOPLE],
+  //   tags: ["*new*", "man", "masculine", "mars"],
+  //   Icon: Icons.GenderMale,
+  // },
+  // {
+  //   name: "gender-intersex",
+  //   categories: [IconCategory.PEOPLE],
+  //   tags: ["*new*", "transgender", "non-binary"],
+  //   Icon: Icons.GenderIntersex,
+  // },
+  // {
+  //   name: "gender-transgender",
+  //   categories: [IconCategory.PEOPLE],
+  //   tags: ["*new*", "intersex", "non-binary"],
+  //   Icon: Icons.GenderTransgender,
+  // },
+  // {
+  //   name: "gender-neuter",
+  //   categories: [IconCategory.PEOPLE],
+  //   tags: ["*new*", "agender", "non-binary", "asexual"],
+  //   Icon: Icons.GenderNeuter,
+  // },
   {
     name: "ghost",
     categories: [IconCategory.GAMES, IconCategory.OBJECTS],
@@ -3999,6 +4186,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["pointers", "cursors", "emoji", "drag", "hold"],
     Icon: Icons.HandGrabbing,
   },
+  // {
+  //   name: "hand-ok",
+  //   categories: [IconCategory.PEOPLE],
+  //   tags: ["*new*", "pointers", "emoji", "good", "nice"],
+  //   Icon: Icons.HandOk,
+  // },
   {
     name: "hand-palm",
     categories: [IconCategory.SYSTEM, IconCategory.PEOPLE],
@@ -4014,6 +4207,20 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.HandPalm,
   },
+  // {
+  //   name: "hand-peace",
+  //   categories: [IconCategory.PEOPLE],
+  //   tags: [
+  //     "*new*",
+  //     "pointers",
+  //     "cursors",
+  //     "emoji",
+  //     "love",
+  //     "hippies",
+  //     "peace sign"
+  //   ],
+  //   Icon: Icons.HandPeace,
+  // },
   {
     name: "hand-pointing",
     categories: [IconCategory.SYSTEM, IconCategory.PEOPLE],
@@ -4026,6 +4233,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["pointers", "cursors", "emoji", "palm", "wave", "hello", "goodbye"],
     Icon: Icons.HandWaving,
   },
+  // {
+  //   name: "hands-clapping",
+  //   categories: [IconCategory.SYSTEM, IconCategory.PEOPLE],
+  //   tags: ["*new*", "emoji", "clap", "applause"],
+  //   Icon: Icons.HandsClapping,
+  // },
   {
     name: "handshake",
     categories: [IconCategory.PEOPLE, IconCategory.COMMERCE],
@@ -4334,6 +4547,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["homes", "buildings", "places", "locations"],
     Icon: Icons.HouseSimple,
   },
+  // {
+  //   name: "i-beam",
+  //   categories: [IconCategory.OBJECTS],
+  //   tags: ["*new*", "pointers", "cursors", "text", "selection"],
+  //   Icon: Icons.IBeam,
+  // },
   {
     name: "identification-card",
     categories: [IconCategory.PEOPLE],
@@ -4470,6 +4689,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["computer", "notebook", "pc", "macbook"],
     Icon: Icons.Laptop,
   },
+  // {
+  //   name: "layout",
+  //   categories: [IconCategory.DESIGN],
+  //   tags: ["*new*", "wireframe"],
+  //   Icon: Icons.Layout,
+  // },
   {
     name: "leaf",
     categories: [IconCategory.NATURE],
@@ -4484,6 +4709,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.Leaf,
   },
+  // {
+  //   name: "library",
+  //   categories: [IconCategory.MAP, IconCategory.MEDIA],
+  //   tags: ["*new*", "books", "places", "locations"],
+  //   Icon: Icons.Library,
+  // },
   {
     name: "lifebuoy",
     categories: [
@@ -4545,6 +4776,18 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.LightningSlash,
   },
+  // {
+  //   name: "line-segment",
+  //   categories: [IconCategory.DESIGN],
+  //   tags: ["*new*", "shapes", "drawing", "path", "pen"],
+  //   Icon: Icons.LineSegment,
+  // },
+  // {
+  //   name: "line-segments",
+  //   categories: [IconCategory.DESIGN],
+  //   tags: ["*new*", "shapes", "drawing", "path", "pen"],
+  //   Icon: Icons.LineSegments,
+  // },
   {
     name: "link",
     categories: [IconCategory.COMMUNICATION, IconCategory.OBJECTS],
@@ -4801,6 +5044,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.LockSimpleOpen,
   },
+  // {
+  //   name: "magic-wand",
+  //   categories: [IconCategory.DESIGN, IconCategory.GAMES, IconCategory.OBJECTS],
+  //   tags: ["*new*", "selection", "wizard", "games"],
+  //   Icon: Icons.MagicWand,
+  // },
   {
     name: "magnet",
     categories: [IconCategory.DEVELOPMENT, IconCategory.OBJECTS],
@@ -4926,6 +5175,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["bullhorn", "announcements", "loudspeaker", "broadcast"],
     Icon: Icons.MegaphoneSimple,
   },
+  // {
+  //   name: "messenger-logo",
+  //   categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
+  //   tags: ["*new*", "logos", "facebook", "social media"],
+  //   Icon: Icons.MessengerLogo,
+  // },
   {
     name: "microphone",
     categories: [
@@ -5054,6 +5309,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.MoonStars,
   },
+  // {
+  //   name: "mountain",
+  //   categories: [IconCategory.NATURE, IconCategory.MAP],
+  //   tags: ["*new*", "peak", "hill", "summit", "outdoors", "climbing", "terrain", "geology"],
+  //   Icon: Icons.Mountain,
+  // },
   {
     name: "mouse",
     categories: [IconCategory.SYSTEM],
@@ -5154,6 +5415,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.Notepad,
   },
+  // {
+  //   name: "notification",
+  //   categories: [IconCategory.SYSTEM],
+  //   tags: ["*new*", "badge", "pip"],
+  //   Icon: Icons.Notification,
+  // },
   {
     name: "number-zero",
     categories: [IconCategory.FINANCE],
@@ -5666,6 +5933,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["paintbucket", "colors", "color picker", "fill", "arts"],
     Icon: Icons.PaintBucket,
   },
+  // {
+  //   name: "palette",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OBJECTS],
+  //   tags: ["*new*", "paint", "colors", "color picker", "arts"],
+  //   Icon: Icons.Palette,
+  // },
   {
     name: "paper-plane",
     categories: [
@@ -5745,6 +6018,22 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["attachments", "mail", "email", "office"],
     Icon: Icons.PaperclipHorizontal,
   },
+  // {
+  //   name: "password",
+  //   categories: [IconCategory.SYSTEM],
+  //   tags: [
+  //     "*new*",
+  //     "security",
+  //     "secured",
+  //     "authentication",
+  //     "authenticated",
+  //     "login",
+  //     "encrypted",
+  //     "encryption",
+  //     "privacy",
+  //     "private",],
+  //   Icon: Icons.Password,
+  // },
   {
     name: "path",
     categories: [IconCategory.DESIGN, IconCategory.MAP],
@@ -5813,6 +6102,44 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.Pedestrian,
   },
+  // {
+  //   name: "pedestrian-run",
+  //   categories: [IconCategory.MAP, IconCategory.PEOPLE],
+  //   tags: [
+  //     "*new*",
+  //     "person",
+  //     "running",
+  //     "human",
+  //     "woman",
+  //     "man",
+  //     "body",
+  //     "transit",
+  //     "transportation",
+  //     "travel",
+  //     "commuter",
+  //     "user",
+  //   ],
+  //   Icon: Icons.PedestrianRun,
+  // },
+  // {
+  //   name: "pedestrian-walk",
+  //   categories: [IconCategory.MAP, IconCategory.PEOPLE],
+  //   tags: [
+  //     "*new*",
+  //     "person",
+  //     "walking",
+  //     "human",
+  //     "woman",
+  //     "man",
+  //     "body",
+  //     "transit",
+  //     "transportation",
+  //     "travel",
+  //     "commuter",
+  //     "user",
+  //   ],
+  //   Icon: Icons.PedestrianWalk,
+  // },
   {
     name: "pen",
     categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
@@ -5979,6 +6306,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["music", "audio", "resume", "start", "round"],
     Icon: Icons.PlayCircle,
   },
+  // {
+  //   name: "playlist",
+  //   categories: [IconCategory.MEDIA],
+  //   tags: ["*new*", "music", "audio", "queue"],
+  //   Icon: Icons.Playlist,
+  // },
   {
     name: "plus",
     categories: [
@@ -6033,6 +6366,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["chips", "tokens", "cards", "gambling", "casino"],
     Icon: Icons.PokerChip,
   },
+  // {
+  //   name: "polygon",
+  //   categories: [IconCategory.DESIGN],
+  //   tags: ["*new*", "shapes", "drawing"],
+  //   Icon: Icons.Polygon,
+  // },
   {
     name: "power",
     categories: [IconCategory.SYSTEM],
@@ -6183,6 +6522,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["information", "help", "support", "questions"],
     Icon: Icons.Question,
   },
+  // {
+  //   name: "queue",
+  //   categories: [IconCategory.MEDIA],
+  //   tags: ["*new*", "music", "audio", "playlist"],
+  //   Icon: Icons.Queue,
+  // },
   {
     name: "quotes",
     categories: [
@@ -6247,6 +6592,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["4", "shapes", "polygons", "box"],
     Icon: Icons.Rectangle,
   },
+  // {
+  //   name: "recycle",
+  //   categories: [IconCategory.ARROWS, IconCategory.NATURE],
+  //   tags: ["*new*", "recycling", "trash", "environmental", "green"],
+  //   Icon: Icons.Recycle,
+  // },
   {
     name: "reddit-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
@@ -6265,6 +6616,23 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["music", "audio", "recycle"],
     Icon: Icons.RepeatOnce,
   },
+  // {
+  //   name: "rewind",
+  //   categories: [IconCategory.MEDIA],
+  //   tags: [
+  //     "*new*",
+  //     "music",
+  //     "audio",
+  //     "seek",
+  //     "scrub",
+  //     "scan",
+  //     "skip",
+  //     "back",
+  //     "backwards",
+  //     "reverse",
+  //   ],
+  //   Icon: Icons.Rewind,
+  // },
   {
     name: "rewind-circle",
     categories: [IconCategory.MEDIA],
@@ -6281,6 +6649,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     ],
     Icon: Icons.RewindCircle,
   },
+  // {
+  //   name: "robot",
+  //   categories: [IconCategory.DEVELOPMENT, IconCategory.OBJECTS],
+  //   tags: ["*new*", "automaton", "artificial intelligence"],
+  //   Icon: Icons.Robot,
+  // },
   {
     name: "rocket",
     categories: [
@@ -6319,6 +6693,24 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["radio", "broadcast", "web feed", "news", "aggregator"],
     Icon: Icons.RssSimple,
   },
+  // {
+  //   name: "ruler",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OBJECTS],
+  //   tags: ["*new*", "measure", "scale", "distance"],
+  //   Icon: Icons.Ruler,
+  // },
+  // {
+  //   name: "scales",
+  //   categories: [IconCategory.COMMERCE, IconCategory.MAP, IconCategory.OBJECTS],
+  //   tags: ["*new*", "measure", "balance", "law", "justice", "government"],
+  //   Icon: Icons.Scales,
+  // },
+  // {
+  //   name: "scalpel",
+  //   categories: [IconCategory.DESIGN, IconCategory.HEALTH],
+  //   tags: ["*new*", "x-acto", "hobby knife", "craft knife", "razor", "slice"],
+  //   Icon: Icons.Scalpel,
+  // },
   {
     name: "scissors",
     categories: [
@@ -6352,8 +6744,32 @@ export const icons: ReadonlyArray<IconEntry> = [
   // {
   //   name: "selection",
   //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
-  //   tags: ["*new*", "marquis", "select all"],
+  //   tags: ["*new*", "marquis", "select"],
   //   Icon: Icons.Selection,
+  // },
+  // {
+  //   name: "selection-all",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
+  //   tags: ["*new*", "marquis", "select all"],
+  //   Icon: Icons.SelectionAll,
+  // },
+  // {
+  //   name: "selection-inverse",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
+  //   tags: ["*new*", "marquis", "invert"],
+  //   Icon: Icons.SelectionInverse,
+  // },
+  // {
+  //   name: "selection-plus",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
+  //   tags: ["*new*", "marquis", "add"],
+  //   Icon: Icons.SelectionPlus,
+  // },
+  // {
+  //   name: "selection-slash",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR],
+  //   tags: ["*new*", "marquis", "unselect"],
+  //   Icon: Icons.SelectionSlash,
   // },
   {
     name: "share",
@@ -6732,6 +7148,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["spades", "suits", "cards", "gambling", "casino", "gaming"],
     Icon: Icons.Spade,
   },
+  // {
+  //   name: "sparkle",
+  //   categories: [IconCategory.COMMUNICATION, IconCategory.NATURE],
+  //   tags: ["*new*", "star", "rate", "ratings", "favorites", "favorited"],
+  //   Icon: Icons.Sparkle,
+  // },
   {
     name: "speaker-high",
     categories: [IconCategory.MEDIA, IconCategory.SYSTEM],
@@ -6874,6 +7296,21 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["rate", "ratings", "favorites", "favorited"],
     Icon: Icons.Star,
   },
+  // {
+  //   name: "star-four",
+  //   categories: [
+  //     IconCategory.COMMUNICATION,
+  //     IconCategory.NATURE,
+  //   ],
+  //   tags: ["*new*", "rate", "ratings", "favorites", "favorited"],
+  //   Icon: Icons.StarFour,
+  // },
+  // {
+  //   name: "steam-logo",
+  //   categories: [IconCategory.BRAND, IconCategory.GAMES],
+  //   tags: ["*new*", "logos","gaming", "valve"],
+  //   Icon: Icons.SteamLogo,
+  // },
   {
     name: "sticker",
     categories: [IconCategory.COMMUNICATION],
@@ -7056,12 +7493,24 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["bullseye", "radar", "archery", "accuracy", "precision"],
     Icon: Icons.Target,
   },
+  // {
+  //   name: "team",
+  //   categories: [IconCategory.PEOPLE, IconCategory.OFFICE],
+  //   tags: ["*new*", "group", "users", "accounts"],
+  //   Icon: Icons.Team,
+  // },
   {
     name: "telegram-logo",
     categories: [IconCategory.BRAND, IconCategory.COMMUNICATION],
     tags: ["logos", "messages", "messaging"],
     Icon: Icons.TelegramLogo,
   },
+  // {
+  //   name: "television",
+  //   categories: [IconCategory.SYSTEM, IconCategory.OBJECTS],
+  //   tags: ["*new*", "screen", "tv", "displays"],
+  //   Icon: Icons.Television,
+  // },
   {
     name: "terminal",
     categories: [IconCategory.DEVELOPMENT, IconCategory.SYSTEM],
@@ -7104,6 +7553,48 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["typography", "typeface", "print", "font", "boldface", "emphasis"],
     Icon: Icons.TextBolder,
   },
+  // {
+  //   name: "text-h",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
+  //   tags: ["*new*", "heading", "typography", "print"],
+  //   Icon: Icons.TextH,
+  // },
+  // {
+  //   name: "text-h-one",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
+  //   tags: ["*new*", "heading", "h1", "typography", "print"],
+  //   Icon: Icons.TextHOne,
+  // },
+  // {
+  //   name: "text-h-two",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
+  //   tags: ["*new*", "heading", "h2", "typography", "print"],
+  //   Icon: Icons.TextHTwo,
+  // },
+  // {
+  //   name: "text-h-three",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
+  //   tags: ["*new*", "heading", "h3", "typography", "print"],
+  //   Icon: Icons.TextHThree,
+  // },
+  // {
+  //   name: "text-h-four",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
+  //   tags: ["*new*", "heading", "h4", "typography", "print"],
+  //   Icon: Icons.TextHFour,
+  // },
+  // {
+  //   name: "text-h-five",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
+  //   tags: ["*new*", "heading", "h5", "typography", "print"],
+  //   Icon: Icons.TextHFive,
+  // },
+  // {
+  //   name: "text-h-six",
+  //   categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
+  //   tags: ["*new*", "heading", "h6", "typography", "print"],
+  //   Icon: Icons.TextHSix,
+  // },
   {
     name: "text-italic",
     categories: [IconCategory.DESIGN, IconCategory.EDITOR, IconCategory.OFFICE],
@@ -7362,6 +7853,16 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["inbox", "mailbox", "bin"],
     Icon: Icons.Tray,
   },
+  // {
+  //   name: "tree",
+  //   categories: [IconCategory.NATURE],
+  //   tags: ["*new*", "plants",
+  //     "branches",
+  //     "leaves",
+  //     "green",
+  //     "environmental"],
+  //   Icon: Icons.Tree,
+  // },
   {
     name: "tree-structure",
     categories: [IconCategory.DEVELOPMENT, IconCategory.OFFICE],
@@ -7643,6 +8144,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["videography", "films", "movies", "recording", "disabled"],
     Icon: Icons.VideoCameraSlash,
   },
+  // {
+  //   name: "virus",
+  //   categories: [IconCategory.HEALTH],
+  //   tags: ["*new*", "illness", "disease", "covid-19", "coronavirus", "flu", "cold"],
+  //   Icon: Icons.Virus,
+  // },
   {
     name: "voicemail",
     categories: [IconCategory.SYSTEM],
@@ -7797,7 +8304,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   //      "food",
   //      "dining",
   //    ],
-  //    Icon: Icons.WineGlass,
+  //    Icon: Icons.Wine,
   //  },
   {
     name: "wrench",
