@@ -21,8 +21,8 @@
 			"{",
 			"\tname: \"${1:name}\",",
 			"\tcategories: [IconCategory${2:categories}],",
-			"\ttags: [${3:tags}],",
-			"\tIcon: ${4:icon},",
+			"\ttags: [\"*new*\", ${3:tags}],",
+			"\tIcon: Icons.${4:icon},",
 			"},"
 		],
 		"description": "Create an IconEntry for phosphor-home"
