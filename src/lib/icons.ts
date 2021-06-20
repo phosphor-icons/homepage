@@ -6393,12 +6393,12 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: ["attachments", "mail", "email", "office"],
     Icon: Icons.PaperclipHorizontal,
   },
-  {
-    name: "party-hat",
-    categories: [IconCategory.OBJECT],
-    tags: ["*new*", "birthday", "celebration", "event"],
-    Icon: Icons.PartyHat,
-  },
+  // {
+  //   name: "party-hat",
+  //   categories: [IconCategory.OBJECT],
+  //   tags: ["*new*", "birthday", "celebration", "event"],
+  //   Icon: Icons.PartyHat,
+  // },
   // {
   //   name: "password",
   //   categories: [IconCategory.SYSTEM],

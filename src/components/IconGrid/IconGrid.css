@@ -46,6 +46,24 @@
   text-align: center;
 }
 
+@media screen and (max-width: 536px) {
+  .grid-container {
+    padding: 32px 8px;
+  }
+
+  .grid-item {
+    width: 108px;
+    height: unset;
+    padding: 4px 0;
+    justify-content: flex-start;
+    border: 2px solid transparent;
+  }
+
+  .grid-item p {
+    padding: 0 4px;
+  }
+}
+
 .info-box {
   position: relative;
   display: flex;
@@ -63,6 +81,10 @@
 
   .icon-usage {
     padding-left: 10% !important;
+  }
+
+  .snippet pre {
+    padding: 12px 8px 12px 20px;
   }
 }
 
