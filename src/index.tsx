@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { RecoilRoot } from "recoil";
 import * as serviceWorker from "./serviceWorker";
-import App from "./components/App/App";
+import App from "./components/App";
 import ReactGA from "react-ga";
 
 ReactGA.initialize("UA-179205759-1", { titleCase: false });
@@ -23,7 +23,6 @@ ReactDOM.render(
 serviceWorker.unregister();
 
 console.log(`
-
 %c  sphorphosphor  %co%cspho
 %c  s%cphorphosphor  %co%csphorpho%cs
 %c o %cp%chorphosphor  %co%csphorphosph%co

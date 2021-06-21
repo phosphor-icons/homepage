@@ -13,7 +13,6 @@
   flex-direction: column;
   width: 400px;
   min-height: 600px;
-  /* background-color: #ffe8dc; */
   background-color: white;
   border-radius: 8px;
   border: 2px solid black;
@@ -22,8 +21,10 @@
 
 @media screen and (max-width: 480px) {
   .modal-content {
-    min-width: 90%;
-    min-height: 100%;
+    position: fixed;
+    inset: 0;
+    width: unset;
+    min-height: unset;
     border: none;
     border-radius: 0;
   }
@@ -46,6 +47,17 @@ button.modal-close-button {
   cursor: pointer;
   box-sizing: content-box;
   z-index: 1;
+}
+
+.modal-titlebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-titlebar > * {
+  margin: 0;
 }
 
 .payment-methods {

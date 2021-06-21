@@ -7,9 +7,9 @@ import React, {
 import { useRecoilState } from "recoil";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { iconPreviewOpenAtom } from "../../state/atoms";
+import { IconEntry } from "lib";
+import { iconPreviewOpenAtom } from "state/atoms";
 import DetailsPanel from "./DetailsPanel";
-import { IconEntry } from "../../lib";
 
 interface IconGridItemProps {
   index: number;
@@ -86,9 +86,9 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
         <Icon />
         <p>{name}</p>
       </motion.div>
-        <AnimatePresence initial={false}>
-          {isOpen && <DetailsPanel {...props} />}
-        </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {isOpen && <DetailsPanel {...props} />}
+      </AnimatePresence>
     </>
   );
 };

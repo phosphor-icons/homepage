@@ -21,9 +21,7 @@
   "repository": "github:phosphor-icons/phosphor-home",
   "private": true,
   "dependencies": {
-    "@types/braintree-web": "^3.75.3",
     "@types/braintree-web-drop-in": "^1.22.3",
-    "braintree-web": "^3.78.2",
     "braintree-web-drop-in": "^1.30.1",
     "file-saver": "^2.0.2",
     "framer-motion": "^3.10.0",

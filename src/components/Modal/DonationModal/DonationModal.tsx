@@ -1,23 +1,40 @@
 import React, { useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { X } from "phosphor-react";
 
-import { modalOpenAtom } from "../../state/atoms";
+import { ModalInstance } from "../Modal";
 import DonationStepMethod from "./DonationStepMethod";
 import DonationStepDropin from "./DonationStepDropin";
 import DonationStepThanks from "./DonationStepThanks";
 
 const routes = [DonationStepMethod, DonationStepDropin, DonationStepThanks];
 
+export enum DonationType {
+  FIVE_DOLLARS = 5,
+  TEN_DOLLARS = 10,
+  TWENTY_DOLLARS = 20,
+  FIFTY_DOLLARS = 50,
+  ONE_HUNDRED_DOLLARS = 100,
+  CUSTOM = -1,
+}
+
+interface RouteProps {
+  donationType: DonationType | undefined;
+  setDonationType: React.Dispatch<
+    React.SetStateAction<DonationType | undefined>
+  >;
+  donationAmount: number;
+  setDonationAmount: React.Dispatch<React.SetStateAction<number>>;
+}
+
 export interface StepProps {
   previousStep: () => void;
   nextStep: () => void;
   close: () => void;
+  routeProps: RouteProps;
 }
 
 interface StepperProps {
   routes: Array<React.FC<StepProps>>;
-  routeProps: any;
+  routeProps: RouteProps;
   close: () => void;
 }
 
@@ -42,26 +59,32 @@ const Stepper: React.FC<StepperProps> = ({ routes, routeProps, close }) => {
         previousStep={previousStep}
         nextStep={nextStep}
         close={close}
-        {...routeProps}
+        routeProps={routeProps}
       />
     </>
   );
 };
 
-const DonationModal: React.FC<{}> = () => {
-  const setModalOpen = useSetRecoilState(modalOpenAtom);
-  const close = () => setModalOpen(false);
+const DonationModal = ({ close }: ModalInstance): JSX.Element => {
+  const [donationType, setDonationType] = useState<DonationType | undefined>();
+  const [donationAmount, setDonationAmount] = useState<number>(0);
 
   return (
-    <div className="modal-content">
-      <button
-        className="modal-close-button"
-        onClick={() => setModalOpen(false)}
-      >
-        <X size={32} />
-      </button>
-      <Stepper routes={routes} routeProps={{}} close={close} />
-    </div>
+    <>
+      <div className="modal-titlebar">
+        <h2>Donate</h2>
+      </div>
+      <Stepper
+        routes={routes}
+        routeProps={{
+          donationType,
+          setDonationType,
+          donationAmount,
+          setDonationAmount,
+        }}
+        close={close}
+      />
+    </>
   );
 };
 

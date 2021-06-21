@@ -1,22 +1,24 @@
 import React from "react";
 import { ArrowCircleUpRight, ArrowCircleDown } from "phosphor-react";
 
-import markerPurple from "../../assets/marker-purple.svg";
-import paperclips from "../../assets/paperclips-header-mobile.svg";
-import paperclipsThree from "../../assets/paperclips-header.svg";
-import tablet from "../../assets/tablet.svg";
-import tabletSpec from "../../assets/tablet-spec.svg";
-import billiardBall from "../../assets/billiard-ball.svg";
-import billiardBallSpec from "../../assets/billiard-ball-spec.svg";
-import warning from "../../assets/warning.svg";
-import warningSpec from "../../assets/warning-spec.svg";
-import cuttingMat from "../../assets/cutting-mat.svg";
-import cuttingMatSpec from "../../assets/cutting-mat-spec.svg";
-import receipt from "../../assets/receipt.svg";
-import receiptSpec from "../../assets/receipt-spec.svg";
-import calculator from "../../assets/calculator.svg";
-import calculatorSpec from "../../assets/calculator-spec.svg";
-import Links from "../Links/Links";
+import markerPurple from "assets/marker-purple.svg";
+import paperclips from "assets/paperclips-header-mobile.svg";
+import paperclipsThree from "assets/paperclips-header.svg";
+import tablet from "assets/tablet.svg";
+import tabletSpec from "assets/tablet-spec.svg";
+import billiardBall from "assets/billiard-ball.svg";
+import billiardBallSpec from "assets/billiard-ball-spec.svg";
+import warning from "assets/warning.svg";
+import warningSpec from "assets/warning-spec.svg";
+import cuttingMat from "assets/cutting-mat.svg";
+import cuttingMatSpec from "assets/cutting-mat-spec.svg";
+import receipt from "assets/receipt.svg";
+import receiptSpec from "assets/receipt-spec.svg";
+import calculator from "assets/calculator.svg";
+import calculatorSpec from "assets/calculator-spec.svg";
+
+import Links from "components/Links";
+
 import "./Header.css";
 
 type HeaderProps = {};

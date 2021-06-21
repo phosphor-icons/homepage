@@ -3,18 +3,19 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { motion } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
-import { Copy, X, CheckCircle, Download } from "phosphor-react";
 import ReactGA from "react-ga";
+import { Copy, X, CheckCircle, Download } from "phosphor-react";
 
 import {
   iconWeightAtom,
   iconSizeAtom,
   iconColorAtom,
   iconPreviewOpenAtom,
-} from "../../state/atoms";
-import useTransientState from "../../hooks/useTransientState";
+} from "state/atoms";
+import { IconEntry } from "lib";
+import useTransientState from "hooks/useTransientState";
+
 import TagCloud from "./TagCloud";
-import { IconEntry } from "../../lib";
 
 const panelVariants = {
   open: {

@@ -1,10 +1,12 @@
 import React from "react";
 import { Coffee, Heart } from "phosphor-react";
 
-import uArrowUpLeft from "../../assets/u-arrow-up-left.svg";
-import markerGreen from "../../assets/marker-green.svg";
-import postIt from "../../assets/footer-mobile.svg";
-import Links from "../Links/Links";
+import uArrowUpLeft from "assets/u-arrow-up-left.svg";
+import markerGreen from "assets/marker-green.svg";
+import postIt from "assets/footer-mobile.svg";
+
+import Links from "components/Links";
+
 import "./Footer.css";
 
 type FooterProps = {};
@@ -34,8 +36,8 @@ const Footer: React.FC<FooterProps> = () => {
             a little quirky, too.
           </p>
           <p>
-            We're thankful for the tools we've benefited from and
-            this is our contribution towards a collaborative community.
+            We're thankful for the tools we've benefited from and this is our
+            contribution towards a collaborative community.
           </p>
           <p>
             Phosphor is free and open-source, licensed under{" "}

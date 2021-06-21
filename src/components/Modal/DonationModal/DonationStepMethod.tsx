@@ -1,27 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { StepProps } from "./DonationModal";
-
-enum DonationAmount {
-  FIVE_DOLLARS = 5,
-  TEN_DOLLARS = 10,
-  TWENTY_DOLLARS = 20,
-  FIFTY_DOLLARS = 50,
-  ONE_HUNDRED_DOLLARS = 100,
-  CUSTOM = -1,
-}
+import { StepProps, DonationType } from "./DonationModal";
 
 const DonationStepMethod: React.FC<StepProps> = ({
   previousStep,
   nextStep,
   close,
+  routeProps,
 }) => {
-  const [donationType, setDonationType] = useState<DonationAmount>();
-  const [donationAmount, setDonationAmount] = useState<number>(0);
+  const { donationType, donationAmount, setDonationType, setDonationAmount } =
+    routeProps;
 
   const onDonationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDonationType(+e.target.value as DonationAmount);
-    if (!(+e.target.value === DonationAmount.CUSTOM))
+    setDonationType(+e.target.value as DonationType);
+    if (!(+e.target.value === DonationType.CUSTOM))
       setDonationAmount(+e.target.value);
   };
 
@@ -39,8 +31,8 @@ const DonationStepMethod: React.FC<StepProps> = ({
             type="radio"
             id="donate-5"
             name="donation-type"
-            value={DonationAmount.FIVE_DOLLARS}
-            checked={donationType === DonationAmount.FIVE_DOLLARS}
+            value={DonationType.FIVE_DOLLARS}
+            checked={donationType === DonationType.FIVE_DOLLARS}
             onChange={onDonationChange}
           />
           <label htmlFor="donate-5">$5</label>
@@ -50,8 +42,8 @@ const DonationStepMethod: React.FC<StepProps> = ({
             type="radio"
             id="donate-10"
             name="donation-type"
-            value={DonationAmount.TEN_DOLLARS}
-            checked={donationType === DonationAmount.TEN_DOLLARS}
+            value={DonationType.TEN_DOLLARS}
+            checked={donationType === DonationType.TEN_DOLLARS}
             onChange={onDonationChange}
           />
           <label htmlFor="donate-10">$10</label>
@@ -61,8 +53,8 @@ const DonationStepMethod: React.FC<StepProps> = ({
             type="radio"
             id="donate-20"
             name="donation-type"
-            value={DonationAmount.TWENTY_DOLLARS}
-            checked={donationType === DonationAmount.TWENTY_DOLLARS}
+            value={DonationType.TWENTY_DOLLARS}
+            checked={donationType === DonationType.TWENTY_DOLLARS}
             onChange={onDonationChange}
           />
           <label htmlFor="donate-20">$20</label>
@@ -72,8 +64,8 @@ const DonationStepMethod: React.FC<StepProps> = ({
             type="radio"
             id="donate-50"
             name="donation-type"
-            value={DonationAmount.FIFTY_DOLLARS}
-            checked={donationType === DonationAmount.FIFTY_DOLLARS}
+            value={DonationType.FIFTY_DOLLARS}
+            checked={donationType === DonationType.FIFTY_DOLLARS}
             onChange={onDonationChange}
           />
           <label htmlFor="donate-50">$50</label>
@@ -83,8 +75,8 @@ const DonationStepMethod: React.FC<StepProps> = ({
             type="radio"
             id="donate-100"
             name="donation-type"
-            value={DonationAmount.ONE_HUNDRED_DOLLARS}
-            checked={donationType === DonationAmount.ONE_HUNDRED_DOLLARS}
+            value={DonationType.ONE_HUNDRED_DOLLARS}
+            checked={donationType === DonationType.ONE_HUNDRED_DOLLARS}
             onChange={onDonationChange}
           />
           <label htmlFor="donate-100">$100</label>
@@ -94,8 +86,8 @@ const DonationStepMethod: React.FC<StepProps> = ({
             type="radio"
             id="donate-custom"
             name="donation-type"
-            value={DonationAmount.CUSTOM}
-            checked={donationType === DonationAmount.CUSTOM}
+            value={DonationType.CUSTOM}
+            checked={donationType === DonationType.CUSTOM}
             onChange={onDonationChange}
           />
           <label htmlFor="donate-custom">
@@ -106,7 +98,7 @@ const DonationStepMethod: React.FC<StepProps> = ({
               max={1000000}
               id="donate-custom"
               value={donationAmount}
-              disabled={donationType !== DonationAmount.CUSTOM}
+              disabled={donationType !== DonationType.CUSTOM}
               onChange={(e) => setDonationAmount(+e.target.value)}
             />
           </label>

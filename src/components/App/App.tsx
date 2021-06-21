@@ -1,14 +1,16 @@
 import React, { Suspense } from "react";
 
+import Header from "components/Header";
+import Modal from "components/Modal";
+import Toolbar from "components/Toolbar";
+import IconGrid from "components/IconGrid";
+import Footer from "components/Footer";
+import ErrorBoundary from "components/ErrorBoundary";
+import Notice from "components/Notice";
+
+import useIconParameters from "hooks/useIconParameters";
+
 import "./App.css";
-import Header from "../Header/Header";
-import Modal from "../Modal/Modal";
-import Toolbar from "../Toolbar/Toolbar";
-import IconGrid from "../IconGrid/IconGrid";
-import Footer from "../Footer/Footer";
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
-import Notice from "../Notice/Notice";
-import useIconParameters from "../../hooks/useIconParameters";
 
 const errorFallback = <Notice message="Search error" />;
 const paymentFallback = <Notice message="Could not connect to payments" />;

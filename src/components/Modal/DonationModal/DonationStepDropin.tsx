@@ -17,9 +17,11 @@ const BT_PAYMENT_FIELDS = {
   },
 };
 
-const PaymentModal: React.FC<StepProps> = ({ previousStep }) => {
+const PaymentModal: React.FC<StepProps> = ({ previousStep, routeProps }) => {
   const instance = useRef<Dropin>();
   const [isValid, setIsValid] = useState<boolean>(false);
+
+  const { donationAmount } = routeProps;
 
   const submit = async () => {
     if (!instance.current) return;
@@ -43,13 +45,13 @@ const PaymentModal: React.FC<StepProps> = ({ previousStep }) => {
           },
           paypal: {
             flow: "checkout",
-            amount: "10.00",
+            amount: donationAmount.toFixed(2).toString(),
             currency: "USD",
             commit: true,
           },
           paypalCredit: {
             flow: "checkout",
-            amount: "10.00",
+            amount: donationAmount.toFixed(2).toString(),
             currency: "USD",
             commit: true,
           },
@@ -65,7 +67,7 @@ const PaymentModal: React.FC<StepProps> = ({ previousStep }) => {
     };
 
     initializePayments();
-  }, []);
+  }, [donationAmount]);
 
   return (
     <>

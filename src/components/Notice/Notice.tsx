@@ -1,17 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useRecoilValue } from "recoil";
-
-import { isDarkThemeSelector } from "../../state/selectors";
-import { searchQueryAtom } from "../../state/atoms";
 import { HourglassMedium, Question, SmileyXEyes } from "phosphor-react";
+
+import { isDarkThemeSelector } from "state/selectors";
+import { searchQueryAtom } from "state/atoms";
 
 interface NoticeProps {
   message?: string;
   type?: "wait" | "help" | "warn" | "none";
 }
 
-const Notice: React.FC<NoticeProps> = ({ message, type = "warn", children }) => {
+const Notice: React.FC<NoticeProps> = ({
+  message,
+  type = "warn",
+  children,
+}) => {
   const isDark = useRecoilValue(isDarkThemeSelector);
   const query = useRecoilValue(searchQueryAtom);
 

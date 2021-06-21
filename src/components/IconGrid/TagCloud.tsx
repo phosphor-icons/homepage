@@ -1,7 +1,8 @@
 import React, { useCallback } from "react";
 import { useSetRecoilState } from "recoil";
 
-import { searchQueryAtom } from "../../state/atoms";
+import { searchQueryAtom } from "state/atoms";
+
 import "./TagCloud.css";
 
 interface TagCloudProps {

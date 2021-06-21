@@ -5,7 +5,8 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { Command, MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
 import ReactGA from "react-ga";
 
-import { searchQueryAtom } from "../../state/atoms";
+import { searchQueryAtom } from "state/atoms";
+
 import "./SearchInput.css";
 
 const apple = /iPhone|iPod|iPad|Macintosh|MacIntel|MacPPC/i;
@@ -19,7 +20,8 @@ type SearchInputProps = {};
 const SearchInput: React.FC<SearchInputProps> = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
-  const inputRef = useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
+  const inputRef =
+    useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
 
   useHotkeys("ctrl+k,cmd+k", (e) => {
     e.preventDefault();

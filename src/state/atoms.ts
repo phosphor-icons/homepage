@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { ModalInstance } from "../components/Modal/Modal";
 import { IconStyle } from "../lib";
 
 export const searchQueryAtom = atom<string>({
@@ -26,7 +27,12 @@ export const iconPreviewOpenAtom = atom<string | false>({
   default: false,
 });
 
+export const modalAtom = atom<((props: ModalInstance) => JSX.Element) | null>({
+  key: "modalAtom",
+  default: null,
+});
+
 export const modalOpenAtom = atom<boolean>({
   key: "modalOpenAtom",
-  default: true,
+  default: false,
 });

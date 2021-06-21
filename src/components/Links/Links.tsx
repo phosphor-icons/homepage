@@ -3,17 +3,19 @@ import { OutboundLink } from "react-ga";
 import { useSetRecoilState } from "recoil";
 import { ArrowElbowDownRight } from "phosphor-react";
 
-import { iconCount } from "../../lib/icons";
-import { modalOpenAtom } from "../../state/atoms";
+import { iconCount } from "lib/icons";
+import { modalSelector } from "state/selectors";
+import DonationModal from "components/Modal/DonationModal";
 
 import "./Links.css";
 
 interface LinksProps {}
 
 const Links: React.FC<LinksProps> = () => {
-  const setModalOpen = useSetRecoilState(modalOpenAtom);
+  const openModal = useSetRecoilState(modalSelector);
+  const openDonationModal = () => openModal({ type: DonationModal });
 
-  const openDonationModal = () => setTimeout(() => setModalOpen(true), 1000);
+  const delayedOpenDonationModal = () => setTimeout(openDonationModal, 2000);
 
   return (
     <div className="links">
@@ -25,7 +27,7 @@ const Links: React.FC<LinksProps> = () => {
           eventLabel="Download all"
           download
           type="application/zip"
-          onClick={openDonationModal}
+          onClick={delayedOpenDonationModal}
         >
           Download all ({iconCount})
         </OutboundLink>
@@ -59,27 +61,11 @@ const Links: React.FC<LinksProps> = () => {
           Request an icon
         </a>
       </div>
-      {/* <div>
-        <ArrowElbowDownRight size={24} />
-        <span>
-          <a className="nav-link" href="https://paypal.me/minoraxis">
-            Donate on PayPal
-          </a>
-          {" / "}
-          <a className="nav-link" href="https://patreon.com/phosphoricons">
-            Patreon
-          </a>
-        </span>
-      </div> */}
       <div>
         <ArrowElbowDownRight size={24} />
-        <a
-          className="nav-link"
-          href="https://paypal.me/minoraxis"
-          onClick={openDonationModal}
-        >
-          Donate on PayPal
-        </a>
+        <span className="nav-link" onClick={openDonationModal}>
+          Donate
+        </span>
       </div>
       <div>
         <ArrowElbowDownRight size={24} />

@@ -20,13 +20,14 @@
   margin-right: 12px;
 }
 
-a.nav-link {
+.nav-link {
   text-decoration: none;
   position: relative;
   color: black;
+  cursor: pointer;
 }
 
-a.nav-link:after {
+.nav-link:after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -36,6 +37,6 @@ a.nav-link:after {
   transition: 0.2s;
 }
 
-a.nav-link:hover:after {
+.nav-link:hover:after {
   width: 100%;
 }

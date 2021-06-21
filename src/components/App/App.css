@@ -144,7 +144,7 @@ button.text-button svg {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  row-gap: 16px;
+  row-gap: 8px;
 }
 
 .radio-button input[type="radio"] {

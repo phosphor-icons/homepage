@@ -3,18 +3,27 @@ import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { IconContext } from "phosphor-react";
 
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
+import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "state/atoms";
 import {
   filteredQueryResultsSelector,
   isDarkThemeSelector,
-} from "../../state/selectors";
-import useGridSpans from "../../hooks/useGridSpans";
+} from "state/selectors";
+import useGridSpans from "hooks/useGridSpans";
+
 import IconGridItem from "./IconGridItem";
 import TagCloud from "./TagCloud";
-import Notice from "../Notice/Notice";
+import Notice from "components/Notice";
+
 import "./IconGrid.css";
 
-const defaultSearchTags = ["*new*", "communication", "editor", "emoji", "maps", "weather"];
+const defaultSearchTags = [
+  "*new*",
+  "communication",
+  "editor",
+  "emoji",
+  "maps",
+  "weather",
+];
 
 type IconGridProps = {};
 
