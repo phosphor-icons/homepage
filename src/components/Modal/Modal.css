@@ -1,0 +1,67 @@
+.modal-container {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  min-height: 600px;
+  /* background-color: #ffe8dc; */
+  background-color: white;
+  border-radius: 8px;
+  border: 2px solid black;
+  padding: 24px;
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    min-width: 90%;
+    min-height: 100%;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.step-button-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+button.modal-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  box-sizing: content-box;
+  z-index: 1;
+}
+
+.payment-methods {
+  display: grid;
+  gap: 16px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.payment-methods button {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  height: 96px;
+}
+
+.payment-methods button > svg {
+  margin: 0;
+}

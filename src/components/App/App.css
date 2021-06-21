@@ -49,6 +49,7 @@ button {
   justify-content: flex-start;
 }
 
+input.main-button,
 button.main-button {
   height: 64px;
   padding: 0 48px 0 40px;
@@ -72,19 +73,29 @@ button.main-button {
   margin: 0 24px 24px 0;
 }
 
+input.main-button:active,
 button.main-button:active {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 0 black;
 }
 
+input.main-button:focus,
 button.main-button:focus {
   outline: none;
+}
+
+input.main-button:disabled,
+button.main-button:disabled {
+  border: 2px solid gray;
+  box-shadow: 4px 4px 0 0 gray;
+  cursor: not-allowed;
 }
 
 /* button.main-button:not(:last-child) {
   margin: 0 24px 24px 0;
 } */
 
+input.main-button,
 button.main-button svg {
   margin-right: 12px;
 }
@@ -113,4 +124,56 @@ a.main-link:after {
 
 a.main-link:hover:after {
   width: 0%;
+}
+
+button.text-button {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button.text-button svg {
+  margin: 8px;
+}
+
+.radio-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  row-gap: 16px;
+}
+
+.radio-button input[type="radio"] {
+  display: none;
+}
+
+.radio-button label {
+  display: inline-block;
+  padding: 8px;
+  min-width: 50px;
+  background-color: white;
+  border-radius: 8px;
+  border: 2px solid black;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+
+.radio-button label:hover {
+  background-color: #E0E0E0;
+}
+
+.radio-button input[type="radio"]:checked + label {
+  color: white;
+  background-color: black;
+
+}
+
+.radio-button label input {
+  margin-left: 8px;
 }

@@ -25,3 +25,8 @@ export const iconPreviewOpenAtom = atom<string | false>({
   key: "iconPreviewOpenAtom",
   default: false,
 });
+
+export const modalOpenAtom = atom<boolean>({
+  key: "modalOpenAtom",
+  default: true,
+});

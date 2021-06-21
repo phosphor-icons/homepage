@@ -1,14 +1,20 @@
 import React from "react";
 import { OutboundLink } from "react-ga";
+import { useSetRecoilState } from "recoil";
 import { ArrowElbowDownRight } from "phosphor-react";
 
 import { iconCount } from "../../lib/icons";
+import { modalOpenAtom } from "../../state/atoms";
 
 import "./Links.css";
 
 interface LinksProps {}
 
 const Links: React.FC<LinksProps> = () => {
+  const setModalOpen = useSetRecoilState(modalOpenAtom);
+
+  const openDonationModal = () => setTimeout(() => setModalOpen(true), 1000);
+
   return (
     <div className="links">
       <div>
@@ -19,28 +25,29 @@ const Links: React.FC<LinksProps> = () => {
           eventLabel="Download all"
           download
           type="application/zip"
+          onClick={openDonationModal}
         >
           Download all ({iconCount})
         </OutboundLink>
       </div>
-       <div>
+      <div>
         <ArrowElbowDownRight size={24} />
         <span>
-        <OutboundLink
-          className="nav-link"
-          to="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
-          eventLabel="Figma library"
-        >
-          Figma library
-        </OutboundLink>
-        {" / "}
-        <OutboundLink
-          className="nav-link"
-          to="https://www.figma.com/community/plugin/898620911119764089/Phosphor-Icons"
-          eventLabel="Figma plugin"
-        >
-          plugin
-        </OutboundLink>
+          <OutboundLink
+            className="nav-link"
+            to="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
+            eventLabel="Figma library"
+          >
+            Figma library
+          </OutboundLink>
+          {" / "}
+          <OutboundLink
+            className="nav-link"
+            to="https://www.figma.com/community/plugin/898620911119764089/Phosphor-Icons"
+            eventLabel="Figma plugin"
+          >
+            plugin
+          </OutboundLink>
         </span>
       </div>
       <div>
@@ -66,7 +73,11 @@ const Links: React.FC<LinksProps> = () => {
       </div> */}
       <div>
         <ArrowElbowDownRight size={24} />
-        <a className="nav-link" href="https://paypal.me/minoraxis">
+        <a
+          className="nav-link"
+          href="https://paypal.me/minoraxis"
+          onClick={openDonationModal}
+        >
           Donate on PayPal
         </a>
       </div>
