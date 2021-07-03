@@ -38,6 +38,12 @@
   justify-content: center;
 }
 
+.donation-details {
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+
 button.modal-close-button {
   position: absolute;
   top: 24px;

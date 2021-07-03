@@ -1,6 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
 import dropin, { Dropin } from "braintree-web-drop-in";
+import axios from "axios";
+import { CurrencyCircleDollar } from "phosphor-react";
+
 import { StepProps } from "./DonationModal";
+
+const PaymentServer = axios.create({
+  baseURL: "https://us-central1-phosphor-14c61.cloudfunctions.net/paymentsApi",
+});
 
 const BT_PAYMENT_FIELDS = {
   number: {
@@ -17,16 +24,40 @@ const BT_PAYMENT_FIELDS = {
   },
 };
 
-const PaymentModal: React.FC<StepProps> = ({ previousStep, routeProps }) => {
+const PaymentModal: React.FC<StepProps> = ({
+  nextStep,
+  previousStep,
+  routeProps,
+}) => {
   const instance = useRef<Dropin>();
   const [isValid, setIsValid] = useState<boolean>(false);
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   const { donationAmount } = routeProps;
 
   const submit = async () => {
     if (!instance.current) return;
-    const payload = await instance.current.requestPaymentMethod();
-    console.log({ payload });
+
+    setLoading(true);
+
+    try {
+      const payload = await instance.current.requestPaymentMethod();
+      console.log({ ...payload, donationAmount });
+      const response = await PaymentServer.post("/", {
+        ...payload,
+        donationAmount,
+      });
+
+      console.log({ response });
+      if (!!response.data?.success) {
+        nextStep();
+      } else {
+        setIsValid(false);
+      }
+    } catch (_e) {
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -47,13 +78,13 @@ const PaymentModal: React.FC<StepProps> = ({ previousStep, routeProps }) => {
             flow: "checkout",
             amount: donationAmount.toFixed(2).toString(),
             currency: "USD",
-            commit: true,
+            commit: false,
           },
           paypalCredit: {
             flow: "checkout",
             amount: donationAmount.toFixed(2).toString(),
             currency: "USD",
-            commit: true,
+            commit: false,
           },
           venmo: { allowNewBrowserTab: false },
         });
@@ -72,12 +103,22 @@ const PaymentModal: React.FC<StepProps> = ({ previousStep, routeProps }) => {
   return (
     <>
       <div id="braintree-dropin"></div>
+      <div className="donation-details">
+        <CurrencyCircleDollar size={64} weight="duotone" />
+        <span>
+          Preparing your ${routeProps.donationAmount.toFixed(2)} donation...
+        </span>
+      </div>
       <div className="step-button-container">
         <button className="main-button" onClick={previousStep}>
           Back
         </button>
-        <button className="main-button" onClick={submit} disabled={!isValid}>
-          Submit
+        <button
+          className="main-button"
+          onClick={submit}
+          disabled={isLoading || !isValid}
+        >
+          {isLoading ? "Processing..." : "Donate"}
         </button>
       </div>
     </>

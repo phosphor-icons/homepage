@@ -22,6 +22,7 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
+// prettier-ignore
 console.log(`
 %c  sphorphosphor  %co%cspho
 %c  s%cphorphosphor  %co%csphorpho%cs
