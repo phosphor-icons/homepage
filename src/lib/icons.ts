@@ -8492,7 +8492,7 @@ export const icons: ReadonlyArray<IconEntry> = [
   // },
   {
     name: "toilet-paper",
-    categories: [IconCategory.OBJECTS],
+    categories: [IconCategory.HEALTH, IconCategory.OBJECTS],
     tags: ["*new*", "bathroom", "restroom", "lavatory", "water closet"],
     Icon: Icons.ToiletPaper,
   },

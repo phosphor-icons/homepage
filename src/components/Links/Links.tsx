@@ -23,24 +23,24 @@ const Links: React.FC<LinksProps> = () => {
           Download all ({iconCount})
         </OutboundLink>
       </div>
-       <div>
+      <div>
         <ArrowElbowDownRight size={24} />
         <span>
-        <OutboundLink
-          className="nav-link"
-          to="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
-          eventLabel="Figma library"
-        >
-          Figma library
-        </OutboundLink>
-        {" / "}
-        <OutboundLink
-          className="nav-link"
-          to="https://www.figma.com/community/plugin/898620911119764089/Phosphor-Icons"
-          eventLabel="Figma plugin"
-        >
-          plugin
-        </OutboundLink>
+          <OutboundLink
+            className="nav-link"
+            to="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
+            eventLabel="Figma library"
+          >
+            Figma library
+          </OutboundLink>
+          {" / "}
+          <OutboundLink
+            className="nav-link"
+            to="https://www.figma.com/community/plugin/898620911119764089/Phosphor-Icons"
+            eventLabel="Figma plugin"
+          >
+            plugin
+          </OutboundLink>
         </span>
       </div>
       <div>
