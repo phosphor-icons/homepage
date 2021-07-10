@@ -45,14 +45,17 @@ const Links: React.FC<LinksProps> = () => {
       </div>
       <div>
         <ArrowElbowDownRight size={24} />
-        <a
+        <OutboundLink
           className="nav-link"
-          href="https://github.com/phosphor-icons/phosphor-home/issues"
+          to="https://phosphoricons.com/assets/phosphor-icons.sketchplugin.zip"
+          eventLabel="Download sketch plugin"
+          download
+          type="application/zip"
         >
-          Request an icon
-        </a>
+          Sketch plugin
+        </OutboundLink>
       </div>
-      {/* <div>
+      <div>
         <ArrowElbowDownRight size={24} />
         <span>
           <a className="nav-link" href="https://paypal.me/minoraxis">
@@ -63,8 +66,8 @@ const Links: React.FC<LinksProps> = () => {
             Patreon
           </a>
         </span>
-      </div> */}
-      <div>
+      </div>
+      {/* <div>
         <ArrowElbowDownRight size={24} />
         <a className="nav-link" href="https://paypal.me/minoraxis">
           Donate on PayPal
@@ -76,6 +79,7 @@ const Links: React.FC<LinksProps> = () => {
           Support us on Patreon
         </a>
       </div>
+    */}
       <div>
         <ArrowElbowDownRight size={24} />
         <a
@@ -83,6 +87,15 @@ const Links: React.FC<LinksProps> = () => {
           href="https://github.com/phosphor-icons/phosphor-home"
         >
           GitHub
+        </a>
+      </div>
+      <div>
+        <ArrowElbowDownRight size={24} />
+        <a
+          className="nav-link"
+          href="https://github.com/phosphor-icons/phosphor-home/issues"
+        >
+          Request an icon
         </a>
       </div>
     </div>
