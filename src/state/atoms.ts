@@ -13,7 +13,7 @@ export const iconWeightAtom = atom<IconStyle>({
 
 export const iconSizeAtom = atom<number>({
   key: "iconSizeAtom",
-  default: 48,
+  default: 32,
 });
 
 export const iconColorAtom = atom<string>({

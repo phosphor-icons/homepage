@@ -5,6 +5,7 @@ import StyleInput from "../StyleInput/StyleInput";
 import SearchInput from "../SearchInput/SearchInput";
 import SizeInput from "../SizeInput/SizeInput";
 import ColorInput from "../ColorInput/ColorInput";
+import SettingsActions from "../SettingsActions/SettingsActions";
 
 type ToolbarProps = {};
 
@@ -16,6 +17,7 @@ const Toolbar: React.FC<ToolbarProps> = () => {
         <SearchInput />
         <SizeInput />
         <ColorInput />
+        <SettingsActions />
       </div>
     </nav>
   );

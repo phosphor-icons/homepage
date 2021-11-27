@@ -34,4 +34,29 @@ export default () => {
       if (normalizedColor.isValid()) setColor(normalizedColor.toHexString());
     }
   }, [color, setColor]);
+
+  useEffect(() => {
+    if (!weight && !size && !color) {
+      const persistedState = JSON.parse(
+        window.localStorage.getItem("__phosphor_settings__") || "null"
+      );
+
+      if (!!persistedState) {
+        const { weight, size, color } = persistedState;
+        if (weight) {
+          if (weight.toUpperCase() in IconStyle) setWeight(weight as IconStyle);
+        }
+        if (size) {
+          const normalizedSize = parseInt(size);
+          if (typeof normalizedSize === "number" && isFinite(normalizedSize))
+            setSize(Math.min(Math.max(normalizedSize, 16), 96));
+        }
+        if (color) {
+          const normalizedColor = TinyColor(color);
+          if (normalizedColor.isValid())
+            setColor(normalizedColor.toHexString());
+        }
+      }
+    }
+  }, []);
 };

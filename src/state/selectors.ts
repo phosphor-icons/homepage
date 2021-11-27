@@ -2,7 +2,12 @@ import { selector, selectorFamily } from "recoil";
 import TinyColor from "tinycolor2";
 import Fuse from "fuse.js";
 
-import { searchQueryAtom, iconColorAtom } from "./atoms";
+import {
+  searchQueryAtom,
+  iconWeightAtom,
+  iconSizeAtom,
+  iconColorAtom,
+} from "./atoms";
 import { IconEntry, IconCategory } from "../lib";
 import { icons } from "../lib/icons";
 
@@ -52,17 +57,29 @@ export const singleCategoryQueryResultsSelector = selectorFamily<
   IconCategory
 >({
   key: "singleCategoryQueryResultsSelector",
-  get: (category: IconCategory) => ({ get }) => {
-    const filteredResults = get(filteredQueryResultsSelector);
-    return new Promise((resolve) =>
-      resolve(
-        filteredResults.filter((icon) => icon.categories.includes(category))
-      )
-    );
-  },
+  get:
+    (category: IconCategory) =>
+    ({ get }) => {
+      const filteredResults = get(filteredQueryResultsSelector);
+      return new Promise((resolve) =>
+        resolve(
+          filteredResults.filter((icon) => icon.categories.includes(category))
+        )
+      );
+    },
 });
 
 export const isDarkThemeSelector = selector<boolean>({
   key: "isDarkThemeSelector",
   get: ({ get }) => TinyColor(get(iconColorAtom)).isLight(),
+});
+
+export const resetSettingsSelector = selector<null>({
+  key: "resetSettings",
+  get: () => null,
+  set: ({ reset }) => {
+    reset(iconWeightAtom);
+    reset(iconSizeAtom);
+    reset(iconColorAtom);
+  },
 });

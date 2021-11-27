@@ -8,12 +8,14 @@ import Footer from "../Footer/Footer";
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import Notice from "../Notice/Notice";
 import useIconParameters from "../../hooks/useIconParameters";
+import usePersistSettings from "../../hooks/usePersistSettings";
 
 const errorFallback = <Notice message="Search error" />;
 const waitingFallback = <Notice type="none" message="" />;
 
 const App: React.FC<any> = () => {
   useIconParameters();
+  usePersistSettings();
 
   return (
     <React.StrictMode>

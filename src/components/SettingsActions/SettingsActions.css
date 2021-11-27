@@ -1,0 +1,13 @@
+.action-button {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 558px) {
+  .action-button {
+    display: none;
+  }
+}
