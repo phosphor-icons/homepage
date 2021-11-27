@@ -29,6 +29,8 @@ const TagCloud: React.FC<TagCloudProps> = ({ name, tags, isDark }) => {
           onClick={() => void handleTagClick(tag)}
         >
           <code className={`${isDark ? "dark" : ""}`}>{tag}</code>
+          {tag === "*new*" && <span className="badge new">•</span>}
+          {tag === "*updated*" && <span className="badge updated">•</span>}
         </button>
       ))}
     </div>

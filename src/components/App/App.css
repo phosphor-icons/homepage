@@ -114,3 +114,16 @@ a.main-link:after {
 a.main-link:hover:after {
   width: 0%;
 }
+
+.badge.new {
+  color: #ff6e60;
+}
+
+.badge.updated {
+  color: #397fff;
+}
+
+.badge {
+  font-size: 24px;
+  line-height: 0.5em;
+}

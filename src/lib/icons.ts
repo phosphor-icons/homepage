@@ -1682,6 +1682,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       IconCategory.OBJECTS,
     ],
     tags: [
+      "*updated*",
       "addition",
       "sum",
       "subtraction",
@@ -9189,6 +9190,7 @@ export const icons: ReadonlyArray<IconEntry> = [
       "machinery",
       "mechanical",
       "repairs",
+      "*updated*",
     ],
     Icon: Icons.Wrench,
   },

@@ -36,6 +36,8 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
   const { name, Icon } = entry;
   const [open, setOpen] = useRecoilState(iconPreviewOpenAtom);
   const isOpen = open === name;
+  const isNew = entry.tags.includes("*new*");
+  const isUpdated = entry.tags.includes("*updated*");
   const delayRef = useRef<number>(0);
   const offset = useRef({ top: 0, left: 0 });
   const ref = useRef<any>();
@@ -84,11 +86,15 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
         onClick={handleOpen}
       >
         <Icon />
-        <p>{name}</p>
+        <p>
+          {name}
+          {isNew && <span className="badge new">•</span>}
+          {isUpdated && <span className="badge updated">•</span>}
+        </p>
       </motion.div>
-        <AnimatePresence initial={false}>
-          {isOpen && <DetailsPanel {...props} />}
-        </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {isOpen && <DetailsPanel {...props} />}
+      </AnimatePresence>
     </>
   );
 };
