@@ -20,10 +20,14 @@ const SettingsActions: React.FC = () => {
       ["size", size.toString()],
       ["color", color.replace("#", "")],
     ]).toString();
-    void navigator.clipboard?.writeText(
-      `${window.location.host}?${paramString}`
-    );
-    setCopied(true);
+    void navigator.clipboard
+      ?.writeText(`${window.location.host}?${paramString}`)
+      .then(() => {
+        setCopied(true);
+      })
+      .catch(() => {
+        alert("Clipboard permissions must be enabled to copy links!");
+      });
   };
 
   return (

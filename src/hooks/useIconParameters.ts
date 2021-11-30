@@ -58,5 +58,6 @@ export default () => {
         }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
