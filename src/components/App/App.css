@@ -109,6 +109,7 @@ a.main-link:after {
   width: 100%;
   border-bottom: 1px solid black;
   transition: 0.2s;
+  pointer-events: none;
 }
 
 a.main-link:hover:after {
