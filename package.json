@@ -42,8 +42,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "ingest": "node ./bin/ingest.js",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\""
   },
   "eslintConfig": {
@@ -73,6 +72,8 @@
     "@types/react-list": "^0.8.5",
     "@types/react-virtualized": "^9.21.10",
     "@types/tinycolor2": "^1.4.2",
+    "axios": "^0.24.0",
+    "chalk": "^4",
     "typescript": "^3.9.6"
   }
 }
