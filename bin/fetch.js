@@ -1,15 +1,33 @@
 #!/usr/bin/env node
+"use strict";
+
 const fs = require("fs/promises");
 const path = require("path");
 const axios = require("axios");
 const chalk = require("chalk");
+const { Command } = require("commander");
+const { version } = require("../package.json");
 
 const ICON_API_URL = "https://api.phosphoricons.com";
-const PARAMS = new URLSearchParams([["release", "1.4"]]).toString();
 
 async function main() {
+  const program = new Command();
+  program
+    .version(version)
+    .option(
+      "-r --release <version>",
+      "Fetch icons from Phosphor API and compile to internal data structure"
+    )
+    .option("-p --published", "Published status of icons")
+    .option("-P, --no-published", "Published status of icons")
+    .option("-q --query <text>", "Fulltext search term")
+    .option("-n --name <name>", "Exact icon namee match");
+
+  program.parse(process.argv);
+  const params = new URLSearchParams(Object.entries(program.opts())).toString();
+
   try {
-    const res = await axios.get(`${ICON_API_URL}?${PARAMS}`);
+    const res = await axios.get(`${ICON_API_URL}?${params}`);
     if (res.data) {
       let fileString = `\
 import * as Icons from "phosphor-react";

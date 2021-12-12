@@ -20,6 +20,15 @@
   ],
   "repository": "github:phosphor-icons/phosphor-home",
   "private": true,
+  "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "fetch": "node ./bin/fetch.js",
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\""
+  },
   "dependencies": {
     "file-saver": "^2.0.2",
     "framer-motion": "^3.10.0",
@@ -36,14 +45,21 @@
     "svg2png-converter": "^1.0.0",
     "tinycolor2": "^1.4.2"
   },
-  "scripts": {
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "ingest": "node ./bin/ingest.js",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\""
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/file-saver": "^2.0.1",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-virtualized": "^9.21.10",
+    "@types/tinycolor2": "^1.4.2",
+    "axios": "^0.24.0",
+    "chalk": "^4",
+    "commander": "^8.3.0",
+    "typescript": "^3.9.6"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -59,21 +75,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/file-saver": "^2.0.1",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.46",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-list": "^0.8.5",
-    "@types/react-virtualized": "^9.21.10",
-    "@types/tinycolor2": "^1.4.2",
-    "axios": "^0.24.0",
-    "chalk": "^4",
-    "typescript": "^3.9.6"
   }
 }
