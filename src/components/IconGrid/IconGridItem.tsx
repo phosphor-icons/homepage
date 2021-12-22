@@ -25,7 +25,7 @@ const delayPerPixel = 0.0004;
 
 const itemVariants = {
   hidden: { opacity: 0 },
-  visible: (delayRef: any) => ({
+  visible: (delayRef: MutableRefObject<number>) => ({
     opacity: 1,
     transition: { delay: delayRef.current },
   }),
