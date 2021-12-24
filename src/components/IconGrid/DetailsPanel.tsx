@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useHotkeys } from "react-hotkeys-hook";
 import { motion } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
@@ -59,6 +60,8 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
   const [copied, setCopied] = useTransientState<string | false>(false, 2000);
   const ref = useRef<SVGSVGElement>(null);
 
+  useHotkeys("esc", () => setOpen(false));
+
   useEffect(
     () => ReactGA.event({ category: "Grid", action: "Details", label: name }),
     [name]
@@ -82,17 +85,28 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
     react: `<${Icon.displayName} size={${size}} ${
       color !== "#000000" ? `color="${color}" ` : ""
     }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
-    vue: `<ph${Icon.displayName!!.replace(
+    vue: `<ph${Icon.displayName!.replace(
       /([a-z0-9]|(?=[A-Z]))([A-Z])/g,
       "$1-$2"
     ).toLowerCase()} :size="${size}" ${
       color !== "#000000" ? `color="${color}" ` : ""
     }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
+    flutter: 
+      weight === "duotone"
+        ? "This weight is not yet supported"
+        : `Icon(\n  PhosphorIcons.${
+            Icon.displayName!.replace(/^\w/, (c) => c.toLowerCase())
+          }${weight === "regular"
+            ? ""
+            : weight.replace(/^\w/, (c) => c.toUpperCase())
+          },\n  size: ${size.toFixed(1)},\n  color: Color(0xff${
+            color.replace("#", "")
+          }),\n)`,
   };
 
   const handleCopySnippet = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    type: "html" | "react" | "vue"
+    type: "html" | "react" | "vue" | "flutter"
   ) => {
     event.currentTarget.blur();
     setCopied(type);
@@ -218,6 +232,25 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
             </button>
           </pre>
         </div>
+        <div className="snippet">
+          Flutter
+          <pre tabIndex={0} style={snippetButtonStyle}>
+            <span>{snippets.flutter}</span>
+            <button
+              title="Copy snippet"
+              onClick={(e) => handleCopySnippet(e, "flutter")}
+              disabled={weight === "duotone"}
+              style={snippetButtonStyle}
+            >
+              {copied === "flutter" ? (
+                <CheckCircle size={24} color={successColor} weight="fill" />
+              ) : (
+                <Copy size={24} color={snippetButtonStyle.color} weight="fill" />
+              )}
+            </button>
+          </pre>
+        </div>
+
         <div className="button-row">
           <button style={buttonBarStyle} onClick={handleDownloadPNG}>
             <Download size={32} color="currentColor" weight="fill" /> Download
