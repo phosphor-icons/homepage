@@ -36,3 +36,10 @@ export interface IconEntry {
   tags: string[];
   Icon: Icon;
 }
+
+export enum SnippetType {
+  REACT = "React",
+  VUE = "Vue",
+  HTML = "HTML/CSS",
+  FLUTTER = "Flutter",
+}

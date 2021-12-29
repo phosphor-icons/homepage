@@ -15,7 +15,8 @@ import {
 } from "../../state/atoms";
 import useTransientState from "../../hooks/useTransientState";
 import TagCloud from "./TagCloud";
-import { IconEntry } from "../../lib";
+import { IconEntry, SnippetType } from "../../lib";
+import { getCodeSnippets, supportsWeight } from "../../utils";
 
 const panelVariants = {
   open: {
@@ -50,6 +51,13 @@ interface InfoPanelProps {
   entry: IconEntry;
 }
 
+const renderedSnippets = [
+  SnippetType.REACT,
+  SnippetType.VUE,
+  SnippetType.HTML,
+  SnippetType.FLUTTER,
+];
+
 const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
   const { index, spans, isDark, entry } = props;
   const { name, Icon, categories, tags } = entry;
@@ -57,7 +65,10 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const setOpen = useSetRecoilState(iconPreviewOpenAtom);
-  const [copied, setCopied] = useTransientState<string | false>(false, 2000);
+  const [copied, setCopied] = useTransientState<SnippetType | "SVG" | false>(
+    false,
+    2000
+  );
   const ref = useRef<SVGSVGElement>(null);
 
   useHotkeys("esc", () => setOpen(false));
@@ -75,38 +86,17 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
       ? { color: disabledColor, userSelect: "none" }
       : { color: buttonColor };
 
-  const snippets = {
-    html:
-      weight === "duotone"
-        ? "This weight is not yet supported"
-        : `<i class="ph-${name}${
-            weight === "regular" ? "" : `-${weight}`
-          }"></i>`,
-    react: `<${Icon.displayName} size={${size}} ${
-      color !== "#000000" ? `color="${color}" ` : ""
-    }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
-    vue: `<ph${Icon.displayName!.replace(
-      /([a-z0-9]|(?=[A-Z]))([A-Z])/g,
-      "$1-$2"
-    ).toLowerCase()} :size="${size}" ${
-      color !== "#000000" ? `color="${color}" ` : ""
-    }${weight === "regular" ? "" : `weight="${weight}" `}/>`,
-    flutter: 
-      weight === "duotone"
-        ? "This weight is not yet supported"
-        : `Icon(\n  PhosphorIcons.${
-            Icon.displayName!.replace(/^\w/, (c) => c.toLowerCase())
-          }${weight === "regular"
-            ? ""
-            : weight.replace(/^\w/, (c) => c.toUpperCase())
-          },\n  size: ${size.toFixed(1)},\n  color: Color(0xff${
-            color.replace("#", "")
-          }),\n)`,
-  };
+  const snippets = getCodeSnippets({
+    displayName: Icon.displayName!,
+    name,
+    weight,
+    size,
+    color,
+  });
 
   const handleCopySnippet = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    type: "html" | "react" | "vue" | "flutter"
+    type: SnippetType
   ) => {
     event.currentTarget.blur();
     setCopied(type);
@@ -118,7 +108,7 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.currentTarget.blur();
-    setCopied("svg");
+    setCopied("SVG");
     ref.current && void navigator.clipboard?.writeText(ref.current.outerHTML);
   };
 
@@ -171,6 +161,7 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
           isDark={isDark}
         />
       </motion.div>
+
       <motion.div
         initial="collapsed"
         animate="open"
@@ -178,78 +169,45 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
         variants={contentVariants}
         className="icon-usage"
       >
-        <div className="snippet">
-          React
-          <pre tabIndex={0}>
-            <span>{snippets.react}</span>
-            <button
-              title="Copy snippet"
-              onClick={(e) => handleCopySnippet(e, "react")}
-            >
-              {copied === "react" ? (
-                <CheckCircle size={24} color={successColor} weight="fill" />
-              ) : (
-                <Copy size={24} color={buttonColor} weight="fill" />
-              )}
-            </button>
-          </pre>
-        </div>
-        <div className="snippet">
-          Vue
-          <pre tabIndex={0}>
-            <span>{snippets.vue}</span>
-            <button
-              title="Copy snippet"
-              onClick={(e) => handleCopySnippet(e, "vue")}
-            >
-              {copied === "vue" ? (
-                <CheckCircle size={24} color={successColor} weight="fill" />
-              ) : (
-                <Copy size={24} color={buttonColor} weight="fill" />
-              )}
-            </button>
-          </pre>
-        </div>
-        <div className="snippet">
-          HTML/CSS
-          <pre tabIndex={0} style={snippetButtonStyle}>
-            <span>{snippets.html}</span>
-            <button
-              title="Copy snippet"
-              onClick={(e) => handleCopySnippet(e, "html")}
-              disabled={weight === "duotone"}
-              style={snippetButtonStyle}
-            >
-              {copied === "html" ? (
-                <CheckCircle size={24} color={successColor} weight="fill" />
-              ) : (
-                <Copy
-                  size={24}
-                  color={snippetButtonStyle.color}
-                  weight="fill"
-                />
-              )}
-            </button>
-          </pre>
-        </div>
-        <div className="snippet">
-          Flutter
-          <pre tabIndex={0} style={snippetButtonStyle}>
-            <span>{snippets.flutter}</span>
-            <button
-              title="Copy snippet"
-              onClick={(e) => handleCopySnippet(e, "flutter")}
-              disabled={weight === "duotone"}
-              style={snippetButtonStyle}
-            >
-              {copied === "flutter" ? (
-                <CheckCircle size={24} color={successColor} weight="fill" />
-              ) : (
-                <Copy size={24} color={snippetButtonStyle.color} weight="fill" />
-              )}
-            </button>
-          </pre>
-        </div>
+        {renderedSnippets.map((type) => {
+          const isWeightSupported = supportsWeight({ type, weight });
+
+          return (
+            <div className="snippet" key={type}>
+              {type}
+              <pre
+                tabIndex={0}
+                style={isWeightSupported ? undefined : snippetButtonStyle}
+              >
+                <span>
+                  {isWeightSupported
+                    ? snippets[type]
+                    : "This weight is not yet supported"}
+                </span>
+                <button
+                  title="Copy snippet"
+                  onClick={(e) => handleCopySnippet(e, type)}
+                  disabled={!isWeightSupported}
+                  style={isWeightSupported ? undefined : snippetButtonStyle}
+                >
+                  {copied === type ? (
+                    <CheckCircle size={24} color={successColor} weight="fill" />
+                  ) : (
+                    <Copy
+                      size={24}
+                      color={
+                        isWeightSupported
+                          ? buttonColor
+                          : snippetButtonStyle.color
+                      }
+                      weight="fill"
+                    />
+                  )}
+                </button>
+              </pre>
+            </div>
+          );
+        })}
 
         <div className="button-row">
           <button style={buttonBarStyle} onClick={handleDownloadPNG}>
@@ -261,12 +219,12 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
             SVG
           </button>
           <button style={buttonBarStyle} onClick={handleCopySVG}>
-            {copied === "svg" ? (
+            {copied === "SVG" ? (
               <CheckCircle size={32} color={successColor} weight="fill" />
             ) : (
               <Copy size={32} color="currentColor" weight="fill" />
             )}
-            {copied === "svg" ? "Copied!" : "Copy SVG"}
+            {copied === "SVG" ? "Copied!" : "Copy SVG"}
           </button>
         </div>
       </motion.div>
