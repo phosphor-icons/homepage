@@ -16,6 +16,7 @@ import receipt from "../../assets/receipt.svg";
 import receiptSpec from "../../assets/receipt-spec.svg";
 import calculator from "../../assets/calculator.svg";
 import calculatorSpec from "../../assets/calculator-spec.svg";
+import Banner from "../Banner/Banner";
 import Links from "../Links/Links";
 import "./Header.css";
 
@@ -35,61 +36,64 @@ const handleScrollToIcons = () =>
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <header>
-      <div className="header-contents">
-        <div className="illustrations-top">
-          <img src={markerPurple} id="marker-purple" alt="" />
-          <img src={paperclips} id="paperclips" alt="" />
-          <img src={paperclipsThree} id="paperclips-three" alt="" />
-          <img className="tablet" src={tabletSpec} alt="" />
-          <img className="tablet inspectable xray" src={tablet} alt="" />
-          <img className="billiard-ball" src={billiardBallSpec} alt="" />
-          <img
-            className="billiard-ball inspectable xray"
-            src={billiardBall}
-            alt=""
-          />
+    <>
+      <Banner />
+      <header>
+        <div className="header-contents">
+          <div className="illustrations-top">
+            <img src={markerPurple} id="marker-purple" alt="" />
+            <img src={paperclips} id="paperclips" alt="" />
+            <img src={paperclipsThree} id="paperclips-three" alt="" />
+            <img className="tablet" src={tabletSpec} alt="" />
+            <img className="tablet inspectable xray" src={tablet} alt="" />
+            <img className="billiard-ball" src={billiardBallSpec} alt="" />
+            <img
+              className="billiard-ball inspectable xray"
+              src={billiardBall}
+              alt=""
+            />
 
-          <img className="warning" src={warningSpec} alt="" />
-          <img className="warning inspectable xray" src={warning} alt="" />
-        </div>
-        <div className="intro">
-          <h2>
-            Phosphor is a flexible icon family for interfaces, diagrams,
-            presentations — 
-            <wbr />
-            whatever, really.
-          </h2>
-          <div className="button-container">
-            <button className="main-button" onClick={handleGetStarted}>
-              <ArrowCircleUpRight size={24} weight="fill" />
-              Get started
-            </button>
-            <button className="main-button" onClick={handleScrollToIcons}>
-              <ArrowCircleDown size={24} weight="fill" />
-              Explore icons
-            </button>
+            <img className="warning" src={warningSpec} alt="" />
+            <img className="warning inspectable xray" src={warning} alt="" />
           </div>
-          <Links />
+          <div className="intro">
+            <h2>
+              Phosphor is a flexible icon family for interfaces, diagrams,
+              presentations — 
+              <wbr />
+              whatever, really.
+            </h2>
+            <div className="button-container">
+              <button className="main-button" onClick={handleGetStarted}>
+                <ArrowCircleUpRight size={24} weight="fill" />
+                Get started
+              </button>
+              <button className="main-button" onClick={handleScrollToIcons}>
+                <ArrowCircleDown size={24} weight="fill" />
+                Explore icons
+              </button>
+            </div>
+            <Links />
+          </div>
+          <div className="illustrations-bottom">
+            <img className="cutting-mat" src={cuttingMatSpec} alt="" />
+            <img
+              className="cutting-mat inspectable xray"
+              src={cuttingMat}
+              alt=""
+            />
+            <img className="receipt" src={receiptSpec} alt="" />
+            <img className="receipt inspectable xray" src={receipt} alt="" />
+            <img className="calculator" src={calculatorSpec} alt="" />
+            <img
+              className="calculator inspectable xray"
+              src={calculator}
+              alt=""
+            />
+          </div>
         </div>
-        <div className="illustrations-bottom">
-          <img className="cutting-mat" src={cuttingMatSpec} alt="" />
-          <img
-            className="cutting-mat inspectable xray"
-            src={cuttingMat}
-            alt=""
-          />
-          <img className="receipt" src={receiptSpec} alt="" />
-          <img className="receipt inspectable xray" src={receipt} alt="" />
-          <img className="calculator" src={calculatorSpec} alt="" />
-          <img
-            className="calculator inspectable xray"
-            src={calculator}
-            alt=""
-          />
-        </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

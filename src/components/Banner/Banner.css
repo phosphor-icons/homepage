@@ -1,0 +1,14 @@
+.banner {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: white;
+  text-align: center;
+  background-color: #35313d;
+}
+
+.banner .main-button {
+  height: unset;
+  min-height: 64px;
+  margin: 8px 0 0;
+}
