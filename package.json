@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "fetch": "node ./bin/fetch.mjs",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\""
+    "format": "prettier --write '**/*.{ts,tsx,mjs,json,md}'"
   },
   "dependencies": {
     "file-saver": "^2.0.5",
