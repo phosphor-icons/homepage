@@ -51,7 +51,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-virtualized": "^9.21.21",
     "@types/tinycolor2": "^1.4.3",
-    "axios": "^0.27.2",
+    "axios": "^1.1.3",
     "chalk": "^4",
     "commander": "^8.3.0",
     "prettier": "^2.7.1",
