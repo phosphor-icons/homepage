@@ -39,7 +39,7 @@
     "react-ga": "^3.3.1",
     "react-hotkeys-hook": "^3.4.7",
     "react-scripts": "5.0.1",
-    "react-use": "^15.3.8",
+    "react-use": "^17.4.0",
     "recoil": "^0.7.6",
     "svg2png-converter": "^1.0.2",
     "tinycolor2": "^1.4.2"
