@@ -1,19 +1,17 @@
 #!/usr/bin/env node
-"use strict";
 
-const fs = require("fs/promises");
-const path = require("path");
-const axios = require("axios");
-const chalk = require("chalk");
-const { Command } = require("commander");
-const { version } = require("../package.json");
+import * as fs from "node:fs/promises";
+import axios from "axios";
+import chalk from "chalk";
+import { Command } from "commander";
+import packageJson from "../package.json" assert { type: "json" };
 
 const ICON_API_URL = "https://api.phosphoricons.com";
 
 async function main() {
   const program = new Command();
   program
-    .version(version)
+    .version(packageJson.version)
     .option(
       "-r --release <version>",
       "Fetch icons from Phosphor API and compile to internal data structure"
@@ -72,7 +70,7 @@ export const iconCount = (icons.length * 6)
 
       try {
         await fs.writeFile(
-          path.join(__dirname, "../src/lib/new.ts"),
+          new URL("../src/lib/new.ts", import.meta.url).pathname,
           fileString
         );
         console.log(
