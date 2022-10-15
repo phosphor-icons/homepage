@@ -54,6 +54,8 @@
     "axios": "^0.24.0",
     "chalk": "^4",
     "commander": "^8.3.0",
+    "prettier": "^2.7.1",
+    "source-map-explorer": "^2.5.3",
     "typescript": "^3.9.6"
   },
   "eslintConfig": {
