@@ -21,18 +21,6 @@ import "./Header.css";
 
 type HeaderProps = {};
 
-const handleGetStarted = () =>
-  window.open(
-    "https://github.com/phosphor-icons/phosphor-home#phosphor-icons",
-    "_blank",
-    "noopener noreferrer"
-  );
-
-const handleScrollToIcons = () =>
-  document
-    .getElementById("toolbar")
-    ?.scrollIntoView({ behavior: "smooth", block: "start" });
-
 const Header: React.FC<HeaderProps> = () => {
   return (
     <header>
@@ -61,14 +49,20 @@ const Header: React.FC<HeaderProps> = () => {
             whatever, really.
           </h2>
           <div className="button-container">
-            <button className="main-button" onClick={handleGetStarted}>
+            <a
+              className="main-button"
+              href="https://github.com/phosphor-icons/phosphor-home#phosphor-icons"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ArrowCircleUpRight size={24} weight="fill" />
               Get started
-            </button>
-            <button className="main-button" onClick={handleScrollToIcons}>
+            </a>
+
+            <a className="main-button" href="#toolbar">
               <ArrowCircleDown size={24} weight="fill" />
               Explore icons
-            </button>
+            </a>
           </div>
           <Links />
         </div>

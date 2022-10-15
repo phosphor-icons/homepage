@@ -13,18 +13,14 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <footer>
       <div className="container">
-        <button
+        <a
           id="back-to-top-button"
           aria-label="back-to-top button"
           className="main-button"
-          onClick={() => {
-            document
-              .getElementById("root")
-              ?.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
+          href="#root"
         >
           <img src={uArrowUpLeft} alt="" />
-        </button>
+        </a>
         <div className="outro">
           <Links />
           <p>
@@ -48,32 +44,24 @@ const Footer: React.FC<FooterProps> = () => {
             . If you enjoy these icons, please support us with a donation.
           </p>
           <div className="button-container">
-            <button
+            <a
               className="main-button"
-              onClick={() =>
-                window.open(
-                  "https://paypal.me/minoraxis",
-                  "_blank",
-                  "noopener noreferrer"
-                )
-              }
+              href="https://paypal.me/minoraxis"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Coffee size={24} weight="fill" />
               Buy us a coffee
-            </button>
-            <button
+            </a>
+            <a
               className="main-button"
-              onClick={() =>
-                window.open(
-                  "https://patreon.com/phosphoricons",
-                  "_blank",
-                  "noopener noreferrer"
-                )
-              }
+              href="https://patreon.com/phosphoricons"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Heart size={24} weight="fill" />
               Become a patron
-            </button>
+            </a>
           </div>
           <div className="fine-print">
             <p>

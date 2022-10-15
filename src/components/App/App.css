@@ -42,14 +42,15 @@ input {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-button {
+button,
+.main-button {
   border: none;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-button.main-button {
+.main-button {
   height: 64px;
   padding: 0 48px 0 40px;
   background-color: white;
@@ -72,20 +73,20 @@ button.main-button {
   margin: 0 24px 24px 0;
 }
 
-button.main-button:active {
+.main-button:active {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 0 black;
 }
 
-button.main-button:focus {
+.main-button:focus {
   outline: none;
 }
 
-/* button.main-button:not(:last-child) {
+/* .main-button:not(:last-child) {
   margin: 0 24px 24px 0;
 } */
 
-button.main-button svg {
+.main-button svg {
   margin-right: 12px;
 }
 
@@ -93,6 +94,11 @@ button.main-button svg {
   display: flex;
   flex-wrap: wrap;
   /* gap: 24px; */
+}
+
+a.main-button {
+  text-decoration: none;
+  color: inherit;
 }
 
 a.main-link {
