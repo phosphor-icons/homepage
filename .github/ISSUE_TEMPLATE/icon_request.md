@@ -1,10 +1,9 @@
 ---
 name: Icon request
 about: Request an icon you'd like to see added
-title: ''
+title: ""
 labels: enhancement
 assignees: rektdeckard
-
 ---
 
 **Describe the requested icon**
