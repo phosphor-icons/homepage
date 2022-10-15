@@ -3523,7 +3523,6 @@ export const icons: ReadonlyArray<IconEntry> = [
       "cards",
       "gambling",
       "casino",
-
       "gaming",
     ],
     Icon: Icons.Diamond,
@@ -7140,7 +7139,6 @@ export const icons: ReadonlyArray<IconEntry> = [
     tags: [
       "nyt",
       "new york times",
-
       "logos",
       "reading",
       "writing",

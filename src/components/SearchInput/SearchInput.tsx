@@ -19,7 +19,8 @@ type SearchInputProps = {};
 const SearchInput: React.FC<SearchInputProps> = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
-  const inputRef = useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
+  const inputRef =
+    useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
 
   useHotkeys("ctrl+k,cmd+k", (e) => {
     e.preventDefault();

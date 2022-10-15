@@ -5,13 +5,16 @@ interface ErrorBoundaryProps {
 }
 
 interface ErrorBoundaryState {
-  errorMessage?: string
+  errorMessage?: string;
 }
 
-export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export default class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: any) {
     super(props);
-    this.state = { errorMessage: "" }
+    this.state = { errorMessage: "" };
   }
 
   static getDerivedStateFromError(error: any) {
