@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useRef, MutableRefObject } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  MutableRefObject,
+  ReactNode,
+} from "react";
 import { useRecoilState } from "recoil";
 import { useDebounce } from "react-use";
 import { useHotkeys } from "react-hotkeys-hook";
@@ -94,7 +100,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   );
 };
 
-const Keys: React.FC<{}> = ({ children }) => (
+const Keys: React.FC<{ children: ReactNode }> = ({ children }) => (
   <div className="keys">{children}</div>
 );
 

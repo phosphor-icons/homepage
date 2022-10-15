@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useRecoilValue } from "recoil";
 
@@ -9,6 +9,7 @@ import { HourglassMedium, Question, SmileyXEyes } from "phosphor-react";
 interface NoticeProps {
   message?: string;
   type?: "wait" | "help" | "warn" | "none";
+  children?: ReactNode;
 }
 
 const Notice: React.FC<NoticeProps> = ({
