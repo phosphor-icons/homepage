@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useHotkeys } from "react-hotkeys-hook";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
 import { Copy, X, CheckCircle, Download } from "phosphor-react";
@@ -18,10 +18,10 @@ import TagCloud from "./TagCloud";
 import { IconEntry, SnippetType } from "../../lib";
 import { getCodeSnippets, supportsWeight } from "../../utils";
 
-const panelVariants = {
+const panelVariants: Variants = {
   open: {
     opacity: 1,
-    height: "100%",
+    height: "auto",
     marginTop: "4px",
     marginBottom: "4px",
     transition: { type: "tween", duration: 0.1 },
@@ -35,7 +35,7 @@ const panelVariants = {
   },
 };
 
-const contentVariants = {
+const contentVariants: Variants = {
   open: { opacity: 1, transition: { duration: 0.2, delay: 0.1 } },
   collapsed: { opacity: 0, transition: { duration: 0 } },
 };

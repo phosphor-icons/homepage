@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "file-saver": "^2.0.5",
-    "framer-motion": "^3.10.6",
+    "framer-motion": "^7.5.3",
     "fuse.js": "^6.6.2",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
