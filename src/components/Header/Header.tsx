@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowCircleUpRight, ArrowCircleDown } from "phosphor-react";
 
 import markerPurple from "../../assets/marker-purple.svg";
@@ -19,8 +18,6 @@ import calculatorSpec from "../../assets/calculator-spec.svg";
 import Links from "../Links/Links";
 import "./Header.css";
 
-type HeaderProps = {};
-
 const handleGetStarted = () =>
   window.open(
     "https://github.com/phosphor-icons/phosphor-home#phosphor-icons",
@@ -33,7 +30,7 @@ const handleScrollToIcons = () =>
     .getElementById("toolbar")
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
 
-const Header: React.FC<HeaderProps> = () => {
+const Header = () => {
   return (
     <header>
       <div className="header-contents">

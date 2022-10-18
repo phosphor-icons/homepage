@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { IconContext } from "phosphor-react";
@@ -24,9 +24,7 @@ const defaultSearchTags = [
   "weather",
 ];
 
-type IconGridProps = {};
-
-const IconGrid: React.FC<IconGridProps> = () => {
+const IconGrid = () => {
   const weight = useRecoilValue(iconWeightAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);

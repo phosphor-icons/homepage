@@ -1,5 +1,4 @@
 import { Medal } from "phosphor-react";
-import React from "react";
 import ReactGA from "react-ga";
 
 import "./Banner.css";

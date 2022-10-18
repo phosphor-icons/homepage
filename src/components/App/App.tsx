@@ -13,7 +13,7 @@ import usePersistSettings from "../../hooks/usePersistSettings";
 const errorFallback = <Notice message="Search error" />;
 const waitingFallback = <Notice type="none" message="" />;
 
-const App: React.FC<any> = () => {
+const App = () => {
   useIconParameters();
   usePersistSettings();
 

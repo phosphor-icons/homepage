@@ -1,4 +1,3 @@
-import React from "react";
 import { Coffee, Heart } from "phosphor-react";
 
 import uArrowUpLeft from "../../assets/u-arrow-up-left.svg";
@@ -7,9 +6,7 @@ import postIt from "../../assets/footer-mobile.svg";
 import Links from "../Links/Links";
 import "./Footer.css";
 
-type FooterProps = {};
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer = () => {
   return (
     <footer>
       <div className="container">

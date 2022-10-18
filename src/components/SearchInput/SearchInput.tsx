@@ -20,9 +20,7 @@ const isApple = apple.test(window.navigator.platform);
 const mobile = /Android|iPhone|iPod|iPad|Opera Mini|IEMobile/i;
 const isMobile = mobile.test(window.navigator.userAgent);
 
-type SearchInputProps = {};
-
-const SearchInput: React.FC<SearchInputProps> = () => {
+const SearchInput = () => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
   const inputRef =

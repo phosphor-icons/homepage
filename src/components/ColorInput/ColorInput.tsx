@@ -6,9 +6,7 @@ import { isDarkThemeSelector } from "../../state/selectors";
 import useThrottled from "../../hooks/useThrottled";
 import "./ColorInput.css";
 
-type ColorInputProps = {};
-
-const ColorInput: React.FC<ColorInputProps> = () => {
+const ColorInput = () => {
   const [color, setColor] = useRecoilState(iconColorAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
 
