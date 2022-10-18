@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  MutableRefObject,
-  ReactNode,
-} from "react";
+import { useState, useEffect, useRef, ReactNode } from "react";
 import { useRecoilState } from "recoil";
 import { useDebounce } from "react-use";
 import { useHotkeys } from "react-hotkeys-hook";
@@ -21,16 +15,15 @@ const mobile = /Android|iPhone|iPod|iPad|Opera Mini|IEMobile/i;
 const isMobile = mobile.test(window.navigator.userAgent);
 
 const SearchInput = () => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
-  const inputRef =
-    useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useHotkeys("ctrl+k,cmd+k", (e) => {
     e.preventDefault();
     if (!e.repeat) {
       inputRef.current?.focus();
-      inputRef.current.select();
+      inputRef.current?.select();
     }
   });
 
@@ -98,7 +91,10 @@ const SearchInput = () => {
   );
 };
 
-const Keys: React.FC<{ children: ReactNode }> = ({ children }) => (
+interface KeysProps {
+  children: ReactNode;
+}
+const Keys = ({ children }: KeysProps) => (
   <div className="keys">{children}</div>
 );
 

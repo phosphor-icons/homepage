@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { useSetRecoilState } from "recoil";
 
 import { searchQueryAtom } from "../../state/atoms";
@@ -10,7 +10,7 @@ interface TagCloudProps {
   isDark: boolean;
 }
 
-const TagCloud: React.FC<TagCloudProps> = ({ name, tags, isDark }) => {
+const TagCloud = ({ name, tags, isDark }: TagCloudProps) => {
   const setQuery = useSetRecoilState(searchQueryAtom);
   const handleTagClick = useCallback(
     (tag: string) => {

@@ -1,7 +1,7 @@
-import React, { ErrorInfo, ReactNode } from "react";
+import { Component, ErrorInfo, ReactNode } from "react";
 
 interface ErrorBoundaryProps {
-  fallback?: JSX.Element | React.ReactNode;
+  fallback?: JSX.Element | ReactNode;
   children: ReactNode;
 }
 
@@ -9,7 +9,7 @@ interface ErrorBoundaryState {
   errorMessage?: string;
 }
 
-export default class ErrorBoundary extends React.Component<
+export default class ErrorBoundary extends Component<
   ErrorBoundaryProps,
   ErrorBoundaryState
 > {
@@ -27,7 +27,7 @@ export default class ErrorBoundary extends React.Component<
     console.info(info);
   }
 
-  render(): JSX.Element | React.ReactNode {
+  render(): JSX.Element | ReactNode {
     if (this.state.errorMessage) {
       return this.props.fallback ?? <p>{this.state.errorMessage}</p>;
     }

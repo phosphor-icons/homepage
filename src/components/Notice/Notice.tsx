@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useRecoilValue } from "recoil";
 
@@ -12,11 +12,7 @@ interface NoticeProps {
   children?: ReactNode;
 }
 
-const Notice: React.FC<NoticeProps> = ({
-  message,
-  type = "warn",
-  children,
-}) => {
+const Notice = ({ message, type = "warn", children }: NoticeProps) => {
   const isDark = useRecoilValue(isDarkThemeSelector);
   const query = useRecoilValue(searchQueryAtom);
 

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { MouseEvent, useRef, useEffect, CSSProperties } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useHotkeys } from "react-hotkeys-hook";
 import { motion, Variants } from "framer-motion";
@@ -44,7 +44,7 @@ const buttonColor = "#35313D";
 const successColor = "#1FA647";
 const disabledColor = "#B7B7B7";
 
-interface InfoPanelProps {
+interface DetailsPanelProps {
   index: number;
   spans: number;
   isDark: boolean;
@@ -58,7 +58,7 @@ const renderedSnippets = [
   SnippetType.FLUTTER,
 ];
 
-const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
+const DetailsPanel = (props: DetailsPanelProps) => {
   const { index, spans, isDark, entry } = props;
   const { name, Icon, categories, tags } = entry;
   const weight = useRecoilValue(iconWeightAtom);
@@ -78,10 +78,10 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
     [name]
   );
 
-  const buttonBarStyle: React.CSSProperties = {
+  const buttonBarStyle: CSSProperties = {
     color: isDark ? "white" : buttonColor,
   };
-  const snippetButtonStyle: React.CSSProperties =
+  const snippetButtonStyle: CSSProperties =
     weight === "duotone"
       ? { color: disabledColor, userSelect: "none" }
       : { color: buttonColor };
@@ -95,7 +95,7 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
   });
 
   const handleCopySnippet = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    event: MouseEvent<HTMLButtonElement>,
     type: SnippetType
   ) => {
     event.currentTarget.blur();
@@ -104,26 +104,20 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
     data && void navigator.clipboard?.writeText(data);
   };
 
-  const handleCopySVG = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleCopySVG = (event: MouseEvent<HTMLButtonElement>) => {
     event.currentTarget.blur();
     setCopied("SVG");
     ref.current && void navigator.clipboard?.writeText(ref.current.outerHTML);
   };
 
-  const handleDownloadSVG = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleDownloadSVG = (event: MouseEvent<HTMLButtonElement>) => {
     event.currentTarget.blur();
     if (!ref.current?.outerHTML) return;
     const blob = new Blob([ref.current.outerHTML]);
     saveAs(blob, `${name}${weight === "regular" ? "" : `-${weight}`}.svg`);
   };
 
-  const handleDownloadPNG = async (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleDownloadPNG = async (event: MouseEvent<HTMLButtonElement>) => {
     event.currentTarget.blur();
     if (!ref.current?.outerHTML) return;
     Svg2Png.save(

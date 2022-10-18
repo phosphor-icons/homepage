@@ -1,9 +1,4 @@
-import React, {
-  useRef,
-  useLayoutEffect,
-  useEffect,
-  MutableRefObject,
-} from "react";
+import { useRef, useLayoutEffect, useEffect, MutableRefObject } from "react";
 import { useRecoilState } from "recoil";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -31,7 +26,7 @@ const itemVariants = {
   }),
 };
 
-const IconGridItem: React.FC<IconGridItemProps> = (props) => {
+const IconGridItem = (props: IconGridItemProps) => {
   const { index, originOffset, entry } = props;
   const { name, Icon } = entry;
   const [open, setOpen] = useRecoilState(iconPreviewOpenAtom);

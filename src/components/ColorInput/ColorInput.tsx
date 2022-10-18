@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import { ChangeEvent, useCallback } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 import { iconColorAtom } from "../../state/atoms";
@@ -11,7 +11,7 @@ const ColorInput = () => {
   const isDark = useRecoilValue(isDarkThemeSelector);
 
   const handleColorChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+    (event: ChangeEvent<HTMLInputElement>) => {
       const {
         target: { value: color },
       } = event;

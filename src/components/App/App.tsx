@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import { Suspense, StrictMode } from "react";
 
 import "./App.css";
 import Header from "../Header/Header";
@@ -18,7 +18,7 @@ const App = () => {
   usePersistSettings();
 
   return (
-    <React.StrictMode>
+    <StrictMode>
       <Header />
       <main>
         <Toolbar />
@@ -29,7 +29,7 @@ const App = () => {
         </ErrorBoundary>
       </main>
       <Footer />
-    </React.StrictMode>
+    </StrictMode>
   );
 };
 

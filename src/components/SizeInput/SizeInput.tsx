@@ -1,14 +1,14 @@
-import React, { useCallback } from "react";
+import { useCallback, UIEvent, ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
 
 import { iconSizeAtom } from "../../state/atoms";
 import "./SizeInput.css";
 
-const handleFocus = (event: React.UIEvent<HTMLInputElement>) => {
+const handleFocus = (event: UIEvent<HTMLInputElement>) => {
   event.currentTarget.focus();
 };
 
-const handleBlur = (event: React.UIEvent<HTMLInputElement>) => {
+const handleBlur = (event: UIEvent<HTMLInputElement>) => {
   event.currentTarget.blur();
 };
 
@@ -16,7 +16,7 @@ const SizeInput = () => {
   const [size, setSize] = useRecoilState(iconSizeAtom);
 
   const handleSizeChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+    (event: ChangeEvent<HTMLInputElement>) => {
       const {
         target: { value },
       } = event;
