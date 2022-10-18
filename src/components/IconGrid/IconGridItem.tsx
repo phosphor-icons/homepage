@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { iconPreviewOpenAtom } from "../../state/atoms";
 import DetailsPanel from "./DetailsPanel";
-import { IconEntry } from "../../lib";
+import type { IconEntry } from "../../lib";
 
 interface IconGridItemProps {
   index: number;

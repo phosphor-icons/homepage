@@ -18,7 +18,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noEmit": true
+    "noEmit": true,
+    "importsNotUsedAsValues": "error"
   },
   "include": ["src"],
   "exclude": ["node_modules", "build"]

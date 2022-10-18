@@ -1,4 +1,4 @@
-import { Icon } from "phosphor-react";
+import type { Icon } from "phosphor-react";
 
 export enum IconStyle {
   THIN = "thin",

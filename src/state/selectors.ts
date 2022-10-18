@@ -8,7 +8,7 @@ import {
   iconSizeAtom,
   iconColorAtom,
 } from "./atoms";
-import { IconEntry, IconCategory } from "../lib";
+import type { IconEntry, IconCategory } from "../lib";
 import { icons } from "../lib/icons";
 
 const fuse = new Fuse(icons, {
