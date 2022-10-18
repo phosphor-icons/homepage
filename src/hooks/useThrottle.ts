@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import useUnmount from "./useUnmount";
 
-const useThrottle = <T>(value: T, ms: number = 200) => {
+export default function useThrottle<T>(value: T, ms: number = 200) {
   const [state, setState] = useState<T>(value);
   const timeout = useRef<ReturnType<typeof setTimeout>>();
   const nextValue = useRef(null) as any;
@@ -32,6 +32,4 @@ const useThrottle = <T>(value: T, ms: number = 200) => {
   });
 
   return state;
-};
-
-export default useThrottle;
+}

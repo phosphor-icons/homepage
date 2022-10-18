@@ -5,7 +5,7 @@ import TinyColor from "tinycolor2";
 import { iconColorAtom, iconWeightAtom, iconSizeAtom } from "../state/atoms";
 import { IconStyle } from "../lib";
 
-export default () => {
+export default function useIconParameters() {
   const weight = useSearchParam("weight")?.replace(/["']/g, "");
   const size = useSearchParam("size")?.replace(/["']/g, "");
   const color = useSearchParam("color")?.replace(/["']/g, "");
@@ -60,4 +60,4 @@ export default () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-};
+}

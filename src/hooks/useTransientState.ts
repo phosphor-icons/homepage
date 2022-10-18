@@ -1,11 +1,10 @@
-/* eslint-disable */
 import { useState, useEffect } from "react";
 import { useTimeoutFn } from "react-use";
 
-export default <T>(
+export default function useTransientState<T>(
   baseState: T,
   ms: number = 1000
-): [T, (transientValue: T) => void] => {
+): [T, (transientValue: T) => void] {
   const [value, setValue] = useState<T>(baseState);
   const [, cancel, restart] = useTimeoutFn(() => setValue(baseState), ms);
 
@@ -20,4 +19,4 @@ export default <T>(
   };
 
   return [value, setTransientValue];
-};
+}

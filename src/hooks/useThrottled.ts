@@ -2,11 +2,11 @@ import { useRef, useEffect, useCallback } from "react";
 
 type Callback = (...args: any) => void;
 
-export default (
+export default function useThrottled(
   callback: Callback,
   delay: number,
   dependencies: any[] = []
-) => {
+) {
   const throttleRef = useRef<Boolean>(false);
   const callbackRef = useRef<Callback>(callback);
 
@@ -28,4 +28,4 @@ export default (
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [delay, ...dependencies]
   );
-};
+}
