@@ -1,13 +1,7 @@
 {
   "name": "phosphor-home",
   "version": "1.4.0",
-  "license": "MIT",
-  "homepage": "https://phosphoricons.com",
-  "author": {
-    "name": "Tobias Fried",
-    "email": "friedtm@gmail.com",
-    "url": "https://tobiasfried.com"
-  },
+  "private": true,
   "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
   "keywords": [
     "phosphor",
@@ -18,8 +12,14 @@
     "UI",
     "UX"
   ],
+  "homepage": "https://phosphoricons.com",
   "repository": "github:phosphor-icons/phosphor-home",
-  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Tobias Fried",
+    "email": "friedtm@gmail.com",
+    "url": "https://tobiasfried.com"
+  },
   "type": "module",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
@@ -28,6 +28,21 @@
     "eject": "react-scripts eject",
     "fetch": "node ./bin/fetch.js",
     "format": "prettier --write '**/*.{ts,tsx,mjs,json,md}'"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "dependencies": {
     "file-saver": "^2.0.5",
@@ -57,20 +72,5 @@
     "prettier": "^2.7.1",
     "source-map-explorer": "^2.5.3",
     "typescript": "^4.8.4"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
