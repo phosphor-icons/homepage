@@ -41,9 +41,6 @@
       "last 1 safari version"
     ]
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "dependencies": {
     "file-saver": "2.0.5",
     "framer-motion": "7.6.1",
