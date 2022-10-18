@@ -20,12 +20,13 @@
   ],
   "repository": "github:phosphor-icons/phosphor-home",
   "private": true,
+  "type": "module",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "fetch": "node ./bin/fetch.mjs",
+    "fetch": "node ./bin/fetch.js",
     "format": "prettier --write '**/*.{ts,tsx,mjs,json,md}'"
   },
   "dependencies": {
