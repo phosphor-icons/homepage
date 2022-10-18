@@ -1,4 +1,4 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { RecoilRoot } from "recoil";
 import * as serviceWorker from "./serviceWorker";
@@ -10,11 +10,11 @@ ReactGA.pageview(window.location.pathname);
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <RecoilRoot>
       <App />
     </RecoilRoot>
-  </React.StrictMode>
+  </StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
