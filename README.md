@@ -39,9 +39,9 @@ Check out the full documentation on the [phosphor-icons](https://github.com/phos
 
 - **Powerful** – Phosphor's intuitive but powerful API can style the `color`, `size`, and `weight` of an icon with a few keystrokes, provide default styles to all icons via the Context API, or directly manipulate the SVG at runtime through render props to do some amazing things! Check out the full documentation on the [phosphor-react](https://github.com/phosphor-icons/phosphor-react) repo page.
 
-```jsx
-import React from "react";
-import ReactDOM from "react-dom";
+```tsx
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
 import { Smiley, Heart, Horse } from "phosphor-react";
 
 const App = () => {
@@ -54,7 +54,7 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
 ```
 
 - **Lightweight** – Supports tree-shaking, so your bundle only includes code for the icons you use.
