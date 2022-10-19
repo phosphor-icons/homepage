@@ -1,15 +1,15 @@
+import Fuse from "fuse.js";
 import { selector, selectorFamily } from "recoil";
 import TinyColor from "tinycolor2";
-import Fuse from "fuse.js";
 
-import {
-  searchQueryAtom,
-  iconWeightAtom,
-  iconSizeAtom,
-  iconColorAtom,
-} from "./atoms";
-import type { IconEntry, IconCategory } from "../lib";
+import type { IconCategory, IconEntry } from "../lib";
 import { icons } from "../lib/icons";
+import {
+  iconColorAtom,
+  iconSizeAtom,
+  iconWeightAtom,
+  searchQueryAtom,
+} from "./atoms";
 
 const fuse = new Fuse(icons, {
   keys: [{ name: "name", weight: 4 }, "tags", "categories"],

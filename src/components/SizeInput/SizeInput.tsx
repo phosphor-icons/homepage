@@ -1,4 +1,4 @@
-import { useCallback, UIEvent, ChangeEvent } from "react";
+import { ChangeEvent, UIEvent, useCallback } from "react";
 import { useRecoilState } from "recoil";
 
 import { iconSizeAtom } from "../../state/atoms";

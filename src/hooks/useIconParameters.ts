@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useSearchParam } from "react-use";
 import { useSetRecoilState } from "recoil";
 import TinyColor from "tinycolor2";
-import { iconColorAtom, iconWeightAtom, iconSizeAtom } from "../state/atoms";
+
 import { IconStyle } from "../lib";
+import { iconColorAtom, iconSizeAtom, iconWeightAtom } from "../state/atoms";
 
 export default function useIconParameters() {
   const weight = useSearchParam("weight")?.replace(/["']/g, "");

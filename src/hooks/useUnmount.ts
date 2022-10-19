@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function useUnmount(fn: () => any): void {
   const fnRef = useRef(fn);

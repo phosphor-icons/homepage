@@ -1,8 +1,8 @@
 import { Coffee, Heart } from "phosphor-react";
 
-import uArrowUpLeft from "../../assets/u-arrow-up-left.svg";
-import markerGreen from "../../assets/marker-green.svg";
 import postIt from "../../assets/footer-mobile.svg";
+import markerGreen from "../../assets/marker-green.svg";
+import uArrowUpLeft from "../../assets/u-arrow-up-left.svg";
 import Links from "../Links/Links";
 import "./Footer.css";
 

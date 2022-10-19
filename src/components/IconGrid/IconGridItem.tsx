@@ -1,10 +1,10 @@
-import { useRef, useLayoutEffect, useEffect, MutableRefObject } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { MutableRefObject, useEffect, useLayoutEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
-import { motion, AnimatePresence } from "framer-motion";
 
+import type { IconEntry } from "../../lib";
 import { iconPreviewOpenAtom } from "../../state/atoms";
 import DetailsPanel from "./DetailsPanel";
-import type { IconEntry } from "../../lib";
 
 interface IconGridItemProps {
   index: number;

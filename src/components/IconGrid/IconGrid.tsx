@@ -1,18 +1,18 @@
-import { useRef, useEffect } from "react";
-import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { IconContext } from "phosphor-react";
+import { useEffect, useRef } from "react";
+import { useRecoilValue } from "recoil";
 
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
+import useGridSpans from "../../hooks/useGridSpans";
+import { iconColorAtom, iconSizeAtom, iconWeightAtom } from "../../state/atoms";
 import {
   filteredQueryResultsSelector,
   isDarkThemeSelector,
 } from "../../state/selectors";
-import useGridSpans from "../../hooks/useGridSpans";
-import IconGridItem from "./IconGridItem";
-import TagCloud from "./TagCloud";
 import Notice from "../Notice/Notice";
 import "./IconGrid.css";
+import IconGridItem from "./IconGridItem";
+import TagCloud from "./TagCloud";
 
 const defaultSearchTags = [
   "*new*",

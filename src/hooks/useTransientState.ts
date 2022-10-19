@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTimeoutFn } from "react-use";
 
 export default function useTransientState<T>(

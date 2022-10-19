@@ -1,6 +1,7 @@
 import { useRecoilValue } from "recoil";
+
+import { iconColorAtom, iconSizeAtom, iconWeightAtom } from "../state/atoms";
 import useDebounce from "./useDebounce";
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../state/atoms";
 
 export default function usePersistSettings() {
   const weight = useRecoilValue(iconWeightAtom);

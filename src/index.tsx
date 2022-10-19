@@ -1,9 +1,10 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { RecoilRoot } from "recoil";
-import * as serviceWorker from "./serviceWorker";
-import App from "./components/App/App";
 import ReactGA from "react-ga";
+import { RecoilRoot } from "recoil";
+
+import App from "./components/App/App";
+import * as serviceWorker from "./serviceWorker";
 
 ReactGA.initialize("UA-179205759-1", { titleCase: false });
 ReactGA.pageview(window.location.pathname);

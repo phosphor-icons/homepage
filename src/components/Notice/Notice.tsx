@@ -1,10 +1,10 @@
-import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
 
-import { isDarkThemeSelector } from "../../state/selectors";
-import { searchQueryAtom } from "../../state/atoms";
 import { HourglassMedium, Question, SmileyXEyes } from "phosphor-react";
+import { searchQueryAtom } from "../../state/atoms";
+import { isDarkThemeSelector } from "../../state/selectors";
 
 interface NoticeProps {
   message?: string;

@@ -1,4 +1,4 @@
-import { SnippetType, IconStyle } from "../lib";
+import { IconStyle, SnippetType } from "../lib";
 
 export function getCodeSnippets({
   name,

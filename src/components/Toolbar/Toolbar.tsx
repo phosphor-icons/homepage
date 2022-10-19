@@ -1,9 +1,9 @@
-import "./Toolbar.css";
-import StyleInput from "../StyleInput/StyleInput";
-import SearchInput from "../SearchInput/SearchInput";
-import SizeInput from "../SizeInput/SizeInput";
 import ColorInput from "../ColorInput/ColorInput";
+import SearchInput from "../SearchInput/SearchInput";
 import SettingsActions from "../SettingsActions/SettingsActions";
+import SizeInput from "../SizeInput/SizeInput";
+import StyleInput from "../StyleInput/StyleInput";
+import "./Toolbar.css";
 
 const Toolbar = () => {
   return (

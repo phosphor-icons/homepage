@@ -1,10 +1,10 @@
-import { useMemo } from "react";
-import { useRecoilState } from "recoil";
-import Select from "react-dropdown-select";
 import { PencilLine } from "phosphor-react";
+import { useMemo } from "react";
+import Select from "react-dropdown-select";
+import { useRecoilState } from "recoil";
 
-import { iconWeightAtom } from "../../state/atoms";
 import { IconStyle } from "../../lib";
+import { iconWeightAtom } from "../../state/atoms";
 import "./StyleInput.css";
 
 type WeightOption = { key: string; value: IconStyle; icon: JSX.Element };

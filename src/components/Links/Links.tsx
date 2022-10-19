@@ -1,8 +1,7 @@
-import { OutboundLink } from "react-ga";
 import { ArrowElbowDownRight } from "phosphor-react";
+import { OutboundLink } from "react-ga";
 
 import { iconCount } from "../../lib/icons";
-
 import "./Links.css";
 
 const Links = () => {

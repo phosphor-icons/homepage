@@ -1,5 +1,6 @@
 import * as Icons from "phosphor-react";
-import { IconEntry, IconCategory } from ".";
+
+import { IconCategory, IconEntry } from ".";
 
 export const icons: ReadonlyArray<IconEntry> = [
   {

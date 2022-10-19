@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+
 import { IconStyle } from "../lib";
 
 export const searchQueryAtom = atom<string>({

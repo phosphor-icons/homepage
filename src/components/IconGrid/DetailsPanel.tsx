@@ -1,22 +1,22 @@
-import { MouseEvent, useRef, useEffect, CSSProperties } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { useHotkeys } from "react-hotkeys-hook";
-import { motion, Variants } from "framer-motion";
-import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
-import { Copy, X, CheckCircle, Download } from "phosphor-react";
+import { motion, Variants } from "framer-motion";
+import { CheckCircle, Copy, Download, X } from "phosphor-react";
+import { CSSProperties, MouseEvent, useEffect, useRef } from "react";
 import ReactGA from "react-ga";
+import { useHotkeys } from "react-hotkeys-hook";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { Svg2Png } from "svg2png-converter";
 
+import useTransientState from "../../hooks/useTransientState";
+import { IconEntry, SnippetType } from "../../lib";
 import {
-  iconWeightAtom,
-  iconSizeAtom,
   iconColorAtom,
   iconPreviewOpenAtom,
+  iconSizeAtom,
+  iconWeightAtom,
 } from "../../state/atoms";
-import useTransientState from "../../hooks/useTransientState";
-import TagCloud from "./TagCloud";
-import { IconEntry, SnippetType } from "../../lib";
 import { getCodeSnippets, supportsWeight } from "../../utils";
+import TagCloud from "./TagCloud";
 
 const panelVariants: Variants = {
   open: {

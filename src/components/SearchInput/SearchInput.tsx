@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef, ReactNode } from "react";
-import { useRecoilState } from "recoil";
-import { useDebounce } from "react-use";
-import { useHotkeys } from "react-hotkeys-hook";
-import { Command, MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
+import { Command, HourglassHigh, MagnifyingGlass, X } from "phosphor-react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import ReactGA from "react-ga";
+import { useHotkeys } from "react-hotkeys-hook";
+import { useDebounce } from "react-use";
+import { useRecoilState } from "recoil";
 
 import { searchQueryAtom } from "../../state/atoms";
 import "./SearchInput.css";
