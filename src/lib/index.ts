@@ -1,34 +1,5 @@
 import { Icon } from "phosphor-react";
-
-export enum IconStyle {
-  THIN = "thin",
-  LIGHT = "light",
-  REGULAR = "regular",
-  BOLD = "bold",
-  FILL = "fill",
-  DUOTONE = "duotone",
-}
-
-export enum IconCategory {
-  ARROWS = "arrows",
-  BRAND = "brands",
-  COMMERCE = "commerce",
-  COMMUNICATION = "communications",
-  DESIGN = "design",
-  DEVELOPMENT = "technology & development",
-  OFFICE = "office",
-  EDITOR = "editor",
-  FINANCE = "finances",
-  GAMES = "games",
-  HEALTH = "health & wellness",
-  MAP = "maps & travel",
-  MEDIA = "media",
-  NATURE = "nature",
-  OBJECTS = "objects",
-  PEOPLE = "people",
-  SYSTEM = "system",
-  WEATHER = "weather",
-}
+import { IconCategory } from "@phosphor-icons/core";
 
 export interface IconEntry {
   name: string;

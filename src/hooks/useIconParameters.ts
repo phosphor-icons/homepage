@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { useSearchParam } from "react-use";
 import { useSetRecoilState } from "recoil";
 import TinyColor from "tinycolor2";
+import { IconStyle } from "@phosphor-icons/core";
+
 import { iconColorAtom, iconWeightAtom, iconSizeAtom } from "../state/atoms";
-import { IconStyle } from "../lib";
 
 export default () => {
   const weight = useSearchParam("weight")?.replace(/["']/g, "");

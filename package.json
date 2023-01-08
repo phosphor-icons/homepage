@@ -30,6 +30,7 @@
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\""
   },
   "dependencies": {
+    "@phosphor-icons/core": "^1.4.5",
     "file-saver": "^2.0.2",
     "framer-motion": "^3.10.0",
     "fuse.js": "^6.4.1",

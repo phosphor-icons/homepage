@@ -11,7 +11,11 @@ interface NoticeProps {
   type?: "wait" | "help" | "warn" | "none";
 }
 
-const Notice: React.FC<NoticeProps> = ({ message, type = "warn", children }) => {
+const Notice: React.FC<NoticeProps> = ({
+  message,
+  type = "warn",
+  children,
+}) => {
   const isDark = useRecoilValue(isDarkThemeSelector);
   const query = useRecoilValue(searchQueryAtom);
 

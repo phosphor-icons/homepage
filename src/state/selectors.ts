@@ -1,6 +1,7 @@
 import { selector, selectorFamily } from "recoil";
 import TinyColor from "tinycolor2";
 import Fuse from "fuse.js";
+import { IconCategory } from "@phosphor-icons/core";
 
 import {
   searchQueryAtom,
@@ -8,7 +9,7 @@ import {
   iconSizeAtom,
   iconColorAtom,
 } from "./atoms";
-import { IconEntry, IconCategory } from "../lib";
+import { IconEntry } from "../lib";
 import { icons } from "../lib/icons";
 
 const fuse = new Fuse(icons, {

@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { IconStyle } from "../lib";
+import { IconStyle } from "@phosphor-icons/core";
 
 export const searchQueryAtom = atom<string>({
   key: "searchQueryAtom",

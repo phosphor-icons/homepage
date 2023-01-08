@@ -1,4 +1,6 @@
-import { SnippetType, IconStyle } from "../lib";
+import { IconStyle } from "@phosphor-icons/core";
+
+import { SnippetType } from "../lib";
 
 export function getCodeSnippets({
   name,
