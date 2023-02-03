@@ -11,6 +11,7 @@ import {
 import useGridSpans from "@/hooks/useGridSpans";
 import Notice from "@/components/Notice";
 
+import DetailFooter from "./DetailFooter";
 import IconGridItem from "./IconGridItem";
 import TagCloud from "./TagCloud";
 import "./IconGrid.css";
@@ -75,6 +76,7 @@ const IconGrid = (_: IconGridProps) => {
             />
           ))}
         </motion.div>
+        <DetailFooter />
       </div>
     </IconContext.Provider>
   );

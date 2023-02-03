@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { IconEntry } from "@/lib";
-import { iconPreviewOpenAtom } from "@/state/atoms";
+import { iconPreviewOpenAtom, selectionEntryAtom } from "@/state/atoms";
 
 import DetailsPanel from "./DetailsPanel";
 
@@ -30,15 +30,15 @@ const itemVariants = {
 const IconGridItem = (props: IconGridItemProps) => {
   const { index, originOffset, entry } = props;
   const { name, Icon } = entry;
-  const [open, setOpen] = useRecoilState(iconPreviewOpenAtom);
-  const isOpen = open === name;
+  const [selection, setSelectionEntry] = useRecoilState(selectionEntryAtom);
+  const isOpen = selection?.name === name;
   const isNew = entry.tags.includes("*new*");
   const isUpdated = entry.tags.includes("*updated*");
   const delayRef = useRef<number>(0);
   const offset = useRef({ top: 0, left: 0 });
   const ref = useRef<any>();
 
-  const handleOpen = () => setOpen(isOpen ? false : name);
+  const handleOpen = () => setSelectionEntry(isOpen ? null : entry);
 
   // The measurement for all elements happens in the layoutEffect cycle
   // This ensures that when we calculate distance in the effect cycle
@@ -88,9 +88,9 @@ const IconGridItem = (props: IconGridItemProps) => {
           {isUpdated && <span className="badge updated">•</span>}
         </p>
       </motion.div>
-      <AnimatePresence initial={false}>
+      {/* <AnimatePresence initial={false}>
         {isOpen && <DetailsPanel {...props} />}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </>
   );
 };

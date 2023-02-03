@@ -95,6 +95,17 @@ button.main-button svg {
   /* gap: 24px; */
 }
 
+figure {
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+figcaption {
+  font-size: 14px;
+  text-align: center;
+}
+
 a.main-link {
   text-decoration: none;
   position: relative;
@@ -127,4 +138,19 @@ a.main-link:hover:after {
 .badge {
   font-size: 24px;
   line-height: 0.5em;
+}
+
+.card {
+  border-radius: 8px;
+  border: 2px solid rgba(163, 159, 171, 0.1);
+}
+
+.card.dark {
+  color: white;
+  background-color: #413c48;
+}
+
+.card.light {
+  color: rgb(53, 49, 61);
+  background-color: #f6f5f6;
 }

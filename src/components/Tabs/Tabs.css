@@ -1,0 +1,32 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid rgba(163, 159, 171, 0.1);
+  border-right: 2px solid rgba(163, 159, 171, 0.1);
+}
+
+.tabs-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 2px solid rgba(163, 159, 171, 0.1);
+}
+
+button.tab {
+  all: unset;
+  padding: 4px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  flex: 1;
+}
+
+.tab.active {
+  background-color: rgba(194, 186, 196, 0.25);
+}
+
+.tab-content {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}

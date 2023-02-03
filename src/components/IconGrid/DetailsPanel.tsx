@@ -153,7 +153,8 @@ const DetailsPanel = (props: InfoPanelProps) => {
         className="icon-preview"
       >
         <Icon ref={ref} color={color} weight={weight} size={192} />
-        <p>{name}</p>
+        <p className="name">{name}</p>
+        <p className="versioning">in &ge; {entry.published_in.toFixed(1)}.0</p>
         <TagCloud
           name={name}
           tags={Array.from(

@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 24px;
+  /* padding: 24px; */
 }
 
 button.tag-button {
