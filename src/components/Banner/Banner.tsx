@@ -1,4 +1,3 @@
-import React from "react";
 import { Medal } from "phosphor-react";
 import ReactGA from "react-ga";
 

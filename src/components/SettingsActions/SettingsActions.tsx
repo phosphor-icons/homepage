@@ -1,12 +1,13 @@
-import React from "react";
-import { ArrowCounterClockwise, CheckCircle, Link } from "phosphor-react";
 import { useRecoilValue, useResetRecoilState } from "recoil";
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
-import "./SettingsActions.css";
-import useTransientState from "../../hooks/useTransientState";
-import { resetSettingsSelector } from "../../state/selectors";
+import { ArrowCounterClockwise, CheckCircle, Link } from "phosphor-react";
 
-const SettingsActions: React.FC = () => {
+import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "@/state/atoms";
+import useTransientState from "@/hooks/useTransientState";
+import { resetSettingsSelector } from "@/state/selectors";
+
+import "./SettingsActions.css";
+
+const SettingsActions = () => {
   const weight = useRecoilValue(iconWeightAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);

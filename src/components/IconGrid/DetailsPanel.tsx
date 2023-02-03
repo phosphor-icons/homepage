@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, CSSProperties } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useHotkeys } from "react-hotkeys-hook";
 import { motion } from "framer-motion";
@@ -12,11 +12,12 @@ import {
   iconSizeAtom,
   iconColorAtom,
   iconPreviewOpenAtom,
-} from "../../state/atoms";
-import useTransientState from "../../hooks/useTransientState";
+} from "@/state/atoms";
+import useTransientState from "@/hooks/useTransientState";
+import { IconEntry, SnippetType } from "@/lib";
+import { getCodeSnippets, supportsWeight } from "@/utils";
+
 import TagCloud from "./TagCloud";
-import { IconEntry, SnippetType } from "../../lib";
-import { getCodeSnippets, supportsWeight } from "../../utils";
 
 const panelVariants = {
   open: {
@@ -58,7 +59,7 @@ const renderedSnippets = [
   SnippetType.FLUTTER,
 ];
 
-const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
+const DetailsPanel = (props: InfoPanelProps) => {
   const { index, spans, isDark, entry } = props;
   const { name, Icon, categories, tags } = entry;
   const weight = useRecoilValue(iconWeightAtom);
@@ -78,10 +79,10 @@ const DetailsPanel: React.FC<InfoPanelProps> = (props) => {
     [name]
   );
 
-  const buttonBarStyle: React.CSSProperties = {
+  const buttonBarStyle: CSSProperties = {
     color: isDark ? "white" : buttonColor,
   };
-  const snippetButtonStyle: React.CSSProperties =
+  const snippetButtonStyle: CSSProperties =
     weight === "duotone"
       ? { color: disabledColor, userSelect: "none" }
       : { color: buttonColor };

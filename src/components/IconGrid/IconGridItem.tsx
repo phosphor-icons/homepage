@@ -1,15 +1,11 @@
-import React, {
-  useRef,
-  useLayoutEffect,
-  useEffect,
-  MutableRefObject,
-} from "react";
+import { useRef, useLayoutEffect, useEffect, MutableRefObject } from "react";
 import { useRecoilState } from "recoil";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { iconPreviewOpenAtom } from "../../state/atoms";
+import { IconEntry } from "@/lib";
+import { iconPreviewOpenAtom } from "@/state/atoms";
+
 import DetailsPanel from "./DetailsPanel";
-import { IconEntry } from "../../lib";
 
 interface IconGridItemProps {
   index: number;
@@ -31,7 +27,7 @@ const itemVariants = {
   }),
 };
 
-const IconGridItem: React.FC<IconGridItemProps> = (props) => {
+const IconGridItem = (props: IconGridItemProps) => {
   const { index, originOffset, entry } = props;
   const { name, Icon } = entry;
   const [open, setOpen] = useRecoilState(iconPreviewOpenAtom);

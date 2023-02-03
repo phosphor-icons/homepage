@@ -1,22 +1,22 @@
-import React from "react";
 import { ArrowCircleUpRight, ArrowCircleDown } from "phosphor-react";
 
-import markerPurple from "../../assets/marker-purple.svg";
-import paperclips from "../../assets/paperclips-header-mobile.svg";
-import paperclipsThree from "../../assets/paperclips-header.svg";
-import tablet from "../../assets/tablet.svg";
-import tabletSpec from "../../assets/tablet-spec.svg";
-import billiardBall from "../../assets/billiard-ball.svg";
-import billiardBallSpec from "../../assets/billiard-ball-spec.svg";
-import warning from "../../assets/warning.svg";
-import warningSpec from "../../assets/warning-spec.svg";
-import cuttingMat from "../../assets/cutting-mat.svg";
-import cuttingMatSpec from "../../assets/cutting-mat-spec.svg";
-import receipt from "../../assets/receipt.svg";
-import receiptSpec from "../../assets/receipt-spec.svg";
-import calculator from "../../assets/calculator.svg";
-import calculatorSpec from "../../assets/calculator-spec.svg";
-import Links from "../Links/Links";
+import { ReactComponent as MarkerPurple } from "@/assets/marker-purple.svg";
+import { ReactComponent as PaperClips } from "@/assets/paperclips-header-mobile.svg";
+import { ReactComponent as PaperClipsThree } from "@/assets/paperclips-header.svg";
+import { ReactComponent as Tablet } from "@/assets/tablet.svg";
+import { ReactComponent as TabletSpec } from "@/assets/tablet-spec.svg";
+import { ReactComponent as BilliardBall } from "@/assets/billiard-ball.svg";
+import { ReactComponent as BilliardBallSpec } from "@/assets/billiard-ball-spec.svg";
+import { ReactComponent as Warning } from "@/assets/warning.svg";
+import { ReactComponent as WarningSpec } from "@/assets/warning-spec.svg";
+import { ReactComponent as CuttingMat } from "@/assets/cutting-mat.svg";
+import { ReactComponent as CuttingMatSpec } from "@/assets/cutting-mat-spec.svg";
+import { ReactComponent as Receipt } from "@/assets/receipt.svg";
+import { ReactComponent as ReceiptSpec } from "@/assets/receipt-spec.svg";
+import { ReactComponent as Calculator } from "@/assets/calculator.svg";
+import { ReactComponent as CalculatorSpec } from "@/assets/calculator-spec.svg";
+
+import Links from "@/components/Links";
 import "./Header.css";
 
 type HeaderProps = {};
@@ -33,25 +33,21 @@ const handleScrollToIcons = () =>
     .getElementById("toolbar")
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
 
-const Header: React.FC<HeaderProps> = () => {
+const Header = (_: HeaderProps) => {
   return (
     <header>
       <div className="header-contents">
         <div className="illustrations-top">
-          <img src={markerPurple} id="marker-purple" alt="" />
-          <img src={paperclips} id="paperclips" alt="" />
-          <img src={paperclipsThree} id="paperclips-three" alt="" />
-          <img className="tablet" src={tabletSpec} alt="" />
-          <img className="tablet inspectable xray" src={tablet} alt="" />
-          <img className="billiard-ball" src={billiardBallSpec} alt="" />
-          <img
-            className="billiard-ball inspectable xray"
-            src={billiardBall}
-            alt=""
-          />
+          <MarkerPurple id="marker-purple" />
+          <PaperClips id="paperclips" />
+          <PaperClipsThree id="paperclips-three" />
+          <TabletSpec className="tablet" />
+          <Tablet className="tablet inspectable xray" />
+          <BilliardBallSpec className="billiard-ball" />
+          <BilliardBall className="billiard-ball inspectable xray" />
 
-          <img className="warning" src={warningSpec} alt="" />
-          <img className="warning inspectable xray" src={warning} alt="" />
+          <WarningSpec className="warning" />
+          <Warning className="warning inspectable xray" />
         </div>
         <div className="intro">
           <h2>
@@ -73,20 +69,12 @@ const Header: React.FC<HeaderProps> = () => {
           <Links />
         </div>
         <div className="illustrations-bottom">
-          <img className="cutting-mat" src={cuttingMatSpec} alt="" />
-          <img
-            className="cutting-mat inspectable xray"
-            src={cuttingMat}
-            alt=""
-          />
-          <img className="receipt" src={receiptSpec} alt="" />
-          <img className="receipt inspectable xray" src={receipt} alt="" />
-          <img className="calculator" src={calculatorSpec} alt="" />
-          <img
-            className="calculator inspectable xray"
-            src={calculator}
-            alt=""
-          />
+          <CuttingMatSpec className="cutting-mat" />
+          <CuttingMat className="cutting-mat inspectable xray" />
+          <ReceiptSpec className="receipt" />
+          <Receipt className="receipt inspectable xray" />
+          <CalculatorSpec className="calculator" />
+          <Calculator className="calculator inspectable xray" />
         </div>
       </div>
     </header>

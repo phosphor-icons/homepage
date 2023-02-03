@@ -1,14 +1,13 @@
-import React from "react";
 import { OutboundLink } from "react-ga";
 import { ArrowElbowDownRight } from "phosphor-react";
 
-import { iconCount } from "../../lib/icons";
+import { iconCount } from "@/lib/icons";
 
 import "./Links.css";
 
 interface LinksProps {}
 
-const Links: React.FC<LinksProps> = () => {
+const Links = (_: LinksProps) => {
   return (
     <div className="links">
       <div>

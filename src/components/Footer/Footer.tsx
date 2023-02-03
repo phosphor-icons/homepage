@@ -1,15 +1,15 @@
-import React from "react";
 import { Coffee, Heart } from "phosphor-react";
 
-import uArrowUpLeft from "../../assets/u-arrow-up-left.svg";
-import markerGreen from "../../assets/marker-green.svg";
-import postIt from "../../assets/footer-mobile.svg";
-import Links from "../Links/Links";
+import Links from "@/components/Links/Links";
+
+import { ReactComponent as UArrowUpLeft } from "@/assets/u-arrow-up-left.svg";
+import { ReactComponent as MarkerGreen } from "@/assets/marker-green.svg";
+import { ReactComponent as PostIt } from "@/assets/footer-mobile.svg";
 import "./Footer.css";
 
 type FooterProps = {};
 
-const Footer: React.FC<FooterProps> = () => {
+const Footer = (_: FooterProps) => {
   return (
     <footer>
       <div className="container">
@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProps> = () => {
               ?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
         >
-          <img src={uArrowUpLeft} alt="" />
+          <UArrowUpLeft />
         </button>
         <div className="outro">
           <Links />
@@ -108,11 +108,11 @@ const Footer: React.FC<FooterProps> = () => {
               </a>{" "}
               by Mikhail Sharanda.
             </p>
-            <img id="marker-green" src={markerGreen} alt="" />
+            <MarkerGreen id="marker-green" />
           </div>
         </div>
         <div className="illustrations-footer">
-          <img id="post-it" src={postIt} width="878" height="667" alt="" />
+          <PostIt id="post-it" width="878" height="667" />
         </div>
       </div>
     </footer>

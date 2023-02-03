@@ -1,17 +1,18 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { IconContext } from "phosphor-react";
 
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
+import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "@/state/atoms";
 import {
   filteredQueryResultsSelector,
   isDarkThemeSelector,
-} from "../../state/selectors";
-import useGridSpans from "../../hooks/useGridSpans";
+} from "@/state/selectors";
+import useGridSpans from "@/hooks/useGridSpans";
+import Notice from "@/components/Notice";
+
 import IconGridItem from "./IconGridItem";
 import TagCloud from "./TagCloud";
-import Notice from "../Notice/Notice";
 import "./IconGrid.css";
 
 const defaultSearchTags = [
@@ -26,7 +27,7 @@ const defaultSearchTags = [
 
 type IconGridProps = {};
 
-const IconGrid: React.FC<IconGridProps> = () => {
+const IconGrid = (_: IconGridProps) => {
   const weight = useRecoilValue(iconWeightAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
