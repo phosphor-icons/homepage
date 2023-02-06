@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
 import { Copy, X, CheckCircle, Download } from "phosphor-react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 import {
   iconWeightAtom,

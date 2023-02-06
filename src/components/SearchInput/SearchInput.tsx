@@ -9,7 +9,7 @@ import { useRecoilState } from "recoil";
 import { useDebounce } from "react-use";
 import { useHotkeys } from "react-hotkeys-hook";
 import { Command, MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 import { searchQueryAtom } from "@/state/atoms";
 import "./SearchInput.css";

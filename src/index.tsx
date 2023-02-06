@@ -2,10 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RecoilRoot } from "recoil";
 import App from "./components/App";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
-ReactGA.initialize("UA-179205759-1", { titleCase: false });
-ReactGA.pageview(window.location.pathname);
+const GA_MEASUREMENT_ID = 'G-1C1REQCLFB'
+ReactGA.initialize(GA_MEASUREMENT_ID);
 
 const container = document.getElementById("root");
 const root = createRoot(container!);

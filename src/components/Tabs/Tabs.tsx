@@ -19,6 +19,7 @@ const Tabs = ({ tabs }: TabsProps) => {
       <div className="tabs-header">
         {tabs.map((tab, i) => (
           <button
+            key={i}
             className={`tab ${activeIndex === i ? "active" : ""}`}
             onClick={() => setActiveIndex(i)}
           >

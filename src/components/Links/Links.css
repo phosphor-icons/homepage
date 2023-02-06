@@ -23,6 +23,7 @@
 a.nav-link {
   text-decoration: none;
   position: relative;
+  cursor: pointer;
   color: black;
 }
 

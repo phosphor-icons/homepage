@@ -4,8 +4,8 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
-import { Copy, X, CheckCircle, Download } from "phosphor-react";
-import ReactGA from "react-ga";
+import { Copy, CheckCircle, Download } from "phosphor-react";
+import ReactGA from "react-ga4";
 
 import {
   iconWeightAtom,
@@ -16,7 +16,7 @@ import {
 import { isDarkThemeSelector } from "@/state/selectors";
 import Tabs, { Tab } from "@/components/Tabs";
 import useTransientState from "@/hooks/useTransientState";
-import { IconEntry, SnippetType } from "@/lib";
+import { SnippetType } from "@/lib";
 import { getCodeSnippets, supportsWeight } from "@/utils";
 
 import TagCloud from "./TagCloud";
