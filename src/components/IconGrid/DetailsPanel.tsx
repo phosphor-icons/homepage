@@ -7,14 +7,14 @@ import { saveAs } from "file-saver";
 import { Copy, X, CheckCircle, Download } from "phosphor-react";
 import ReactGA from "react-ga4";
 
+import { useTransientState } from "@/hooks";
+import { IconEntry, SnippetType } from "@/lib";
 import {
   iconWeightAtom,
   iconSizeAtom,
   iconColorAtom,
   iconPreviewOpenAtom,
-} from "@/state/atoms";
-import useTransientState from "@/hooks/useTransientState";
-import { IconEntry, SnippetType } from "@/lib";
+} from "@/state";
 import { getCodeSnippets, supportsWeight } from "@/utils";
 
 import TagCloud from "./TagCloud";

@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useRecoilState } from "recoil";
 
-import { iconSizeAtom } from "@/state/atoms";
+import { iconSizeAtom } from "@/state";
 import "./SizeInput.css";
 
 type SizeInputProps = {};

@@ -1,9 +1,8 @@
 import { useCallback } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
-import { iconColorAtom } from "@/state/atoms";
-import { isDarkThemeSelector } from "@/state/selectors";
-import useThrottled from "@/hooks/useThrottled";
+import { useThrottled } from "@/hooks";
+import { iconColorAtom, isDarkThemeSelector } from "@/state";
 
 import "./ColorInput.css";
 

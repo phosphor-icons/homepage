@@ -31,9 +31,9 @@ pre {
   box-sizing: border-box;
   padding: 20px 16px 20px 24px;
   margin: 12px 0px;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 6px;
-  border: 1px solid #e1d4d7;
+  /* border: 1px solid #e1d4d7; */
   white-space: pre-wrap;
 }
 
@@ -93,17 +93,6 @@ button.main-button svg {
   display: flex;
   flex-wrap: wrap;
   /* gap: 24px; */
-}
-
-figure {
-  margin: 0;
-  display: grid;
-  place-items: center;
-}
-
-figcaption {
-  font-size: 14px;
-  text-align: center;
 }
 
 a.main-link {

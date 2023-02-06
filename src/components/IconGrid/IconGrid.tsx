@@ -1,13 +1,15 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, CSSProperties } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { IconContext } from "phosphor-react";
 
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "@/state/atoms";
 import {
+  iconWeightAtom,
+  iconSizeAtom,
+  iconColorAtom,
   filteredQueryResultsSelector,
   isDarkThemeSelector,
-} from "@/state/selectors";
+} from "@/state";
 import useGridSpans from "@/hooks/useGridSpans";
 import Notice from "@/components/Notice";
 
@@ -25,6 +27,13 @@ const defaultSearchTags = [
   "maps",
   "weather",
 ];
+
+const gridStyle: Record<string, CSSProperties> = {
+  light: {},
+  dark: {
+    backgroundColor: "#35313D",
+  },
+} as const;
 
 type IconGridProps = {};
 
@@ -56,15 +65,10 @@ const IconGrid = (_: IconGridProps) => {
     <IconContext.Provider value={{ weight, size, color, mirrored: false }}>
       <div
         className="grid-container"
-        style={{ backgroundColor: isDark ? "#35313D" : "" }}
+        style={isDark ? gridStyle.dark : gridStyle.light}
       >
         <i id="beacon" className="beacon" />
-        <motion.div
-          className="grid"
-          initial="hidden"
-          animate={controls}
-          variants={{}}
-        >
+        <motion.div className="grid" initial="hidden" animate={controls}>
           {filteredQueryResults.map((iconEntry, index) => (
             <IconGridItem
               key={index}

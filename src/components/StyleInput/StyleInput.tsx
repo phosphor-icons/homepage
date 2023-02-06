@@ -4,7 +4,7 @@ import Select from "react-dropdown-select";
 import { PencilLine } from "phosphor-react";
 import { IconStyle } from "@phosphor-icons/core";
 
-import { iconWeightAtom } from "@/state/atoms";
+import { iconWeightAtom } from "@/state";
 
 import "./StyleInput.css";
 

@@ -11,7 +11,7 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { Command, MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
 import ReactGA from "react-ga4";
 
-import { searchQueryAtom } from "@/state/atoms";
+import { searchQueryAtom } from "@/state";
 import "./SearchInput.css";
 
 const apple = /iPhone|iPod|iPad|Macintosh|MacIntel|MacPPC/i;

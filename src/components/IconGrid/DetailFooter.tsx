@@ -4,27 +4,27 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
-import { Copy, CheckCircle, Download } from "phosphor-react";
+import { Copy, CheckCircle, DownloadSimple } from "phosphor-react";
 import ReactGA from "react-ga4";
 
+import Tabs, { Tab } from "@/components/Tabs";
+import { useTransientState } from "@/hooks";
+import { SnippetType } from "@/lib";
 import {
   iconWeightAtom,
   iconSizeAtom,
   iconColorAtom,
   selectionEntryAtom,
-} from "@/state/atoms";
-import { isDarkThemeSelector } from "@/state/selectors";
-import Tabs, { Tab } from "@/components/Tabs";
-import useTransientState from "@/hooks/useTransientState";
-import { SnippetType } from "@/lib";
+  isDarkThemeSelector,
+} from "@/state";
 import { getCodeSnippets, supportsWeight } from "@/utils";
 
 import TagCloud from "./TagCloud";
 
 const variants: Variants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 },
+  initial: { y: 188 },
+  animate: { y: 0 },
+  exit: { y: 188 },
 };
 
 const RENDERED_SNIPPETS = [
@@ -94,10 +94,7 @@ const DetailFooter = () => {
           header: type,
           content: (
             <div className="snippet" key={type}>
-              <pre
-                tabIndex={0}
-                style={isWeightSupported ? undefined : snippetButtonStyle}
-              >
+              <pre style={isWeightSupported ? undefined : snippetButtonStyle}>
                 <span>
                   {isWeightSupported
                     ? snippets[type]
@@ -213,31 +210,44 @@ const DetailFooter = () => {
           <div className="detail-preview">
             <figure>
               <entry.Icon ref={ref} size={64}></entry.Icon>
-              <figcaption>{entry.name}</figcaption>
+              <figcaption>
+                <p>{entry.name}</p>
+                <small className="versioning">
+                  available in v{entry.published_in.toFixed(1)}.0+
+                </small>
+              </figcaption>
             </figure>
-            <small className="versioning">
-              in &ge; {entry.published_in.toFixed(1)}.0
-            </small>
+            <div className="detail-actions">
+              <button
+                tabIndex={0}
+                style={buttonBarStyle}
+                onClick={handleDownloadPNG}
+              >
+                <DownloadSimple size={24} color="currentColor" weight="fill" /> PNG
+              </button>
+              <button
+                tabIndex={0}
+                style={buttonBarStyle}
+                onClick={handleDownloadSVG}
+              >
+                <DownloadSimple size={24} color="currentColor" weight="fill" /> SVG
+              </button>
+              <button
+                tabIndex={0}
+                style={buttonBarStyle}
+                onClick={handleCopySVG}
+              >
+                {copied === "SVG" ? (
+                  <CheckCircle size={24} color={successColor} weight="fill" />
+                ) : (
+                  <Copy size={24} color="currentColor" weight="fill" />
+                )}
+                {copied === "SVG" ? "Copied!" : " SVG"}
+              </button>
+            </div>
           </div>
+
           <Tabs tabs={tabs} />
-          <div className="detail-actions">
-            <button style={buttonBarStyle} onClick={handleDownloadPNG}>
-              <Download size={24} color="currentColor" weight="fill" /> Download
-              PNG
-            </button>
-            <button style={buttonBarStyle} onClick={handleDownloadSVG}>
-              <Download size={24} color="currentColor" weight="fill" /> Download
-              SVG
-            </button>
-            <button style={buttonBarStyle} onClick={handleCopySVG}>
-              {copied === "SVG" ? (
-                <CheckCircle size={24} color={successColor} weight="fill" />
-              ) : (
-                <Copy size={24} color="currentColor" weight="fill" />
-              )}
-              {copied === "SVG" ? "Copied!" : "Copy SVG"}
-            </button>
-          </div>
         </motion.aside>
       )}
     </AnimatePresence>

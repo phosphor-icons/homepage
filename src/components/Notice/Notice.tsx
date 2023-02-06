@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import { useRecoilValue } from "recoil";
 import { HourglassMedium, Question, SmileyXEyes } from "phosphor-react";
 
-import { isDarkThemeSelector } from "@/state/selectors";
-import { searchQueryAtom } from "@/state/atoms";
+import { searchQueryAtom, isDarkThemeSelector } from "@/state";
 
 interface NoticeProps {
   message?: string;

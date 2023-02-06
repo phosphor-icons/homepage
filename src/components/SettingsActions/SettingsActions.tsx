@@ -1,9 +1,13 @@
 import { useRecoilValue, useResetRecoilState } from "recoil";
 import { ArrowCounterClockwise, CheckCircle, Link } from "phosphor-react";
 
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "@/state/atoms";
-import useTransientState from "@/hooks/useTransientState";
-import { resetSettingsSelector } from "@/state/selectors";
+import { useTransientState } from "@/hooks";
+import {
+  iconWeightAtom,
+  iconSizeAtom,
+  iconColorAtom,
+  resetSettingsSelector,
+} from "@/state";
 
 import "./SettingsActions.css";
 

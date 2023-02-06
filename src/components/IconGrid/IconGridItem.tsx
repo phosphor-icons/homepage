@@ -1,11 +1,9 @@
 import { useRef, useLayoutEffect, useEffect, MutableRefObject } from "react";
 import { useRecoilState } from "recoil";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { IconEntry } from "@/lib";
-import { iconPreviewOpenAtom, selectionEntryAtom } from "@/state/atoms";
-
-import DetailsPanel from "./DetailsPanel";
+import { selectionEntryAtom } from "@/state";
 
 interface IconGridItemProps {
   index: number;
@@ -70,7 +68,7 @@ const IconGridItem = (props: IconGridItemProps) => {
         className="grid-item"
         key={name}
         ref={ref}
-        tabIndex={0}
+        tabIndex={1}
         style={{
           order: index,
           backgroundColor: isOpen ? "rgba(163, 159, 171, 0.1)" : undefined,
@@ -88,9 +86,6 @@ const IconGridItem = (props: IconGridItemProps) => {
           {isUpdated && <span className="badge updated">•</span>}
         </p>
       </motion.div>
-      {/* <AnimatePresence initial={false}>
-        {isOpen && <DetailsPanel {...props} />}
-      </AnimatePresence> */}
     </>
   );
 };
