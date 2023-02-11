@@ -1,7 +1,4 @@
 import { CSSProperties, ReactNode, useState } from "react";
-import { useRecoilValue } from "recoil";
-
-import { isDarkThemeSelector } from "@/state";
 
 import "./Tabs.css";
 
@@ -12,41 +9,32 @@ export type Tab = {
 
 type TabsProps = {
   tabs: Tab[];
+  initialIndex?: number;
+  onTabChange?: (index: number) => void;
 };
-
-type CSSCustomPropertyName = `--${string}`;
-
-type CSSCustomProperties = {
-  [property: CSSCustomPropertyName]: string;
-};
-
-const colorStyles: Record<string, CSSProperties & CSSCustomProperties> = {
-  light: { "--tabs-background": "white" },
-  dark: { "--tabs-background": "rgba(194, 186, 196, 0.25)" },
-} as const;
 
 const contentStyles: Record<string, CSSProperties> = {
   activeLeft: { borderTopLeftRadius: 0 },
   activeRight: { borderTopRightRadius: 0 },
 } as const;
 
-const Tabs = ({ tabs }: TabsProps) => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-  const isDark = useRecoilValue(isDarkThemeSelector);
+const Tabs = ({ tabs, initialIndex = 0, onTabChange }: TabsProps) => {
+  const [activeIndex, setActiveIndex] = useState<number>(
+    !!tabs[initialIndex] ? initialIndex : 0
+  );
 
   return (
-    <div
-      className="tabs"
-      tabIndex={0}
-      style={isDark ? colorStyles.dark : colorStyles.light}
-    >
+    <div className="secondary tabs" tabIndex={0}>
       <div className="tabs-header">
         {tabs.map((tab, i) => (
           <button
             key={i}
             tabIndex={0}
             className={`tab ${activeIndex === i ? "active" : ""}`}
-            onClick={() => setActiveIndex(i)}
+            onClick={() => {
+              setActiveIndex(i);
+              onTabChange?.(i);
+            }}
           >
             {tab.header}
           </button>

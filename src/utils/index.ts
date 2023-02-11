@@ -17,6 +17,8 @@ export function getCodeSnippets({
 }): Record<SnippetType, string> {
   const isDefaultWeight = weight === "regular";
   const isDefaultColor = color === "#000000";
+  const elmName = displayName.replace(/^\w/, (c) => c.toLowerCase());
+  const elmWeight = weight.replace(/^\w/, (c) => c.toUpperCase());
 
   return {
     [SnippetType.HTML]: `<i class="ph-${name}${
@@ -38,6 +40,12 @@ export function getCodeSnippets({
     },\n  size: ${size.toFixed(1)},\n${
       !isDefaultColor ? `  color: Color(0xff${color.replace("#", "")}),\n` : ""
     })`,
+    [SnippetType.ELM]: `Phosphor.${elmName}${
+      isDefaultWeight ? "" : " " + elmWeight
+    }
+    |> withSize ${size}
+    |> withSizeUnit "px"
+    |> toHtml []`,
   };
 }
 

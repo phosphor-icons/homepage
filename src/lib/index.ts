@@ -10,4 +10,5 @@ export enum SnippetType {
   VUE = "Vue",
   HTML = "HTML/CSS",
   FLUTTER = "Flutter",
+  ELM = "Elm",
 }

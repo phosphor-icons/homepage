@@ -7,7 +7,6 @@ import { selectionEntryAtom } from "@/state";
 
 interface IconGridItemProps {
   index: number;
-  spans: number;
   isDark: boolean;
   entry: IconEntry;
   originOffset: MutableRefObject<{ top: number; left: number }>;
@@ -68,11 +67,8 @@ const IconGridItem = (props: IconGridItemProps) => {
         className="grid-item"
         key={name}
         ref={ref}
-        tabIndex={1}
-        style={{
-          order: index,
-          backgroundColor: isOpen ? "rgba(163, 159, 171, 0.1)" : undefined,
-        }}
+        tabIndex={0}
+        style={isOpen ? { backgroundColor: "var(--translucent)" } : undefined}
         custom={delayRef}
         transition={transition}
         variants={itemVariants}

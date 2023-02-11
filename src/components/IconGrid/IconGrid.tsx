@@ -1,4 +1,4 @@
-import { useRef, useEffect, CSSProperties } from "react";
+import { useRef, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { IconContext } from "phosphor-react";
@@ -10,7 +10,6 @@ import {
   filteredQueryResultsSelector,
   isDarkThemeSelector,
 } from "@/state";
-import useGridSpans from "@/hooks/useGridSpans";
 import Notice from "@/components/Notice";
 
 import DetailFooter from "./DetailFooter";
@@ -28,13 +27,6 @@ const defaultSearchTags = [
   "weather",
 ];
 
-const gridStyle: Record<string, CSSProperties> = {
-  light: {},
-  dark: {
-    backgroundColor: "#35313D",
-  },
-} as const;
-
 type IconGridProps = {};
 
 const IconGrid = (_: IconGridProps) => {
@@ -42,8 +34,6 @@ const IconGrid = (_: IconGridProps) => {
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
-  const spans = useGridSpans();
-
   const filteredQueryResults = useRecoilValue(filteredQueryResultsSelector);
 
   const originOffset = useRef({ top: 0, left: 0 });
@@ -63,17 +53,13 @@ const IconGrid = (_: IconGridProps) => {
 
   return (
     <IconContext.Provider value={{ weight, size, color, mirrored: false }}>
-      <div
-        className="grid-container"
-        style={isDark ? gridStyle.dark : gridStyle.light}
-      >
+      <div className="grid-container">
         <i id="beacon" className="beacon" />
         <motion.div className="grid" initial="hidden" animate={controls}>
           {filteredQueryResults.map((iconEntry, index) => (
             <IconGridItem
               key={index}
               index={index}
-              spans={spans}
               isDark={isDark}
               entry={iconEntry}
               originOffset={originOffset}

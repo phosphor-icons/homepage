@@ -3,6 +3,8 @@
   padding: 32px 16px;
   /* min-height: 80vh; */
   content-visibility: auto;
+  color: var(--foreground);
+  background-color: var(--background);
 }
 
 .grid {
@@ -27,22 +29,21 @@
   -webkit-user-select: none;
   user-select: none;
   cursor: pointer;
-  /* transition: background-color 100ms ease; */
 }
 
 .grid-item:hover {
-  background-color: rgba(163, 159, 171, 0.1);
+  background-color: var(--translucent);
 }
 
 .grid-item:focus {
   outline: none;
-  border: 2px solid rgba(163, 159, 171, 0.1);
+  border: 2px solid var(--translucent);
 }
 
 .grid-item p {
   font-size: 12px;
   line-height: 16px;
-  color: #86838b;
+  color: var(--neutral);
   margin-top: 12px;
   text-align: center;
 }
@@ -65,61 +66,12 @@
   }
 }
 
-.info-box {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 0px;
-  margin: 0 4px;
-  border-radius: 16px;
-  background-color: rgba(163, 159, 171, 0.1);
-}
-
-@media screen and (max-width: 1023px) {
-  .icon-preview {
-    display: none !important;
-  }
-
-  .icon-usage {
-    padding-left: 10% !important;
-  }
-
-  .snippet pre {
-    padding: 12px 8px 12px 20px;
-  }
-}
-
-.icon-preview {
-  width: 30%;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 72px;
-}
-
-.icon-preview p {
-  margin: 0;
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.icon-preview > p.name {
-  font-size: 16px;
-}
-
 .versioning {
   margin-top: 2px;
   opacity: 0.6;
 }
 
-.icon-usage {
-  flex: 1;
-  padding: 56px 10% 56px 0;
-}
-
 .snippet {
-  /* margin-bottom: 24px; */
   width: 100%;
 }
 
@@ -127,7 +79,6 @@
   display: flex;
   align-items: center;
   text-overflow: ellipsis;
-  /* color: black; */
   -moz-user-select: all;
   -webkit-user-select: all;
   user-select: all;
@@ -182,10 +133,28 @@
 
 .close-icon {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 12px;
+  right: 12px;
   text-align: end;
   cursor: pointer;
+}
+
+.close-button {
+  color: inherit;
+  background: var(--background);
+  height: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 48px !important;
+  position: absolute;
+  top: -14px;
+  right: -18px;
+  text-align: end;
+  cursor: pointer;
+}
+
+.close-button:active {
+  opacity: 0.7;
 }
 
 .empty-list {
@@ -255,4 +224,19 @@ figcaption > p {
   flex-direction: row;
   align-items: center;
   gap: 8px;
+}
+
+@media screen and (max-width: 719px) {
+  .close-button {
+    top: 4px;
+    right: 12px;
+  }
+
+  aside.detail-footer {
+    top: 16px;
+    bottom: -4px;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+  }
 }

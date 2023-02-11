@@ -84,8 +84,8 @@ const SearchInput = (_: SearchInputProps) => {
         value={value}
         placeholder="Search"
         onChange={({ currentTarget }) => setValue(currentTarget.value)}
-        onKeyPress={({ currentTarget, key }) =>
-          key === "Enter" && currentTarget.blur()
+        onKeyDown={({ currentTarget, key }) =>
+          (key === "Enter" || key === "Escape") && currentTarget.blur()
         }
       />
       {!value && !isMobile && <Keys>{isApple ? <Command /> : "Ctrl + "}K</Keys>}

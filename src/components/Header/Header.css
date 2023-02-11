@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  background-color: #ffd171;
+  background-color: var(--yellow);
   overflow: hidden;
 }
 

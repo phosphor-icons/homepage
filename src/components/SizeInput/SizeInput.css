@@ -7,7 +7,7 @@
   padding: 0 24px;
   color: white;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--scrim);
   font-family: "Manrope", sans-serif;
   font-size: 16px;
 }
@@ -68,12 +68,12 @@
   outline: none;
   width: 24px; /* Set a specific slider handle width */
   height: 24px; /* Slider handle height */
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 6px var(--sheer);
 }
 
 .size-bar input:focus::-webkit-slider-thumb {
   outline: none;
   width: 24px; /* Set a specific slider handle width */
   height: 24px; /* Slider handle height */
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 6px var(--sheer);
 }

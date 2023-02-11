@@ -20,21 +20,38 @@ button.tab {
   border-top-right-radius: 8px;
 }
 
-button.tab:focus-within {
-  /* background-color: var(--tabs-background); */
+button.tab:focus-visible {
+  outline: 1px solid currentColor;
 }
 
-.tab.active {
-  background-color: var(--tabs-background);
+button.tab:hover:not(.active) {
+  background-color: var(--sheer);
+}
+
+button.tab.active {
+  background-color: var(--background);
   border-bottom: none;
 }
 
 .tab-content {
   flex: 1;
-  padding: 8px 16px;
+  height: 80px;
+  max-height: 80px;
+  padding: 16px;
   display: grid;
   place-items: center;
   border-radius: 8px;
-  background-color: var(--tabs-background);
+  background-color: var(--background);
   overflow-y: auto;
+}
+
+@media screen and (max-width: 719px) {
+  .tabs {
+    flex: 1;
+  }
+
+  .tab-content {
+    height: unset;
+    max-height: unset;
+  }
 }

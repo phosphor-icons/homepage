@@ -1,5 +1,5 @@
 footer {
-  background-color: #925bff;
+  background-color: var(--purple);
 }
 
 #back-to-top-button {
@@ -8,6 +8,11 @@ footer {
   margin: 0;
   border-radius: 50%;
   z-index: 2;
+  font-size: 56px;
+}
+
+#back-to-top-button svg {
+  margin-right: unset;
 }
 
 .container {
@@ -65,11 +70,7 @@ footer .links {
     width: 56px;
     height: 56px;
     padding: 0;
-  }
-
-  #back-to-top-button svg {
-    width: 28px;
-    height: 28px;
+    font-size: 28px;
   }
 
   footer .links {
@@ -132,12 +133,6 @@ footer .links {
     left: 190px;
     top: 276px;
   }
-
-  /* #command {
-    position: absolute;
-    left: 532px;
-    top: 150px;
-  } */
 
   .illustrations-footer {
     display: initial;

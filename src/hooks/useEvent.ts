@@ -18,7 +18,7 @@ export type UseEventType<E extends UseEventTarget> = keyof UseEventMap<E>;
  * provided event name (currently supports {@link Window}, {@link Document},
  * and subclasses of {@link HTMLElement} and {@link SVGElement}).
  *
- * @param type an {@link https://developer.mozilla.org/en-US/docs/Web/Events#event_listing  event type}
+ * @param type an {@link https://developer.mozilla.org/en-US/docs/Web/Events#event_listing event type}
  * @param listener a callback to be fired on the event
  * @param options {@link AddEventListenerOptions}
  * @param el the target element to attack the listener. Defaults to

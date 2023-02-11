@@ -1,7 +1,10 @@
+export { default as useCSSVariables } from "./useCSSVariables";
 export { default as useDebounce } from "./useDebounce";
 export { default as useEvent } from "./useEvent";
 export { default as useIconParameters } from "./useIconParameters";
+export { default as useMediaQuery } from "./useMediaQuery";
 export { default as usePersistSettings } from "./usePersistSettings";
+export { default as useSessionState } from "./useSessionState";
 export { default as useThrottle } from "./useThrottle";
 export { default as useThrottled } from "./useThrottled";
 export { default as useTimeoutFn } from "./useTimeoutFn";

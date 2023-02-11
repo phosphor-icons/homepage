@@ -4,7 +4,7 @@
   padding: 24px;
   color: white;
   text-align: center;
-  background-color: #35313d;
+  background-color: var(--eggplant);
 }
 
 .banner .main-button {

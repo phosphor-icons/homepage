@@ -4,11 +4,11 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
-import { Copy, CheckCircle, DownloadSimple } from "phosphor-react";
+import { Copy, CheckCircle, DownloadSimple, XCircle } from "phosphor-react";
 import ReactGA from "react-ga4";
 
 import Tabs, { Tab } from "@/components/Tabs";
-import { useTransientState } from "@/hooks";
+import { useMediaQuery, useTransientState, useSessionState } from "@/hooks";
 import { SnippetType } from "@/lib";
 import {
   iconWeightAtom,
@@ -21,10 +21,17 @@ import { getCodeSnippets, supportsWeight } from "@/utils";
 
 import TagCloud from "./TagCloud";
 
-const variants: Variants = {
-  initial: { y: 188 },
-  animate: { y: 0 },
-  exit: { y: 188 },
+const variants: Record<string, Variants> = {
+  desktop: {
+    initial: { y: 188 },
+    animate: { y: 0 },
+    exit: { y: 188 },
+  },
+  mobile: {
+    initial: { y: "60vh" },
+    animate: { y: 0 },
+    exit: { y: "60vh" },
+  },
 };
 
 const RENDERED_SNIPPETS = [
@@ -32,11 +39,19 @@ const RENDERED_SNIPPETS = [
   SnippetType.VUE,
   SnippetType.HTML,
   SnippetType.FLUTTER,
+  SnippetType.ELM,
 ];
 
 const buttonColor = "#35313D";
 const successColor = "#1FA647";
 const disabledColor = "#B7B7B7";
+
+function cloneWithSize(svg: SVGSVGElement, size: number): SVGSVGElement {
+  const sized = svg.cloneNode(true) as SVGSVGElement;
+  sized.setAttribute("width", `${size}`);
+  sized.setAttribute("height", `${size}`);
+  return sized;
+}
 
 const DetailFooter = () => {
   const [entry, setSelectionEntry] = useRecoilState(selectionEntryAtom);
@@ -50,6 +65,10 @@ const DetailFooter = () => {
     2000
   );
   const ref = useRef<SVGSVGElement>(null);
+
+  const [{ i }, setInitialTab] = useSessionState("tab", { i: 0 });
+
+  const isMobile = useMediaQuery("(max-width: 719px)");
 
   const [snippets, tabs] = useMemo<
     [Partial<Record<SnippetType, string>>, Tab[]]
@@ -67,7 +86,7 @@ const DetailFooter = () => {
     const snippetButtonStyle: CSSProperties =
       weight === "duotone"
         ? { color: disabledColor, userSelect: "none" }
-        : { color: buttonColor };
+        : { color: "currentcolor" };
 
     const tabs = [
       {
@@ -104,7 +123,11 @@ const DetailFooter = () => {
                   title="Copy snippet"
                   onClick={(e) => handleCopySnippet(e, type)}
                   disabled={!isWeightSupported}
-                  style={isWeightSupported ? undefined : snippetButtonStyle}
+                  style={
+                    isWeightSupported
+                      ? { color: "currentColor" }
+                      : snippetButtonStyle
+                  }
                 >
                   {copied === type ? (
                     <CheckCircle size={24} color={successColor} weight="fill" />
@@ -113,7 +136,7 @@ const DetailFooter = () => {
                       size={24}
                       color={
                         isWeightSupported
-                          ? buttonColor
+                          ? "currentColor"
                           : snippetButtonStyle.color
                       }
                       weight="fill"
@@ -128,7 +151,7 @@ const DetailFooter = () => {
     );
 
     return [snippets, tabs];
-  }, [entry, weight, copied, isDark]);
+  }, [entry, weight, size, copied, isDark]);
 
   useHotkeys("esc", () => setSelectionEntry(null));
 
@@ -163,9 +186,10 @@ const DetailFooter = () => {
   ) => {
     event.currentTarget.blur();
     if (!entry) return;
+    if (!ref.current) return;
 
+    navigator.clipboard?.writeText(cloneWithSize(ref.current, size).outerHTML);
     setCopied("SVG");
-    ref.current && void navigator.clipboard?.writeText(ref.current.outerHTML);
   };
 
   const handleDownloadSVG = (
@@ -173,9 +197,9 @@ const DetailFooter = () => {
   ) => {
     event.currentTarget.blur();
     if (!entry) return;
-    if (!ref.current?.outerHTML) return;
+    if (!ref.current) return;
 
-    const blob = new Blob([ref.current.outerHTML]);
+    const blob = new Blob([cloneWithSize(ref.current, size).outerHTML]);
     saveAs(
       blob,
       `${entry?.name}${weight === "regular" ? "" : `-${weight}`}.svg`
@@ -187,12 +211,11 @@ const DetailFooter = () => {
   ) => {
     event.currentTarget.blur();
     if (!entry) return;
-    if (!ref.current?.outerHTML) return;
+    if (!ref.current) return;
 
     Svg2Png.save(
-      ref.current,
-      `${entry?.name}${weight === "regular" ? "" : `-${weight}`}.png`,
-      { scaleX: 2.667, scaleY: 2.667 }
+      cloneWithSize(ref.current, size),
+      `${entry?.name}${weight === "regular" ? "" : `-${weight}`}.png`
     );
   };
 
@@ -203,9 +226,9 @@ const DetailFooter = () => {
           initial="initial"
           animate="animate"
           exit="exit"
-          variants={variants}
-          className={`detail-footer card ${isDark ? "dark" : "light"}`}
-          transition={{ duration: 0.1 }}
+          variants={isMobile ? variants.mobile : variants.desktop}
+          className="secondary detail-footer card"
+          transition={isMobile ? { duration: 0.25 } : { duration: 0.1 }}
         >
           <div className="detail-preview">
             <figure>
@@ -223,14 +246,16 @@ const DetailFooter = () => {
                 style={buttonBarStyle}
                 onClick={handleDownloadPNG}
               >
-                <DownloadSimple size={24} color="currentColor" weight="fill" /> PNG
+                <DownloadSimple size={24} color="currentColor" weight="fill" />{" "}
+                PNG
               </button>
               <button
                 tabIndex={0}
                 style={buttonBarStyle}
                 onClick={handleDownloadSVG}
               >
-                <DownloadSimple size={24} color="currentColor" weight="fill" /> SVG
+                <DownloadSimple size={24} color="currentColor" weight="fill" />{" "}
+                SVG
               </button>
               <button
                 tabIndex={0}
@@ -247,7 +272,22 @@ const DetailFooter = () => {
             </div>
           </div>
 
-          <Tabs tabs={tabs} />
+          <Tabs
+            tabs={tabs}
+            initialIndex={i}
+            onTabChange={(i) => setInitialTab({ i })}
+          />
+
+          <button
+            tabIndex={0}
+            className="close-button"
+            onClick={() => setSelectionEntry(null)}
+            onKeyDown={(e) => {
+              e.key === "Enter" && setSelectionEntry(null);
+            }}
+          >
+            <XCircle color="currentColor" size={28} weight="fill" />
+          </button>
         </motion.aside>
       )}
     </AnimatePresence>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useRecoilValue } from "recoil";
 import { HourglassMedium, Question, SmileyXEyes } from "phosphor-react";
 
-import { searchQueryAtom, isDarkThemeSelector } from "@/state";
+import { searchQueryAtom } from "@/state";
 
 interface NoticeProps {
   message?: string;
@@ -12,11 +12,10 @@ interface NoticeProps {
 }
 
 const Notice = ({ message, type = "warn", children }: NoticeProps) => {
-  const isDark = useRecoilValue(isDarkThemeSelector);
   const query = useRecoilValue(searchQueryAtom);
 
   return (
-    <div style={isDark ? { backgroundColor: "#35313D", color: "white" } : {}}>
+    <div className="primary">
       <motion.div
         className="empty-list"
         initial={{ opacity: 0 }}

@@ -1,17 +1,13 @@
 button.action-button {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--scrim);
   color: white;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-button.action-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 button.action-button:active {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--sheer);
 }
 
 @media screen and (max-width: 558px) {
