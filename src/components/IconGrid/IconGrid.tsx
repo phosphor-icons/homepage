@@ -47,7 +47,7 @@ const IconGrid = (_: IconGridProps) => {
     return (
       <Notice>
         <span>Try searching a category or keyword:</span>
-        <TagCloud name="empty-state" isDark={isDark} tags={defaultSearchTags} />
+        <TagCloud name="empty-state" tags={defaultSearchTags} />
       </Notice>
     );
 

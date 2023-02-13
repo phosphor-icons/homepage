@@ -23,7 +23,7 @@ type HeaderProps = {};
 
 const handleGetStarted = () =>
   window.open(
-    "https://github.com/phosphor-icons/phosphor-home#phosphor-icons",
+    "https://github.com/phosphor-icons/homepage#phosphor-icons",
     "_blank",
     "noopener noreferrer"
   );

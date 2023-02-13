@@ -101,7 +101,6 @@ const DetailFooter = () => {
                 ...entry.tags,
               ])
             )}
-            isDark={isDark}
           />
         ),
       },

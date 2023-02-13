@@ -73,7 +73,7 @@ const Links = (_: LinksProps) => {
       <div>
         <ArrowElbowDownRight size={24} />
         <OutboundLink
-          href="https://github.com/phosphor-icons/phosphor-home"
+          href="https://github.com/phosphor-icons/homepage"
           eventLabel="GitHub"
         >
           GitHub
@@ -82,7 +82,7 @@ const Links = (_: LinksProps) => {
       <div>
         <ArrowElbowDownRight size={24} />
         <OutboundLink
-          href="https://github.com/phosphor-icons/phosphor-home/issues"
+          href="https://github.com/phosphor-icons/homepage/issues"
           eventLabel="Request"
         >
           Request an icon

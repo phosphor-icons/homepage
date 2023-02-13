@@ -116,13 +116,6 @@ const Footer = (_: FooterProps) => {
               <a className="main-link" href="mailto:hello@phosphoricons.com">
                 hello@phosphoricons.com
               </a>
-              . Check out our sister project:{" "}
-              <a
-                className="main-link"
-                href="https://play.google.com/store/apps/details?id=com.tobiasfried.phosphor"
-              >
-                Phosphor for Android
-              </a>
               . Type set in{" "}
               <a className="main-link" href="https://manropefont.com/">
                 Manrope

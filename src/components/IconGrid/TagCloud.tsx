@@ -8,10 +8,9 @@ import "./TagCloud.css";
 interface TagCloudProps {
   name: string;
   tags: string[];
-  isDark: boolean;
 }
 
-const TagCloud = ({ name, tags, isDark }: TagCloudProps) => {
+const TagCloud = ({ name, tags }: TagCloudProps) => {
   const isMobile = useMediaQuery("(max-width: 719px)");
   const setQuery = useSetRecoilState(searchQueryAtom);
   const handleTagClick = useCallback(

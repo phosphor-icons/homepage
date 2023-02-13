@@ -1,6 +1,6 @@
 {
   "name": "phosphor-home",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "license": "MIT",
   "homepage": "https://phosphoricons.com",
   "author": {
@@ -18,7 +18,7 @@
     "UI",
     "UX"
   ],
-  "repository": "github:phosphor-icons/phosphor-home",
+  "repository": "github:phosphor-icons/homepage",
   "private": true,
   "scripts": {
     "dev": "vite",
