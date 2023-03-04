@@ -13,12 +13,12 @@ function expand<S extends object>(action: Action<S>, prev?: S) {
   }
 }
 
-export default function useSessionState<S extends object>(
+export default function useLocalStorage<S extends object>(
   key: string,
   fallbackState: S | (() => S)
-): [S, Dispatch<SetStateAction<S>>] {
+): [S, Dispatch<SetStateAction<S>>, (partial: Partial<S>) => void] {
   const [value, setValue] = useState<S>(() => {
-    let val = sessionStorage.getItem(STORAGE_KEY + key);
+    let val = localStorage.getItem(STORAGE_KEY + key);
     if (val) return JSON.parse(val) as S;
     return expand(fallbackState);
   });
@@ -26,10 +26,15 @@ export default function useSessionState<S extends object>(
   const set: Dispatch<SetStateAction<S>> = useCallback((val) => {
     setValue((prev) => {
       const next = expand(val, prev);
-      sessionStorage.setItem(STORAGE_KEY + key, JSON.stringify(next));
+      localStorage.setItem(STORAGE_KEY + key, JSON.stringify(next));
       return next;
     });
   }, []);
 
-  return [value, set];
+  const insert = useCallback(
+    (partial: Partial<S>) => set((value) => ({ ...value, ...partial })),
+    []
+  );
+
+  return [value, set, insert];
 }

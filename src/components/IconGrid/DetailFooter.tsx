@@ -8,7 +8,7 @@ import { Copy, CheckCircle, DownloadSimple, XCircle } from "phosphor-react";
 import ReactGA from "react-ga4";
 
 import Tabs, { Tab } from "@/components/Tabs";
-import { useMediaQuery, useTransientState, useSessionState } from "@/hooks";
+import { useMediaQuery, useTransientState, useSessionStorage } from "@/hooks";
 import { SnippetType } from "@/lib";
 import {
   iconWeightAtom,
@@ -66,7 +66,7 @@ const DetailFooter = () => {
   );
   const ref = useRef<SVGSVGElement>(null);
 
-  const [{ i }, setInitialTab] = useSessionState("tab", { i: 0 });
+  const [{ i }, setInitialTab] = useSessionStorage("tab", { i: 0 });
 
   const isMobile = useMediaQuery("(max-width: 719px)");
 
@@ -219,7 +219,7 @@ const DetailFooter = () => {
   };
 
   return (
-    <AnimatePresence initial={false}>
+    <AnimatePresence initial={true}>
       {!!entry && (
         <motion.aside
           initial="initial"

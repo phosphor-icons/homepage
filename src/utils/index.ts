@@ -21,9 +21,9 @@ export function getCodeSnippets({
   const elmWeight = weight.replace(/^\w/, (c) => c.toUpperCase());
 
   return {
-    [SnippetType.HTML]: `<i class="ph-${name}${
+    [SnippetType.HTML]: `<i class="ph${
       isDefaultWeight ? "" : `-${weight}`
-    }"></i>`,
+    } ph-${name}"></i>`,
     [SnippetType.REACT]: `<${displayName} size={${size}} ${
       !isDefaultColor ? `color="${color}" ` : ""
     }${isDefaultWeight ? "" : `weight="${weight}" `}/>`,
@@ -56,6 +56,6 @@ export function supportsWeight({
   type: SnippetType;
   weight: IconStyle;
 }): boolean {
-  if (type !== SnippetType.HTML && type !== SnippetType.FLUTTER) return true;
+  if (type !== SnippetType.FLUTTER) return true;
   return weight !== IconStyle.DUOTONE;
 }

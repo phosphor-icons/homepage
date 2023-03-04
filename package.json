@@ -41,7 +41,6 @@
     "react-use": "^17.4.0",
     "recoil": "^0.7.6",
     "svg2png-converter": "^1.0.2",
-    "tinycolor": "^0.0.1",
     "tinycolor2": "^1.4.2"
   },
   "devDependencies": {

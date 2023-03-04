@@ -1,7 +1,11 @@
 :root {
   --red: #ff6e60;
-  --blue: #397fff;
+  --orange: #ff8e51;
   --yellow: #ffd171;
+  --pale: #ffe8dc;
+  --peach: #ffd5c0;
+  --darkgreen: #245633;
+  --blue: #397fff;
   --purple: #925bff;
   --eggplant: #35313d;
   --neutral: #86838b;
@@ -59,6 +63,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  cursor: pointer;
 }
 
 button.main-button {

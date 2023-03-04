@@ -2,6 +2,7 @@
   position: relative;
   padding: 32px 16px;
   /* min-height: 80vh; */
+  z-index: 1;
   content-visibility: auto;
   color: var(--foreground);
   background-color: var(--background);

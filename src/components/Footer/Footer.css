@@ -11,6 +11,11 @@ footer {
   font-size: 56px;
 }
 
+#back-to-top-button:active {
+  transform: translate(4px, 4px) !important;
+  box-shadow: 0 0 0 0 black;
+}
+
 #back-to-top-button svg {
   margin-right: unset;
 }
@@ -138,7 +143,7 @@ footer .links {
     display: initial;
     position: absolute;
     left: -240px;
-    top: 656px;
+    top: 632px;
     height: 584px;
     overflow: hidden;
   }

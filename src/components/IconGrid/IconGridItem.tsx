@@ -1,11 +1,17 @@
-import { useRef, useLayoutEffect, useEffect, MutableRefObject } from "react";
+import {
+  useRef,
+  useLayoutEffect,
+  useEffect,
+  MutableRefObject,
+  HTMLAttributes,
+} from "react";
 import { useRecoilState } from "recoil";
 import { motion } from "framer-motion";
 
 import { IconEntry } from "@/lib";
 import { selectionEntryAtom } from "@/state";
 
-interface IconGridItemProps {
+interface IconGridItemProps extends HTMLAttributes<HTMLDivElement> {
   index: number;
   isDark: boolean;
   entry: IconEntry;
@@ -25,7 +31,7 @@ const itemVariants = {
 };
 
 const IconGridItem = (props: IconGridItemProps) => {
-  const { index, originOffset, entry } = props;
+  const { index, originOffset, entry, style } = props;
   const { name, Icon } = entry;
   const [selection, setSelectionEntry] = useRecoilState(selectionEntryAtom);
   const isOpen = selection?.name === name;
@@ -68,7 +74,10 @@ const IconGridItem = (props: IconGridItemProps) => {
         key={name}
         ref={ref}
         tabIndex={0}
-        style={isOpen ? { backgroundColor: "var(--translucent)" } : undefined}
+        style={{
+          ...style,
+          backgroundColor: isOpen ? "var(--translucent)" : undefined,
+        }}
         custom={delayRef}
         transition={transition}
         variants={itemVariants}
