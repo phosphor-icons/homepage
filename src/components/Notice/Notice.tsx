@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useRecoilValue } from "recoil";
-import { HourglassMedium, Question, SmileyXEyes } from "phosphor-react";
+import { HourglassMedium, Question, SmileyXEyes } from "@phosphor-icons/react";
 
 import { searchQueryAtom } from "@/state";
 

@@ -1,4 +1,4 @@
-import { ArrowElbowDownRight } from "phosphor-react";
+import { ArrowElbowDownRight } from "@phosphor-icons/react";
 
 import { iconCount } from "@/lib/icons";
 import OutboundLink from "@/components/OutboundLink";

@@ -1,5 +1,5 @@
 import { useRecoilValue, useResetRecoilState } from "recoil";
-import { ArrowCounterClockwise, CheckCircle, Link } from "phosphor-react";
+import { ArrowCounterClockwise, CheckCircle, Link } from "@phosphor-icons/react";
 
 import { useTransientState } from "@/hooks";
 import {

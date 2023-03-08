@@ -1,4 +1,8 @@
-import { ArrowCircleUpRight, ArrowCircleDown, Megaphone } from "phosphor-react";
+import {
+  ArrowCircleUpRight,
+  ArrowCircleDown,
+  Broadcast,
+} from "@phosphor-icons/react";
 
 import Banner from "@/components/Banner";
 
@@ -38,22 +42,19 @@ const handleScrollToIcons = () =>
 const Header = (_: HeaderProps) => {
   return (
     <header>
-      <Banner
-        id={Math.random().toString()}
-        children={
-          <>
-            <Megaphone mirrored color="var(--orange)" size={28} weight="fill" />
-            <small>
-              Phosphor has some big updates, and some APIs have changed for
-              users of the Vanilla JS library. Please check our{" "}
-              <a href="https://github.com/phosphor-icons/homepage#readme">
-                documentation
-              </a>{" "}
-              to see what's new...
-            </small>
-          </>
-        }
-      />
+      <Banner id="2.0">
+        <div className="message">
+          <Broadcast size={32} weight="fill" />
+          <small>
+            Phosphor 2.0 is out, with some big updates and some small API
+            changes. Check our{" "}
+            <a href="https://github.com/phosphor-icons/homepage#readme">
+              documentation
+            </a>{" "}
+            to see what's new!
+          </small>
+        </div>
+      </Banner>
       <div className="header-contents">
         <div className="illustrations-top">
           <MarkerPurple id="marker-purple" />

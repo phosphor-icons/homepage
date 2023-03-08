@@ -4,7 +4,12 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
-import { Copy, CheckCircle, DownloadSimple, XCircle } from "phosphor-react";
+import {
+  Copy,
+  CheckCircle,
+  DownloadSimple,
+  XCircle,
+} from "@phosphor-icons/react";
 import ReactGA from "react-ga4";
 
 import Tabs, { Tab } from "@/components/Tabs";
@@ -241,30 +246,33 @@ const DetailFooter = () => {
             </figure>
             <div className="detail-actions">
               <button
+                className="action-button"
                 tabIndex={0}
                 style={buttonBarStyle}
                 onClick={handleDownloadPNG}
               >
-                <DownloadSimple size={24} color="currentColor" weight="fill" />{" "}
+                <DownloadSimple size={20} color="currentColor" weight="fill" />{" "}
                 PNG
               </button>
               <button
+                className="action-button"
                 tabIndex={0}
                 style={buttonBarStyle}
                 onClick={handleDownloadSVG}
               >
-                <DownloadSimple size={24} color="currentColor" weight="fill" />{" "}
+                <DownloadSimple size={20} color="currentColor" weight="fill" />{" "}
                 SVG
               </button>
               <button
+                className="action-button"
                 tabIndex={0}
                 style={buttonBarStyle}
                 onClick={handleCopySVG}
               >
                 {copied === "SVG" ? (
-                  <CheckCircle size={24} color={successColor} weight="fill" />
+                  <CheckCircle size={20} color={successColor} weight="fill" />
                 ) : (
-                  <Copy size={24} color="currentColor" weight="fill" />
+                  <Copy size={20} color="currentColor" weight="fill" />
                 )}
                 {copied === "SVG" ? "Copied!" : " SVG"}
               </button>

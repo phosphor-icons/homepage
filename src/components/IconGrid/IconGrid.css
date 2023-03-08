@@ -78,7 +78,7 @@
 
 .snippet pre {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   text-overflow: ellipsis;
   -moz-user-select: all;
   -webkit-user-select: all;
@@ -142,7 +142,7 @@
 
 .close-button {
   color: inherit;
-  background: var(--background);
+  background: transparent;
   height: unset !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -152,6 +152,18 @@
   right: -18px;
   text-align: end;
   cursor: pointer;
+}
+
+.close-button::before {
+  content: "";
+  background: var(--background);
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .close-button:active {
@@ -238,6 +250,10 @@ figcaption > p {
     bottom: -4px;
     display: flex;
     flex-direction: column;
-    height: 60vh;
+    height: 440px;
   }
+}
+
+.action-button svg {
+  margin-right: 6px;
 }

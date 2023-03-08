@@ -4,14 +4,9 @@
   left: 0;
   right: 0;
   border-radius: 0;
-  /* top: 8px;
-  left: 8px;
-  right: 8px;
-  max-width: 1120px; */
   display: flex;
   padding: 12px;
   color: white;
-  text-align: center;
   margin: auto;
   background-color: var(--eggplant);
   z-index: 1;
@@ -31,10 +26,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 20px;
   flex: 1;
   max-width: 1120px;
   margin: auto;
+  font-family: "IBM Plex Mono";
 }
 
 .banner-button {
@@ -49,4 +45,11 @@
 
 .banner-button:active {
   opacity: 0.7;
+}
+
+.message {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  gap: 20px;
 }

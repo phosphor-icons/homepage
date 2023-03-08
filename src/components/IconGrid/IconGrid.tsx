@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
-import { IconContext } from "phosphor-react";
+import { IconContext } from "@phosphor-icons/react";
 
 import {
   iconWeightAtom,

@@ -6,18 +6,19 @@
 .tabs-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 button.tab {
   all: unset;
-  padding: 4px;
+  padding: 6px 4px;
   font-size: 12px;
   text-align: center;
   cursor: pointer;
   flex: 1;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  z-index: 2;
 }
 
 button.tab:focus-visible {
@@ -35,11 +36,9 @@ button.tab.active {
 
 .tab-content {
   flex: 1;
-  height: 80px;
-  max-height: 80px;
-  padding: 16px;
-  display: grid;
-  place-items: center;
+  height: 77px;
+  max-height: 77px;
+  padding: 20px 20px 10px;
   border-radius: 8px;
   background-color: var(--background);
   overflow-y: auto;

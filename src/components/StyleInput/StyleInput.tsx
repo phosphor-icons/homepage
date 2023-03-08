@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useRecoilState } from "recoil";
 import Select from "react-dropdown-select";
-import { PencilLine } from "phosphor-react";
+import { PencilLine } from "@phosphor-icons/react";
 import { IconStyle } from "@phosphor-icons/core";
 
 import { iconWeightAtom } from "@/state";
