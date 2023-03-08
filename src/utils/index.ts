@@ -1,6 +1,6 @@
 import { IconStyle } from "@phosphor-icons/core";
 
-import { SnippetType } from "../lib";
+import { SnippetType } from "@/lib";
 
 export function getCodeSnippets({
   name,
@@ -17,11 +17,13 @@ export function getCodeSnippets({
 }): Record<SnippetType, string> {
   const isDefaultWeight = weight === "regular";
   const isDefaultColor = color === "#000000";
+  const elmName = displayName.replace(/^\w/, (c) => c.toLowerCase());
+  const elmWeight = weight.replace(/^\w/, (c) => c.toUpperCase());
 
   return {
-    [SnippetType.HTML]: `<i class="ph-${name}${
+    [SnippetType.HTML]: `<i class="ph${
       isDefaultWeight ? "" : `-${weight}`
-    }"></i>`,
+    } ph-${name}"></i>`,
     [SnippetType.REACT]: `<${displayName} size={${size}} ${
       !isDefaultColor ? `color="${color}" ` : ""
     }${isDefaultWeight ? "" : `weight="${weight}" `}/>`,
@@ -38,6 +40,12 @@ export function getCodeSnippets({
     },\n  size: ${size.toFixed(1)},\n${
       !isDefaultColor ? `  color: Color(0xff${color.replace("#", "")}),\n` : ""
     })`,
+    [SnippetType.ELM]: `Phosphor.${elmName}${
+      isDefaultWeight ? "" : " " + elmWeight
+    }
+    |> withSize ${size}
+    |> withSizeUnit "px"
+    |> toHtml []`,
   };
 }
 
@@ -48,6 +56,6 @@ export function supportsWeight({
   type: SnippetType;
   weight: IconStyle;
 }): boolean {
-  if (type !== SnippetType.HTML && type !== SnippetType.FLUTTER) return true;
+  if (type !== SnippetType.FLUTTER) return true;
   return weight !== IconStyle.DUOTONE;
 }

@@ -4,7 +4,7 @@
 
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really.
 
-- 1047 icons and counting
+- 1,248 icons and counting
 - 6 weights: **Thin**, **Light**, **Regular**, **Bold**, **Fill**, and **Duotone**
 - Designed at 16 x 16px to read well small and scale up big
 - Raw stroke information retained to fine-tune the style
@@ -13,9 +13,9 @@ More ways to use at [phosphoricons.com](https://phosphoricons.com).
 
 ## For developers
 
-Phosphor is available as a [one-liner](https://github.com/phosphor-icons/phosphor-icons) script, [React package](https://github.com/phosphor-icons/phosphor-react), and [Vue package](https://github.com/phosphor-icons/phosphor-vue), all of which can be sourced from NPM or from a CDN.
+Phosphor is available for [web](https://github.com/phosphor-icons/web), [React](https://github.com/phosphor-icons/react), [Vue](https://github.com/phosphor-icons/vue), [Flutter](https://github.com/phosphor-icons/flutter), [Elm](https://github.com/phosphor-icons/phosphor-elm), and other frameworks and platforms.
 
-### HTML/CSS
+### Vanilla Web
 
 - **Simple to use** – We use a similar approach as many other icon sets out there, providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. But you don't need to know that. All you need to do is add the script to the document `<head>`, and drop in icons with an `<i/>` tag and the appropriate class:
 
@@ -23,26 +23,26 @@ Phosphor is available as a [one-liner](https://github.com/phosphor-icons/phospho
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body>
     <i class="ph-smiley"></i>
-    <i class="ph-heart-fill" style="color: hotpink"></i>
-    <i class="ph-cube-thin"></i>
+    <i class="ph-fill ph-heart" style="color: hotpink"></i>
+    <i class="ph-thin ph-cube"></i>
   </body>
 </html>
 ```
 
-Check out the full documentation on the [phosphor-icons](https://github.com/phosphor-icons/phosphor-icons) repo page.
+Check out the full documentation on the [@phosphor-icons/web](https://github.com/phosphor-icons/web) repo page.
 
 ### React
 
-- **Powerful** – Phosphor's intuitive but powerful API can style the `color`, `size`, and `weight` of an icon with a few keystrokes, provide default styles to all icons via the Context API, or directly manipulate the SVG at runtime through render props to do some amazing things! Check out the full documentation on the [phosphor-react](https://github.com/phosphor-icons/phosphor-react) repo page.
+- **Powerful** – Phosphor's intuitive but powerful API can style the `color`, `size`, and `weight` of an icon with a few keystrokes, provide default styles to all icons via the Context API, or directly manipulate the SVG at runtime through render props to do some amazing things! Check out the full documentation on the [@phosphor-icons/react](https://github.com/phosphor-icons/react) repo page.
 
 ```jsx
 import React from "react";
 import ReactDOM from "react-dom";
-import { Smiley, Heart, Horse } from "phosphor-react";
+import { Smiley, Heart, Horse } from "@phosphor-icons/react";
 
 const App = () => {
   return (
@@ -62,7 +62,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ### Vue
 
-- **Parity** – As with React, you can manipulate the `color`, `size`, and `weight` of an icon with a few keystrokes, or provide default styles to all icons via the `provide/inject` API. It is fully tree-shakable and ready to use right away. Check out the full documentation on the [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) repo page.
+- **Parity** – As with React, you can manipulate the `color`, `size`, and `weight` of an icon with a few keystrokes, or provide default styles to all icons via the `provide/inject` API. It is fully tree-shakable and ready to use right away. Check out the full documentation on the [@phosphor-icons/vue](https://github.com/phosphor-icons/vue) repo page.
 
 ```html
 <template>
@@ -90,13 +90,15 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ## Our Related Projects
 
-- [phosphor-react](https://github.com/phosphor-icons/phosphor-react) ▲ Phosphor icon component library for React
-- [phosphor-vue](https://github.com/phosphor-icons/phosphor-vue) ▲ Phosphor icon component library for Vue
-- [phosphor-icons](https://github.com/phosphor-icons/phosphor-icons) ▲ Phosphor icons for Vanilla JS
-- [phosphor-flutter](https://github.com/phosphor-icons/phosphor-flutter) ▲ Phosphor IconData library for Flutter
-- [phosphor-webcomponents](https://github.com/phosphor-icons/phosphor-webcomponents) ▲ Phosphor icons as Web Components
-- [phosphor-figma](https://github.com/phosphor-icons/phosphor-figma) ▲ Phosphor icons Figma plugin
-- [phosphor-sketch](https://github.com/phosphor-icons/phosphor-sketch) ▲ Phosphor icons Sketch plugin
+- [@phosphor-icons/core](https://github.com/phosphor-icons/core) ▲ Phosphor icon assets and catalog
+- [@phosphor-icons/react](https://github.com/phosphor-icons/react) ▲ Phosphor icon component library for React
+- [@phosphor-icons/web](https://github.com/phosphor-icons/web) ▲ Phosphor icons for Vanilla JS
+- [@phosphor-icons/vue](https://github.com/phosphor-icons/vue) ▲ Phosphor icon component library for Vue
+- [@phosphor-icons/elm](https://github.com/phosphor-icons/phosphor-elm) ▲ Phosphor icons for Elm
+- [@phosphor-icons/flutter](https://github.com/phosphor-icons/flutter) ▲ Phosphor IconData library for Flutter
+- [@phosphor-icons/webcomponents](https://github.com/phosphor-icons/webcomponents) ▲ Phosphor icons as Web Components
+- [@phosphor-icons/figma](https://github.com/phosphor-icons/figma) ▲ Phosphor icons Figma plugin
+- [@phosphor-icons/sketch](https://github.com/phosphor-icons/sketch) ▲ Phosphor icons Sketch plugin
 
 ## Community Projects
 

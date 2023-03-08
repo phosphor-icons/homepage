@@ -1,6 +1,11 @@
 import { useRecoilValue } from "recoil";
+import {
+  iconWeightAtom,
+  iconSizeAtom,
+  iconColorAtom,
+  STORAGE_KEY,
+} from "@/state";
 import useDebounce from "./useDebounce";
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../state/atoms";
 
 export default function usePersistSettings() {
   const weight = useRecoilValue(iconWeightAtom);
@@ -10,7 +15,7 @@ export default function usePersistSettings() {
   useDebounce(
     () => {
       const serializedState = JSON.stringify({ weight, size, color });
-      window.localStorage.setItem("__phosphor_settings__", serializedState);
+      window.localStorage.setItem(STORAGE_KEY, serializedState);
     },
     2000,
     [weight, size, color]

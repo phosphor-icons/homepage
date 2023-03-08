@@ -9,8 +9,8 @@ import {
   iconSizeAtom,
   iconColorAtom,
 } from "./atoms";
-import { IconEntry } from "../lib";
-import { icons } from "../lib/icons";
+import { IconEntry } from "@/lib";
+import { icons } from "@/lib/icons";
 
 const fuse = new Fuse(icons, {
   keys: [{ name: "name", weight: 4 }, "tags", "categories"],
@@ -20,7 +20,7 @@ const fuse = new Fuse(icons, {
 });
 
 export const filteredQueryResultsSelector = selector<ReadonlyArray<IconEntry>>({
-  key: "filteredQueryResultsSelector",
+  key: "filteredQueryResults",
   get: ({ get }) => {
     const query = get(searchQueryAtom).trim().toLowerCase();
     if (!query) return icons;
@@ -36,7 +36,7 @@ type CategorizedIcons = Partial<Record<IconCategory, IconEntry[]>>;
 export const categorizedQueryResultsSelector = selector<
   Readonly<CategorizedIcons>
 >({
-  key: "categorizedQueryResultsSelector",
+  key: "categorizedQueryResults",
   get: ({ get }) => {
     const filteredResults = get(filteredQueryResultsSelector);
     return new Promise((resolve) =>
@@ -57,7 +57,7 @@ export const singleCategoryQueryResultsSelector = selectorFamily<
   ReadonlyArray<IconEntry>,
   IconCategory
 >({
-  key: "singleCategoryQueryResultsSelector",
+  key: "singleCategoryQueryResults",
   get:
     (category: IconCategory) =>
     ({ get }) => {
@@ -71,7 +71,7 @@ export const singleCategoryQueryResultsSelector = selectorFamily<
 });
 
 export const isDarkThemeSelector = selector<boolean>({
-  key: "isDarkThemeSelector",
+  key: "isDarkTheme",
   get: ({ get }) => TinyColor(get(iconColorAtom)).isLight(),
 });
 

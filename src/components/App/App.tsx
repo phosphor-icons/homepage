@@ -1,14 +1,19 @@
-import React, { Suspense } from "react";
+import { Fragment, Suspense, useMemo } from "react";
+import { useRecoilValue } from "recoil";
 
 import "./App.css";
-import Header from "../Header/Header";
-import Toolbar from "../Toolbar/Toolbar";
-import IconGrid from "../IconGrid/IconGrid";
-import Footer from "../Footer/Footer";
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
-import Notice from "../Notice/Notice";
-import useIconParameters from "../../hooks/useIconParameters";
-import usePersistSettings from "../../hooks/usePersistSettings";
+import Header from "@/components/Header";
+import Toolbar from "@/components/Toolbar";
+import IconGrid from "@/components/IconGrid";
+import Footer from "@/components/Footer";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import Notice from "@/components/Notice";
+import {
+  useIconParameters,
+  usePersistSettings,
+  useCSSVariables,
+} from "@/hooks";
+import { isDarkThemeSelector } from "@/state";
 
 const errorFallback = <Notice message="Search error" />;
 const waitingFallback = <Notice type="none" message="" />;
@@ -16,9 +21,23 @@ const waitingFallback = <Notice type="none" message="" />;
 const App: React.FC<any> = () => {
   useIconParameters();
   usePersistSettings();
+  
+  const isDark = useRecoilValue(isDarkThemeSelector);
+
+  const properties = useMemo(
+    () => ({
+      "--foreground": isDark ? "white" : "black",
+      "--foreground-card": isDark ? "white" : "#35313D",
+      "--background": isDark ? "#35313D" : "white",
+      "--background-card": isDark ? "#413c48" : "#f6f5f6",
+    }),
+    [isDark]
+  );
+
+  useCSSVariables(properties);
 
   return (
-    <React.StrictMode>
+    <Fragment>
       <Header />
       <main>
         <Toolbar />
@@ -29,7 +48,7 @@ const App: React.FC<any> = () => {
         </ErrorBoundary>
       </main>
       <Footer />
-    </React.StrictMode>
+    </Fragment>
   );
 };
 

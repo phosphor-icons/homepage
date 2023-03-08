@@ -4,12 +4,12 @@ nav.toolbar {
   top: -1px;
   padding: 0;
   margin: 0;
-  background-color: #35313d;
-  z-index: 1;
+  background-color: var(--eggplant);
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 0 0 var(--shadow);
 }
 
 .toolbar-contents {

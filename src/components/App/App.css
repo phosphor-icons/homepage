@@ -1,3 +1,21 @@
+:root {
+  --red: #ff6e60;
+  --orange: #ff8e51;
+  --yellow: #ffd171;
+  --pale: #ffe8dc;
+  --peach: #ffd5c0;
+  --darkgreen: #245633;
+  --blue: #397fff;
+  --purple: #925bff;
+  --eggplant: #35313d;
+  --neutral: #86838b;
+  --translucent: rgba(163, 159, 171, 0.1);
+  --scrim: rgba(255, 255, 255, 0.05);
+  --sheer: rgba(194, 186, 196, 0.25);
+  --soft: rgba(194, 186, 196, 0.7);
+  --shadow: rgba(0, 0, 0, 0.15);
+}
+
 body {
   margin: 0px;
   font-variant-ligatures: common-ligatures;
@@ -24,16 +42,14 @@ img {
 pre,
 code {
   font-family: "IBM Plex Mono", "Courier New", monospace;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 pre {
   box-sizing: border-box;
-  padding: 20px 16px 20px 24px;
-  margin: 12px 0px;
-  background-color: white;
+  margin: 0;
   border-radius: 6px;
-  border: 1px solid #e1d4d7;
+  font-size: 12x;
   white-space: pre-wrap;
 }
 
@@ -47,6 +63,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  cursor: pointer;
 }
 
 button.main-button {
@@ -76,14 +93,6 @@ button.main-button:active {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 0 black;
 }
-
-button.main-button:focus {
-  outline: none;
-}
-
-/* button.main-button:not(:last-child) {
-  margin: 0 24px 24px 0;
-} */
 
 button.main-button svg {
   margin-right: 12px;
@@ -117,14 +126,29 @@ a.main-link:hover:after {
 }
 
 .badge.new {
-  color: #ff6e60;
+  color: var(--red);
 }
 
 .badge.updated {
-  color: #397fff;
+  color: var(--blue);
 }
 
 .badge {
   font-size: 24px;
   line-height: 0.5em;
+}
+
+.card {
+  border-radius: 8px;
+  border: 2px solid var(--translucent);
+}
+
+.primary {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+.secondary {
+  color: var(--foreground-card);
+  background-color: var(--background-card);
 }

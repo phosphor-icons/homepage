@@ -1,17 +1,20 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
-import { IconContext } from "phosphor-react";
+import { IconContext } from "@phosphor-icons/react";
 
-import { iconWeightAtom, iconSizeAtom, iconColorAtom } from "../../state/atoms";
 import {
+  iconWeightAtom,
+  iconSizeAtom,
+  iconColorAtom,
   filteredQueryResultsSelector,
   isDarkThemeSelector,
-} from "../../state/selectors";
-import useGridSpans from "../../hooks/useGridSpans";
+} from "@/state";
+import Notice from "@/components/Notice";
+
+import DetailFooter from "./DetailFooter";
 import IconGridItem from "./IconGridItem";
 import TagCloud from "./TagCloud";
-import Notice from "../Notice/Notice";
 import "./IconGrid.css";
 
 const defaultSearchTags = [
@@ -26,13 +29,11 @@ const defaultSearchTags = [
 
 type IconGridProps = {};
 
-const IconGrid: React.FC<IconGridProps> = () => {
+const IconGrid = (_: IconGridProps) => {
   const weight = useRecoilValue(iconWeightAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
-  const spans = useGridSpans();
-
   const filteredQueryResults = useRecoilValue(filteredQueryResultsSelector);
 
   const originOffset = useRef({ top: 0, left: 0 });
@@ -46,34 +47,26 @@ const IconGrid: React.FC<IconGridProps> = () => {
     return (
       <Notice>
         <span>Try searching a category or keyword:</span>
-        <TagCloud name="empty-state" isDark={isDark} tags={defaultSearchTags} />
+        <TagCloud name="empty-state" tags={defaultSearchTags} />
       </Notice>
     );
 
   return (
     <IconContext.Provider value={{ weight, size, color, mirrored: false }}>
-      <div
-        className="grid-container"
-        style={{ backgroundColor: isDark ? "#35313D" : "" }}
-      >
+      <div className="grid-container">
         <i id="beacon" className="beacon" />
-        <motion.div
-          className="grid"
-          initial="hidden"
-          animate={controls}
-          variants={{}}
-        >
+        <motion.div className="grid" initial="hidden" animate={controls}>
           {filteredQueryResults.map((iconEntry, index) => (
             <IconGridItem
               key={index}
               index={index}
-              spans={spans}
               isDark={isDark}
               entry={iconEntry}
               originOffset={originOffset}
             />
           ))}
         </motion.div>
+        <DetailFooter />
       </div>
     </IconContext.Provider>
   );

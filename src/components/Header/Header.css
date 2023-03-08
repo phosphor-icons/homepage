@@ -1,7 +1,7 @@
 header {
-  width: 100%;
-  background-color: #ffd171;
   overflow: hidden;
+  position: relative;
+  background-color: var(--yellow);
 }
 
 .header-contents {

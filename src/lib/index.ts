@@ -1,10 +1,7 @@
-import { Icon } from "phosphor-react";
-import { IconCategory } from "@phosphor-icons/core";
+import { Icon } from "@phosphor-icons/react";
+import { IconEntry as CoreEntry } from "@phosphor-icons/core";
 
-export interface IconEntry {
-  name: string;
-  categories: IconCategory[];
-  tags: string[];
+export interface IconEntry extends CoreEntry {
   Icon: Icon;
 }
 
@@ -13,4 +10,5 @@ export enum SnippetType {
   VUE = "Vue",
   HTML = "HTML/CSS",
   FLUTTER = "Flutter",
+  ELM = "Elm",
 }

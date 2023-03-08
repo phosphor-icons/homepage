@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useRecoilState } from "recoil";
 
-import { iconSizeAtom } from "../../state/atoms";
+import { iconSizeAtom } from "@/state";
 import "./SizeInput.css";
 
 type SizeInputProps = {};
@@ -14,7 +14,7 @@ const handleBlur = (event: React.UIEvent<HTMLInputElement>) => {
   event.currentTarget.blur();
 };
 
-const SizeInput: React.FC<SizeInputProps> = () => {
+const SizeInput = (_: SizeInputProps) => {
   const [size, setSize] = useRecoilState(iconSizeAtom);
 
   const handleSizeChange = useCallback(

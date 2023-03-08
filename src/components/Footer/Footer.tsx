@@ -1,30 +1,51 @@
-import React from "react";
-import { Coffee, Heart } from "phosphor-react";
+import { useRecoilValue } from "recoil";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import { Coffee, Heart, ArrowULeftUp } from "@phosphor-icons/react";
 
-import uArrowUpLeft from "../../assets/u-arrow-up-left.svg";
-import markerGreen from "../../assets/marker-green.svg";
-import postIt from "../../assets/footer-mobile.svg";
-import Links from "../Links/Links";
+import Links from "@/components/Links/Links";
+
+import { ReactComponent as MarkerGreen } from "@/assets/marker-green.svg";
+import { ReactComponent as PostIt } from "@/assets/footer-mobile.svg";
+import { useMediaQuery } from "@/hooks";
+import { selectionEntryAtom } from "@/state";
 import "./Footer.css";
 
 type FooterProps = {};
 
-const Footer: React.FC<FooterProps> = () => {
+const variants: Variants = {
+  initial: { y: 188 },
+  animate: { y: 0 },
+  exit: { y: 188 },
+};
+
+const Footer = (_: FooterProps) => {
+  const isMobile = useMediaQuery("(max-width: 719px)");
+  const isViewing = !!useRecoilValue(selectionEntryAtom);
+
   return (
     <footer>
       <div className="container">
-        <button
-          id="back-to-top-button"
-          aria-label="back-to-top button"
-          className="main-button"
-          onClick={() => {
-            document
-              .getElementById("root")
-              ?.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-        >
-          <img src={uArrowUpLeft} alt="" />
-        </button>
+        <AnimatePresence initial={false}>
+          {(!isMobile || !isViewing) && (
+            <motion.button
+              id="back-to-top-button"
+              aria-label="back-to-top button"
+              className="main-button"
+              variants={variants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.1 }}
+              onClick={() => {
+                document
+                  .getElementById("root")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
+              <ArrowULeftUp size="1em" />
+            </motion.button>
+          )}
+        </AnimatePresence>
         <div className="outro">
           <Links />
           <p>
@@ -95,24 +116,17 @@ const Footer: React.FC<FooterProps> = () => {
               <a className="main-link" href="mailto:hello@phosphoricons.com">
                 hello@phosphoricons.com
               </a>
-              . Check out our sister project:{" "}
-              <a
-                className="main-link"
-                href="https://play.google.com/store/apps/details?id=com.tobiasfried.phosphor"
-              >
-                Phosphor for Android
-              </a>
               . Type set in{" "}
               <a className="main-link" href="https://manropefont.com/">
                 Manrope
               </a>{" "}
               by Mikhail Sharanda.
             </p>
-            <img id="marker-green" src={markerGreen} alt="" />
+            <MarkerGreen id="marker-green" />
           </div>
         </div>
         <div className="illustrations-footer">
-          <img id="post-it" src={postIt} width="878" height="667" alt="" />
+          <PostIt id="post-it" width="878" height="667" />
         </div>
       </div>
     </footer>

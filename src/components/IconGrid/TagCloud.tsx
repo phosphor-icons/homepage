@@ -1,23 +1,24 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { useSetRecoilState } from "recoil";
 
-import { searchQueryAtom } from "../../state/atoms";
+import { useMediaQuery } from "@/hooks";
+import { searchQueryAtom } from "@/state";
 import "./TagCloud.css";
 
 interface TagCloudProps {
   name: string;
   tags: string[];
-  isDark: boolean;
 }
 
-const TagCloud: React.FC<TagCloudProps> = ({ name, tags, isDark }) => {
+const TagCloud = ({ name, tags }: TagCloudProps) => {
+  const isMobile = useMediaQuery("(max-width: 719px)");
   const setQuery = useSetRecoilState(searchQueryAtom);
   const handleTagClick = useCallback(
     (tag: string) => {
       setQuery(tag);
-      document.getElementById("search-input")?.focus();
+      !isMobile && document.getElementById("search-input")?.focus();
     },
-    [setQuery]
+    [setQuery, isMobile]
   );
 
   return (
@@ -28,7 +29,7 @@ const TagCloud: React.FC<TagCloudProps> = ({ name, tags, isDark }) => {
           className="tag-button"
           onClick={() => void handleTagClick(tag)}
         >
-          <code className={`${isDark ? "dark" : ""}`}>{tag}</code>
+          <code>{tag}</code>
           {tag === "*new*" && <span className="badge new">•</span>}
           {tag === "*updated*" && <span className="badge updated">•</span>}
         </button>

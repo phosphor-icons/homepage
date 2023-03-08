@@ -1,11 +1,17 @@
-import React, { useState, useEffect, useRef, MutableRefObject } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  MutableRefObject,
+  ReactNode,
+} from "react";
 import { useRecoilState } from "recoil";
 import { useDebounce } from "react-use";
 import { useHotkeys } from "react-hotkeys-hook";
-import { Command, MagnifyingGlass, X, HourglassHigh } from "phosphor-react";
-import ReactGA from "react-ga";
+import { Command, MagnifyingGlass, X, HourglassHigh } from "@phosphor-icons/react";
+import ReactGA from "react-ga4";
 
-import { searchQueryAtom } from "../../state/atoms";
+import { searchQueryAtom } from "@/state";
 import "./SearchInput.css";
 
 const apple = /iPhone|iPod|iPad|Macintosh|MacIntel|MacPPC/i;
@@ -16,7 +22,7 @@ const isMobile = mobile.test(window.navigator.userAgent);
 
 type SearchInputProps = {};
 
-const SearchInput: React.FC<SearchInputProps> = () => {
+const SearchInput = (_: SearchInputProps) => {
   const [value, setValue] = useState<string>("");
   const [query, setQuery] = useRecoilState(searchQueryAtom);
   const inputRef =
@@ -78,8 +84,8 @@ const SearchInput: React.FC<SearchInputProps> = () => {
         value={value}
         placeholder="Search"
         onChange={({ currentTarget }) => setValue(currentTarget.value)}
-        onKeyPress={({ currentTarget, key }) =>
-          key === "Enter" && currentTarget.blur()
+        onKeyDown={({ currentTarget, key }) =>
+          (key === "Enter" || key === "Escape") && currentTarget.blur()
         }
       />
       {!value && !isMobile && <Keys>{isApple ? <Command /> : "Ctrl + "}K</Keys>}
@@ -94,7 +100,7 @@ const SearchInput: React.FC<SearchInputProps> = () => {
   );
 };
 
-const Keys: React.FC<{}> = ({ children }) => (
+const Keys = ({ children }: { children?: ReactNode }) => (
   <div className="keys">{children}</div>
 );
 

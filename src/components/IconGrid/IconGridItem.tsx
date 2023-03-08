@@ -1,19 +1,18 @@
-import React, {
+import {
   useRef,
   useLayoutEffect,
   useEffect,
   MutableRefObject,
+  HTMLAttributes,
 } from "react";
 import { useRecoilState } from "recoil";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { iconPreviewOpenAtom } from "../../state/atoms";
-import DetailsPanel from "./DetailsPanel";
-import { IconEntry } from "../../lib";
+import { IconEntry } from "@/lib";
+import { selectionEntryAtom } from "@/state";
 
-interface IconGridItemProps {
+interface IconGridItemProps extends HTMLAttributes<HTMLDivElement> {
   index: number;
-  spans: number;
   isDark: boolean;
   entry: IconEntry;
   originOffset: MutableRefObject<{ top: number; left: number }>;
@@ -31,18 +30,18 @@ const itemVariants = {
   }),
 };
 
-const IconGridItem: React.FC<IconGridItemProps> = (props) => {
-  const { index, originOffset, entry } = props;
+const IconGridItem = (props: IconGridItemProps) => {
+  const { index, originOffset, entry, style } = props;
   const { name, Icon } = entry;
-  const [open, setOpen] = useRecoilState(iconPreviewOpenAtom);
-  const isOpen = open === name;
+  const [selection, setSelectionEntry] = useRecoilState(selectionEntryAtom);
+  const isOpen = selection?.name === name;
   const isNew = entry.tags.includes("*new*");
   const isUpdated = entry.tags.includes("*updated*");
   const delayRef = useRef<number>(0);
   const offset = useRef({ top: 0, left: 0 });
   const ref = useRef<any>();
 
-  const handleOpen = () => setOpen(isOpen ? false : name);
+  const handleOpen = () => setSelectionEntry(isOpen ? null : entry);
 
   // The measurement for all elements happens in the layoutEffect cycle
   // This ensures that when we calculate distance in the effect cycle
@@ -76,8 +75,8 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
         ref={ref}
         tabIndex={0}
         style={{
-          order: index,
-          backgroundColor: isOpen ? "rgba(163, 159, 171, 0.1)" : undefined,
+          ...style,
+          backgroundColor: isOpen ? "var(--translucent)" : undefined,
         }}
         custom={delayRef}
         transition={transition}
@@ -92,9 +91,6 @@ const IconGridItem: React.FC<IconGridItemProps> = (props) => {
           {isUpdated && <span className="badge updated">•</span>}
         </p>
       </motion.div>
-      <AnimatePresence initial={false}>
-        {isOpen && <DetailsPanel {...props} />}
-      </AnimatePresence>
     </>
   );
 };
