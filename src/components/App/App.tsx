@@ -8,6 +8,7 @@ import IconGrid from "@/components/IconGrid";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Notice from "@/components/Notice";
+import Recipes from "@/components/Recipes";
 import {
   useIconParameters,
   usePersistSettings,
@@ -21,7 +22,7 @@ const waitingFallback = <Notice type="none" message="" />;
 const App: React.FC<any> = () => {
   useIconParameters();
   usePersistSettings();
-  
+
   const isDark = useRecoilValue(isDarkThemeSelector);
 
   const properties = useMemo(
@@ -47,6 +48,7 @@ const App: React.FC<any> = () => {
           </Suspense>
         </ErrorBoundary>
       </main>
+      <Recipes />
       <Footer />
     </Fragment>
   );
