@@ -2,42 +2,34 @@ import { Cube } from "@phosphor-icons/react";
 
 import { RecipeProps } from "../Recipe";
 
-const recipe: RecipeProps = {
+const animation: RecipeProps = {
   title: "SVG Wizardry",
   url: "https://stackblitz.com/edit/react-ts-f7q7gs?file=App.tsx,style.css",
   Example() {
     return (
       <div className="example">
-        <Cube
-          color="darkorchid"
-          weight="duotone"
-          style={{ fill: "url(#star)" }}
-        >
+        <Cube color="red" weight="fill" style={{ fill: "url(#star)" }}>
           <defs>
             <pattern id="star" viewBox="0,0,10,10" width="10%" height="10%">
               <polygon
                 points="0,0 2,5 0,10 5,8 10,10 8,5 10,0 5,2"
-                fill="darkOrchid"
+                fill="red"
               />
             </pattern>
           </defs>
         </Cube>
-        <Cube
-          color="darkorchid"
-          weight="duotone"
-          style={{ filter: "url(#emboss)" }}
-        >
+        <Cube color="red" weight="duotone" style={{ filter: "url(#emboss)" }}>
           <filter id="emboss">
             <feConvolveMatrix
               kernelMatrix="
-                5 0 0
+                3 0 0
                 0 0 0
                 0 0 -3
               "
             />
           </filter>
         </Cube>
-        <Cube color="darkorchid" weight="duotone">
+        <Cube color="red" weight="duotone">
           <animate
             attributeName="opacity"
             values="0;1;0"
@@ -55,7 +47,7 @@ const recipe: RecipeProps = {
           ></animateTransform>
         </Cube>
         <Cube
-          color="darkorchid"
+          color="red"
           weight="duotone"
           style={{ filter: "url(#displacementFilter)" }}
         >
@@ -80,4 +72,4 @@ const recipe: RecipeProps = {
   },
 };
 
-export default recipe;
+export default animation;

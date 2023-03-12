@@ -45,7 +45,7 @@ function createDuocolorStyle(id: string, color: string) {
   );
 }
 
-const recipe: RecipeProps = {
+const duocolor: RecipeProps = {
   title: "Duocolor",
   url: "https://stackblitz.com/edit/react-ts-kvdzu1?file=App.tsx",
   Example() {
@@ -60,4 +60,4 @@ const recipe: RecipeProps = {
   },
 };
 
-export default recipe;
+export default duocolor;

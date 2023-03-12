@@ -14,7 +14,7 @@ const Recipes = () => {
         </div>
       </div>
       <div className="grid-container">
-        <IconContext.Provider value={{ size: 64 }}>
+        <IconContext.Provider value={{ size: 64, color: "var(--foreground)" }}>
           <div className="recipes grid">
             {items.map((itemProps) => (
               <Recipe key={itemProps.title} {...itemProps} />
