@@ -1,7 +1,7 @@
 import {
   ArrowCircleUpRight,
   ArrowCircleDown,
-  Broadcast,
+  MegaphoneSimple,
 } from "@phosphor-icons/react";
 
 import Banner from "@/components/Banner";
@@ -21,6 +21,10 @@ import { ReactComponent as Receipt } from "@/assets/receipt.svg";
 import { ReactComponent as ReceiptSpec } from "@/assets/receipt-spec.svg";
 import { ReactComponent as Calculator } from "@/assets/calculator.svg";
 import { ReactComponent as CalculatorSpec } from "@/assets/calculator-spec.svg";
+import { ReactComponent as IPad } from "@/assets/ipad.svg";
+import { ReactComponent as Map } from "@/assets/map.svg";
+import { ReactComponent as Synth } from "@/assets/synth.svg";
+import { ReactComponent as Watch } from "@/assets/watch.svg";
 
 import Links from "@/components/Links";
 import "./Header.css";
@@ -42,58 +46,72 @@ const handleScrollToIcons = () =>
 const Header = (_: HeaderProps) => {
   return (
     <header>
-      <Banner id="2.0">
-        <div className="message">
-          <Broadcast size={32} weight="fill" />
-          <small>
-            Phosphor 2.0 is out, with some big updates and some small API
-            changes. Check our{" "}
-            <a href="https://github.com/phosphor-icons/homepage#readme">
-              documentation
-            </a>{" "}
-            to see what's new!
-          </small>
-        </div>
-      </Banner>
+      <Banner.Container>
+        <Banner id={Math.random().toString()}>
+          <div className="message">
+            <MegaphoneSimple size={32} weight="fill" mirrored />
+            <small>
+              Phosphor 2.0 is out, with some big updates and some small API
+              changes. Check our{" "}
+              <a href="https://github.com/phosphor-icons/homepage#readme">
+                documentation
+              </a>{" "}
+              to see what's new!
+            </small>
+          </div>
+        </Banner>
+      </Banner.Container>
       <div className="header-contents">
         <div className="illustrations-top">
           <MarkerPurple id="marker-purple" />
-          <PaperClips id="paperclips" />
-          <PaperClipsThree id="paperclips-three" />
-          <TabletSpec className="tablet" />
-          <Tablet className="tablet inspectable xray" />
-          <BilliardBallSpec className="billiard-ball" />
-          <BilliardBall className="billiard-ball inspectable xray" />
 
-          <WarningSpec className="warning" />
-          <Warning className="warning inspectable xray" />
+          <PaperClips id="paperclips" />
+
+          <PaperClipsThree id="paperclips-three" />
+
+          <IPad className="ipad inspectable xray" />
+
+          {/* <Tablet className="tablet inspectable xray" /> */}
+          {/* <TabletSpec className="tablet" /> */}
+
+          {/* <BilliardBallSpec className="billiard-ball" /> */}
+          {/* <BilliardBall className="billiard-ball inspectable xray" /> */}
+
+          {/* <WarningSpec className="warning" /> */}
+          {/* <Warning className="warning inspectable xray" /> */}
         </div>
         <div className="intro">
           <h2>
-            Phosphor is a flexible icon family for interfaces, diagrams,
-            presentations — 
-            <wbr />
-            whatever, really.
+            Phosphor is a flexible icon <br />
+            family for interfaces and more.
           </h2>
           <div className="button-container">
             <button className="main-button" onClick={handleGetStarted}>
-              <ArrowCircleUpRight size={24} weight="fill" />
+              <ArrowCircleUpRight size={24} />
               Get started
             </button>
             <button className="main-button" onClick={handleScrollToIcons}>
-              <ArrowCircleDown size={24} weight="fill" />
+              <ArrowCircleDown size={24} />
               Explore icons
             </button>
           </div>
           <Links />
         </div>
         <div className="illustrations-bottom">
-          <CuttingMatSpec className="cutting-mat" />
-          <CuttingMat className="cutting-mat inspectable xray" />
-          <ReceiptSpec className="receipt" />
-          <Receipt className="receipt inspectable xray" />
-          <CalculatorSpec className="calculator" />
-          <Calculator className="calculator inspectable xray" />
+          <Map className="map inspectable xray" />
+
+          <Synth className="synth inspectable xray" />
+
+          <Watch className="watch inspectable xray" />
+
+          {/* <CuttingMatSpec className="cutting-mat" /> */}
+          {/* <CuttingMat className="cutting-mat inspectable xray" /> */}
+
+          {/* <ReceiptSpec className="receipt" /> */}
+          {/* <Receipt className="receipt inspectable xray" /> */}
+
+          {/* <CalculatorSpec className="calculator" /> */}
+          {/* <Calculator className="calculator inspectable xray" /> */}
         </div>
       </div>
     </header>

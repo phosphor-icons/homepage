@@ -3,6 +3,14 @@
   flex-direction: column;
 }
 
+.tabs:has(button.tab:first-child:hover) .tab-content {
+  border-top-left-radius: 0;
+}
+
+.tabs:has(button.tab:last-child:hover) .tab-content {
+  border-top-right-radius: 0;
+}
+
 .tabs-header {
   display: flex;
   align-items: center;
@@ -30,7 +38,7 @@ button.tab:hover:not(.active) {
 }
 
 button.tab.active {
-  background-color: var(--background);
+  background-color: var(--background-tab);
   border-bottom: none;
 }
 
@@ -40,7 +48,7 @@ button.tab.active {
   max-height: 77px;
   padding: 20px 20px 10px;
   border-radius: 8px;
-  background-color: var(--background);
+  background-color: var(--background-tab);
   overflow-y: auto;
 }
 

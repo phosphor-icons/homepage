@@ -11,7 +11,7 @@ button.action-button:active {
 }
 
 @media screen and (max-width: 558px) {
-  .action-button {
+  .toolbar .action-button {
     display: none;
   }
 }

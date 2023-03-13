@@ -6,7 +6,7 @@ import "./Recipes.css";
 
 const Recipes = () => {
   return (
-    <>
+    <div>
       <div className="toolbar">
         <div className="toolbar-contents">
           <h2>Recipes</h2>
@@ -22,7 +22,7 @@ const Recipes = () => {
           </div>
         </IconContext.Provider>
       </div>
-    </>
+    </div>
   );
 };
 

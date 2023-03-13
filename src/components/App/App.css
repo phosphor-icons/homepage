@@ -4,6 +4,13 @@
   --yellow: #ffd171;
   --pale: #ffe8dc;
   --peach: #ffd5c0;
+  --sand: #bcadaf;
+  --foam: #e9ebe2;
+  --lichen: #d2d6c5;
+  --moss: #3c402b;
+  --moss-shadow: rgba(60, 64, 43, 0.2);
+  --stone: #1f2310;
+  --acid: #c4e456;
   --darkgreen: #245633;
   --blue: #397fff;
   --purple: #925bff;
@@ -77,8 +84,9 @@ button.main-button {
   font-size: 20px;
   line-height: 30px;
   box-sizing: border-box;
-  border: 2px solid black;
-  box-shadow: 4px 4px 0 0 black;
+  color: var(--moss);
+  border: 1px solid var(--moss);
+  box-shadow: 2px 2px 0 0 var(--moss-shadow);
   transform: translate(0, 0);
   transition: all 0.2s ease;
   cursor: pointer;
@@ -90,8 +98,8 @@ button.main-button {
 }
 
 button.main-button:active {
-  transform: translate(4px, 4px);
-  box-shadow: 0 0 0 0 black;
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 var(--moss);
 }
 
 button.main-button svg {
@@ -101,13 +109,12 @@ button.main-button svg {
 .button-container {
   display: flex;
   flex-wrap: wrap;
-  /* gap: 24px; */
 }
 
 a.main-link {
   text-decoration: none;
   position: relative;
-  color: black;
+  color: var(--moss);
 }
 
 a.main-link:after {
@@ -116,7 +123,7 @@ a.main-link:after {
   bottom: -2px;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--moss);
   transition: 0.2s;
   pointer-events: none;
 }

@@ -27,10 +27,11 @@ const App: React.FC<any> = () => {
 
   const properties = useMemo(
     () => ({
-      "--foreground": isDark ? "white" : "black",
-      "--foreground-card": isDark ? "white" : "#35313D",
-      "--background": isDark ? "#35313D" : "white",
-      "--background-card": isDark ? "#413c48" : "#f6f5f6",
+      "--foreground": isDark ? "white" : "var(--moss)",
+      "--foreground-card": isDark ? "white" : "var(--moss)",
+      "--background": isDark ? "var(--stone)" : "var(--foam)",
+      "--background-card": isDark ? "var(--stone)" : "var(--foam)",
+      "--background-tab": isDark ? "var(--moss)" : "white",
     }),
     [isDark]
   );

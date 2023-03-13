@@ -1,5 +1,6 @@
 footer {
-  background-color: var(--purple);
+  color: var(--moss);
+  background-color: var(--sand);
 }
 
 #back-to-top-button {
@@ -12,8 +13,8 @@ footer {
 }
 
 #back-to-top-button:active {
-  transform: translate(4px, 4px) !important;
-  box-shadow: 0 0 0 0 black;
+  transform: translate(2px, 2px) !important;
+  box-shadow: 0 0 0 0 var(--moss-shadow);
 }
 
 #back-to-top-button svg {

@@ -79,7 +79,7 @@ const Footer = (_: FooterProps) => {
                 )
               }
             >
-              <Coffee size={24} weight="fill" />
+              <Coffee size={24} />
               Buy us a coffee
             </button>
             <button
@@ -92,7 +92,7 @@ const Footer = (_: FooterProps) => {
                 )
               }
             >
-              <Heart size={24} weight="fill" />
+              <Heart size={24} />
               Become a patron
             </button>
           </div>

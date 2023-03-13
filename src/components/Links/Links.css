@@ -7,7 +7,7 @@
   /* column-gap: 72px; */
   /* -webkit-column-gap: 72px; */
   margin: 32px 0 64px;
-  max-height: 144px;
+  max-height: 220px;
 }
 
 .links > div {
@@ -24,7 +24,7 @@ a.nav-link {
   text-decoration: none;
   position: relative;
   cursor: pointer;
-  color: black;
+  color: inherit;
 }
 
 a.nav-link:after {
@@ -33,7 +33,7 @@ a.nav-link:after {
   bottom: -2px;
   left: 0;
   width: 0%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--moss);
   transition: 0.2s;
 }
 

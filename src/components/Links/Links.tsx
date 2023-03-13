@@ -88,6 +88,22 @@ const Links = (_: LinksProps) => {
           Request an icon
         </OutboundLink>
       </div>
+
+      <div>
+        <ArrowElbowDownRight size={24} />
+        <OutboundLink href="tk" eventLabel="Request">
+          TKTK
+        </OutboundLink>
+      </div>
+      <div>
+        <ArrowElbowDownRight size={24} />
+        <OutboundLink
+          href="https://play.phosphoricons.com"
+          eventLabel="Request"
+        >
+          Showcase TK
+        </OutboundLink>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 header {
   overflow: hidden;
   position: relative;
-  background-color: var(--yellow);
+  color: var(--moss);
+  background-color: var(--lichen);
 }
 
 .header-contents {
@@ -34,6 +35,29 @@ header {
 
 .inspectable {
   cursor: cell;
+}
+
+.map {
+  position: absolute;
+  transform: translate(300px, -44px) rotate(-10deg);
+}
+
+.synth {
+  position: absolute;
+  transform: translate(800px, -274px) rotate(3deg);
+}
+
+.ipad {
+  position: absolute;
+  top: -620px;
+  left: 500px;
+}
+
+.watch {
+  position: absolute;
+  top: 160px;
+  left: 320px;
+  transform: rotate(-5deg);
 }
 
 .xray {
@@ -83,6 +107,12 @@ header {
     left: 672px;
     top: -900px;
   }
+
+  /* .ipad {
+    position: absolute;
+    top: -571px;
+    left: 500px;
+  } */
 }
 
 @media screen and (min-width: 720px) and (max-width: 1239px) {
@@ -144,8 +174,8 @@ header {
   #paperclips-three {
     display: initial;
     position: absolute;
-    left: 724px;
-    top: 694px;
+    left: 908px;
+    top: 360px;
   }
 
   .warning {
