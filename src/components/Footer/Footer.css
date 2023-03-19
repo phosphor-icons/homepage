@@ -58,6 +58,8 @@ footer .links {
 }
 
 .illustrations-footer {
+  position: fixed;
+  margin: auto;
   display: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -92,11 +94,9 @@ footer .links {
   }
 
   .illustrations-footer {
-    max-width: 100%;
     height: 440px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+    display: initial;
+    overflow-y: hidden;
   }
 }
 
@@ -127,6 +127,11 @@ footer .links {
     right: -18px;
     top: 144px;
   }
+
+  .ruler {
+    position: absolute;
+    transform: rotate(-5deg);
+  }
 }
 
 @media screen and (min-width: 1239px) {
@@ -143,9 +148,7 @@ footer .links {
   .illustrations-footer {
     display: initial;
     position: absolute;
-    left: -240px;
-    top: 632px;
-    height: 584px;
-    overflow: hidden;
+    bottom: 0;
+    height: 500px !important;
   }
 }

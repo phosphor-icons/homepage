@@ -6,7 +6,7 @@ export type RecipeProps = {
   Example: () => JSX.Element;
 };
 
-const Recipe = ({ title, url, Example }: RecipeProps) => {
+const Recipe = ({ url, Example }: RecipeProps) => {
   return (
     <a className="recipe card" href={url}>
       {/* <h1>{title}</h1> */}

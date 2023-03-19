@@ -5,7 +5,7 @@ import { Coffee, Heart, ArrowULeftUp } from "@phosphor-icons/react";
 import Links from "@/components/Links/Links";
 
 import { ReactComponent as MarkerGreen } from "@/assets/marker-green.svg";
-import { ReactComponent as PostIt } from "@/assets/footer-mobile.svg";
+import { ReactComponent as Ruler } from "@/assets/ruler.svg";
 import { useMediaQuery } from "@/hooks";
 import { selectionEntryAtom } from "@/state";
 import "./Footer.css";
@@ -122,11 +122,11 @@ const Footer = (_: FooterProps) => {
               </a>{" "}
               by Mikhail Sharanda.
             </p>
-            <MarkerGreen id="marker-green" />
           </div>
         </div>
         <div className="illustrations-footer">
-          <PostIt id="post-it" width="878" height="667" />
+          <Ruler className="ruler" width="878" height="667" />
+          <MarkerGreen id="marker-green" />
         </div>
       </div>
     </footer>
