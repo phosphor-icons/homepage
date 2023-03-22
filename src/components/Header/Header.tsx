@@ -6,13 +6,17 @@ import {
 
 import Banner from "@/components/Banner";
 
-import { ReactComponent as MarkerPurple } from "@/assets/marker-purple.svg";
-import { ReactComponent as PaperClips } from "@/assets/paperclips-header-mobile.svg";
-import { ReactComponent as PaperClipsThree } from "@/assets/paperclips-header.svg";
+import { ReactComponent as PhosphorLogo } from "@/assets/phosphor-logo.svg";
+import { ReactComponent as PaperClipsTwo } from "@/assets/paperclips-2.svg";
+import { ReactComponent as PaperClipsThree } from "@/assets/paperclips-3.svg";
 import { ReactComponent as IPad } from "@/assets/ipad.svg";
+import { ReactComponent as IPadSpec } from "@/assets/ipad-spec.svg";
 import { ReactComponent as Map } from "@/assets/map.svg";
+import { ReactComponent as MapSpec } from "@/assets/map-spec.svg";
 import { ReactComponent as Synth } from "@/assets/synth.svg";
-import { ReactComponent as Watch } from "@/assets/watch.svg";
+import { ReactComponent as SynthSpec } from "@/assets/synth-spec.svg";
+
+import { Watch, WatchSpec } from "./dynamic/Watch";
 
 import Links from "@/components/Links";
 import "./Header.css";
@@ -37,7 +41,7 @@ const Header = (_: HeaderProps) => {
       <Banner.Container>
         <Banner id={Math.random().toString()}>
           <div className="message">
-            <MegaphoneSimple size={32} weight="fill" mirrored />
+            <MegaphoneSimple size={32} mirrored />
             <small>
               Phosphor 2.0 is out, with some big updates and some small API
               changes. Check our{" "}
@@ -51,27 +55,17 @@ const Header = (_: HeaderProps) => {
       </Banner.Container>
       <div className="header-contents">
         <div className="illustrations-top">
-          <MarkerPurple id="marker-purple" />
-
-          <PaperClips id="paperclips" />
+          <PhosphorLogo id="logo" />
 
           <PaperClipsThree id="paperclips-three" />
 
+          <IPadSpec className="ipad" />
           <IPad className="ipad inspectable xray" />
-
-          {/* <Tablet className="tablet inspectable xray" /> */}
-          {/* <TabletSpec className="tablet" /> */}
-
-          {/* <BilliardBallSpec className="billiard-ball" /> */}
-          {/* <BilliardBall className="billiard-ball inspectable xray" /> */}
-
-          {/* <WarningSpec className="warning" /> */}
-          {/* <Warning className="warning inspectable xray" /> */}
         </div>
         <div className="intro">
           <h2>
-            Phosphor is a flexible icon <br />
-            family for interfaces and more.
+            Phosphor is a flexible icon family for interfaces, diagrams,
+            presentations — whatever, really.
           </h2>
           <div className="button-container">
             <button className="main-button" onClick={handleGetStarted}>
@@ -86,20 +80,20 @@ const Header = (_: HeaderProps) => {
           <Links />
         </div>
         <div className="illustrations-bottom">
+          <MapSpec className="map" />
           <Map className="map inspectable xray" />
 
+          <SynthSpec className="synth" />
           <Synth className="synth inspectable xray" />
 
-          <Watch className="watch inspectable xray" />
+          <WatchSpec className="watch" />
+          <Watch className="watch inspectable xray">
+            <foreignObject>
+              <span>FOOO</span>
+            </foreignObject>
+          </Watch>
 
-          {/* <CuttingMatSpec className="cutting-mat" /> */}
-          {/* <CuttingMat className="cutting-mat inspectable xray" /> */}
-
-          {/* <ReceiptSpec className="receipt" /> */}
-          {/* <Receipt className="receipt inspectable xray" /> */}
-
-          {/* <CalculatorSpec className="calculator" /> */}
-          {/* <Calculator className="calculator inspectable xray" /> */}
+          <PaperClipsTwo id="paperclips" />
         </div>
       </div>
     </header>

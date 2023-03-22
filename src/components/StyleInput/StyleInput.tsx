@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useRecoilState } from "recoil";
 import Select from "react-dropdown-select";
-import { PencilLine } from "@phosphor-icons/react";
+import { PencilSimpleLine } from "@phosphor-icons/react";
 import { IconStyle } from "@phosphor-icons/core";
 
 import { iconWeightAtom } from "@/state";
@@ -14,32 +14,32 @@ const options: WeightOption[] = [
   {
     key: "Thin",
     value: IconStyle.THIN,
-    icon: <PencilLine size={24} weight="thin" />,
+    icon: <PencilSimpleLine size={24} weight="thin" />,
   },
   {
     key: "Light",
     value: IconStyle.LIGHT,
-    icon: <PencilLine size={24} weight="light" />,
+    icon: <PencilSimpleLine size={24} weight="light" />,
   },
   {
     key: "Regular",
     value: IconStyle.REGULAR,
-    icon: <PencilLine size={24} weight="regular" />,
+    icon: <PencilSimpleLine size={24} weight="regular" />,
   },
   {
     key: "Bold",
     value: IconStyle.BOLD,
-    icon: <PencilLine size={24} weight="bold" />,
+    icon: <PencilSimpleLine size={24} weight="bold" />,
   },
   {
     key: "Fill",
     value: IconStyle.FILL,
-    icon: <PencilLine size={24} weight="fill" />,
+    icon: <PencilSimpleLine size={24} weight="fill" />,
   },
   {
     key: "Duotone",
     value: IconStyle.DUOTONE,
-    icon: <PencilLine size={24} weight="duotone" />,
+    icon: <PencilSimpleLine size={24} weight="duotone" />,
   },
 ];
 

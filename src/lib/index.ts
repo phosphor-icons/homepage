@@ -8,7 +8,7 @@ export interface IconEntry extends CoreEntry {
 export enum SnippetType {
   REACT = "React",
   VUE = "Vue",
-  HTML = "HTML/CSS",
+  HTML = "Web",
   FLUTTER = "Flutter",
   ELM = "Elm",
 }

@@ -10,6 +10,7 @@
   color: white;
   margin: auto;
   z-index: 1;
+  pointer-events: none;
 }
 
 .banner {
@@ -31,7 +32,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  max-width: 560px;
+  max-width: 600px;
   margin: auto;
   padding: 12px 12px 12px 16px;
   color: var(--moss);
@@ -41,6 +42,7 @@
   filter: drop-shadow(2px 2px 0 var(--moss-shadow));
   font-family: "IBM Plex Mono";
   font-size: 14px;
+  pointer-events: initial;
 }
 
 .banner-button {
@@ -60,4 +62,23 @@
   grid-template-columns: 32px 1fr;
   align-items: center;
   gap: 12px;
+}
+
+@media screen and (max-width: 719px) {
+  .banner-container {
+    padding: 0;
+  }
+
+  .banner-content {
+    align-items: flex-start;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--moss);
+    margin: 0;
+    max-width: unset;
+  }
+
+  .message {
+    align-items: flex-start;
+  }
 }

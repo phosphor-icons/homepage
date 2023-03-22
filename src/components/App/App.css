@@ -1,26 +1,29 @@
 :root {
-  --red: #ff6e60;
+  --red: #e8612b;
   --orange: #ff8e51;
-  --yellow: #ffd171;
+  --yellow: #f8c666;
   --pale: #ffe8dc;
   --peach: #ffd5c0;
   --sand: #bcadaf;
+  --vellum: #eeeae3;
   --foam: #e9ebe2;
   --lichen: #d2d6c5;
   --moss: #3c402b;
-  --moss-shadow: rgba(60, 64, 43, 0.2);
-  --stone: #1f2310;
+  --slate: #3e3d3a;
+  --stone: #343330;
   --acid: #c4e456;
+  --green: #1fa647;
   --darkgreen: #245633;
-  --blue: #397fff;
+  --blue: #1f7fea;
   --purple: #925bff;
   --eggplant: #35313d;
-  --neutral: #86838b;
-  --translucent: rgba(163, 159, 171, 0.1);
+  --moss-shadow: rgba(60, 64, 43, 0.2);
+  --shadow: rgba(0, 0, 0, 0.15);
   --scrim: rgba(255, 255, 255, 0.05);
   --sheer: rgba(194, 186, 196, 0.25);
   --soft: rgba(194, 186, 196, 0.7);
-  --shadow: rgba(0, 0, 0, 0.15);
+  --translucent: rgba(255, 255, 255, 0.5);
+  --neutral: #9b9b9b;
 }
 
 body {
@@ -31,12 +34,16 @@ body {
 }
 
 ::selection {
-  color: white;
-  background-color: black;
+  color: var(--moss);
+  background-color: var(--acid);
 }
 
 h2 {
   font-weight: 400;
+}
+
+p {
+  font-size: 16px;
 }
 
 img {
@@ -49,15 +56,24 @@ img {
 pre,
 code {
   font-family: "IBM Plex Mono", "Courier New", monospace;
-  font-size: 12px;
 }
 
 pre {
   box-sizing: border-box;
   margin: 0;
   border-radius: 6px;
-  font-size: 12x;
+  font-size: 13px;
   white-space: pre-wrap;
+}
+
+hr {
+  display: block;
+  height: 0px;
+  border: 0;
+  border-bottom: 1px solid var(--border-secondary);
+  margin: 1em 0;
+  padding: 0;
+  margin: 8px 0;
 }
 
 input {
@@ -67,21 +83,25 @@ input {
 
 button {
   border: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: flex-start;
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: not-allowed !important;
+}
+
 button.main-button {
-  height: 64px;
-  padding: 0 48px 0 40px;
+  height: 56px;
+  padding: 0 32px 0 28px;
   background-color: white;
   border-radius: 8px;
   font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 30px;
   box-sizing: border-box;
   color: var(--moss);
@@ -103,7 +123,7 @@ button.main-button:active {
 }
 
 button.main-button svg {
-  margin-right: 12px;
+  margin-right: 8px;
 }
 
 .button-container {
@@ -147,7 +167,7 @@ a.main-link:hover:after {
 
 .card {
   border-radius: 8px;
-  border: 2px solid var(--translucent);
+  border: 1px solid var(--border-card);
 }
 
 .primary {
@@ -158,4 +178,41 @@ a.main-link:hover:after {
 .secondary {
   color: var(--foreground-card);
   background-color: var(--background-card);
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-12px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+.bounce {
+  animation: bounce 1s ease-out 1;
+}
+
+@keyframes spin {
+  0%,
+  20% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(200deg);
+  }
+  100% {
+    transform: rotate(540deg);
+  }
+}
+
+.spin {
+  animation: spin 1000ms ease-out 1;
 }

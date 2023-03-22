@@ -1,19 +1,18 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
-import { useRecoilValue } from "recoil";
 import { HourglassMedium, Question, SmileyXEyes } from "@phosphor-icons/react";
 
-import { searchQueryAtom } from "@/state";
-
 interface NoticeProps {
-  message?: string;
+  message?: ReactNode;
   type?: "wait" | "help" | "warn" | "none";
   children?: ReactNode;
 }
 
-const Notice = ({ message, type = "warn", children }: NoticeProps) => {
-  const query = useRecoilValue(searchQueryAtom);
-
+const Notice = ({
+  message = "An error occurred.",
+  type = "warn",
+  children,
+}: NoticeProps) => {
   return (
     <div className="primary">
       <motion.div
@@ -22,21 +21,13 @@ const Notice = ({ message, type = "warn", children }: NoticeProps) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        {type === "wait" && (
-          <HourglassMedium size={128} color="#615C68" weight="duotone" />
-        )}
-        {type === "help" && (
-          <Question size={128} color="#615C68" weight="duotone" />
-        )}
-        {type === "warn" && (
-          <SmileyXEyes size={128} color="#615C68" weight="duotone" />
-        )}
-        {message ?? (
-          <p>
-            No results for "<code>{query}</code>"
-          </p>
-        )}
-        {children}
+        <div className="empty-list-box">
+          {type === "wait" && <HourglassMedium size={128} weight="fill" />}
+          {type === "help" && <Question size={128} weight="fill" />}
+          {type === "warn" && <SmileyXEyes size={128} weight="fill" />}
+          <p>{message}</p>
+          {children}
+        </div>
       </motion.div>
     </div>
   );

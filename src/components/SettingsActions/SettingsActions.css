@@ -1,17 +1,17 @@
-button.action-button {
+button.tool-button {
   background-color: var(--scrim);
   color: white;
-  padding: 8px;
+  padding: 12px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-button.action-button:active {
+button.tool-button:active {
   background-color: var(--sheer);
 }
 
 @media screen and (max-width: 558px) {
-  .toolbar .action-button {
+  .toolbar .tool-button {
     display: none;
   }
 }

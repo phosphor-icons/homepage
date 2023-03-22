@@ -10,6 +10,7 @@ footer {
   border-radius: 50%;
   z-index: 2;
   font-size: 56px;
+  justify-content: center;
 }
 
 #back-to-top-button:active {
@@ -18,7 +19,7 @@ footer {
 }
 
 #back-to-top-button svg {
-  margin-right: unset;
+  margin-right: 0 !important;
 }
 
 .container {

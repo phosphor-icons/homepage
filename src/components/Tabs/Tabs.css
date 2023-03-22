@@ -38,17 +38,17 @@ button.tab:hover:not(.active) {
 }
 
 button.tab.active {
-  background-color: var(--background-tab);
+  background-color: var(--background-layer);
   border-bottom: none;
 }
 
 .tab-content {
   flex: 1;
-  height: 77px;
-  max-height: 77px;
+  height: 86px;
+  max-height: 86px;
   padding: 20px 20px 10px;
   border-radius: 8px;
-  background-color: var(--background-tab);
+  background-color: var(--background-layer);
   overflow-y: auto;
 }
 

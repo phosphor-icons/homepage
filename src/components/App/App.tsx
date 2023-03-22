@@ -8,7 +8,7 @@ import IconGrid from "@/components/IconGrid";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Notice from "@/components/Notice";
-import Recipes from "@/components/Recipes";
+// import Recipes from "@/components/Recipes";
 import {
   useIconParameters,
   usePersistSettings,
@@ -29,9 +29,11 @@ const App: React.FC<any> = () => {
     () => ({
       "--foreground": isDark ? "white" : "var(--moss)",
       "--foreground-card": isDark ? "white" : "var(--moss)",
-      "--background": isDark ? "var(--stone)" : "var(--foam)",
-      "--background-card": isDark ? "var(--stone)" : "var(--foam)",
-      "--background-tab": isDark ? "var(--moss)" : "white",
+      "--background": isDark ? "var(--slate)" : "var(--vellum)",
+      "--background-card": isDark ? "var(--stone)" : "var(--vellum)",
+      "--background-layer": isDark ? "var(--scrim)" : "var(--translucent)",
+      "--border-card": isDark ? "var(--shadow)" : "var(--moss-shadow)",
+      "--border-secondary": isDark ? "var(--scrim)" : "var(--moss-shadow)",
     }),
     [isDark]
   );
@@ -49,7 +51,7 @@ const App: React.FC<any> = () => {
           </Suspense>
         </ErrorBoundary>
       </main>
-      <Recipes />
+      {/* <Recipes /> */}
       <Footer />
     </Fragment>
   );

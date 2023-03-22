@@ -27,17 +27,17 @@ const Links = (_: LinksProps) => {
         <ArrowElbowDownRight size={24} />
         <span>
           <OutboundLink
-            href="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
-            eventLabel="Figma library"
-          >
-            Figma library
-          </OutboundLink>
-          {" / "}
-          <OutboundLink
             href="https://www.figma.com/community/plugin/898620911119764089/Phosphor-Icons"
             eventLabel="Figma plugin"
           >
-            plugin
+            Figma plugin
+          </OutboundLink>
+          {" / "}
+          <OutboundLink
+            href="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
+            eventLabel="Figma library"
+          >
+            library
           </OutboundLink>
         </span>
       </div>
@@ -56,18 +56,12 @@ const Links = (_: LinksProps) => {
 
       <div>
         <ArrowElbowDownRight size={24} />
-        <span>
-          <OutboundLink href="https://paypal.me/minoraxis" eventLabel="Donate">
-            Donate on PayPal
-          </OutboundLink>
-          {" / "}
-          <OutboundLink
-            href="https://patreon.com/phosphoricons"
-            eventLabel="Patreon"
-          >
-            Patreon
-          </OutboundLink>
-        </span>
+        <OutboundLink
+          href="https://play.phosphoricons.com"
+          eventLabel="Showcase"
+        >
+          Showcase
+        </OutboundLink>
       </div>
 
       <div>
@@ -91,17 +85,27 @@ const Links = (_: LinksProps) => {
 
       <div>
         <ArrowElbowDownRight size={24} />
-        <OutboundLink href="tk" eventLabel="Request">
-          TKTK
-        </OutboundLink>
+        <span>
+          <OutboundLink href="https://paypal.me/minoraxis" eventLabel="Donate">
+            Donate on PayPal
+          </OutboundLink>
+          {" / "}
+          <OutboundLink
+            href="https://patreon.com/phosphoricons"
+            eventLabel="Patreon"
+          >
+            Patreon
+          </OutboundLink>
+        </span>
       </div>
+
       <div>
         <ArrowElbowDownRight size={24} />
         <OutboundLink
-          href="https://play.phosphoricons.com"
-          eventLabel="Request"
+          href="https://twitter.com/_phosphoricons"
+          eventLabel="Twitter"
         >
-          Showcase TK
+          Twitter
         </OutboundLink>
       </div>
     </div>

@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, CSSProperties, useMemo } from "react";
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  useMemo,
+  HTMLAttributes,
+} from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { useHotkeys } from "react-hotkeys-hook";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -7,8 +13,10 @@ import { saveAs } from "file-saver";
 import {
   Copy,
   CheckCircle,
-  DownloadSimple,
+  ArrowFatLinesDown,
   XCircle,
+  CaretDoubleLeft,
+  CaretDoubleRight,
 } from "@phosphor-icons/react";
 import ReactGA from "react-ga4";
 
@@ -41,15 +49,19 @@ const variants: Record<string, Variants> = {
 
 const RENDERED_SNIPPETS = [
   SnippetType.REACT,
-  SnippetType.VUE,
   SnippetType.HTML,
+  SnippetType.VUE,
   SnippetType.FLUTTER,
   SnippetType.ELM,
 ];
 
-const buttonColor = "#35313D";
-const successColor = "#1FA647";
-const disabledColor = "#B7B7B7";
+enum CopyType {
+  SVG,
+  SVG_RAW,
+  SVG_DATA,
+  PNG,
+  PNG_DATA,
+}
 
 function cloneWithSize(svg: SVGSVGElement, size: number): SVGSVGElement {
   const sized = svg.cloneNode(true) as SVGSVGElement;
@@ -58,20 +70,43 @@ function cloneWithSize(svg: SVGSVGElement, size: number): SVGSVGElement {
   return sized;
 }
 
-const DetailFooter = () => {
+const ActionButton = (
+  props: {
+    active?: boolean;
+    label: string;
+    download?: boolean;
+  } & HTMLAttributes<HTMLButtonElement>
+) => {
+  const { active, download, label, ...rest } = props;
+  const Icon = download ? ArrowFatLinesDown : Copy;
+  return (
+    <button {...rest} className="action-button text" tabIndex={0}>
+      {active ? (
+        <CheckCircle size={20} color="var(--green)" weight="fill" />
+      ) : (
+        <Icon size={20} color="currentColor" weight="fill" />
+      )}
+      {label}
+    </button>
+  );
+};
+
+const Panel = () => {
   const [entry, setSelectionEntry] = useRecoilState(selectionEntryAtom);
 
   const weight = useRecoilValue(iconWeightAtom);
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
-  const [copied, setCopied] = useTransientState<SnippetType | "SVG" | false>(
+  const [copied, setCopied] = useTransientState<SnippetType | CopyType | false>(
     false,
     2000
   );
   const ref = useRef<SVGSVGElement>(null);
 
-  const [{ i }, setInitialTab] = useSessionStorage("tab", { i: 0 });
+  const [showMoreActions, setShowMoreActions] = useState<boolean>(false);
+
+  const [i, setInitialTab] = useSessionStorage("tab", 0);
 
   const isMobile = useMediaQuery("(max-width: 719px)");
 
@@ -88,11 +123,6 @@ const DetailFooter = () => {
       color,
     });
 
-    const snippetButtonStyle: CSSProperties =
-      weight === "duotone"
-        ? { color: disabledColor, userSelect: "none" }
-        : { color: "currentcolor" };
-
     const tabs = [
       {
         header: "Tags",
@@ -101,9 +131,9 @@ const DetailFooter = () => {
             name={entry.name}
             tags={Array.from(
               new Set<string>([
+                ...entry.tags,
                 ...entry.categories,
                 ...entry.name.split("-"),
-                ...entry.tags,
               ])
             )}
           />
@@ -117,31 +147,27 @@ const DetailFooter = () => {
           header: type,
           content: (
             <div className="snippet" key={type}>
-              <pre style={isWeightSupported ? undefined : snippetButtonStyle}>
-                <span>
+              <pre className={!isWeightSupported ? "disabled" : undefined}>
+                <span className={!isWeightSupported ? "disabled" : undefined}>
                   {isWeightSupported
                     ? snippets[type]
                     : "This weight is not yet supported"}
                 </span>
                 <button
                   title="Copy snippet"
+                  className="action-button"
                   onClick={(e) => handleCopySnippet(e, type)}
                   disabled={!isWeightSupported}
-                  style={
-                    isWeightSupported
-                      ? { color: "currentColor" }
-                      : snippetButtonStyle
-                  }
                 >
                   {copied === type ? (
-                    <CheckCircle size={24} color={successColor} weight="fill" />
+                    <CheckCircle size={20} color="var(--acid)" weight="fill" />
                   ) : (
                     <Copy
-                      size={24}
+                      size={20}
                       color={
-                        isWeightSupported
-                          ? "currentColor"
-                          : snippetButtonStyle.color
+                        !isWeightSupported
+                          ? "var(--neutral)"
+                          : "var(--foreground)"
                       }
                       weight="fill"
                     />
@@ -168,11 +194,6 @@ const DetailFooter = () => {
     });
   }, [entry]);
 
-  const buttonBarStyle: CSSProperties = {
-    color: isDark ? "white" : buttonColor,
-    backgroundColor: "transparent",
-  };
-
   const handleCopySnippet = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     type: SnippetType
@@ -193,7 +214,39 @@ const DetailFooter = () => {
     if (!ref.current) return;
 
     navigator.clipboard?.writeText(cloneWithSize(ref.current, size).outerHTML);
-    setCopied("SVG");
+    setCopied(CopyType.SVG);
+  };
+
+  const handleCopyDataSVG = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.currentTarget.blur();
+    if (!entry) return;
+    if (!ref.current) return;
+
+    navigator.clipboard?.writeText(
+      "data:image/svg+xml;base64," +
+        btoa(
+          unescape(
+            encodeURIComponent(cloneWithSize(ref.current, size).outerHTML)
+          )
+        )
+    );
+    setCopied(CopyType.SVG_DATA);
+  };
+
+  const handleCopyRawSVG = async () => {
+    if (!entry) return;
+
+    const { name } = entry;
+    const data = await fetch(
+      `https://raw.githubusercontent.com/phosphor-icons/core/main/raw/${weight}/${name}${
+        weight === "regular" ? "" : `-${weight}`
+      }.svg`
+    );
+    const content = await data.text();
+    navigator.clipboard?.writeText(content);
+    setCopied(CopyType.SVG_RAW);
   };
 
   const handleDownloadSVG = (
@@ -223,6 +276,40 @@ const DetailFooter = () => {
     );
   };
 
+  const handleCopyPNG = async (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.currentTarget.blur();
+    if (!entry) return;
+    if (!ref.current) return;
+
+    Svg2Png.toDataURL(cloneWithSize(ref.current, size))
+      .then((data) => fetch(data))
+      .then((res) => res.blob())
+      .then((blob) =>
+        navigator.clipboard.write([
+          new ClipboardItem({
+            [blob.type]: blob,
+          }),
+        ])
+      )
+      .then(() => {
+        setCopied(CopyType.PNG);
+      });
+  };
+
+  // const handleCopyDataPNG = async (
+  //   event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  // ) => {
+  //   event.currentTarget.blur();
+  //   if (!entry) return;
+  //   if (!ref.current) return;
+
+  //   const data = await Svg2Png.toDataURL(cloneWithSize(ref.current, size));
+  //   navigator.clipboard?.writeText(data);
+  //   setCopied(CopyType.PNG_DATA);
+  // };
+
   return (
     <AnimatePresence initial={true}>
       {!!entry && (
@@ -244,46 +331,81 @@ const DetailFooter = () => {
                 </small>
               </figcaption>
             </figure>
-            <div className="detail-actions">
-              <button
-                className="action-button"
-                tabIndex={0}
-                style={buttonBarStyle}
-                onClick={handleDownloadPNG}
-              >
-                <DownloadSimple size={20} color="currentColor" weight="fill" />{" "}
-                PNG
-              </button>
-              <button
-                className="action-button"
-                tabIndex={0}
-                style={buttonBarStyle}
-                onClick={handleDownloadSVG}
-              >
-                <DownloadSimple size={20} color="currentColor" weight="fill" />{" "}
-                SVG
-              </button>
-              <button
-                className="action-button"
-                tabIndex={0}
-                style={buttonBarStyle}
-                onClick={handleCopySVG}
-              >
-                {copied === "SVG" ? (
-                  <CheckCircle size={20} color={successColor} weight="fill" />
+            <hr />
+            <div className="detail-meta">
+              <div className="detail-actions">
+                {!showMoreActions ? (
+                  <>
+                    <ActionButton
+                      label="SVG"
+                      title="Download SVG"
+                      download
+                      onClick={handleDownloadSVG}
+                    />
+
+                    <ActionButton
+                      label="SVG"
+                      title="Copy SVG"
+                      active={copied === CopyType.SVG}
+                      onClick={handleCopySVG}
+                    />
+
+                    <ActionButton
+                      label="SVG Raw"
+                      title="Copy raw SVG including original strokes"
+                      active={copied === CopyType.SVG_RAW}
+                      onClick={handleCopyRawSVG}
+                    />
+                  </>
                 ) : (
-                  <Copy size={20} color="currentColor" weight="fill" />
+                  <>
+                    <ActionButton
+                      label="PNG"
+                      title="Download PNG"
+                      download
+                      onClick={handleDownloadPNG}
+                    />
+
+                    <ActionButton
+                      label="PNG"
+                      title="Copy PNG"
+                      active={copied === CopyType.PNG}
+                      onClick={handleCopyPNG}
+                    />
+
+                    <ActionButton
+                      label="Data SVG"
+                      title="Copy SVG as DataURL"
+                      active={copied === CopyType.SVG_DATA}
+                      onClick={handleCopyDataSVG}
+                    />
+                  </>
                 )}
-                {copied === "SVG" ? "Copied!" : " SVG"}
+              </div>
+              <button
+                className="action-button"
+                title="More actions"
+                tabIndex={0}
+                onClick={() => setShowMoreActions((s) => !s)}
+              >
+                {!showMoreActions ? (
+                  <CaretDoubleRight
+                    size={16}
+                    weight="bold"
+                    color="var(--foreground)"
+                  />
+                ) : (
+                  <CaretDoubleLeft
+                    size={16}
+                    weight="bold"
+                    color="var(--foreground)"
+                  />
+                )}
               </button>
             </div>
           </div>
 
-          <Tabs
-            tabs={tabs}
-            initialIndex={i}
-            onTabChange={(i) => setInitialTab({ i })}
-          />
+          <Tabs tabs={tabs} initialIndex={i} onTabChange={setInitialTab} />
 
           <button
             tabIndex={0}
@@ -301,4 +423,4 @@ const DetailFooter = () => {
   );
 };
 
-export default DetailFooter;
+export default Panel;

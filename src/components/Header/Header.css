@@ -2,7 +2,7 @@ header {
   overflow: hidden;
   position: relative;
   color: var(--moss);
-  background-color: var(--lichen);
+  background-color: var(--vellum);
 }
 
 .header-contents {
@@ -14,6 +14,28 @@ header {
   margin: auto;
 }
 
+@keyframes tickle {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.1) rotate(-12deg) translateY(-2px);
+  }
+  100% {
+    transform: scale(1.2) rotate(12deg) translateY(-4px);
+  }
+}
+
+#logo {
+  margin-top: 56px;
+  transition: color 150ms ease;
+}
+
+#logo:hover {
+  color: var(--sand);
+  animation: tickle 250ms ease 0ms infinite alternate forwards;
+}
+
 .illustrations-top {
   position: relative;
 }
@@ -22,7 +44,8 @@ header {
   position: relative;
 }
 
-.intro {
+.intro,
+.illustrations-top {
   margin: 0 8%;
   max-width: 666px;
 }
@@ -37,20 +60,37 @@ header {
   cursor: cell;
 }
 
+#paperclips {
+  position: absolute;
+  left: 110px;
+  top: 152px;
+}
+
+#paperclips-three {
+  display: initial;
+  position: absolute;
+  left: 776px;
+  top: 370px;
+}
+
 .map {
   position: absolute;
-  transform: translate(300px, -44px) rotate(-10deg);
+  top: -44px;
+  left: 300px;
+  transform: rotate(-10deg);
 }
 
 .synth {
   position: absolute;
-  transform: translate(800px, -274px) rotate(3deg);
+  top: -235px;
+  left: 800px;
+  transform: rotate(3deg);
 }
 
 .ipad {
   position: absolute;
-  top: -620px;
-  left: 500px;
+  top: -626px;
+  left: 308px;
 }
 
 .watch {
@@ -69,81 +109,45 @@ header {
   opacity: 0;
 }
 
-#paperclips-three {
-  display: none;
-}
-
 @media screen and (max-width: 1239px) {
   .illustrations-top {
     height: 382px;
   }
 
-  #marker-purple {
-    position: absolute;
-    left: 28px;
-    top: -158px;
+  .map {
+    top: -10px;
+    left: -80px;
   }
 
-  .billiard-ball {
-    position: absolute;
-    left: 132px;
-    top: -98px;
+  .watch {
+    top: 8px;
+    left: 90px;
   }
 
   #paperclips {
-    position: absolute;
-    left: 110px;
-    top: 152px;
+    display: none;
   }
-
-  .warning {
-    position: absolute;
-    left: 394px;
-    top: -304px;
-  }
-
-  .tablet {
-    position: absolute;
-    left: 672px;
-    top: -900px;
-  }
-
-  /* .ipad {
-    position: absolute;
-    top: -571px;
-    left: 500px;
-  } */
 }
 
 @media screen and (min-width: 720px) and (max-width: 1239px) {
-  .intro {
-    margin: 0 auto;
-  }
-
   .illustrations-bottom {
-    height: 612px;
+    height: 500px;
   }
 
-  .cutting-mat {
-    position: absolute;
-    left: 96px;
+  .synth {
+    top: -110px;
+    left: 620px;
   }
 
-  .receipt {
-    position: absolute;
-    left: -36px;
-    top: 190px;
-  }
-
-  .calculator {
-    position: absolute;
-    left: 632px;
-    top: 170px;
+  #paperclips-three {
+    top: 506px;
+    left: 550px;
   }
 }
 
 @media screen and (min-width: 1240px) {
-  .intro {
+  .intro,
+  .illustrations-top {
     margin: 0 auto 0 140px;
   }
 
@@ -152,59 +156,7 @@ header {
   }
 
   .illustrations-bottom {
-    height: 606px;
-  }
-
-  #marker-purple {
-    position: absolute;
-    left: 144px;
-    top: -158px;
-  }
-
-  .billiard-ball {
-    position: absolute;
-    left: 900px;
-    top: 400px;
-  }
-
-  #paperclips {
-    display: none;
-  }
-
-  #paperclips-three {
-    display: initial;
-    position: absolute;
-    left: 908px;
-    top: 360px;
-  }
-
-  .warning {
-    position: absolute;
-    left: 1170px;
-    top: 400px;
-  }
-
-  .tablet {
-    position: absolute;
-    left: 578px;
-    top: -900px;
-  }
-
-  .cutting-mat {
-    position: absolute;
-    left: 120px;
-  }
-
-  .receipt {
-    position: absolute;
-    left: -16px;
-    top: 190px;
-  }
-
-  .calculator {
-    position: absolute;
-    left: 924px;
-    top: 114px;
+    height: 550px;
   }
 }
 
@@ -215,11 +167,35 @@ header {
   }
 
   .illustrations-top {
-    height: 352px;
+    height: 200px;
+  }
+
+  #paperclips-three {
+    top: -70px;
+    left: -167px;
+  }
+
+  .ipad {
+    display: none;
+  }
+
+  .map {
+    top: 0px;
+    left: -60px;
+  }
+
+  .synth {
+    top: -340px;
+    left: 400px;
+  }
+
+  .watch {
+    top: 0;
+    left: 100px;
   }
 
   .illustrations-bottom {
-    display: none;
+    height: 360px;
   }
 
   .links {
