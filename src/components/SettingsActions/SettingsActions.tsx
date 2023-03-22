@@ -80,7 +80,7 @@ const SettingsActions = () => {
         onClick={copyDeepLinkToClipboard}
       >
         {copied ? (
-          <CheckCircle size={24} color="var(--green)" weight="fill" />
+          <CheckCircle size={24} color="var(--olive)" weight="fill" />
         ) : (
           <Link size={24} />
         )}

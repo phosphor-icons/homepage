@@ -39,7 +39,7 @@ const Header = (_: HeaderProps) => {
   return (
     <header>
       <Banner.Container>
-        <Banner id={Math.random().toString()}>
+        <Banner id={"2.0.1"}>
           <div className="message">
             <MegaphoneSimple size={32} mirrored />
             <small>

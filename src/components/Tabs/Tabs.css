@@ -34,7 +34,7 @@ button.tab:focus-visible {
 }
 
 button.tab:hover:not(.active) {
-  background-color: var(--sheer);
+  background-color: var(--hover-tabs);
 }
 
 button.tab.active {

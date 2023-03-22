@@ -82,7 +82,7 @@ const ActionButton = (
   return (
     <button {...rest} className="action-button text" tabIndex={0}>
       {active ? (
-        <CheckCircle size={20} color="var(--green)" weight="fill" />
+        <CheckCircle size={20} color="var(--olive)" weight="fill" />
       ) : (
         <Icon size={20} color="currentColor" weight="fill" />
       )}
@@ -153,26 +153,23 @@ const Panel = () => {
                     ? snippets[type]
                     : "This weight is not yet supported"}
                 </span>
-                <button
-                  title="Copy snippet"
-                  className="action-button"
-                  onClick={(e) => handleCopySnippet(e, type)}
-                  disabled={!isWeightSupported}
-                >
-                  {copied === type ? (
-                    <CheckCircle size={20} color="var(--acid)" weight="fill" />
-                  ) : (
-                    <Copy
-                      size={20}
-                      color={
-                        !isWeightSupported
-                          ? "var(--neutral)"
-                          : "var(--foreground)"
-                      }
-                      weight="fill"
-                    />
-                  )}
-                </button>
+                {isWeightSupported && (
+                  <button
+                    title="Copy snippet"
+                    className="action-button"
+                    onClick={(e) => handleCopySnippet(e, type)}
+                  >
+                    {copied === type ? (
+                      <CheckCircle
+                        size={20}
+                        color="var(--olive)"
+                        weight="fill"
+                      />
+                    ) : (
+                      <Copy size={20} color="var(--foreground)" weight="fill" />
+                    )}
+                  </button>
+                )}
               </pre>
             </div>
           ),

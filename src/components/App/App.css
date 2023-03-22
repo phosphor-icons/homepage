@@ -2,28 +2,38 @@
   --red: #e8612b;
   --orange: #ff8e51;
   --yellow: #f8c666;
-  --pale: #ffe8dc;
-  --peach: #ffd5c0;
+  --mustard: #d6971e;
+  --rust: #92543b;
+  --earth: #825b61;
   --sand: #bcadaf;
+  --blush: #f2cbd1;
+  --pale: #ffe8dc;
   --vellum: #eeeae3;
+  --ghost: #f7f5f1;
   --foam: #e9ebe2;
   --lichen: #d2d6c5;
   --moss: #3c402b;
   --slate: #3e3d3a;
   --stone: #343330;
+  --dark-grey: #656461;
   --acid: #c4e456;
+  --olive: #a4b55b;
   --green: #1fa647;
-  --darkgreen: #245633;
+  --darkgreen: #2e321f;
+  --deepgreen: #1f2310;
   --blue: #1f7fea;
   --purple: #925bff;
   --eggplant: #35313d;
   --moss-shadow: rgba(60, 64, 43, 0.2);
+  --slate-sheer: rgba(62, 61, 58, 0.5);
+  --ghost-sheer: rgba(247, 245, 241, 0.5);
+  --elephant: #656461;
+  --pewter: #c9c5bf;
   --shadow: rgba(0, 0, 0, 0.15);
   --scrim: rgba(255, 255, 255, 0.05);
   --sheer: rgba(194, 186, 196, 0.25);
   --soft: rgba(194, 186, 196, 0.7);
   --translucent: rgba(255, 255, 255, 0.5);
-  --neutral: #9b9b9b;
 }
 
 body {
@@ -140,7 +150,7 @@ a.main-link {
 a.main-link:after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: 0.15em;
   left: 0;
   width: 100%;
   border-bottom: 1px solid var(--moss);
@@ -152,12 +162,16 @@ a.main-link:hover:after {
   width: 0%;
 }
 
+.name {
+  color: var(--foreground-secondary);
+}
+
 .badge.new {
-  color: var(--red);
+  color: var(--mustard);
 }
 
 .badge.updated {
-  color: var(--blue);
+  color: var(--olive);
 }
 
 .badge {
@@ -182,17 +196,16 @@ a.main-link:hover:after {
 
 @keyframes bounce {
   0%,
-  20%,
+  30%,
   50%,
-  80%,
   100% {
     transform: translateY(0);
   }
-  40% {
+  20% {
     transform: translateY(-12px);
   }
-  60% {
-    transform: translateY(-4px);
+  40% {
+    transform: translateY(-7px);
   }
 }
 
@@ -201,13 +214,13 @@ a.main-link:hover:after {
 }
 
 @keyframes spin {
-  0%,
-  20% {
+  0% {
     transform: rotate(0);
   }
-  40% {
+  20% {
     transform: rotate(200deg);
   }
+  80%,
   100% {
     transform: rotate(540deg);
   }

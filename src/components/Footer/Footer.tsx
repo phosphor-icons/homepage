@@ -1,11 +1,11 @@
 import { useRecoilValue } from "recoil";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { Coffee, Heart, ArrowULeftUp } from "@phosphor-icons/react";
+import { ArrowULeftUp, Coffee, HandHeart } from "@phosphor-icons/react";
 
 import Links from "@/components/Links/Links";
 
-import { ReactComponent as MarkerGreen } from "@/assets/marker-green.svg";
-import { ReactComponent as Ruler } from "@/assets/ruler.svg";
+import { ReactComponent as RulerMarker } from "@/assets/ruler-marker.svg";
+import { ReactComponent as RulerMarkerSpec } from "@/assets/ruler-marker-spec.svg";
 import { useMediaQuery } from "@/hooks";
 import { selectionEntryAtom } from "@/state";
 import "./Footer.css";
@@ -49,14 +49,64 @@ const Footer = (_: FooterProps) => {
         <div className="outro">
           <Links />
           <p>
-            We designed the icon library we always wanted to use. Easy to pick
-            up and plug in. Truly consistent in style and scale. Flexible to
-            multiple sizes and weights. Reserved enough to be multi-purpose, but
-            a little quirky, too.
+            Phosphor is a passion project by{" "}
+            <a className="main-link" href="https://helenazhang.com">
+              Helena Zhang
+            </a>{" "}
+            and{" "}
+            <a className="main-link" href="https://tobiasfried.com">
+              Tobias Fried
+            </a>
+            .
           </p>
           <p>
-            We're thankful for the tools we've benefited from and this is our
-            contribution towards a collaborative community.
+            It’s used by companies and creatives like{" "}
+            <a className="main-link" href="https://alltrails.com">
+              AllTrails
+            </a>
+            ,{" "}
+            <a
+              className="main-link"
+              href="https://www.dive.club/course/figma-academy"
+            >
+              Figma Academy
+            </a>
+            ,{" "}
+            <a className="main-link" href="https://www.framer.com/">
+              Framer
+            </a>
+            ,{" "}
+            <a className="main-link" href="https://www.outgo.co/">
+              Outgo
+            </a>
+            ,{" "}
+            <a
+              className="main-link"
+              href="https://twitter.com/pablostanley/status/1520222483949015041"
+            >
+              Pablo Stanley
+            </a>
+            ,{" "}
+            <a className="main-link" href="https://remarkable.com/">
+              reMarkable
+            </a>
+            ,{" "}
+            <a className="main-link" href="https://qatalog.com/">
+              Qatalog
+            </a>
+            ,{" "}
+            <a className="main-link" href="https://www.spacedrive.com/">
+              Spacedrive
+            </a>
+            ,{" "}
+            <a className="main-link" href="https://www.stash.com/">
+              Stash
+            </a>
+            , and{" "}
+            <a className="main-link" href="https://threads.com/">
+              Threads
+            </a>
+            .
           </p>
           <p>
             Phosphor is free and open-source, licensed under{" "}
@@ -92,19 +142,23 @@ const Footer = (_: FooterProps) => {
                 )
               }
             >
-              <Heart size={24} />
+              <HandHeart size={24} />
               Become a patron
             </button>
           </div>
           <div className="fine-print">
             <p>
-              Phosphor Icons is designed by{" "}
-              <a className="main-link" href="https://helenazhang.com">
-                Helena Zhang
+              Type set in{" "}
+              <a className="main-link" href="https://manropefont.com/">
+                Manrope
               </a>{" "}
-              and built by{" "}
-              <a className="main-link" href="https://tobiasfried.com">
-                Toby Fried
+              by Mikhail Sharanda and{" "}
+              <a className="main-link" href="https://www.ibm.com/plex/">
+                IBM Plex Mono
+              </a>.{" "}
+              Contact us at{" "}
+              <a className="main-link" href="mailto:hello@phosphoricons.com">
+                hello@phosphoricons.com
               </a>{" "}
               <span
                 role="img"
@@ -112,21 +166,12 @@ const Footer = (_: FooterProps) => {
               >
                 🙇🏻‍♀️👨‍💻🐈
               </span>
-              . Contact us at{" "}
-              <a className="main-link" href="mailto:hello@phosphoricons.com">
-                hello@phosphoricons.com
-              </a>
-              . Type set in{" "}
-              <a className="main-link" href="https://manropefont.com/">
-                Manrope
-              </a>{" "}
-              by Mikhail Sharanda.
             </p>
           </div>
-        </div>
-        <div className="illustrations-footer">
-          <Ruler className="ruler" width="878" height="667" />
-          <MarkerGreen id="marker-green" />
+          <div className="illustrations-footer">
+            <RulerMarkerSpec className="ruler-marker spec" />
+            <RulerMarker className="ruler-marker inspectable xray" />
+          </div>
         </div>
       </div>
     </footer>

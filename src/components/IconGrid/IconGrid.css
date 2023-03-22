@@ -35,15 +35,14 @@
   background-color: var(--background-layer);
 }
 
-.grid-item:focus {
+.grid-item:focus-visible {
   outline: none;
-  border: 1px solid var(--background-layer);
+  border: 1px solid var(--foreground);
 }
 
 .grid-item p {
   font-size: 12px;
   line-height: 16px;
-  opacity: 0.75;
   margin-top: 12px;
   text-align: center;
 }
@@ -105,7 +104,7 @@
 }
 
 .disabled {
-  color: var(--neutral);
+  color: var(--pewter);
   user-select: none;
 }
 
@@ -245,7 +244,7 @@ figcaption > p {
 }
 
 .action-button:hover {
-  background-color: var(--sheer) !important;
+  background-color: var(--background-layer) !important;
 }
 
 .detail-actions .action-button svg {

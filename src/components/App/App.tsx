@@ -29,11 +29,14 @@ const App: React.FC<any> = () => {
     () => ({
       "--foreground": isDark ? "white" : "var(--moss)",
       "--foreground-card": isDark ? "white" : "var(--moss)",
+      "--foreground-secondary": isDark ? "var(--pewter)" : "var(--elephant)",
       "--background": isDark ? "var(--slate)" : "var(--vellum)",
       "--background-card": isDark ? "var(--stone)" : "var(--vellum)",
       "--background-layer": isDark ? "var(--scrim)" : "var(--translucent)",
       "--border-card": isDark ? "var(--shadow)" : "var(--moss-shadow)",
       "--border-secondary": isDark ? "var(--scrim)" : "var(--moss-shadow)",
+      "--hover-tabs": isDark ? "var(--slate-sheer)" : "var(--ghost-sheer)",
+      "--hover-buttons": isDark ? "var(--scrim)" : "var(--slate)",
     }),
     [isDark]
   );

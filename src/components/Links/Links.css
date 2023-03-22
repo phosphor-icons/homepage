@@ -30,7 +30,7 @@ a.nav-link {
 a.nav-link:after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: 0.15em;
   left: 0;
   width: 0%;
   border-bottom: 1px solid var(--moss);

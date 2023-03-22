@@ -15,11 +15,11 @@ button.tag-button {
 }
 
 button.tag-button:hover {
-  background-color: var(--sheer);
+  background-color: transparent;
 }
 
 button.tag-button:focus-visible {
-  box-shadow: 0 0 0 1px var(--sheer);
+  box-shadow: 0 0 0 1px var(--foreground);
 }
 
 .tag-button code {
