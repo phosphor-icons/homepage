@@ -142,24 +142,7 @@ button.main-button svg {
 }
 
 a.main-link {
-  text-decoration: none;
-  position: relative;
   color: var(--moss);
-}
-
-a.main-link:after {
-  content: "";
-  position: absolute;
-  bottom: 0.15em;
-  left: 0;
-  width: 100%;
-  border-bottom: 1px solid var(--moss);
-  transition: 0.2s;
-  pointer-events: none;
-}
-
-a.main-link:hover:after {
-  width: 0%;
 }
 
 .name {

@@ -87,12 +87,12 @@ const Footer = (_: FooterProps) => {
               Pablo Stanley
             </a>
             ,{" "}
-            <a className="main-link" href="https://remarkable.com/">
-              reMarkable
-            </a>
-            ,{" "}
             <a className="main-link" href="https://qatalog.com/">
               Qatalog
+            </a>
+            ,{" "}
+            <a className="main-link" href="https://remarkable.com/">
+              reMarkable
             </a>
             ,{" "}
             <a className="main-link" href="https://www.spacedrive.com/">
@@ -155,8 +155,8 @@ const Footer = (_: FooterProps) => {
               by Mikhail Sharanda and{" "}
               <a className="main-link" href="https://www.ibm.com/plex/">
                 IBM Plex Mono
-              </a>.{" "}
-              Contact us at{" "}
+              </a>
+              . Contact us at{" "}
               <a className="main-link" href="mailto:hello@phosphoricons.com">
                 hello@phosphoricons.com
               </a>{" "}
