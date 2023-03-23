@@ -5,7 +5,7 @@ type Initializer<S> = () => S;
 type Setter<S> = (prev: S) => S;
 type Action<S> = S | Setter<S> | Initializer<S>;
 
-function expand<S extends object>(action: Action<S>, prev?: S) {
+function expand<S>(action: Action<S>, prev?: S) {
   if (typeof action === "function") {
     return (action as Setter<S>)(prev!);
   } else {
@@ -13,13 +13,19 @@ function expand<S extends object>(action: Action<S>, prev?: S) {
   }
 }
 
-export default function useSessionStorage<S extends object>(
+export default function useSessionStorage<S>(
   key: string,
   fallbackState: S | (() => S)
 ): [S, Dispatch<SetStateAction<S>>, (partial: Partial<S>) => void] {
   const [value, setValue] = useState<S>(() => {
     let val = sessionStorage.getItem(STORAGE_KEY + key);
-    if (val) return JSON.parse(val) as S;
+    if (val) {
+      try {
+        return JSON.parse(val) as S;
+      } catch (_) {
+        return val as S;
+      }
+    }
     return expand(fallbackState);
   });
 

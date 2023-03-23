@@ -53,7 +53,7 @@ const Banner = ({ id, children, onClose }: BannerProps) => {
     <AnimatePresence initial={true}>
       {!seen && (
         <motion.aside
-          className="card banner"
+          className="banner"
           initial="initial"
           animate="animate"
           exit="exit"
@@ -69,13 +69,17 @@ const Banner = ({ id, children, onClose }: BannerProps) => {
                 e.key === "Enter" && handleClose();
               }}
             >
-              <XCircle color="currentColor" size={28} weight="regular" />
+              <XCircle size={28} weight="regular" />
             </button>
           </div>
         </motion.aside>
       )}
     </AnimatePresence>
   );
+};
+
+Banner.Container = ({ children }: { children: ReactNode }) => {
+  return <div className="banner-container">{children}</div>;
 };
 
 export default Banner;

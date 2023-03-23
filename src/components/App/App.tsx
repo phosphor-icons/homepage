@@ -8,6 +8,7 @@ import IconGrid from "@/components/IconGrid";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Notice from "@/components/Notice";
+// import Recipes from "@/components/Recipes";
 import {
   useIconParameters,
   usePersistSettings,
@@ -21,15 +22,21 @@ const waitingFallback = <Notice type="none" message="" />;
 const App: React.FC<any> = () => {
   useIconParameters();
   usePersistSettings();
-  
+
   const isDark = useRecoilValue(isDarkThemeSelector);
 
   const properties = useMemo(
     () => ({
-      "--foreground": isDark ? "white" : "black",
-      "--foreground-card": isDark ? "white" : "#35313D",
-      "--background": isDark ? "#35313D" : "white",
-      "--background-card": isDark ? "#413c48" : "#f6f5f6",
+      "--foreground": isDark ? "white" : "var(--moss)",
+      "--foreground-card": isDark ? "white" : "var(--moss)",
+      "--foreground-secondary": isDark ? "var(--pewter)" : "var(--elephant)",
+      "--background": isDark ? "var(--slate)" : "var(--vellum)",
+      "--background-card": isDark ? "var(--stone)" : "var(--vellum)",
+      "--background-layer": isDark ? "var(--scrim)" : "var(--translucent)",
+      "--border-card": isDark ? "var(--shadow)" : "var(--moss-shadow)",
+      "--border-secondary": isDark ? "var(--scrim)" : "var(--moss-shadow)",
+      "--hover-tabs": isDark ? "var(--slate-sheer)" : "var(--ghost-sheer)",
+      "--hover-buttons": isDark ? "var(--scrim)" : "var(--slate)",
     }),
     [isDark]
   );
@@ -47,6 +54,7 @@ const App: React.FC<any> = () => {
           </Suspense>
         </ErrorBoundary>
       </main>
+      {/* <Recipes /> */}
       <Footer />
     </Fragment>
   );

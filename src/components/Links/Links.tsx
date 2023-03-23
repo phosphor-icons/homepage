@@ -27,17 +27,17 @@ const Links = (_: LinksProps) => {
         <ArrowElbowDownRight size={24} />
         <span>
           <OutboundLink
-            href="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
-            eventLabel="Figma library"
-          >
-            Figma library
-          </OutboundLink>
-          {" / "}
-          <OutboundLink
             href="https://www.figma.com/community/plugin/898620911119764089/Phosphor-Icons"
             eventLabel="Figma plugin"
           >
-            plugin
+            Figma plugin
+          </OutboundLink>
+          {" / "}
+          <OutboundLink
+            href="https://www.figma.com/community/file/903830135544202908/Phosphor-Icons"
+            eventLabel="Figma library"
+          >
+            library
           </OutboundLink>
         </span>
       </div>
@@ -51,6 +51,35 @@ const Links = (_: LinksProps) => {
           type="application/zip"
         >
           Sketch plugin
+        </OutboundLink>
+      </div>
+
+      <div>
+        <ArrowElbowDownRight size={24} />
+        <OutboundLink
+          href="https://play.phosphoricons.com"
+          eventLabel="Showcase"
+        >
+          Showcase
+        </OutboundLink>
+      </div>
+
+      <div>
+        <ArrowElbowDownRight size={24} />
+        <OutboundLink
+          href="https://github.com/phosphor-icons/homepage"
+          eventLabel="GitHub"
+        >
+          GitHub
+        </OutboundLink>
+      </div>
+      <div>
+        <ArrowElbowDownRight size={24} />
+        <OutboundLink
+          href="https://github.com/phosphor-icons/homepage/issues"
+          eventLabel="Request"
+        >
+          Request an icon
         </OutboundLink>
       </div>
 
@@ -73,19 +102,10 @@ const Links = (_: LinksProps) => {
       <div>
         <ArrowElbowDownRight size={24} />
         <OutboundLink
-          href="https://github.com/phosphor-icons/homepage"
-          eventLabel="GitHub"
+          href="https://twitter.com/_phosphoricons"
+          eventLabel="Twitter"
         >
-          GitHub
-        </OutboundLink>
-      </div>
-      <div>
-        <ArrowElbowDownRight size={24} />
-        <OutboundLink
-          href="https://github.com/phosphor-icons/homepage/issues"
-          eventLabel="Request"
-        >
-          Request an icon
+          Twitter
         </OutboundLink>
       </div>
     </div>

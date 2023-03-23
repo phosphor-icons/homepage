@@ -76,7 +76,7 @@ const IconGridItem = (props: IconGridItemProps) => {
         tabIndex={0}
         style={{
           ...style,
-          backgroundColor: isOpen ? "var(--translucent)" : undefined,
+          backgroundColor: isOpen ? "var(--background-layer)" : undefined,
         }}
         custom={delayRef}
         transition={transition}
@@ -86,7 +86,7 @@ const IconGridItem = (props: IconGridItemProps) => {
       >
         <Icon />
         <p>
-          {name}
+          <span className="name">{name}</span>
           {isNew && <span className="badge new">•</span>}
           {isUpdated && <span className="badge updated">•</span>}
         </p>

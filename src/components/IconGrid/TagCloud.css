@@ -1,25 +1,25 @@
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 6px;
 }
 
 button.tag-button {
-  margin: 4px;
   border-radius: 4px;
-  background-color: var(--sheer);
+  background-color: var(--background-card);
   outline: none;
   cursor: pointer;
-  transition: background-color 200ms ease, box-shadow 200ms ease;
+  transition: background-color 150ms ease, box-shadow 150ms ease;
   color: var(--foreground);
 }
 
 button.tag-button:hover {
-  background-color: var(--soft);
+  background-color: transparent;
 }
 
 button.tag-button:focus-visible {
-  box-shadow: 0 0 0 1px var(--soft);
+  box-shadow: 0 0 0 1px var(--foreground);
 }
 
 .tag-button code {

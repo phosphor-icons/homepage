@@ -1,15 +1,16 @@
-nav.toolbar {
+.toolbar {
   position: -webkit-sticky;
   position: sticky;
   top: -1px;
   padding: 0;
   margin: 0;
-  background-color: var(--eggplant);
+  color: white;
+  background-color: var(--stone);
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 0 0 var(--shadow);
+  box-shadow: 0 2px 0 0 var(--moss-shadow);
 }
 
 .toolbar-contents {

@@ -1,5 +1,6 @@
 footer {
-  background-color: var(--purple);
+  color: var(--moss);
+  background-color: var(--sand);
 }
 
 #back-to-top-button {
@@ -9,15 +10,17 @@ footer {
   border-radius: 50%;
   z-index: 2;
   font-size: 56px;
+  justify-content: center;
+  padding: 0 30px;
 }
 
 #back-to-top-button:active {
-  transform: translate(4px, 4px) !important;
-  box-shadow: 0 0 0 0 black;
+  transform: translate(2px, 2px) !important;
+  box-shadow: 0 0 0 0 var(--moss-shadow);
 }
 
 #back-to-top-button svg {
-  margin-right: unset;
+  margin-right: 0 !important;
 }
 
 .container {
@@ -46,22 +49,68 @@ footer .links {
 
 .fine-print {
   position: relative;
-  margin: 72px 0 0;
-  padding-bottom: 32px;
+  margin: 104px 0 0;
   overflow: hidden;
 }
 
 .fine-print p {
   font-size: 16px;
   line-height: 24px;
+  padding-bottom: 56px;
+  margin: 0;
 }
 
 .illustrations-footer {
-  display: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  pointer-events: none;
+  position: absolute;
+  overflow-y: hidden;
+  width: 300px;
+  margin: auto;
+  bottom: 0;
+  left: -456px;
+  height: 490px;
+}
+
+.ruler-marker {
+  position: absolute;
+}
+
+@media screen and (min-width: 720px) {
+  .outro {
+    margin: 0 auto;
+  }
+
+  .fine-print {
+    margin-top: 72px;
+  }
+
+  #back-to-top-button {
+    position: absolute;
+    left: 70px;
+    top: -56px;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1239px) {
+  .illustrations-footer {
+    height: 600px;
+    left: -320px;
+  }
+
+  .ruler-marker {
+    bottom: -216px;
+  }
+}
+
+@media screen and (min-width: 1239px) {
+  .outro {
+    margin-left: 462px;
+  }
+
+  #back-to-top-button {
+    position: absolute;
+    left: 190px;
+    top: 348px;
+  }
 }
 
 @media screen and (max-width: 719px) {
@@ -82,69 +131,11 @@ footer .links {
     margin: 0 0 64px;
   }
 
-  #command {
-    display: none;
-  }
-
-  #marker-green {
-    display: none;
-  }
-
-  .illustrations-footer {
-    max-width: 100%;
-    height: 440px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-  }
-}
-
-@media screen and (min-width: 720px) {
-  .outro {
-    margin: 0 auto;
-  }
-
   .fine-print {
-    margin-top: 96px;
-    padding-bottom: 96px;
-  }
-
-  #back-to-top-button {
-    position: absolute;
-    left: 70px;
-    top: -56px;
-  }
-
-  #marker-green {
-    position: absolute;
-    left: 678px;
-    top: -218px;
-  }
-
-  #command {
-    position: absolute;
-    right: -18px;
-    top: 144px;
-  }
-}
-
-@media screen and (min-width: 1239px) {
-  .outro {
-    margin-left: 462px;
-  }
-
-  #back-to-top-button {
-    position: absolute;
-    left: 190px;
-    top: 276px;
+    margin-top: 48px;
   }
 
   .illustrations-footer {
-    display: initial;
-    position: absolute;
-    left: -240px;
-    top: 632px;
-    height: 584px;
-    overflow: hidden;
+    display: none;
   }
 }

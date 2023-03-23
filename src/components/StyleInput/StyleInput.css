@@ -28,7 +28,7 @@
 
 .react-dropdown-select:focus-within {
   background-color: white;
-  color: black;
+  color: var(--moss);
   outline: none !important;
   box-shadow: none !important;
 }
@@ -62,21 +62,21 @@
   box-shadow: none;
 }
 .react-dropdown-select-item {
-  color: black;
+  color: var(--moss);
 }
 .react-dropdown-select-item:hover {
-  background-color: var(--yellow) !important;
+  background-color: var(--acid) !important;
 }
 
 .react-dropdown-select-item.react-dropdown-select-item-selected,
 .react-dropdown-select-item.react-dropdown-select-item-active {
-  color: black !important;
-  background-color: var(--yellow) !important;
+  color: var(--moss) !important;
+  background-color: var(--acid) !important;
 }
 
 .react-dropdown-select-item:focus {
-  color: black !important;
-  background-color: var(--yellow) !important;
+  color: var(--moss) !important;
+  background-color: var(--acid) !important;
 }
 
 .react-dropdown-select-item.react-dropdown-select-item-disabled {

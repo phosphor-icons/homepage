@@ -1,7 +1,6 @@
 .grid-container {
   position: relative;
   padding: 32px 16px;
-  /* min-height: 80vh; */
   z-index: 1;
   content-visibility: auto;
   color: var(--foreground);
@@ -33,52 +32,32 @@
 }
 
 .grid-item:hover {
-  background-color: var(--translucent);
+  background-color: var(--background-layer);
 }
 
-.grid-item:focus {
+.grid-item:focus-visible {
   outline: none;
-  border: 2px solid var(--translucent);
+  border: 1px solid var(--foreground);
 }
 
 .grid-item p {
   font-size: 12px;
   line-height: 16px;
-  color: var(--neutral);
   margin-top: 12px;
   text-align: center;
 }
 
-@media screen and (max-width: 536px) {
-  .grid-container {
-    padding: 32px 8px;
-  }
-
-  .grid-item {
-    width: 108px;
-    height: unset;
-    padding: 4px 0;
-    justify-content: flex-start;
-    border: 2px solid transparent;
-  }
-
-  .grid-item p {
-    padding: 0 4px;
-  }
-}
-
 .versioning {
   margin-top: 2px;
-  opacity: 0.6;
+  opacity: 0.75;
 }
 
 .snippet {
+  position: relative;
   width: 100%;
 }
 
 .snippet pre {
-  display: flex;
-  align-items: flex-start;
   text-overflow: ellipsis;
   -moz-user-select: all;
   -webkit-user-select: all;
@@ -97,20 +76,12 @@
   }
 }
 
-.snippet span {
-  flex: 1;
-}
-
 .snippet button {
-  background-color: transparent;
+  position: absolute;
+  top: -8px;
+  right: -8px;
   margin: 0;
-  padding: 0;
-  height: 24px;
   cursor: pointer;
-}
-
-.snippet button:disabled {
-  cursor: not-allowed;
 }
 
 .button-row {
@@ -130,6 +101,11 @@
 
 .button-row button svg {
   margin-right: 8px;
+}
+
+.disabled {
+  color: var(--pewter);
+  user-select: none;
 }
 
 .close-icon {
@@ -179,15 +155,22 @@
   min-height: 80vh;
   max-width: 1120px;
   margin: auto;
-  white-space: nowrap;
 }
 
-.empty-list p {
-  max-width: 80%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.empty-list-box p {
   margin-bottom: 0;
+}
+
+.empty-list-box {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 8px;
+  background-color: var(--background-layer);
 }
 
 .beacon {
@@ -201,10 +184,10 @@ aside.detail-footer {
   margin: auto;
   max-width: 1120px;
   display: grid;
-  grid-template-columns: 232px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 24px;
   padding: 12px 24px;
-  height: 136px;
+  height: 146px;
 }
 
 figure {
@@ -228,18 +211,51 @@ figcaption > p {
 .detail-preview {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 24px;
+  justify-content: space-between;
+  padding-block: 8px;
+}
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
 }
 
 .detail-actions {
-  display: flex;
-  flex-direction: row;
+  /* display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: flex-start; */
+  display: inline-grid;
+  grid-template-columns: 66px 66px 92px;
+  gap: 6px;
+}
+
+.action-button {
+  color: var(--foreground);
+  background-color: transparent;
+  font-size: 11px;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.action-button.text {
+  padding: 6px 10px 6px 6px;
+}
+
+.action-button:hover {
+  background-color: var(--background-layer) !important;
+}
+
+.detail-actions .action-button svg {
+  margin-right: 6px;
 }
 
 @media screen and (max-width: 719px) {
+  .grid-container {
+    padding: 16px 8px;
+  }
+
   .close-button {
     top: 4px;
     right: 12px;
@@ -247,13 +263,25 @@ figcaption > p {
 
   aside.detail-footer {
     top: 16px;
-    bottom: -4px;
+    bottom: -20px;
     display: flex;
     flex-direction: column;
     height: 440px;
+    margin-inline: -10px;
+    border-radius: 0;
   }
 }
 
-.action-button svg {
-  margin-right: 6px;
+@media screen and (max-width: 536px) {
+  .grid-item {
+    width: 108px;
+    height: unset;
+    padding: 4px 0;
+    justify-content: flex-start;
+    border: 1px solid transparent;
+  }
+
+  .grid-item p {
+    padding: 0 4px;
+  }
 }

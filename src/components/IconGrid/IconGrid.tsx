@@ -9,10 +9,11 @@ import {
   iconColorAtom,
   filteredQueryResultsSelector,
   isDarkThemeSelector,
+  searchQueryAtom,
 } from "@/state";
 import Notice from "@/components/Notice";
 
-import DetailFooter from "./DetailFooter";
+import Panel from "./Panel";
 import IconGridItem from "./IconGridItem";
 import TagCloud from "./TagCloud";
 import "./IconGrid.css";
@@ -34,6 +35,7 @@ const IconGrid = (_: IconGridProps) => {
   const size = useRecoilValue(iconSizeAtom);
   const color = useRecoilValue(iconColorAtom);
   const isDark = useRecoilValue(isDarkThemeSelector);
+  const query = useRecoilValue(searchQueryAtom);
   const filteredQueryResults = useRecoilValue(filteredQueryResultsSelector);
 
   const originOffset = useRef({ top: 0, left: 0 });
@@ -45,8 +47,15 @@ const IconGrid = (_: IconGridProps) => {
 
   if (!filteredQueryResults.length)
     return (
-      <Notice>
-        <span>Try searching a category or keyword:</span>
+      <Notice
+        type="warn"
+        message={
+          <>
+            No results for "<code>{query}</code>". Try searching a category or
+            keyword:
+          </>
+        }
+      >
         <TagCloud name="empty-state" tags={defaultSearchTags} />
       </Notice>
     );
@@ -66,7 +75,7 @@ const IconGrid = (_: IconGridProps) => {
             />
           ))}
         </motion.div>
-        <DetailFooter />
+        <Panel />
       </div>
     </IconContext.Provider>
   );

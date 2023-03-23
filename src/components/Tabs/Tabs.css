@@ -3,6 +3,14 @@
   flex-direction: column;
 }
 
+.tabs:has(button.tab:first-child:hover) .tab-content {
+  border-top-left-radius: 0;
+}
+
+.tabs:has(button.tab:last-child:hover) .tab-content {
+  border-top-right-radius: 0;
+}
+
 .tabs-header {
   display: flex;
   align-items: center;
@@ -26,21 +34,21 @@ button.tab:focus-visible {
 }
 
 button.tab:hover:not(.active) {
-  background-color: var(--sheer);
+  background-color: var(--hover-tabs);
 }
 
 button.tab.active {
-  background-color: var(--background);
+  background-color: var(--background-layer);
   border-bottom: none;
 }
 
 .tab-content {
   flex: 1;
-  height: 77px;
-  max-height: 77px;
+  height: 86px;
+  max-height: 86px;
   padding: 20px 20px 10px;
   border-radius: 8px;
-  background-color: var(--background);
+  background-color: var(--background-layer);
   overflow-y: auto;
 }
 
