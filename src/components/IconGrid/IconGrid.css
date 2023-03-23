@@ -59,21 +59,6 @@
 
 .snippet pre {
   text-overflow: ellipsis;
-  -moz-user-select: all;
-  -webkit-user-select: all;
-  user-select: all;
-}
-
-.snippet pre:focus {
-  animation: select 50ms step-end forwards;
-}
-
-@keyframes select {
-  to {
-    -moz-user-select: text;
-    -webkit-user-select: text;
-    user-select: text;
-  }
 }
 
 .snippet button {
