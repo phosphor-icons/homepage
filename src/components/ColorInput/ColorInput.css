@@ -6,16 +6,16 @@
   flex: 1;
   border: none;
   outline: none;
+  appearance: none;
   -webkit-appearance: none;
 }
 
 .color-picker span {
+  display: grid;
+  place-items: center;
   position: absolute;
   margin: 0;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  inset: 0;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
