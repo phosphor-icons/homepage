@@ -8,11 +8,9 @@
 }
 
 .grid {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   max-width: 1120px;
-  margin: auto;
 }
 
 .grid-item {
