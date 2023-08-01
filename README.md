@@ -108,6 +108,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 - [blade-phosphor-icons](https://github.com/codeat3/blade-phosphor-icons) ▲ Phosphor icons in your Laravel Blade views
 - [wireui/phosphoricons](https://github.com/wireui/phosphoricons) ▲ Phosphor icons for Laravel
 - [phosphor-css](https://github.com/lucagoslar/phosphor-css) ▲ CSS wrapper for Phosphor SVG icons
+- [phosphor-react-sc](https://github.com/simenandre/phosphor-react-sc) ▲ Phosphor icon component library for React Server Components
 
 If you've made a port of Phosphor and you want to see it here, just open a PR [here](https://github.com/phosphor-icons/phosphor-home)!
 
