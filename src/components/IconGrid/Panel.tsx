@@ -260,6 +260,18 @@ const Panel = () => {
     );
   };
 
+  const handleDownloadRawSVG = async () => {
+    if (!entry) return;
+
+    const { name } = entry;
+    saveAs(
+      `https://raw.githubusercontent.com/phosphor-icons/core/main/raw/${weight}/${name}${
+        weight === "regular" ? "" : `-${weight}`
+      }.svg`,
+      `${entry?.name}${weight === "regular" ? "" : `-${weight}`}.svg`
+    );
+  };
+
   const handleDownloadPNG = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -338,6 +350,13 @@ const Panel = () => {
                       title="Download SVG"
                       download
                       onClick={handleDownloadSVG}
+                    />
+
+                    <ActionButton
+                      label="SVG Raw"
+                      title="Download raw SVG including original strokes"
+                      download
+                      onClick={handleDownloadRawSVG}
                     />
 
                     <ActionButton

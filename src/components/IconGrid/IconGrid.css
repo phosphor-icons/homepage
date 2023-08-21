@@ -212,8 +212,9 @@ figcaption > p {
   align-items: center;
   justify-content: flex-start; */
   display: inline-grid;
-  grid-template-columns: 66px 66px 92px;
-  gap: 6px;
+  grid-template-columns: 1fr 1fr;
+  max-height: 60px;
+  /* gap: 6px; */
 }
 
 .action-button {
@@ -254,6 +255,10 @@ figcaption > p {
     height: 440px;
     margin-inline: -10px;
     border-radius: 0;
+  }
+
+  .detail-actions {
+    display: inline-flex;
   }
 }
 
