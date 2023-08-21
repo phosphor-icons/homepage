@@ -20,8 +20,8 @@ const errorFallback = <Notice message="Search error" />;
 const waitingFallback = <Notice type="none" message="" />;
 
 const App: React.FC<any> = () => {
-  useIconParameters();
-  usePersistSettings();
+  // useIconParameters();
+  // usePersistSettings();
 
   const isDark = useRecoilValue(isDarkThemeSelector);
 

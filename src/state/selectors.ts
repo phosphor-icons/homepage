@@ -1,5 +1,6 @@
 import { selector, selectorFamily } from "recoil";
 import TinyColor from "tinycolor2";
+// @ts-ignore
 import Fuse from "fuse.js";
 import { IconCategory } from "@phosphor-icons/core";
 
@@ -26,6 +27,7 @@ export const filteredQueryResultsSelector = selector<ReadonlyArray<IconEntry>>({
     if (!query) return icons;
 
     return new Promise((resolve) =>
+      // @ts-ignore
       resolve(fuse.search(query).map((value) => value.item))
     );
   },
