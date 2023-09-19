@@ -257,6 +257,10 @@ figcaption > p {
 }
 
 @media screen and (max-width: 536px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+  }
+
   .grid-item {
     width: 108px;
     height: unset;
