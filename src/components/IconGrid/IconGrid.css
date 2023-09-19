@@ -8,9 +8,8 @@
 }
 
 .grid {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   max-width: 1120px;
   margin: auto;
 }
@@ -263,6 +262,10 @@ figcaption > p {
 }
 
 @media screen and (max-width: 536px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+  }
+
   .grid-item {
     width: 108px;
     height: unset;
