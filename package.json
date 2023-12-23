@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@phosphor-icons/core": "^2.0.2",
-    "@phosphor-icons/react": "^2.0.4",
+    "@phosphor-icons/react": "^2.1.3",
     "file-saver": "^2.0.2",
     "framer-motion": "^9.0.1",
     "fuse.js": "^6.4.1",
