@@ -123,7 +123,7 @@ const Footer = (_: FooterProps) => {
               className="main-button"
               onClick={() =>
                 window.open(
-                  "https://paypal.me/minoraxis",
+                  "https://www.buymeacoffee.com/phosphoricons",
                   "_blank",
                   "noopener noreferrer"
                 )
