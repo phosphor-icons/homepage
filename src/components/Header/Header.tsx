@@ -2,6 +2,7 @@ import {
   ArrowCircleUpRight,
   ArrowCircleDown,
   MegaphoneSimple,
+  HandHeart,
 } from "@phosphor-icons/react";
 
 import Banner from "@/components/Banner";
@@ -49,6 +50,20 @@ const Header = (_: HeaderProps) => {
                 documentation
               </a>{" "}
               to see what's new!
+            </small>
+          </div>
+        </Banner>
+        <Banner id={"buymeacoffee"}>
+          <div className="message">
+            <HandHeart size={32} mirrored />
+            <small>
+              We are now processing donations via{" "}
+              <a href="https://www.buymeacoffee.com/phosphoricons">
+                Buy Me a Coffee
+              </a>
+              ! It takes a lot of work to make Phosphor available to the public
+              free and open-source, and your one-time or recurring contribution does
+              a lot to keep us going. Please show us some support if you can!
             </small>
           </div>
         </Banner>

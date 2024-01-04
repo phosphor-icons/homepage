@@ -20,7 +20,7 @@ type BannerProps = {
 const variants: Variants = {
   initial: { y: -120 },
   animate: { y: 0 },
-  exit: { y: -120 },
+  exit: { opacity: 0 },
 };
 
 const BANNER_STATE_KEY = "banner_state";

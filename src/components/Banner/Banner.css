@@ -13,7 +13,8 @@
   pointer-events: none;
 }
 
-.banner {
+.banner ::selection {
+  background-color: var(--moss-shadow);
 }
 
 .banner .main-button {
@@ -67,6 +68,7 @@
 @media screen and (max-width: 719px) {
   .banner-container {
     padding: 0;
+    gap: 0;
   }
 
   .banner-content {
