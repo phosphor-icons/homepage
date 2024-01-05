@@ -1,10 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RecoilRoot } from "recoil";
-import { RecoilURLSync } from "recoil-sync";
+import { RecoilURLSyncJSON } from "recoil-sync";
 import App from "./components/App";
-import RecoilSyncLocalStorage from "./state/RecoilSyncLocalStorage";
 import ReactGA from "react-ga4";
+import ErrorBoundary from "./components/ErrorBoundary";
+import Notice from "./components/Notice";
 
 const GA_MEASUREMENT_ID = "G-1C1REQCLFB";
 ReactGA.initialize(GA_MEASUREMENT_ID);
@@ -15,18 +16,22 @@ const root = createRoot(container!);
 root.render(
   <StrictMode>
     <RecoilRoot>
-      <RecoilURLSync
-        location={{ part: "queryParams" }}
-        serialize={(data) => {
-          console.log(data);
-          return "";
-        }}
-        deserialize={() => {}}
+      <ErrorBoundary
+        fallback={
+          <Notice
+            message={
+              <p>
+                An error occurred. Try going{" "}
+                <a href={window.location.origin}>home</a>.
+              </p>
+            }
+          />
+        }
       >
-        <RecoilSyncLocalStorage>
+        <RecoilURLSyncJSON location={{ part: "queryParams" }}>
           <App />
-        </RecoilSyncLocalStorage>
-      </RecoilURLSync>
+        </RecoilURLSyncJSON>
+      </ErrorBoundary>
     </RecoilRoot>
   </StrictMode>
 );

@@ -1,4 +1,5 @@
 import { Component, ErrorInfo, ReactNode } from "react";
+import ReactGA from "react-ga4";
 
 interface ErrorBoundaryProps {
   fallback?: JSX.Element | ReactNode;
@@ -23,8 +24,16 @@ export default class ErrorBoundary extends Component<
   }
 
   componentDidCatch(error: any, info: ErrorInfo) {
-    void error;
-    console.info(info);
+    console.error(error);
+    ReactGA.event("exception", {
+      description: JSON.stringify({
+        error:
+          error instanceof Error
+            ? error.message
+            : error.toString?.() ?? "UNSERIALIZEABLE",
+        info,
+      }),
+    });
   }
 
   render(): JSX.Element | ReactNode {

@@ -1,6 +1,7 @@
 import { atom } from "recoil";
 import { syncEffect } from "recoil-sync";
-import { custom, number, string, stringLiterals } from "@recoiljs/refine";
+import TinyColor from "tinycolor2";
+import { custom, stringLiterals } from "@recoiljs/refine";
 import { IconStyle } from "@phosphor-icons/core";
 import { IconEntry } from "@/lib";
 
@@ -11,7 +12,7 @@ export const searchQueryAtom = atom<string>({
     syncEffect({
       itemKey: "q",
       refine: custom((q) => {
-        return (q as string) ?? "";
+        return (q as string).toString() ?? "";
       }),
       syncDefault: false,
     }),
@@ -24,10 +25,21 @@ export const iconWeightAtom = atom<IconStyle>({
   effects: [
     syncEffect<IconStyle>({
       itemKey: "weight",
-      refine: custom((w) => {
-        const isWeight = (w as string)?.toUpperCase?.() in IconStyle;
-        return isWeight ? (w as IconStyle) : IconStyle.REGULAR;
-      }, `Unrecognized weight`),
+      refine: stringLiterals({
+        thin: IconStyle.THIN,
+        light: IconStyle.LIGHT,
+        regular: IconStyle.REGULAR,
+        bold: IconStyle.BOLD,
+        fill: IconStyle.FILL,
+        duotone: IconStyle.DUOTONE,
+      }),
+      write: (atom, w) => {
+        if (typeof w === "string") {
+          atom.write("weight", w);
+        } else {
+          atom.reset("weight");
+        }
+      },
       syncDefault: false,
     }),
   ],
@@ -55,8 +67,22 @@ export const iconColorAtom = atom<string>({
     syncEffect({
       itemKey: "color",
       refine: custom((c) => {
-        return (c as string) ?? "#000000";
+        if (typeof c === "string") {
+          const normalizedColor = TinyColor(c);
+          if (normalizedColor.isValid()) {
+            return normalizedColor.toHexString();
+          }
+        }
+        return "#000000";
       }),
+      write: (atom, c) => {
+        if (typeof c === "string") {
+          const color = c.replace("#", "");
+          atom.write("color", color);
+        } else {
+          atom.reset("color");
+        }
+      },
       syncDefault: false,
     }),
   ],
