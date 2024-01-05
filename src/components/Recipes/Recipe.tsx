@@ -8,7 +8,7 @@ export type RecipeProps = {
 
 const Recipe = ({ url, Example }: RecipeProps) => {
   return (
-    <a className="recipe card" href={url}>
+    <a className="recipe card" href={url} target="_blank">
       {/* <h1>{title}</h1> */}
       <div className="recipe-linkout">
         <span>Open on StackBlitz</span>

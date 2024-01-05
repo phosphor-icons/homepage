@@ -112,7 +112,7 @@ const Footer = (_: FooterProps) => {
             Phosphor is free and open-source, licensed under{" "}
             <a
               className="main-link"
-              href="https://raw.githubusercontent.com/phosphor-icons/phosphor-home/master/LICENSE"
+              href="https://raw.githubusercontent.com/phosphor-icons/homepage/master/LICENSE"
             >
               MIT
             </a>
@@ -149,7 +149,7 @@ const Footer = (_: FooterProps) => {
           <div className="fine-print">
             <p>
               Type set in{" "}
-              <a className="main-link" href="https://manropefont.com/">
+              <a className="main-link" href="https://www.gent.media/manrope">
                 Manrope
               </a>{" "}
               by Mikhail Sharanda and{" "}

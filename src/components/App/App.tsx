@@ -8,7 +8,7 @@ import IconGrid from "@/components/IconGrid";
 import Footer from "@/components/Footer";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Notice from "@/components/Notice";
-// import Recipes from "@/components/Recipes";
+import Recipes from "@/components/Recipes";
 import { useCSSVariables } from "@/hooks";
 import { isDarkThemeSelector } from "@/state";
 

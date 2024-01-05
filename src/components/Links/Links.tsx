@@ -86,7 +86,10 @@ const Links = (_: LinksProps) => {
       <div>
         <ArrowElbowDownRight size={24} />
         <span>
-          <OutboundLink href="https://paypal.me/minoraxis" eventLabel="Donate">
+          <OutboundLink
+            href="https://www.buymeacoffee.com/phosphoricons"
+            eventLabel="Donate"
+          >
             Donate on BuyMeACoffee
           </OutboundLink>
           {" / "}

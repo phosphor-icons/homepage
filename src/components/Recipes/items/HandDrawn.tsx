@@ -4,14 +4,14 @@ import { RecipeProps } from "../Recipe";
 
 const animation: RecipeProps = {
   title: "Hand Drawn",
-  url: "https://stackblitz.com/edit/react-ts-f7q7gs?file=App.tsx,style.css",
+  url: "https://stackblitz.com/edit/stackblitz-starters-4vqgkm?file=src%2FApp.tsx",
   Example() {
     return (
       <div className="example">
         <CassetteTape
           color="teal"
           style={{ filter: "url(#displacementFilter)" }}
-         >
+        >
           <defs>
             <filter id="displacementFilter">
               <feTurbulence
@@ -30,18 +30,9 @@ const animation: RecipeProps = {
             </filter>
           </defs>
         </CassetteTape>
-        <Cube
-          color="teal"
-          style={{ filter: "url(#displacementFilter)" }}
-        />
-        <ThumbsUp
-          color="teal"
-          style={{ filter: "url(#displacementFilter)" }}
-        />
-        <Virus
-          color="teal"
-          style={{ filter: "url(#displacementFilter)" }}
-        />
+        <Cube color="teal" style={{ filter: "url(#displacementFilter)" }} />
+        <ThumbsUp color="teal" style={{ filter: "url(#displacementFilter)" }} />
+        <Virus color="teal" style={{ filter: "url(#displacementFilter)" }} />
       </div>
     );
   },
