@@ -38,9 +38,8 @@
     "react-dom": "^18.2.0",
     "react-dropdown-select": "^4.4.2",
     "react-ga4": "^2.1.0",
-    "react-hotkeys-hook": "^3.2.1",
-    "react-use": "^17.4.2",
-    "recoil": "^0.7.6",
+    "react-hotkeys-hook": "^4.4.3",
+    "recoil": "^0.7.7",
     "recoil-sync": "^0.2.0",
     "svg2png-converter": "^1.0.2",
     "tinycolor2": "^1.4.2"

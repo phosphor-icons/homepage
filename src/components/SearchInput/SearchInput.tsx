@@ -6,7 +6,6 @@ import {
   ReactNode,
 } from "react";
 import { useRecoilState } from "recoil";
-import { useDebounce } from "react-use";
 import { useHotkeys } from "react-hotkeys-hook";
 import {
   Command,
@@ -16,6 +15,7 @@ import {
 } from "@phosphor-icons/react";
 import ReactGA from "react-ga4";
 
+import { useDebounce } from "@/hooks";
 import { searchQueryAtom } from "@/state";
 import "./SearchInput.css";
 
@@ -33,7 +33,7 @@ const SearchInput = (_: SearchInputProps) => {
   const inputRef =
     useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
 
-  useHotkeys("ctrl+k,cmd+k", (e) => {
+  useHotkeys("ctrl+k,meta+k", (e) => {
     e.preventDefault();
     if (!e.repeat) {
       inputRef.current?.focus();

@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useRef } from "react";
 
-export type UseTimeoutFnReturn = [() => boolean | null, () => void, () => void];
+export type UseTimeoutFnReturn = [
+  isReady: () => boolean | null,
+  clear: () => void,
+  set: () => void
+];
 
 export default function useTimeoutFn(
   fn: Function,

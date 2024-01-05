@@ -1,21 +1,21 @@
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, DependencyList } from "react";
 
-type Callback = (...args: any) => void;
+type Callback<T extends Array<unknown>> = (...args: T) => void;
 
-export default (
-  callback: Callback,
+const useThrottled = <T extends Array<unknown>>(
+  callback: Callback<T>,
   delay: number,
-  dependencies: any[] = []
-) => {
+  dependencies: DependencyList = []
+): ((...args: T) => void) => {
   const throttleRef = useRef<Boolean>(false);
-  const callbackRef = useRef<Callback>(callback);
+  const callbackRef = useRef<Callback<T>>(callback);
 
   // Update the callback to be used, if it ever changes
   useEffect(() => {
     callbackRef.current = callback;
   }, [callback]);
 
-  return useCallback<Callback>(
+  return useCallback<Callback<T>>(
     (...args) => {
       if (throttleRef.current) return;
 
@@ -29,3 +29,5 @@ export default (
     [delay, ...dependencies]
   );
 };
+
+export default useThrottled;

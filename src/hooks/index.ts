@@ -1,7 +1,6 @@
 export { default as useCSSVariables } from "./useCSSVariables";
 export { default as useDebounce } from "./useDebounce";
 export { default as useEvent } from "./useEvent";
-export { default as useIconParameters } from "./useIconParameters";
 export { default as useLocalStorage } from "./useLocalStorage";
 export { default as useMediaQuery } from "./useMediaQuery";
 export { default as usePersistSettings } from "./usePersistSettings";
