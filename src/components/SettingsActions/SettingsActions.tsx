@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactGA from "react-ga4";
-import { useRecoilState, useResetRecoilState } from "recoil";
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import {
   ArrowCounterClockwise,
   CheckCircle,
@@ -21,21 +21,16 @@ import "./SettingsActions.css";
 
 const SettingsActions = () => {
   const [weight, setWeight] = useRecoilState(iconWeightAtom);
-  const [size, setSize] = useRecoilState(iconSizeAtom);
-  const [color, setColor] = useRecoilState(iconColorAtom);
+  const setSize = useSetRecoilState(iconSizeAtom);
+  const setColor = useSetRecoilState(iconColorAtom);
   const reset = useResetRecoilState(resetSettingsSelector);
 
   const [copied, setCopied] = useTransientState<boolean>(false, 2000);
   const [booped, setBooped] = useState<boolean>(false);
 
   const copyDeepLinkToClipboard = () => {
-    const paramString = new URLSearchParams([
-      ["weight", weight.toString()],
-      ["size", size.toString()],
-      ["color", color.replace("#", "")],
-    ]).toString();
     void navigator.clipboard
-      ?.writeText(`${window.location.host}?${paramString}`)
+      ?.writeText(`${window.location.origin}${window.location.search}`)
       .then(() => {
         setCopied(true);
       })

@@ -52,7 +52,7 @@ const SearchInput = (_: SearchInputProps) => {
   }, [query]);
   /* eslint-enable react-hooks/exhaustive-deps */
 
-  const [isReady] = useDebounce(
+  const [_isReady, _cancel] = useDebounce(
     () => {
       if (value !== query) {
         setQuery(value);
@@ -95,7 +95,7 @@ const SearchInput = (_: SearchInputProps) => {
       />
       {!value && !isMobile && <Keys>{isApple ? <Command /> : "Ctrl + "}K</Keys>}
       {value ? (
-        isReady() ? (
+        value === query ? (
           <X className="clear-icon" size={18} onClick={handleCancelSearch} />
         ) : (
           <HourglassHigh className="wait-icon" weight="fill" size={18} />
