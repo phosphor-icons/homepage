@@ -5,10 +5,10 @@ export type UseEventTarget = HTMLElement | SVGElement | Document | Window;
 export type UseEventMap<E extends UseEventTarget> = E extends HTMLElement
   ? HTMLElementEventMap
   : E extends SVGElement
-  ? SVGElementEventMap
-  : E extends Document
-  ? DocumentEventMap
-  : WindowEventMap;
+    ? SVGElementEventMap
+    : E extends Document
+      ? DocumentEventMap
+      : WindowEventMap;
 
 export type UseEventType<E extends UseEventTarget> = keyof UseEventMap<E>;
 
@@ -27,7 +27,7 @@ export type UseEventType<E extends UseEventTarget> = keyof UseEventMap<E>;
 export default function useEvent<
   K extends UseEventType<T>,
   M extends UseEventMap<T>,
-  T extends UseEventTarget = Document
+  T extends UseEventTarget = Document,
 >(
   type: K,
   listener: (this: T, ev: M[K]) => any,
