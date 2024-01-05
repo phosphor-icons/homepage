@@ -46,8 +46,8 @@ const Tabs = ({ tabs, initialIndex = 0, onTabChange }: TabsProps) => {
           activeIndex === 0
             ? contentStyles.activeLeft
             : activeIndex === tabs.length - 1
-            ? contentStyles.activeRight
-            : undefined
+              ? contentStyles.activeRight
+              : undefined
         }
       >
         {tabs[activeIndex]?.content}

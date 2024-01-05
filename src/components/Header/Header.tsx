@@ -62,8 +62,9 @@ const Header = (_: HeaderProps) => {
                 Buy Me a Coffee
               </a>
               ! It takes a lot of work to make Phosphor available to the public
-              free and open-source, and your one-time or recurring contribution does
-              a lot to keep us going. Please show us some support if you can!
+              free and open-source, and your one-time or recurring contribution
+              does a lot to keep us going. Please show us some support if you
+              can!
             </small>
           </div>
         </Banner>
