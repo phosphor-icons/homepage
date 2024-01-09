@@ -1,4 +1,4 @@
-<img src="/meta/phosphor-mark-tight-yellow.png" width="128" align="right" />
+<img src="/meta/phosphor-mark-tight-black.png" width="96" align="right" />
 
 # Phosphor Icons
 
@@ -20,7 +20,7 @@ Phosphor is available for [web](https://github.com/phosphor-icons/web), [React](
 - **Simple to use** – We use a similar approach as many other icon sets out there, providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. But you don't need to know that. All you need to do is add the script to the document `<head>`, and drop in icons with an `<i/>` tag and the appropriate class:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
