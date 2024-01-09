@@ -2,7 +2,7 @@
 name: Icon request
 about: Request one or more related icons you'd like to see added to our set
 title: ""
-labels: enhancement
+labels: icon
 assignees: rektdeckard
 ---
 
