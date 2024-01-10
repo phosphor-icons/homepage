@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@phosphor-icons/core':
-    specifier: ^2.0.2
+    specifier: ^2.0.4
     version: 2.0.4
   '@phosphor-icons/react':
     specifier: ^2.0.15
@@ -18,14 +18,11 @@ dependencies:
     specifier: ^2.0.2
     version: 2.0.5
   framer-motion:
-    specifier: ^9.0.1
-    version: 9.1.7(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^10.17.12
+    version: 10.17.12(react-dom@18.2.0)(react@18.2.0)
   fuse.js:
     specifier: ^6.4.1
     version: 6.6.2
-  prop-types:
-    specifier: ^15.8.1
-    version: 15.8.1
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1043,11 +1040,16 @@ packages:
     resolution: {integrity: sha512-NKfW6bec6GfKc0SGx1e07QZY9PE99u0Bft/0rzSD5k3sO/vwkVUpDUKVm5Gpp5Ue3YfShPFTX2070tDs5kB9Ng==}
     dev: false
 
-  /framer-motion@9.1.7(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-nKxBkIO4IPkMEqcBbbATxsVjwPYShKl051yhBv9628iAH6JLeHD0siBHxkL62oQzMC1+GNX73XtPjgP753ufuw==}
+  /framer-motion@10.17.12(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-6aaBLN2EgH/GilXwOzEalTfw5Rx9DTQJJjTrxq5bfDbGtPCzXz2GCN6ePGRpTi1ZGugLHxdU273h38ENbcdFKQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)

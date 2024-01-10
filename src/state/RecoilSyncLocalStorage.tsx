@@ -42,6 +42,7 @@ export default ({ children }: { children: ReactNode }) => {
 
   const listen: ListenToItems = useCallback(
     ({ updateItem, updateAllKnownItems }) => {
+      void updateAllKnownItems;
       const onStorage = (event: StorageEvent) => {
         // ignore clear() calls
         if (event.storageArea === localStorage && event.key !== null) {
