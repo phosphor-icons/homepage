@@ -64,10 +64,15 @@ const IconGrid = (_: IconGridProps) => {
     <IconContext.Provider value={{ weight, size, color, mirrored: false }}>
       <div className="grid-container">
         <i id="beacon" className="beacon" />
-        <motion.div className="grid" initial="hidden" animate={controls}>
+        <motion.div
+          key={query}
+          className="grid"
+          initial="hidden"
+          animate={controls}
+        >
           {filteredQueryResults.map((iconEntry, index) => (
             <IconGridItem
-              key={index}
+              key={iconEntry.name}
               index={index}
               isDark={isDark}
               entry={iconEntry}

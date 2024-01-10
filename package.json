@@ -27,13 +27,12 @@
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\""
   },
   "dependencies": {
-    "@phosphor-icons/core": "^2.0.2",
+    "@phosphor-icons/core": "^2.0.4",
     "@phosphor-icons/react": "^2.0.15",
     "@recoiljs/refine": "^0.1.1",
     "file-saver": "^2.0.2",
-    "framer-motion": "^9.0.1",
+    "framer-motion": "^10.17.12",
     "fuse.js": "^6.4.1",
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropdown-select": "^4.4.2",

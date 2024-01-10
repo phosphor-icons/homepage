@@ -20,7 +20,7 @@ interface IconGridItemProps extends HTMLAttributes<HTMLDivElement> {
 
 const transition = { duration: 0.2 };
 const originIndex = 0;
-const delayPerPixel = 0.0004;
+const delayPerPixel = 0.0003;
 
 const itemVariants = {
   hidden: { opacity: 0 },
@@ -68,30 +68,28 @@ const IconGridItem = (props: IconGridItemProps) => {
   }, [originOffset]);
 
   return (
-    <>
-      <motion.div
-        className="grid-item"
-        key={name}
-        ref={ref}
-        tabIndex={0}
-        style={{
-          ...style,
-          backgroundColor: isOpen ? "var(--background-layer)" : undefined,
-        }}
-        custom={delayRef}
-        transition={transition}
-        variants={itemVariants}
-        onKeyPress={(e) => e.key === "Enter" && handleOpen()}
-        onClick={handleOpen}
-      >
-        <Icon />
-        <p>
-          <span className="name">{name}</span>
-          {isNew && <span className="badge new">•</span>}
-          {isUpdated && <span className="badge updated">•</span>}
-        </p>
-      </motion.div>
-    </>
+    <motion.div
+      className="grid-item"
+      key={name}
+      ref={ref}
+      tabIndex={0}
+      style={{
+        ...style,
+        backgroundColor: isOpen ? "var(--background-layer)" : undefined,
+      }}
+      custom={delayRef}
+      transition={transition}
+      variants={itemVariants}
+      onKeyPress={(e) => e.key === "Enter" && handleOpen()}
+      onClick={handleOpen}
+    >
+      <Icon />
+      <p>
+        <span className="name">{name}</span>
+        {isNew && <span className="badge new">•</span>}
+        {isUpdated && <span className="badge updated">•</span>}
+      </p>
+    </motion.div>
   );
 };
 

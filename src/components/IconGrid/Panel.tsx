@@ -18,6 +18,7 @@ import {
   CaretDoubleLeft,
   CaretDoubleRight,
 } from "@phosphor-icons/react";
+import { IconStyle } from "@phosphor-icons/core";
 import ReactGA from "react-ga4";
 
 import Tabs, { Tab } from "@/components/Tabs";
@@ -61,6 +62,7 @@ enum CopyType {
   SVG_DATA,
   PNG,
   PNG_DATA,
+  UNICODE,
 }
 
 function cloneWithSize(svg: SVGSVGElement, size: number): SVGSVGElement {
@@ -75,12 +77,18 @@ const ActionButton = (
     active?: boolean;
     label: string;
     download?: boolean;
+    disabled?: boolean;
   } & HTMLAttributes<HTMLButtonElement>
 ) => {
   const { active, download, label, ...rest } = props;
   const Icon = download ? ArrowFatLinesDown : Copy;
   return (
-    <button {...rest} className="action-button text" tabIndex={0}>
+    <button
+      {...rest}
+      className={`action-button text ${props.disabled ? "disabled" : ""}`}
+      aria-disabled={props.disabled}
+      tabIndex={0}
+    >
       {active ? (
         <CheckCircle size={20} color="var(--olive)" weight="fill" />
       ) : (
@@ -246,6 +254,14 @@ const Panel = () => {
     setCopied(CopyType.SVG_RAW);
   };
 
+  const handleCopyUnicode = async () => {
+    if (!entry) return;
+
+    const content = String.fromCharCode(entry.codepoint);
+    navigator.clipboard?.writeText(content);
+    setCopied(CopyType.UNICODE);
+  };
+
   const handleDownloadSVG = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -336,6 +352,9 @@ const Panel = () => {
               <figcaption>
                 <p>{entry.name}</p>
                 <small className="versioning">
+                  U+{entry.codepoint.toString(16).toUpperCase()}
+                </small>
+                <small className="versioning">
                   available in v{entry.published_in.toFixed(1)}.0+
                 </small>
               </figcaption>
@@ -394,6 +413,14 @@ const Panel = () => {
                       title="Copy SVG as DataURL"
                       active={copied === CopyType.SVG_DATA}
                       onClick={handleCopyDataSVG}
+                    />
+
+                    <ActionButton
+                      label="Unicode"
+                      title="Copy Unicode character (v2.1.0 or newer)"
+                      active={copied === CopyType.UNICODE}
+                      disabled={weight === IconStyle.DUOTONE}
+                      onClick={handleCopyUnicode}
                     />
                   </>
                 )}
