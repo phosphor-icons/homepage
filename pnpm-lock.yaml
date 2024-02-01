@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@phosphor-icons/core':
-    specifier: ^2.0.4
-    version: 2.0.4
+    specifier: ^2.0.8
+    version: 2.0.8
   '@phosphor-icons/react':
     specifier: ^2.0.15
     version: 2.0.15(react-dom@18.2.0)(react@18.2.0)
@@ -668,8 +668,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@phosphor-icons/core@2.0.4:
-    resolution: {integrity: sha512-VLSxdZvcplDn2afkxiDMrHbTFNudFwzxrplPqyU5a6uerqCHRl18kZ2yGFu7fI9ET+d1+kbYkdS02D24rMA6tA==}
+  /@phosphor-icons/core@2.0.8:
+    resolution: {integrity: sha512-I9MdTtqjqZDXwo6bbG5lRWZUJMWgXc70hZAVG1OVNVmb6j7039slVXLDH4VEok3U3h1Yhotxe8G5l4sPHJBDzQ==}
     dev: false
 
   /@phosphor-icons/react@2.0.15(react-dom@18.2.0)(react@18.2.0):

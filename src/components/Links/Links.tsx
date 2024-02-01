@@ -90,7 +90,7 @@ const Links = (_: LinksProps) => {
             href="https://www.buymeacoffee.com/phosphoricons"
             eventLabel="Donate"
           >
-            Donate on BuyMeACoffee
+            Donate
           </OutboundLink>
           {" / "}
           <OutboundLink

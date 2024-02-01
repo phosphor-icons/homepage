@@ -27,7 +27,7 @@
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\""
   },
   "dependencies": {
-    "@phosphor-icons/core": "^2.0.4",
+    "@phosphor-icons/core": "^2.0.8",
     "@phosphor-icons/react": "^2.0.15",
     "@recoiljs/refine": "^0.1.1",
     "file-saver": "^2.0.2",
