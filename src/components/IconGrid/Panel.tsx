@@ -351,9 +351,9 @@ const Panel = () => {
               <entry.Icon ref={ref} size={64}></entry.Icon>
               <figcaption>
                 <p>{entry.name}</p>
-                <small className="versioning">
+                {/* <small className="versioning">
                   U+{entry.codepoint.toString(16).toUpperCase()}
-                </small>
+                </small> */}
                 <small className="versioning">
                   available in v{entry.published_in.toFixed(1)}.0+
                 </small>
@@ -415,13 +415,13 @@ const Panel = () => {
                       onClick={handleCopyDataSVG}
                     />
 
-                    <ActionButton
+                    {/* <ActionButton
                       label="Unicode"
                       title="Copy Unicode character (v2.1.0 or newer)"
                       active={copied === CopyType.UNICODE}
                       disabled={weight === IconStyle.DUOTONE}
                       onClick={handleCopyUnicode}
-                    />
+                    /> */}
                   </>
                 )}
               </div>
