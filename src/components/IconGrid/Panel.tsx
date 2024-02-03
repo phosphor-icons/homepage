@@ -54,6 +54,7 @@ const RENDERED_SNIPPETS = [
   SnippetType.VUE,
   SnippetType.FLUTTER,
   SnippetType.ELM,
+  SnippetType.SWIFT,
 ];
 
 enum CopyType {
@@ -186,7 +187,7 @@ const Panel = () => {
     );
 
     return [snippets, tabs];
-  }, [entry, weight, size, copied, isDark]);
+  }, [entry, weight, size, color, copied, isDark]);
 
   useHotkeys("esc", () => setSelectionEntry(null));
 

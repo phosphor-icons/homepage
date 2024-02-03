@@ -1,6 +1,14 @@
 import { IconStyle } from "@phosphor-icons/core";
+import TinyColor from "tinycolor2";
 
 import { SnippetType } from "@/lib";
+
+function u8ToCGFloatStr(value: number): string {
+  return (value / 255).toLocaleString("en-US", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 4,
+  });
+}
 
 export function getCodeSnippets({
   name,
@@ -17,8 +25,9 @@ export function getCodeSnippets({
 }): Record<SnippetType, string> {
   const isDefaultWeight = weight === "regular";
   const isDefaultColor = color === "#000000";
-  const elmName = displayName.replace(/^\w/, (c) => c.toLowerCase());
-  const elmWeight = weight.replace(/^\w/, (c) => c.toUpperCase());
+  const camelName = displayName.replace(/^\w/, (c) => c.toLowerCase());
+  const pascalWeight = weight.replace(/^\w/, (c) => c.toUpperCase());
+  const { r, g, b } = TinyColor(color).toRgb();
 
   return {
     [SnippetType.HTML]: `<i class="ph${
@@ -40,12 +49,21 @@ export function getCodeSnippets({
     },\n  size: ${size.toFixed(1)},\n${
       !isDefaultColor ? `  color: Color(0xff${color.replace("#", "")}),\n` : ""
     })`,
-    [SnippetType.ELM]: `Phosphor.${elmName}${
-      isDefaultWeight ? "" : " " + elmWeight
+    [SnippetType.ELM]: `Phosphor.${camelName}${
+      isDefaultWeight ? "" : " " + pascalWeight
     }
     |> withSize ${size}
     |> withSizeUnit "px"
     |> toHtml []`,
+    [SnippetType.SWIFT]: `Ph.${camelName}.${weight}${
+      !isDefaultColor
+        ? `\n    .color(red: ${u8ToCGFloatStr(r)}, green: ${u8ToCGFloatStr(
+            g
+          )}, blue: ${u8ToCGFloatStr(b)})`
+        : ""
+    }
+    .frame(width: ${size}, height: ${size})
+    `,
   };
 }
 
