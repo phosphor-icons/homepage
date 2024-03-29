@@ -40,20 +40,20 @@ const Header = (_: HeaderProps) => {
   return (
     <header>
       <Banner.Container>
-        <Banner id={"2.0.1"}>
+        <Banner id={"2.1.0"}>
           <div className="message">
             <MegaphoneSimple size={32} mirrored />
             <small>
-              Phosphor 2.0 is out, with some big updates and some small API
-              changes. Check our{" "}
-              <a href="https://github.com/phosphor-icons/homepage#readme">
-                documentation
+              Phosphor v2.1 is out, adding 268 new icons and some general
+              revisions. Check our{" "}
+              <a href="https://github.com/phosphor-icons/homepage/releases">
+                release notes
               </a>{" "}
-              to see what's new!
+              to see what's changed!
             </small>
           </div>
         </Banner>
-        <Banner id={"buymeacoffee"}>
+        <Banner id={"buymeacoffee2"}>
           <div className="message">
             <HandHeart size={32} mirrored />
             <small>
@@ -101,11 +101,7 @@ const Header = (_: HeaderProps) => {
           <Synth className="synth inspectable xray" />
 
           <WatchSpec className="watch" />
-          <Watch className="watch inspectable xray">
-            <foreignObject>
-              <span>FOOO</span>
-            </foreignObject>
-          </Watch>
+          <Watch className="watch inspectable xray" />
 
           <PaperClipsTwo id="paperclips" />
         </div>
