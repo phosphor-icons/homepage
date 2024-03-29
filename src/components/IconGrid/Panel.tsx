@@ -18,7 +18,7 @@ import {
   CaretDoubleLeft,
   CaretDoubleRight,
 } from "@phosphor-icons/react";
-// import { IconStyle } from "@phosphor-icons/core";
+import { IconStyle } from "@phosphor-icons/core";
 import ReactGA from "react-ga4";
 
 import Tabs, { Tab } from "@/components/Tabs";
@@ -255,13 +255,13 @@ const Panel = () => {
     setCopied(CopyType.SVG_RAW);
   };
 
-  // const handleCopyUnicode = async () => {
-  //   if (!entry) return;
+  const handleCopyUnicode = async () => {
+    if (!entry) return;
 
-  //   const content = String.fromCharCode(entry.codepoint);
-  //   navigator.clipboard?.writeText(content);
-  //   setCopied(CopyType.UNICODE);
-  // };
+    const content = String.fromCharCode(entry.codepoint);
+    navigator.clipboard?.writeText(content);
+    setCopied(CopyType.UNICODE);
+  };
 
   const handleDownloadSVG = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -352,11 +352,11 @@ const Panel = () => {
               <entry.Icon ref={ref} size={64}></entry.Icon>
               <figcaption>
                 <p>{entry.name}</p>
-                {/* <small className="versioning">
-                  U+{entry.codepoint.toString(16).toUpperCase()}
-                </small> */}
                 <small className="versioning">
-                  available in v{entry.published_in.toFixed(1)}.0+
+                  U+{entry.codepoint.toString(16).toUpperCase()}
+                </small>
+                <small className="versioning">
+                  available in v{entry.published_in.toFixed(1)}+
                 </small>
               </figcaption>
             </figure>
@@ -416,13 +416,13 @@ const Panel = () => {
                       onClick={handleCopyDataSVG}
                     />
 
-                    {/* <ActionButton
+                    <ActionButton
                       label="Unicode"
                       title="Copy Unicode character (v2.1.0 or newer)"
                       active={copied === CopyType.UNICODE}
                       disabled={weight === IconStyle.DUOTONE}
                       onClick={handleCopyUnicode}
-                    /> */}
+                    />
                   </>
                 )}
               </div>
