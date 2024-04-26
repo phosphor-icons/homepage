@@ -24,7 +24,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\"",
+    "generate": "tsx scripts/generate.ts"
   },
   "dependencies": {
     "@phosphor-icons/core": "^2.1.1",
@@ -50,7 +51,9 @@
     "@types/react-dom": "^18.0.10",
     "@types/tinycolor2": "^1.4.3",
     "@vitejs/plugin-react": "^3.1.0",
+    "iconjar-exporter": "^1.0.10",
     "prettier": "^3.1.1",
+    "tsx": "^4.7.3",
     "typescript": "^4.9.5",
     "vite": "^4.5.2",
     "vite-plugin-svgr": "^2.4.0"
