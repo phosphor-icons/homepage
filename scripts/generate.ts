@@ -1,8 +1,8 @@
-import path from "node:path";
 import fs from "node:fs/promises";
+import path from "node:path";
 import { fileURLToPath } from "node:url";
-import IconJar, { IconGroup, IconSet, Icon, License } from "iconjar-exporter";
 import { icons, IconStyle } from "@phosphor-icons/core";
+import IconJar, { IconGroup, IconSet, Icon, License } from "iconjar-exporter";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,6 +20,54 @@ abstract class Exporter {
   }
   static save(): Promise<void> {
     throw new Error("not implemented");
+  }
+}
+
+class NucleoExporter implements Exporter {
+  static JSON_PATH = path.join(OUT_DIR, "./phosphor.nucleo.json");
+  static SET_ID = 1;
+  static data: {
+    sets: Array<{ label: string; id: number }>;
+    groups: Array<unknown>;
+    icons: Array<{
+      name: string;
+      content: string;
+      style: /* possibly just "outline" and "glyph" */ string;
+      tags: /* comma-separated, no spaces */ string;
+      set_id: number;
+    }>;
+  };
+
+  static async load(): Promise<void> {
+    NucleoExporter.data = {
+      sets: [{ label: "Phosphor Icons", id: NucleoExporter.SET_ID }],
+      groups: [],
+      icons: [],
+    };
+
+    for (const weight of Object.values(IconStyle)) {
+      for (const icon of icons) {
+        const name =
+          weight === "regular" ? icon.name : `${icon.name}-${weight}`;
+        const filePath = path.join(CORE_DIR, `${weight}/${name}.svg`);
+        const content = (await fs.readFile(filePath)).toString();
+
+        NucleoExporter.data.icons.push({
+          name,
+          content,
+          style: "outline",
+          tags: icon.tags.join(","),
+          set_id: NucleoExporter.SET_ID,
+        });
+      }
+    }
+  }
+
+  static async save(): Promise<void> {
+    await fs.writeFile(
+      NucleoExporter.JSON_PATH,
+      JSON.stringify(NucleoExporter.data)
+    );
   }
 }
 
@@ -68,7 +116,7 @@ class IconJarExporter implements Exporter {
 }
 
 (async function main() {
-  for (const exporter of [IconJarExporter]) {
+  for (const exporter of [IconJarExporter, NucleoExporter]) {
     await exporter.load();
     await exporter.save();
   }
