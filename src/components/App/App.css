@@ -48,6 +48,10 @@ body {
   background-color: var(--acid);
 }
 
+::-moz-color-swatch {
+  border: none;
+}
+
 h2 {
   font-weight: 400;
 }
