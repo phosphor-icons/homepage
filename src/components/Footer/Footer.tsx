@@ -65,6 +65,14 @@ const Footer = (_: FooterProps) => {
               AllTrails
             </a>
             ,{" "}
+            <a className="main-link" href="https://www.anthropic.com">
+              Anthropic
+            </a>
+            ,{" "}
+            <a className="main-link" href="https://www.babbel.com/">
+              Babbel
+            </a>
+            ,{" "}
             <a
               className="main-link"
               href="https://www.dive.club/course/figma-academy"
@@ -76,8 +84,8 @@ const Footer = (_: FooterProps) => {
               Framer
             </a>
             ,{" "}
-            <a className="main-link" href="https://www.outgo.co/">
-              Outgo
+            <a className="main-link" href="https://www.khanacademy.org/">
+              Khan Academy
             </a>
             ,{" "}
             <a
