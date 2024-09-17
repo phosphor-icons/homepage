@@ -26,7 +26,7 @@ Phosphor is available for [web](https://github.com/phosphor-icons/web), [React](
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body>
-    <i class="ph-smiley"></i>
+    <i class="ph ph-smiley"></i>
     <i class="ph-fill ph-heart" style="color: hotpink"></i>
     <i class="ph-thin ph-cube"></i>
   </body>
