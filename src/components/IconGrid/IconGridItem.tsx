@@ -68,11 +68,10 @@ const IconGridItem = (props: IconGridItemProps) => {
   }, [originOffset]);
 
   return (
-    <motion.div
+    <motion.button
       className="grid-item"
       key={name}
       ref={ref}
-      tabIndex={0}
       style={{
         ...style,
         backgroundColor: isOpen ? "var(--background-layer)" : undefined,
@@ -80,7 +79,6 @@ const IconGridItem = (props: IconGridItemProps) => {
       custom={delayRef}
       transition={transition}
       variants={itemVariants}
-      onKeyPress={(e) => e.key === "Enter" && handleOpen()}
       onClick={handleOpen}
     >
       <Icon />
@@ -89,7 +87,7 @@ const IconGridItem = (props: IconGridItemProps) => {
         {isNew && <span className="badge new">•</span>}
         {isUpdated && <span className="badge updated">•</span>}
       </p>
-    </motion.div>
+    </motion.button>
   );
 };
 
