@@ -16,6 +16,8 @@
 
 .grid-item {
   display: flex;
+  appearance: none;
+  background: transparent;
   box-sizing: border-box;
   width: 160px;
   height: 160px;
