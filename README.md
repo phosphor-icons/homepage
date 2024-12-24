@@ -23,7 +23,7 @@ Phosphor is available for [web](https://github.com/phosphor-icons/web), [React](
 <!doctype html>
 <html>
   <head>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
   </head>
   <body>
     <i class="ph ph-smiley"></i>
