@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'README.md'
+      - '.github/FUNDING.yaml'
     branches:
       - master
   workflow_dispatch:  # Allows manual triggering
@@ -84,8 +85,7 @@ jobs:
             git checkout -b $BRANCH
 
             # Commit and push changes
-            git add README.md
-            git commit -m "chore(docs): sync readme section"
+            git commit -am "chore(docs): sync readme section"
             git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ matrix.repository }}.git" $BRANCH
 
             # Create PR using the GitHub CLI
