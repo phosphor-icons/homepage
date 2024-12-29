@@ -2,10 +2,10 @@ name: Sync documentation
 
 on:
   push:
-    # paths:
-    #   - 'README.md'
-    # branches:
-    #   - master
+    paths:
+      - 'README.md'
+    branches:
+      - master
   workflow_dispatch:  # Allows manual triggering
 
 concurrency:
