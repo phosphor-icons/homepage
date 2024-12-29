@@ -71,7 +71,7 @@ jobs:
 
               # Create PR
               gh pr create \
-                --title "Sync README section" \
+                --title "chore(docs): sync readme section" \
                 --body "Automated PR to sync README section from master repository" \
                 --base main
             fi
