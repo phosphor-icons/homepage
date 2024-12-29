@@ -20,6 +20,7 @@
   ],
   "repository": "github:phosphor-icons/homepage",
   "private": true,
+  "packageManager": "pnpm@9",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

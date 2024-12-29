@@ -1,0 +1,51 @@
+name: Build and deploy to production
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Add SSH Key to known_hosts
+        env:
+          KNOWN_HOSTS_ENTRY: ${{ secrets.DREAMHOST_KNOWN_HOSTS_ENTRY }}
+          HOST: ${{ secrets.HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$KNOWN_HOSTS_ENTRY" >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Build static site
+        run: pnpm build
+
+      - name: Deploy via rsync and sshpass
+        env:
+          USERNAME: ${{ secrets.DREAMHOST_FTP_USERNAME }}
+          PASSWORD: ${{ secrets.DREAMHOST_FTP_PASSWORD }}
+          HOST: ${{ secrets.DREAMHOST_FTP_HOST }}
+          DEPLOY_PATH: phosphoricons.com
+        run: |
+          sshpass -p "$PASSWORD" rsync -avz --delete ./dist/* $USERNAME@$HOST:$DEPLOY_PATH
