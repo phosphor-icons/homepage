@@ -5,7 +5,7 @@ import OutboundLink from "@/components/OutboundLink";
 
 import "./Links.css";
 
-interface LinksProps {}
+interface LinksProps { }
 
 const Links = (_: LinksProps) => {
   return (
@@ -14,7 +14,7 @@ const Links = (_: LinksProps) => {
         <ArrowElbowDownRight size={24} />
         <OutboundLink
           className="nav-link"
-          href="https://phosphoricons.com/assets/phosphor-icons.zip"
+          href="/assets/phosphor-icons.zip"
           eventLabel="Download all"
           download
           type="application/zip"
@@ -45,7 +45,7 @@ const Links = (_: LinksProps) => {
       <div>
         <ArrowElbowDownRight size={24} />
         <OutboundLink
-          href="https://phosphoricons.com/assets/phosphor-icons.sketchplugin.zip"
+          href="/assets/phosphor-icons.sketchplugin.zip"
           eventLabel="Download sketch plugin"
           download
           type="application/zip"
