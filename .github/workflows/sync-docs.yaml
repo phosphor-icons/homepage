@@ -13,30 +13,14 @@ concurrency:
   group: 'docs'
   cancel-in-progress: true
 
-env:
-  # List of target repositories to sync to
-  TARGET_REPOS: >-
-    phosphor-icons/core
-    phosphor-icons/figma
-    phosphor-icons/flutter
-    phosphor-icons/penpot
-    phosphor-icons/phosphor-elm
-    phosphor-icons/play
-    phosphor-icons/react
-    phosphor-icons/sketch
-    phosphor-icons/swift
-    phosphor-icons/theme
-    phosphor-icons/unplugin
-    phosphor-icons/vue
-    phosphor-icons/web
-    phosphor-icons/webcomponents
-
 jobs:
   sync-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          path: source-repo
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -49,34 +33,42 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
+          cache-dependency-path: source-repo/pnpm-lock.json
+
+      - name: Read repository list
+        id: repo-list
+        run: |
+          echo "repos<<EOF" >> $GITHUB_OUTPUT
+          cat source-repo/.github/sync-repos.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Sync to target repositories
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "$TARGET_REPOS" | while read repo; do
+          for repo in ${{ steps.repo-list.outputs.repos }}; do
             echo "Syncing to $repo"
             # Clone target repository
             gh repo clone $repo target-repo
-            
+
             # Run sync script
             pnpm run sync-docs -- "$repo"
-            
+
             # Create PR if there are changes
             cd target-repo
             if [[ -n "$(git status --porcelain)" ]]; then
               git config user.name "github-actions[bot]"
               git config user.email "github-actions[bot]@users.noreply.github.com"
-              
+
               # Create branch
               BRANCH="sync-readme-$(date +%Y%m%d-%H%M%S)"
               git checkout -b $BRANCH
-              
+
               # Commit and push changes
               git add README.md
               git commit -m "Sync README section from master repository"
               git push origin $BRANCH
-              
+
               # Create PR
               gh pr create \
                 --title "Sync README section" \
