@@ -2,10 +2,9 @@ name: Sync README links section
 
 on:
   push:
-    paths:
-      - 'README.md'
+    # paths:
+    #   - 'README.md'
     # branches:
-    #   - main
     #   - master
   workflow_dispatch:  # Allows manual triggering
 
