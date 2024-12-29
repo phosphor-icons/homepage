@@ -1,7 +1,10 @@
-<img src="/meta/phosphor-mark-tight-black.png" width="96" align="right" />
-
 # Phosphor Icons
+<!-- BEGIN_LOGO -->
+<img src="/.github/logo.png" width="96" align="right" />
+<!-- END_LOGO -->
 
+
+<!-- BEGIN_OVERVIEW -->
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really.
 
 - 1,248 icons and counting
@@ -10,6 +13,7 @@ Phosphor is a flexible icon family for interfaces, diagrams, presentations — w
 - Raw stroke information retained to fine-tune the style
 
 More ways to use at [phosphoricons.com](https://phosphoricons.com).
+<!-- END_OVERVIEW -->
 
 ## For developers
 
