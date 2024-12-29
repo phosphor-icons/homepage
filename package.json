@@ -26,7 +26,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,vue}\"",
-    "generate": "tsx scripts/generate.ts"
+    "generate": "tsx scripts/generate.ts",
+    "sync-docs": "tsx scripts/sync-docs.ts"
   },
   "dependencies": {
     "@phosphor-icons/core": "^2.1.1",

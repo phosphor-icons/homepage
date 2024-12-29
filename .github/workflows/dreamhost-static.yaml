@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+concurrency:
+  group: 'prod'
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,6 +19,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
+          version: 9
           run_install: false
 
       - name: Install Node.js
