@@ -1,4 +1,4 @@
-name: Sync README links section
+name: Sync documentation
 
 on:
   push:
@@ -23,15 +23,15 @@ jobs:
           'phosphor-icons/flutter',
           'phosphor-icons/penpot',
           'phosphor-icons/phosphor-elm',
-          # 'phosphor-icons/play',
-          # 'phosphor-icons/react',
-          # 'phosphor-icons/sketch',
-          # 'phosphor-icons/swift',
-          # 'phosphor-icons/theme',
-          # 'phosphor-icons/unplugin',
-          # 'phosphor-icons/vue',
-          # 'phosphor-icons/web',
-          # 'phosphor-icons/webcomponents'
+          'phosphor-icons/play',
+          'phosphor-icons/react',
+          'phosphor-icons/sketch',
+          'phosphor-icons/swift',
+          'phosphor-icons/theme',
+          'phosphor-icons/unplugin',
+          'phosphor-icons/vue',
+          'phosphor-icons/web',
+          'phosphor-icons/webcomponents'
         ]
     steps:
       - name: Checkout
@@ -62,6 +62,9 @@ jobs:
         run: |
           echo "Syncing to ${{ matrix.repository }}"
 
+          # Get the source repository name and commit info
+          COMMIT_URL="https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
+
           # Clone target repository using HTTPS with token
           git clone "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ matrix.repository }}.git" target-repo
 
@@ -89,7 +92,7 @@ jobs:
             gh pr create \
               --repo "${{ matrix.repository }}" \
               --title "chore(docs): sync readme section" \
-              --body "Automated PR to sync README section from master repository" \
+              --body "Automated PR to sync README section. This change originates from the following commit: ${COMMIT_URL}". \
               --base $(git remote show origin | sed -n '/HEAD branch/s/.*: //p') \
               --head $BRANCH
           fi
