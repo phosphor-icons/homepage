@@ -1,0 +1,225 @@
+body {
+  font: 12px sans-serif;
+  text-align: center;
+  margin: 0px;
+}
+
+a {
+  color: inherit;
+  margin-left: 4px;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  flex: 1;
+  padding: 4px;
+  margin-bottom: 40px;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+}
+
+.icon {
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.1s;
+}
+
+.icon:hover {
+  background-color: rgba(163, 159, 171, 0.2);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-width: 313px;
+  margin: 16px;
+  padding: 0 16px 4px;
+}
+
+.empty-state p {
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  /* background-color: white; */
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.react-dropdown-select {
+  height: 32px !important;
+  justify-content: flex-start;
+  padding: 0 12px !important;
+  border-radius: 4px !important;
+  border: 1px solid #6a6a6a !important;
+  box-sizing: border-box !important;
+  background-color: #f6f6f6;
+}
+
+@media screen and (max-width: 558px) {
+  .react-dropdown-select {
+    width: 100% !important;
+  }
+}
+
+.react-dropdown-select-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.react-dropdown-select-content svg {
+  margin: 0 12px 0 0;
+}
+
+.react-dropdown-select:focus-within {
+  background-color: white;
+  color: black;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.react-dropdown-select-item {
+  color: #333;
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+}
+
+.react-dropdown-select-item svg {
+  margin: 0 12px;
+}
+
+.react-dropdown-select-dropdown {
+  position: absolute;
+  left: 0;
+  top: 39px !important;
+  border: none;
+  width: 500px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px !important;
+  max-height: 300px;
+  overflow: auto;
+  z-index: 9;
+  box-shadow: none;
+}
+.react-dropdown-select-item {
+  color: black;
+}
+.react-dropdown-select-item:hover {
+  color: white;
+  background-color: #FE5100 !important;
+}
+
+.react-dropdown-select-item.react-dropdown-select-item-selected,
+.react-dropdown-select-item.react-dropdown-select-item-active {
+  color: white !important;
+  background-color: #FE5100 !important;
+}
+
+.react-dropdown-select-item:focus {
+  color: white !important;
+  background-color: #FE5100 !important;
+}
+
+.react-dropdown-select-item.react-dropdown-select-item-disabled {
+  background: #777;
+  color: #ccc;
+}
+
+menu.toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  /* background-color: #2c2c2c; */
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-contents {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  padding: 0 4px 8px;
+}
+
+.toolbar-contents > * {
+  margin: 8px 4px 0;
+}
+
+.search-bar {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid #6a6a6a;
+  box-sizing: border-box;
+}
+
+.search-bar:focus-within {
+  color: black !important;
+  background-color: white !important;
+}
+
+.search-bar input {
+  height: 100%;
+  flex: 1;
+  border: none;
+  margin-left: 4px;
+  padding: 0;
+  color: inherit;
+  background-color: transparent !important;
+  text-overflow: ellipsis;
+  outline: none !important;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.search-bar input:focus {
+  outline: none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: inherit;
+}
+
+.search-bar input::placeholder {
+  color: inherit;
+}
+
+.search-bar input:focus::placeholder {
+  display: none;
+  color: transparent;
+}
+
+.clear-icon {
+  cursor: pointer;
+}
+
+.wait-icon {
+  cursor: wait;
+}
