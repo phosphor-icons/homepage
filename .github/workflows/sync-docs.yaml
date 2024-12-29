@@ -19,10 +19,10 @@ jobs:
       matrix:
         repository: [
           'phosphor-icons/core',
-          # 'phosphor-icons/figma',
-          # 'phosphor-icons/flutter',
+          'phosphor-icons/figma',
+          'phosphor-icons/flutter',
           'phosphor-icons/penpot',
-          # 'phosphor-icons/phosphor-elm',
+          'phosphor-icons/phosphor-elm',
           # 'phosphor-icons/play',
           # 'phosphor-icons/react',
           # 'phosphor-icons/sketch',
@@ -90,6 +90,6 @@ jobs:
               --repo "${{ matrix.repository }}" \
               --title "chore(docs): sync readme section" \
               --body "Automated PR to sync README section from master repository" \
-              --base main \
+              --base $(git remote show origin | sed -n '/HEAD branch/s/.*: //p') \
               --head $BRANCH
           fi
