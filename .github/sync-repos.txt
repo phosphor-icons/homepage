@@ -1,0 +1,14 @@
+    phosphor-icons/core
+    phosphor-icons/figma
+    phosphor-icons/flutter
+    phosphor-icons/penpot
+    phosphor-icons/phosphor-elm
+    phosphor-icons/play
+    phosphor-icons/react
+    phosphor-icons/sketch
+    phosphor-icons/swift
+    phosphor-icons/theme
+    phosphor-icons/unplugin
+    phosphor-icons/vue
+    phosphor-icons/web
+    phosphor-icons/webcomponents
