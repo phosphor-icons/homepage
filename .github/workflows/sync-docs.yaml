@@ -15,6 +15,24 @@ concurrency:
 jobs:
   sync-docs:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repository: [
+          'phosphor-icons/core',
+          # 'phosphor-icons/figma',
+          # 'phosphor-icons/flutter',
+          'phosphor-icons/penpot',
+          # 'phosphor-icons/phosphor-elm',
+          # 'phosphor-icons/play',
+          # 'phosphor-icons/react',
+          # 'phosphor-icons/sketch',
+          # 'phosphor-icons/swift',
+          # 'phosphor-icons/theme',
+          # 'phosphor-icons/unplugin',
+          # 'phosphor-icons/vue',
+          # 'phosphor-icons/web',
+          # 'phosphor-icons/webcomponents'
+        ]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,46 +52,44 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: source-repo/pnpm-lock.yaml
 
-      - name: Read repository list
-        id: repo-list
-        run: |
-          echo "repos<<EOF" >> $GITHUB_OUTPUT
-          cat source-repo/.github/sync-repos.txt >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+      - name: Install dependencies
+        working-directory: source-repo
+        run: pnpm install
 
       - name: Sync to target repositories
         env:
-          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.SYNC_PAT }}
         run: |
-          for repo in ${{ steps.repo-list.outputs.repos }}; do
-            echo "Syncing to $repo"
-            # Clone target repository
-            gh repo clone $repo target-repo
+          echo "Syncing to ${{ matrix.repository }}"
 
-            # Run sync script
-            pnpm run sync-docs -- "$repo"
+          # Clone target repository using HTTPS with token
+          git clone "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ matrix.repository }}.git" target-repo
 
-            # Create PR if there are changes
-            cd target-repo
-            if [[ -n "$(git status --porcelain)" ]]; then
-              git config user.name "github-actions[bot]"
-              git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Run sync script
+          cd source-repo
+          pnpm run sync-docs -- target-repo
+          cd ..
 
-              # Create branch
-              BRANCH="sync-readme-$(date +%Y%m%d-%H%M%S)"
-              git checkout -b $BRANCH
+          # Create PR if there are changes
+          cd target-repo
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
 
-              # Commit and push changes
-              git add README.md
-              git commit -m "Sync README section from master repository"
-              git push origin $BRANCH
+            # Create branch
+            BRANCH="sync-readme-$(date +%Y%m%d-%H%M%S)"
+            git checkout -b $BRANCH
 
-              # Create PR
-              gh pr create \
-                --title "chore(docs): sync readme section" \
-                --body "Automated PR to sync README section from master repository" \
-                --base main
-            fi
-            cd ..
-            rm -rf target-repo
-          done
+            # Commit and push changes
+            git add README.md
+            git commit -m "chore(docs): sync readme section"
+            git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ matrix.repository }}.git" $BRANCH
+
+            # Create PR using the GitHub CLI
+            gh pr create \
+              --repo "${{ matrix.repository }}" \
+              --title "chore(docs): sync readme section" \
+              --body "Automated PR to sync README section from master repository" \
+              --base main \
+              --head $BRANCH
+          fi
