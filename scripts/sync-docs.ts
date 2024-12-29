@@ -15,7 +15,7 @@ const SYNC_SECTIONS = ["LINKS"];
 
   for (const section of SYNC_SECTIONS) {
     const sectionContent = extractSection(readmeContent, section);
-    if (!sectionContent) throw new Error(`Section ${section} not found in README.md`);
+    if (!sectionContent) continue;
 
     const targetReadmeContent = fs.readFileSync(targetReadmePath, "utf8");
     const updatedDocsContent = updateSection(targetReadmeContent, section, sectionContent);
