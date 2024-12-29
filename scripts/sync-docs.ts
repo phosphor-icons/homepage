@@ -1,25 +1,52 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const SYNC_SECTIONS = ["LINKS"];
+const README_PATH = "README.md";
+const FUNDING_PATH = ".github/FUNDING.yaml";
+const LOGO_PATH = ".github/logo.png";
+
+const SYNC_SECTIONS = ["LOGO", "OVERVIEW", "LINKS"];
+const SYNC_FILES: Array<string | Array<string>> = [
+  [FUNDING_PATH, ".github/FUNDING.yml"],
+  LOGO_PATH,
+]; // These files will be replaced in the target repository
 
 (function main() {
   const targetRepo = process.argv[process.argv.length - 1];
   if (!targetRepo) throw new Error("Target repository not provided");
 
-  const targetReadmePath = path.resolve(__dirname, `../../${targetRepo}/README.md`);
-  if (!fs.existsSync(targetReadmePath)) throw new Error(`README.md not found in ${targetRepo}`);
 
-  const readmePath = path.resolve(__dirname, "../README.md");
+  const readmePath = path.resolve(__dirname, `../${README_PATH}`);
   const readmeContent = fs.readFileSync(readmePath, "utf8");
 
-  for (const section of SYNC_SECTIONS) {
-    const sectionContent = extractSection(readmeContent, section);
-    if (!sectionContent) continue;
+  const targetReadmePath = path.resolve(__dirname, `../../${targetRepo}/${README_PATH}`);
+  if (!fs.existsSync(targetReadmePath)) throw new Error(`README.md not found in ${targetRepo}`);
 
-    const targetReadmeContent = fs.readFileSync(targetReadmePath, "utf8");
-    const updatedDocsContent = updateSection(targetReadmeContent, section, sectionContent);
-    fs.writeFileSync(targetReadmePath, updatedDocsContent);
+  for (const section of SYNC_SECTIONS) {
+    const readmeSection = extractSection(readmeContent, section);
+    if (readmeSection) {
+      const targetReadmeContent = fs.readFileSync(targetReadmePath, "utf8");
+      const updatedDocsContent = updateSection(targetReadmeContent, section, readmeSection);
+      fs.writeFileSync(targetReadmePath, updatedDocsContent);
+    }
+  }
+
+  for (const file of SYNC_FILES) {
+    const fileName = Array.isArray(file) ? file[0] : file;
+    const filePath = path.resolve(__dirname, `../${fileName}`);
+    const fileContent = fs.readFileSync(filePath, "utf8");
+
+    if (Array.isArray(file)) {
+      for (const alias of file) {
+        const targetPath = path.resolve(__dirname, `../../${targetRepo}/${alias}`);
+        if (fs.existsSync(targetPath)) {
+          fs.rmSync(targetPath);
+        }
+      }
+    }
+
+    const targetPath = path.resolve(__dirname, `../../${targetRepo}/${fileName}`);
+    fs.writeFileSync(targetPath, fileContent); // Overwrites the target file if it exists
   }
 })();
 

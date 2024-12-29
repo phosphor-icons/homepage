@@ -1,6 +1,6 @@
 # Phosphor Icons
 <!-- BEGIN_LOGO -->
-<img src="/.github/logo.png" width="96" align="right" />
+<img src="/.github/logo.png" width="128" align="right" />
 <!-- END_LOGO -->
 
 
