@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-          cache-dependency-path: source-repo/pnpm-lock.json
+          cache-dependency-path: source-repo/pnpm-lock.yaml
 
       - name: Read repository list
         id: repo-list
