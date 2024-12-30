@@ -86,6 +86,7 @@ jobs:
             git checkout -b $BRANCH
 
             # Commit and push changes
+            git add .
             git commit -am "chore(docs): sync readme section"
             git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ matrix.repository }}.git" $BRANCH
 

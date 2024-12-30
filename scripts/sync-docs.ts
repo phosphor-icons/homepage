@@ -15,7 +15,6 @@ const SYNC_FILES: Array<string | Array<string>> = [
   const targetRepo = process.argv[process.argv.length - 1];
   if (!targetRepo) throw new Error("Target repository not provided");
 
-
   const readmePath = path.resolve(__dirname, `../${README_PATH}`);
   const readmeContent = fs.readFileSync(readmePath, "utf8");
 
@@ -36,6 +35,7 @@ const SYNC_FILES: Array<string | Array<string>> = [
     const filePath = path.resolve(__dirname, `../${fileName}`);
     const fileContent = fs.readFileSync(filePath, "utf8");
 
+    // If target file has aliases, remove them
     if (Array.isArray(file)) {
       for (const alias of file) {
         const targetPath = path.resolve(__dirname, `../../${targetRepo}/${alias}`);
@@ -45,8 +45,12 @@ const SYNC_FILES: Array<string | Array<string>> = [
       }
     }
 
+    // Write the target file and intermediate directories, or overwrite if it already exists
     const targetPath = path.resolve(__dirname, `../../${targetRepo}/${fileName}`);
-    fs.writeFileSync(targetPath, fileContent); // Overwrites the target file if it exists
+    if (!fs.existsSync(path.dirname(targetPath))) {
+      fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+    }
+    fs.writeFileSync(targetPath, fileContent);
   }
 })();
 
