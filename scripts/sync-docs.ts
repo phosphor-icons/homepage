@@ -33,7 +33,7 @@ const SYNC_FILES: Array<string | Array<string>> = [
   for (const file of SYNC_FILES) {
     const fileName = Array.isArray(file) ? file[0] : file;
     const filePath = path.resolve(__dirname, `../${fileName}`);
-    const fileContent = fs.readFileSync(filePath, "utf8");
+    const fileContent = fs.readFileSync(filePath);
 
     // If target file has aliases, remove them
     if (Array.isArray(file)) {
