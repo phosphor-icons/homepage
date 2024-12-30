@@ -5,6 +5,7 @@ on:
     paths:
       - 'README.md'
       - '.github/FUNDING.yaml'
+      - '.github/logo.png'
     branches:
       - master
   workflow_dispatch:  # Allows manual triggering

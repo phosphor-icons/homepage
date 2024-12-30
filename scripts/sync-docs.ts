@@ -8,7 +8,7 @@ const LOGO_PATH = ".github/logo.png";
 const SYNC_SECTIONS = ["LOGO", "OVERVIEW", "LINKS"];
 const SYNC_FILES: Array<string | Array<string>> = [
   [FUNDING_PATH, ".github/FUNDING.yml"],
-  LOGO_PATH,
+  [LOGO_PATH, "meta"],
 ]; // These files will be replaced in the target repository
 
 (function main() {
@@ -40,7 +40,7 @@ const SYNC_FILES: Array<string | Array<string>> = [
       for (const alias of file) {
         const targetPath = path.resolve(__dirname, `../../${targetRepo}/${alias}`);
         if (fs.existsSync(targetPath)) {
-          fs.rmSync(targetPath);
+          fs.rmSync(targetPath, { recursive: true });
         }
       }
     }
