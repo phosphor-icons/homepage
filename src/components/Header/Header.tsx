@@ -60,6 +60,10 @@ const Header = (_: HeaderProps) => {
               We are now processing donations via{" "}
               <a href="https://www.buymeacoffee.com/phosphoricons">
                 Buy Me a Coffee
+              </a>{" "}
+              and{" "}
+              <a href="https://ko-fi.com/phosphoricons">
+                Ko-fi
               </a>
               ! Your one-time or recurring contribution does a lot to keep us
               going. Please show us some support if you can!
