@@ -21,18 +21,27 @@ Phosphor is available for [web](https://github.com/phosphor-icons/web), [React](
 
 ### Vanilla Web
 
-- **Simple to use** – We use a similar approach as many other icon sets out there, providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. But you don't need to know that. All you need to do is add the script to the document `<head>`, and drop in icons with an `<i/>` tag and the appropriate class:
+- **Simple to use** – We use a similar approach as many other icon sets out there, providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. But you don't need to know that. All you need to do is add the stylesheet for each weight you need to the document `<head>`, and drop in icons with an `<i/>` tag and the appropriate class:
 
 ```html
 <!doctype html>
 <html>
   <head>
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
   </head>
   <body>
     <i class="ph ph-smiley"></i>
     <i class="ph-fill ph-heart" style="color: hotpink"></i>
-    <i class="ph-thin ph-cube"></i>
+    <i class="ph ph-cube"></i>
   </body>
 </html>
 ```
