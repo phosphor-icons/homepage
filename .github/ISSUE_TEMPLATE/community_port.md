@@ -1,4 +1,3 @@
-
 ---
 name: Community port
 about: Add your Phosphor port to the list of community projects on all Phosphor repositories
