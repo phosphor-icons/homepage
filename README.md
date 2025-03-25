@@ -136,6 +136,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 - [haruaki07/phosphor-svelte](https://github.com/haruaki07/phosphor-svelte) ▲ Phosphor icons for Svelte apps
 - [IgnaceMaes/ember-phosphor-icons](https://github.com/IgnaceMaes/ember-phosphor-icons) ▲ Phosphor icons for Ember apps
 - [iota-uz/icons](https://github.com/iota-uz/icons) ▲ Phosphor icons as Templ components (Go)
+- [jajuma/phosphorhyva](https://www.jajuma.de/en/jajuma-develop/hyva-extensions/phosphor-icons-for-hyva-themes-extension) ▲ Phosphor icons for Magento 2 & Mage-OS with Hyvä Theme
 - [lucagoslar/phosphor-css](https://github.com/lucagoslar/phosphor-css) ▲ CSS wrapper for Phosphor SVG icons
 - [maful/ruby-phosphor-icons](https://github.com/maful/ruby-phosphor-icons) ▲ Phosphor icons for Ruby and Rails applications
 - [meadowsys/phosphor-svgs](https://github.com/meadowsys/phosphor-svgs) ▲ Phosphor icons as Rust string constants
@@ -151,7 +152,6 @@ ReactDOM.render(<App />, document.getElementById("root"));
 - [SorenHolstHansen/phosphor-leptos](https://github.com/SorenHolstHansen/phosphor-leptos) ▲ Phosphor icon component library for Leptos apps (Rust)
 - [vnphanquang/phosphor-icons-tailwindcss](https://github.com/vnphanquang/phosphor-icons-tailwindcss) ▲ TailwindCSS plugin for Phosphor icons
 - [wireui/phosphoricons](https://github.com/wireui/phosphoricons) ▲ Phosphor icons for Laravel
-- [jajuma/phosphorhyva](https://www.jajuma.de/en/jajuma-develop/hyva-extensions/phosphor-icons-for-hyva-themes-extension) ▲ Phosphor icons for Magento 2 & Mage-OS with Hyvä Theme
 
 If you've made a port of Phosphor and you want to see it here, just open a PR [here](https://github.com/phosphor-icons/homepage)!
 
