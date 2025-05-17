@@ -1,8 +1,8 @@
 import {
-  ArrowCircleUpRight,
-  ArrowCircleDown,
-  MegaphoneSimple,
-  HandHeart,
+  ArrowCircleUpRightIcon,
+  ArrowCircleDownIcon,
+  MegaphoneSimpleIcon,
+  HandHeartIcon,
 } from "@phosphor-icons/react";
 
 import Banner from "@/components/Banner";
@@ -42,7 +42,7 @@ const Header = (_: HeaderProps) => {
       <Banner.Container>
         <Banner id={"2.1.0"}>
           <div className="message">
-            <MegaphoneSimple size={32} mirrored />
+            <MegaphoneSimpleIcon size={32} mirrored />
             <small>
               Phosphor v2.1 is out, adding 268 new icons and some general
               revisions. Check our{" "}
@@ -55,7 +55,7 @@ const Header = (_: HeaderProps) => {
         </Banner>
         <Banner id={"buymeacoffee2"}>
           <div className="message">
-            <HandHeart size={32} mirrored />
+            <HandHeartIcon size={32} mirrored />
             <small>
               We are now processing donations via{" "}
               <a href="https://www.buymeacoffee.com/phosphoricons">
@@ -87,11 +87,11 @@ const Header = (_: HeaderProps) => {
           </h2>
           <div className="button-container">
             <button className="main-button" onClick={handleGetStarted}>
-              <ArrowCircleUpRight size={24} />
+              <ArrowCircleUpRightIcon size={24} />
               Get started
             </button>
             <button className="main-button" onClick={handleScrollToIcons}>
-              <ArrowCircleDown size={24} />
+              <ArrowCircleDownIcon size={24} />
               Explore icons
             </button>
           </div>

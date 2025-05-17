@@ -1,5 +1,4 @@
 import { Fragment, Suspense, useMemo } from "react";
-import { useRecoilValue } from "recoil";
 
 import "./App.css";
 import Header from "@/components/Header";
@@ -10,13 +9,13 @@ import ErrorBoundary from "@/components/ErrorBoundary";
 import Notice from "@/components/Notice";
 // import Recipes from "@/components/Recipes";
 import { useCSSVariables } from "@/hooks";
-import { isDarkThemeSelector } from "@/state";
+import { ApplicationTheme, useApplicationStore } from "@/state";
 
 const errorFallback = <Notice message="Search error" />;
 const waitingFallback = <Notice type="none" message="" />;
 
 const App: React.FC<any> = () => {
-  const isDark = useRecoilValue(isDarkThemeSelector);
+  const isDark = useApplicationStore.use.applicationTheme() === ApplicationTheme.DARK;
 
   useCSSVariables(
     useMemo(

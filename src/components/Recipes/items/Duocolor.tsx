@@ -2,10 +2,10 @@ import { useMemo } from "react";
 import {
   Icon,
   IconProps,
-  Barricade,
-  GasCan,
-  IceCream,
-  FlyingSaucer,
+  BarricadeIcon,
+  GasCanIcon,
+  IceCreamIcon,
+  FlyingSaucerIcon,
 } from "@phosphor-icons/react";
 
 import { RecipeProps } from "../Recipe";
@@ -51,10 +51,10 @@ const duocolor: RecipeProps = {
   Example() {
     return (
       <div className="example">
-        <Duocolor Icon={FlyingSaucer} duocolor="darkcyan" />
-        <Duocolor Icon={Barricade} color="darkgray" duocolor="orange" />
-        <Duocolor Icon={IceCream} color="saddlebrown" duocolor="lightpink" />
-        <Duocolor Icon={GasCan} duocolor="indianred" />
+        <Duocolor Icon={FlyingSaucerIcon} duocolor="darkcyan" />
+        <Duocolor Icon={BarricadeIcon} color="darkgray" duocolor="orange" />
+        <Duocolor Icon={IceCreamIcon} color="saddlebrown" duocolor="lightpink" />
+        <Duocolor Icon={GasCanIcon} duocolor="indianred" />
       </div>
     );
   },

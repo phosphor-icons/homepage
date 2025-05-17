@@ -1,16 +1,8 @@
 import { useRef, useEffect } from "react";
-import { useRecoilValue } from "recoil";
 import { motion, useAnimation } from "framer-motion";
 import { IconContext } from "@phosphor-icons/react";
 
-import {
-  iconWeightAtom,
-  iconSizeAtom,
-  iconColorAtom,
-  filteredQueryResultsSelector,
-  isDarkThemeSelector,
-  searchQueryAtom,
-} from "@/state";
+import { ApplicationTheme, useApplicationStore } from "@/state";
 import Notice from "@/components/Notice";
 
 import Panel from "./Panel";
@@ -31,12 +23,14 @@ const defaultSearchTags = [
 type IconGridProps = {};
 
 const IconGrid = (_: IconGridProps) => {
-  const weight = useRecoilValue(iconWeightAtom);
-  const size = useRecoilValue(iconSizeAtom);
-  const color = useRecoilValue(iconColorAtom);
-  const isDark = useRecoilValue(isDarkThemeSelector);
-  const query = useRecoilValue(searchQueryAtom);
-  const filteredQueryResults = useRecoilValue(filteredQueryResultsSelector);
+  const {
+    iconWeight: weight,
+    iconSize: size,
+    iconColor: color,
+    applicationTheme,
+    filteredQueryResults,
+    searchQuery: query,
+  } = useApplicationStore();
 
   const originOffset = useRef({ top: 0, left: 0 });
   const controls = useAnimation();
@@ -74,7 +68,7 @@ const IconGrid = (_: IconGridProps) => {
             <IconGridItem
               key={iconEntry.name}
               index={index}
-              isDark={isDark}
+              isDark={applicationTheme === ApplicationTheme.DARK}
               entry={iconEntry}
               originOffset={originOffset}
             />

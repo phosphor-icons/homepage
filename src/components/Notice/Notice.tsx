@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
-import { HourglassMedium, Question, SmileyXEyes } from "@phosphor-icons/react";
+import { HourglassMediumIcon, QuestionIcon, SmileyXEyesIcon } from "@phosphor-icons/react";
 
 interface NoticeProps {
   message?: ReactNode;
@@ -22,9 +22,9 @@ const Notice = ({
         transition={{ duration: 0.5 }}
       >
         <div className="empty-list-box">
-          {type === "wait" && <HourglassMedium size={128} weight="fill" />}
-          {type === "help" && <Question size={128} weight="fill" />}
-          {type === "warn" && <SmileyXEyes size={128} weight="fill" />}
+          {type === "wait" && <HourglassMediumIcon size={128} weight="fill" />}
+          {type === "help" && <QuestionIcon size={128} weight="fill" />}
+          {type === "warn" && <SmileyXEyesIcon size={128} weight="fill" />}
           <p>{message}</p>
           {children}
         </div>

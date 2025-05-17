@@ -1,17 +1,20 @@
 import { useCallback } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { EyedropperSample } from "@phosphor-icons/react";
+import { useShallow } from "zustand/react/shallow";
+import { EyedropperSampleIcon } from "@phosphor-icons/react";
 
 import { useThrottled } from "@/hooks";
-import { iconColorAtom, isDarkThemeSelector } from "@/state";
+import { ApplicationTheme, useApplicationStore } from "@/state";
 
 import "./ColorInput.css";
 
 type ColorInputProps = {};
 
 const ColorInput = (_: ColorInputProps) => {
-  const [color, setColor] = useRecoilState(iconColorAtom);
-  const isDark = useRecoilValue(isDarkThemeSelector);
+  const { color, setColor, theme } = useApplicationStore(useShallow((state) => ({
+    color: state.iconColor,
+    setColor: state.setIconColor,
+    theme: state.applicationTheme,
+  })));
 
   const handleColorChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,9 +49,9 @@ const ColorInput = (_: ColorInputProps) => {
         onChange={throttledColorChange}
         value={color}
       />
-      <span style={{ color: isDark ? "black" : "white" }}>
+      <span style={{ color: theme === ApplicationTheme.DARK ? "black" : "white" }}>
         {color === "currentColor" ? (
-          <EyedropperSample size={28} weight="fill" />
+          <EyedropperSampleIcon size={28} weight="fill" />
         ) : (
           color
         )}

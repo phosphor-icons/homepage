@@ -1,7 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { RecoilRoot } from "recoil";
-import { RecoilURLSyncJSON } from "recoil-sync";
 import App from "./components/App";
 import ReactGA from "react-ga4";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -15,24 +13,20 @@ const root = createRoot(container!);
 
 root.render(
   <StrictMode>
-    <RecoilRoot>
-      <ErrorBoundary
-        fallback={
-          <Notice
-            message={
-              <p>
-                An error occurred. Try going{" "}
-                <a href={window.location.origin}>home</a>.
-              </p>
-            }
-          />
-        }
-      >
-        <RecoilURLSyncJSON location={{ part: "queryParams" }}>
-          <App />
-        </RecoilURLSyncJSON>
-      </ErrorBoundary>
-    </RecoilRoot>
+    <ErrorBoundary
+      fallback={
+        <Notice
+          message={
+            <p>
+              An error occurred. Try going{" "}
+              <a href={window.location.origin}>home</a>.
+            </p>
+          }
+        />
+      }
+    >
+      <App />
+    </ErrorBoundary>
   </StrictMode>
 );
 

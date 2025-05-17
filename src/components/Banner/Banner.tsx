@@ -1,6 +1,6 @@
 import { ReactNode, Dispatch, SetStateAction } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { XCircle } from "@phosphor-icons/react";
+import { XCircleIcon } from "@phosphor-icons/react";
 import ReactGA from "react-ga4";
 
 import { useLocalStorage } from "@/hooks";
@@ -44,9 +44,9 @@ const Banner = ({ id, children, onClose }: BannerProps) => {
     onClose
       ? onClose(setBannerState)
       : setBannerState((state) => ({
-          ...state,
-          seen: { ...state.seen, [id]: true },
-        }));
+        ...state,
+        seen: { ...state.seen, [id]: true },
+      }));
   };
 
   return (
@@ -69,7 +69,7 @@ const Banner = ({ id, children, onClose }: BannerProps) => {
                 e.key === "Enter" && handleClose();
               }}
             >
-              <XCircle size={28} weight="regular" />
+              <XCircleIcon size={28} weight="regular" />
             </button>
           </div>
         </motion.aside>

@@ -1,4 +1,4 @@
-import { ArrowElbowDownRight } from "@phosphor-icons/react";
+import { ArrowElbowDownRightIcon } from "@phosphor-icons/react";
 
 import { iconCount } from "@/lib/icons";
 import OutboundLink from "@/components/OutboundLink";
@@ -11,7 +11,7 @@ const Links = (_: LinksProps) => {
   return (
     <div className="links">
       <div>
-        <ArrowElbowDownRight size={24} />
+        <ArrowElbowDownRightIcon size={24} />
         <OutboundLink
           className="nav-link"
           href="/assets/phosphor-icons.zip"
@@ -24,7 +24,7 @@ const Links = (_: LinksProps) => {
       </div>
 
       <div>
-        <ArrowElbowDownRight size={24} />
+        <ArrowElbowDownRightIcon size={24} />
         <span>
           <OutboundLink
             href="https://www.figma.com/community/plugin/898620911119764089/Phosphor-Icons"
@@ -43,7 +43,7 @@ const Links = (_: LinksProps) => {
       </div>
 
       <div>
-        <ArrowElbowDownRight size={24} />
+        <ArrowElbowDownRightIcon size={24} />
         <OutboundLink
           href="/assets/phosphor-icons.sketchplugin.zip"
           eventLabel="Download sketch plugin"
@@ -55,7 +55,7 @@ const Links = (_: LinksProps) => {
       </div>
 
       <div>
-        <ArrowElbowDownRight size={24} />
+        <ArrowElbowDownRightIcon size={24} />
         <OutboundLink
           href="https://play.phosphoricons.com"
           eventLabel="Showcase"
@@ -65,7 +65,7 @@ const Links = (_: LinksProps) => {
       </div>
 
       <div>
-        <ArrowElbowDownRight size={24} />
+        <ArrowElbowDownRightIcon size={24} />
         <OutboundLink
           href="https://github.com/phosphor-icons/homepage"
           eventLabel="GitHub"
@@ -74,7 +74,7 @@ const Links = (_: LinksProps) => {
         </OutboundLink>
       </div>
       <div>
-        <ArrowElbowDownRight size={24} />
+        <ArrowElbowDownRightIcon size={24} />
         <OutboundLink
           href="https://github.com/phosphor-icons/homepage/issues"
           eventLabel="Request"
@@ -84,7 +84,7 @@ const Links = (_: LinksProps) => {
       </div>
 
       <div>
-        <ArrowElbowDownRight size={24} />
+        <ArrowElbowDownRightIcon size={24} />
         <span>
           <OutboundLink
             href="https://www.buymeacoffee.com/phosphoricons"
@@ -103,7 +103,7 @@ const Links = (_: LinksProps) => {
       </div>
 
       <div>
-        <ArrowElbowDownRight size={24} />
+        <ArrowElbowDownRightIcon size={24} />
         <OutboundLink
           href="https://twitter.com/_phosphoricons"
           eventLabel="Twitter"

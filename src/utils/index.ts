@@ -30,29 +30,36 @@ export function getCodeSnippets({
   const { r, g, b } = TinyColor(color).toRgb();
 
   return {
-    [SnippetType.HTML]: `<i class="ph${isDefaultWeight ? "" : `-${weight}`
-      } ph-${name}"></i>`,
-    [SnippetType.REACT]: `<${displayName} size={${size}} ${!isDefaultColor ? `color="${color}" ` : ""
-      }${isDefaultWeight ? "" : `weight="${weight}" `}/>`,
-    [SnippetType.VUE]: `<Ph${displayName} :size="${size}" ${!isDefaultColor ? `color="${color}" ` : ""
-      }${isDefaultWeight ? "" : `weight="${weight}" `}/>`,
+    [SnippetType.HTML]: `<i class="ph${
+      isDefaultWeight ? "" : `-${weight}`
+    } ph-${name}"></i>`,
+    [SnippetType.REACT]: `<${displayName} size={${size}} ${
+      !isDefaultColor ? `color="${color}" ` : ""
+    }${isDefaultWeight ? "" : `weight="${weight}" `}/>`,
+    [SnippetType.VUE]: `<Ph${displayName} :size="${size}" ${
+      !isDefaultColor ? `color="${color}" ` : ""
+    }${isDefaultWeight ? "" : `weight="${weight}" `}/>`,
     [SnippetType.FLUTTER]: `Icon(\n  PhosphorIcons.${displayName.replace(
       /^\w/,
       (c) => c.toLowerCase()
-    )}${isDefaultWeight ? "" : weight.replace(/^\w/, (c) => c.toUpperCase())
-      },\n  size: ${size.toFixed(1)},\n${!isDefaultColor ? `  color: Color(0xff${color.replace("#", "")}),\n` : ""
-      })`,
-    [SnippetType.ELM]: `Phosphor.${camelName}${isDefaultWeight ? "" : " " + pascalWeight
-      }
+    )}${
+      isDefaultWeight ? "" : weight.replace(/^\w/, (c) => c.toUpperCase())
+    },\n  size: ${size.toFixed(1)},\n${
+      !isDefaultColor ? `  color: Color(0xff${color.replace("#", "")}),\n` : ""
+    })`,
+    [SnippetType.ELM]: `Phosphor.${camelName}${
+      isDefaultWeight ? "" : " " + pascalWeight
+    }
     |> withSize ${size}
     |> withSizeUnit "px"
     |> toHtml []`,
-    [SnippetType.SWIFT]: `Ph.${camelName}.${weight}${!isDefaultColor
+    [SnippetType.SWIFT]: `Ph.${camelName}.${weight}${
+      !isDefaultColor
         ? `\n    .color(red: ${u8ToCGFloatStr(r)}, green: ${u8ToCGFloatStr(
-          g
-        )}, blue: ${u8ToCGFloatStr(b)})`
+            g
+          )}, blue: ${u8ToCGFloatStr(b)})`
         : ""
-      }
+    }
     .frame(width: ${size}, height: ${size})
     `,
   };
@@ -67,4 +74,41 @@ export function supportsWeight({
 }): boolean {
   if (type !== SnippetType.FLUTTER) return true;
   return weight !== IconStyle.DUOTONE;
+}
+
+export function parseWeight(weight: string | null | undefined): IconStyle {
+  switch (weight?.replace('"', "").toLowerCase()) {
+    case "thin":
+      return IconStyle.THIN;
+    case "light":
+      return IconStyle.LIGHT;
+    case "bold":
+      return IconStyle.BOLD;
+    case "fill":
+      return IconStyle.FILL;
+    case "duotone":
+      return IconStyle.DUOTONE;
+    case "regular":
+    default:
+      return IconStyle.REGULAR;
+  }
+}
+
+export function parseQuery(query: string | null | undefined): string {
+  return query?.replace('"', "") ?? "";
+}
+
+export function parseSize(size: string | null | undefined): number {
+  const sizeAsNumber = parseInt(size?.replace('"', "") ?? "32", 10);
+  return Number.isFinite(sizeAsNumber)
+    ? Math.min(Math.max(sizeAsNumber, 16), 96)
+    : 32;
+}
+
+export function parseColor(color: string | null | undefined): string {
+  const parsedColor = TinyColor(color?.replace('"', "") ?? "#000000");
+  if (parsedColor.isValid()) {
+    return parsedColor.toHexString();
+  }
+  return "#000000";
 }

@@ -1,4 +1,4 @@
-import { ArrowCircleUpRight } from "@phosphor-icons/react";
+import { ArrowCircleUpRightIcon } from "@phosphor-icons/react";
 
 export type RecipeProps = {
   title: string;
@@ -12,7 +12,7 @@ const Recipe = ({ url, Example }: RecipeProps) => {
       {/* <h1>{title}</h1> */}
       <div className="recipe-linkout">
         <span>Open on StackBlitz</span>
-        <ArrowCircleUpRight weight="fill" size={32} />
+        <ArrowCircleUpRightIcon weight="fill" size={32} />
       </div>
       <Example />
     </a>

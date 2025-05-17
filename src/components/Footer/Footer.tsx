@@ -1,13 +1,12 @@
-import { useRecoilValue } from "recoil";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { ArrowULeftUp, Coffee, HandHeart } from "@phosphor-icons/react";
+import { ArrowULeftUpIcon, CoffeeIcon, HandHeartIcon } from "@phosphor-icons/react";
 
 import Links from "@/components/Links/Links";
 
 import { ReactComponent as RulerMarker } from "@/assets/ruler-marker.svg";
 import { ReactComponent as RulerMarkerSpec } from "@/assets/ruler-marker-spec.svg";
 import { useMediaQuery } from "@/hooks";
-import { selectionEntryAtom } from "@/state";
+import { useApplicationStore } from "@/state";
 import "./Footer.css";
 
 type FooterProps = {};
@@ -20,7 +19,7 @@ const variants: Variants = {
 
 const Footer = (_: FooterProps) => {
   const isMobile = useMediaQuery("(max-width: 719px)");
-  const isViewing = !!useRecoilValue(selectionEntryAtom);
+  const isViewing = !!useApplicationStore.use.selectionEntry();
 
   return (
     <footer>
@@ -42,7 +41,7 @@ const Footer = (_: FooterProps) => {
                   ?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
             >
-              <ArrowULeftUp size="1em" />
+              <ArrowULeftUpIcon size="1em" />
             </motion.button>
           )}
         </AnimatePresence>
@@ -137,7 +136,7 @@ const Footer = (_: FooterProps) => {
                 )
               }
             >
-              <Coffee size={24} />
+              <CoffeeIcon size={24} />
               Buy us a coffee
             </button>
             <button
@@ -150,7 +149,7 @@ const Footer = (_: FooterProps) => {
                 )
               }
             >
-              <HandHeart size={24} />
+              <HandHeartIcon size={24} />
               Become a patron
             </button>
           </div>

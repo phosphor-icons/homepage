@@ -5,19 +5,19 @@ import {
   MutableRefObject,
   ReactNode,
 } from "react";
-import { useRecoilState } from "recoil";
+import { useShallow } from "zustand/react/shallow";
 import { useHotkeys } from "react-hotkeys-hook";
 import {
-  Command,
-  MagnifyingGlass,
-  X,
-  HourglassHigh,
+  CommandIcon,
+  MagnifyingGlassIcon,
+  XIcon,
+  HourglassHighIcon,
 } from "@phosphor-icons/react";
 import ReactGA from "react-ga4";
 
 import { useDebounce } from "@/hooks";
-import { searchQueryAtom } from "@/state";
 import "./SearchInput.css";
+import { useApplicationStore } from "@/state";
 
 const apple = /iPhone|iPod|iPad|Macintosh|MacIntel|MacPPC/i;
 const isApple = apple.test(window.navigator.platform);
@@ -29,7 +29,10 @@ type SearchInputProps = {};
 
 const SearchInput = (_: SearchInputProps) => {
   const [value, setValue] = useState<string>("");
-  const [query, setQuery] = useRecoilState(searchQueryAtom);
+  const { query, setQuery } = useApplicationStore(useShallow((state) => ({
+    query: state.searchQuery,
+    setQuery: state.setSearchQuery,
+  })));
   const inputRef =
     useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
 
@@ -77,7 +80,7 @@ const SearchInput = (_: SearchInputProps) => {
 
   return (
     <div className="search-bar">
-      <MagnifyingGlass id="search-icon" size={24} />
+      <MagnifyingGlassIcon id="search-icon" size={24} />
       <input
         ref={inputRef}
         id="search-input"
@@ -93,12 +96,12 @@ const SearchInput = (_: SearchInputProps) => {
           (key === "Enter" || key === "Escape") && currentTarget.blur()
         }
       />
-      {!value && !isMobile && <Keys>{isApple ? <Command /> : "Ctrl + "}K</Keys>}
+      {!value && !isMobile && <Keys>{isApple ? <CommandIcon /> : "Ctrl + "}K</Keys>}
       {value ? (
         value === query ? (
-          <X className="clear-icon" size={18} onClick={handleCancelSearch} />
+          <XIcon className="clear-icon" size={18} onClick={handleCancelSearch} />
         ) : (
-          <HourglassHigh className="wait-icon" weight="fill" size={18} />
+          <HourglassHighIcon className="wait-icon" weight="fill" size={18} />
         )
       ) : null}
     </div>

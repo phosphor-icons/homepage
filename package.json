@@ -20,7 +20,7 @@
   ],
   "repository": "github:phosphor-icons/homepage",
   "private": true,
-  "packageManager": "pnpm@9",
+  "packageManager": "pnpm@10.6.3",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -31,8 +31,7 @@
   },
   "dependencies": {
     "@phosphor-icons/core": "^2.1.1",
-    "@phosphor-icons/react": "^2.1.4",
-    "@recoiljs/refine": "^0.1.1",
+    "@phosphor-icons/react": "^2.1.8",
     "file-saver": "^2.0.2",
     "framer-motion": "^10.17.12",
     "fuse.js": "^6.4.1",
@@ -41,10 +40,9 @@
     "react-dropdown-select": "^4.4.2",
     "react-ga4": "^2.1.0",
     "react-hotkeys-hook": "^4.4.3",
-    "recoil": "^0.7.7",
-    "recoil-sync": "^0.2.0",
     "svg2png-converter": "^1.0.2",
-    "tinycolor2": "^1.4.2"
+    "tinycolor2": "^1.4.2",
+    "zustand": "^5.0.4"
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.5",

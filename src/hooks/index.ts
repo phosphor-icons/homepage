@@ -3,7 +3,7 @@ export { default as useDebounce } from "./useDebounce";
 export { default as useEvent } from "./useEvent";
 export { default as useLocalStorage } from "./useLocalStorage";
 export { default as useMediaQuery } from "./useMediaQuery";
-export { default as usePersistSettings } from "./usePersistSettings";
+// export { default as usePersistSettings } from "./usePersistSettings";
 export { default as useSessionStorage } from "./useSessionStorage";
 export { default as useThrottle } from "./useThrottle";
 export { default as useThrottled } from "./useThrottled";

@@ -1,10 +1,9 @@
-import { useMemo } from "react";
-import { useRecoilState } from "recoil";
+import { useShallow } from "zustand/react/shallow";
 import Select from "react-dropdown-select";
-import { PencilSimpleLine } from "@phosphor-icons/react";
+import { PencilSimpleLineIcon } from "@phosphor-icons/react";
 import { IconStyle } from "@phosphor-icons/core";
 
-import { iconWeightAtom } from "@/state";
+import { useApplicationStore } from "@/state";
 
 import "./StyleInput.css";
 
@@ -14,44 +13,45 @@ const options: WeightOption[] = [
   {
     key: "Thin",
     value: IconStyle.THIN,
-    icon: <PencilSimpleLine size={24} weight="thin" />,
+    icon: <PencilSimpleLineIcon size={24} weight="thin" />,
   },
   {
     key: "Light",
     value: IconStyle.LIGHT,
-    icon: <PencilSimpleLine size={24} weight="light" />,
+    icon: <PencilSimpleLineIcon size={24} weight="light" />,
   },
   {
     key: "Regular",
     value: IconStyle.REGULAR,
-    icon: <PencilSimpleLine size={24} weight="regular" />,
+    icon: <PencilSimpleLineIcon size={24} weight="regular" />,
   },
   {
     key: "Bold",
     value: IconStyle.BOLD,
-    icon: <PencilSimpleLine size={24} weight="bold" />,
+    icon: <PencilSimpleLineIcon size={24} weight="bold" />,
   },
   {
     key: "Fill",
     value: IconStyle.FILL,
-    icon: <PencilSimpleLine size={24} weight="fill" />,
+    icon: <PencilSimpleLineIcon size={24} weight="fill" />,
   },
   {
     key: "Duotone",
     value: IconStyle.DUOTONE,
-    icon: <PencilSimpleLine size={24} weight="duotone" />,
+    icon: <PencilSimpleLineIcon size={24} weight="duotone" />,
   },
 ];
 
 type StyleInputProps = {};
 
-const StyleInput = (_: StyleInputProps) => {
-  const [style, setStyle] = useRecoilState(iconWeightAtom);
 
-  const currentStyle = useMemo(
-    () => [options.find((option) => option.value === style)!!],
-    [style]
-  );
+const StyleInput = (_: StyleInputProps) => {
+  const { style, setStyle } = useApplicationStore(useShallow((state) => ({
+    style: state.iconWeight,
+    setStyle: state.setIconWeight,
+  })));
+
+  const currentStyle = [options.find((option) => option.value === style)!];
 
   const handleStyleChange = (values: WeightOption[]) =>
     setStyle(values[0].value as IconStyle);
@@ -72,9 +72,8 @@ const StyleInput = (_: StyleInputProps) => {
         <span
           role="option"
           aria-selected={item.key === values[0].key}
-          className={`react-dropdown-select-item ${
-            itemIndex === cursor ? "react-dropdown-select-item-active" : ""
-          }`}
+          className={`react-dropdown-select-item ${itemIndex === cursor ? "react-dropdown-select-item-active" : ""
+            }`}
           onClick={() => methods.addItem(item)}
         >
           {item.icon}
