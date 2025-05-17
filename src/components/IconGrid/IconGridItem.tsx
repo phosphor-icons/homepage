@@ -5,11 +5,11 @@ import {
   MutableRefObject,
   HTMLAttributes,
 } from "react";
-import { useRecoilState } from "recoil";
 import { motion } from "framer-motion";
+import { useShallow } from "zustand/react/shallow";
 
 import { IconEntry } from "@/lib";
-import { selectionEntryAtom } from "@/state";
+import { useApplicationStore } from "@/state";
 
 interface IconGridItemProps extends HTMLAttributes<HTMLDivElement> {
   index: number;
@@ -33,7 +33,10 @@ const itemVariants = {
 const IconGridItem = (props: IconGridItemProps) => {
   const { index, originOffset, entry, style } = props;
   const { name, Icon } = entry;
-  const [selection, setSelectionEntry] = useRecoilState(selectionEntryAtom);
+  const { selection, setSelectionEntry } = useApplicationStore(useShallow((state) => ({
+    selection: state.selectionEntry,
+    setSelectionEntry: state.setSelectionEntry,
+  })));
   const isOpen = selection?.name === name;
   const isNew = entry.tags.includes("*new*");
   const isUpdated = entry.tags.includes("*updated*");

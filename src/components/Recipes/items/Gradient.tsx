@@ -1,4 +1,4 @@
-import { Fire, Image, Peace, RainbowCloud } from "@phosphor-icons/react";
+import { FireIcon, ImageIcon, PeaceIcon, RainbowCloudIcon } from "@phosphor-icons/react";
 
 import { RecipeProps } from "../Recipe";
 
@@ -8,7 +8,7 @@ const gradient: RecipeProps = {
   Example() {
     return (
       <div className="example">
-        <Fire weight="fill" color="url(#flame)">
+        <FireIcon weight="fill" color="url(#flame)">
           <defs>
             <linearGradient id="flame" x1="0%" y1="100%" x2="0%" y2="0%">
               <stop offset="10%" stopColor="#FFDB00" />
@@ -18,9 +18,9 @@ const gradient: RecipeProps = {
               <stop offset="95%" stopColor="#E25822" />
             </linearGradient>
           </defs>
-        </Fire>
+        </FireIcon>
 
-        <RainbowCloud color="url(#spectrum)">
+        <RainbowCloudIcon color="url(#spectrum)">
           <defs>
             <linearGradient id="spectrum">
               <stop offset="10%" stopColor="indigo" />
@@ -30,9 +30,9 @@ const gradient: RecipeProps = {
               <stop offset="95%" stopColor="red" />
             </linearGradient>
           </defs>
-        </RainbowCloud>
+        </RainbowCloudIcon>
 
-        <Peace weight="fill" color="url(#spectrum2)">
+        <PeaceIcon weight="fill" color="url(#spectrum2)">
           <defs>
             <radialGradient id="spectrum2">
               <stop offset="15%" stopColor="indigo" />
@@ -42,16 +42,16 @@ const gradient: RecipeProps = {
               <stop offset="95%" stopColor="red" />
             </radialGradient>
           </defs>
-        </Peace>
+        </PeaceIcon>
 
-        <Image color="url(#sunset)" weight="fill">
+        <ImageIcon color="url(#sunset)" weight="fill">
           <defs>
             <linearGradient id="sunset" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="violet" />
               <stop offset="100%" stopColor="yellow" />
             </linearGradient>
           </defs>
-        </Image>
+        </ImageIcon>
       </div>
     );
   },

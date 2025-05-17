@@ -1,29 +1,27 @@
 import { useState } from "react";
 import ReactGA from "react-ga4";
-import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
+import { useShallow } from "zustand/react/shallow";
 import {
-  ArrowCounterClockwise,
-  CheckCircle,
-  DiceFive,
-  Link,
+  ArrowCounterClockwiseIcon,
+  CheckCircleIcon,
+  DiceFiveIcon,
+  LinkIcon,
 } from "@phosphor-icons/react";
 import { IconStyle } from "@phosphor-icons/core";
 
 import { useTransientState } from "@/hooks";
-import {
-  iconWeightAtom,
-  iconSizeAtom,
-  iconColorAtom,
-  resetSettingsSelector,
-} from "@/state";
+import { useApplicationStore } from "@/state";
 
 import "./SettingsActions.css";
 
 const SettingsActions = () => {
-  const [weight, setWeight] = useRecoilState(iconWeightAtom);
-  const setSize = useSetRecoilState(iconSizeAtom);
-  const setColor = useSetRecoilState(iconColorAtom);
-  const reset = useResetRecoilState(resetSettingsSelector);
+  const { weight, setWeight, setSize, setColor, reset } = useApplicationStore(useShallow((state) => ({
+    weight: state.iconWeight,
+    setWeight: state.setIconWeight,
+    setSize: state.setIconSize,
+    setColor: state.setIconColor,
+    reset: state.resetApplicationState,
+  })));
 
   const [copied, setCopied] = useTransientState<boolean>(false, 2000);
   const [booped, setBooped] = useState<boolean>(false);
@@ -67,7 +65,7 @@ const SettingsActions = () => {
         title="Restore default settings"
         onClick={reset}
       >
-        <ArrowCounterClockwise size={24} />
+        <ArrowCounterClockwiseIcon size={24} />
       </button>
       <button
         className="tool-button"
@@ -75,9 +73,9 @@ const SettingsActions = () => {
         onClick={copyDeepLinkToClipboard}
       >
         {copied ? (
-          <CheckCircle size={24} color="var(--olive)" weight="fill" />
+          <CheckCircleIcon size={24} color="var(--olive)" weight="fill" />
         ) : (
-          <Link size={24} />
+          <LinkIcon size={24} />
         )}
       </button>
       <button
@@ -90,7 +88,7 @@ const SettingsActions = () => {
           style={{ display: "flex" }}
           onAnimationEnd={() => setBooped(false)}
         >
-          <DiceFive className={booped ? "spin" : ""} size={24} />
+          <DiceFiveIcon className={booped ? "spin" : ""} size={24} />
         </span>
       </button>
     </>

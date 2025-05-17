@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
-import { useRecoilState } from "recoil";
+import { useShallow } from "zustand/react/shallow";
 
-import { iconSizeAtom } from "@/state";
+import { useApplicationStore } from "@/state";
 import "./SizeInput.css";
 
 type SizeInputProps = {};
@@ -15,7 +15,10 @@ const handleBlur = (event: React.UIEvent<HTMLInputElement>) => {
 };
 
 const SizeInput = (_: SizeInputProps) => {
-  const [size, setSize] = useRecoilState(iconSizeAtom);
+  const { size, setSize } = useApplicationStore(useShallow((state) => ({
+    size: state.iconSize,
+    setSize: state.setIconSize,
+  })));
 
   const handleSizeChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {

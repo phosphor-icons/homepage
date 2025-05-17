@@ -1,8 +1,7 @@
 import { useCallback } from "react";
-import { useSetRecoilState } from "recoil";
 
 import { useMediaQuery } from "@/hooks";
-import { searchQueryAtom } from "@/state";
+import { useApplicationStore } from "@/state";
 import "./TagCloud.css";
 
 interface TagCloudProps {
@@ -12,7 +11,7 @@ interface TagCloudProps {
 
 const TagCloud = ({ name, tags }: TagCloudProps) => {
   const isMobile = useMediaQuery("(max-width: 719px)");
-  const setQuery = useSetRecoilState(searchQueryAtom);
+  const setQuery = useApplicationStore.use.setSearchQuery();
   const handleTagClick = useCallback(
     (tag: string) => {
       setQuery(tag);

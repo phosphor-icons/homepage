@@ -5,18 +5,17 @@ import React, {
   useMemo,
   HTMLAttributes,
 } from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
 import { useHotkeys } from "react-hotkeys-hook";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Svg2Png } from "svg2png-converter";
 import { saveAs } from "file-saver";
 import {
-  Copy,
-  CheckCircle,
-  ArrowFatLinesDown,
-  XCircle,
-  CaretDoubleLeft,
-  CaretDoubleRight,
+  CopyIcon,
+  CheckCircleIcon,
+  ArrowFatLinesDownIcon,
+  XCircleIcon,
+  CaretDoubleLeftIcon,
+  CaretDoubleRightIcon,
 } from "@phosphor-icons/react";
 import { IconStyle } from "@phosphor-icons/core";
 import ReactGA from "react-ga4";
@@ -24,13 +23,7 @@ import ReactGA from "react-ga4";
 import Tabs, { Tab } from "@/components/Tabs";
 import { useMediaQuery, useTransientState, useSessionStorage } from "@/hooks";
 import { SnippetType } from "@/lib";
-import {
-  iconWeightAtom,
-  iconSizeAtom,
-  iconColorAtom,
-  selectionEntryAtom,
-  isDarkThemeSelector,
-} from "@/state";
+import { useApplicationStore } from "@/state";
 import { getCodeSnippets, supportsWeight } from "@/utils";
 
 import TagCloud from "./TagCloud";
@@ -82,7 +75,7 @@ const ActionButton = (
   } & HTMLAttributes<HTMLButtonElement>
 ) => {
   const { active, download, label, ...rest } = props;
-  const Icon = download ? ArrowFatLinesDown : Copy;
+  const Icon = download ? ArrowFatLinesDownIcon : CopyIcon;
   return (
     <button
       {...rest}
@@ -91,7 +84,7 @@ const ActionButton = (
       tabIndex={0}
     >
       {active ? (
-        <CheckCircle size={20} color="var(--olive)" weight="fill" />
+        <CheckCircleIcon size={20} color="var(--olive)" weight="fill" />
       ) : (
         <Icon size={20} color="currentColor" weight="fill" />
       )}
@@ -101,12 +94,14 @@ const ActionButton = (
 };
 
 const Panel = () => {
-  const [entry, setSelectionEntry] = useRecoilState(selectionEntryAtom);
+  const {
+    iconWeight: weight,
+    iconSize: size,
+    iconColor: color,
+    selectionEntry: entry,
+    setSelectionEntry,
+  } = useApplicationStore();
 
-  const weight = useRecoilValue(iconWeightAtom);
-  const size = useRecoilValue(iconSizeAtom);
-  const color = useRecoilValue(iconColorAtom);
-  const isDark = useRecoilValue(isDarkThemeSelector);
   const [copied, setCopied] = useTransientState<SnippetType | CopyType | false>(
     false,
     2000
@@ -169,13 +164,13 @@ const Panel = () => {
                     onClick={(e) => handleCopySnippet(e, type)}
                   >
                     {copied === type ? (
-                      <CheckCircle
+                      <CheckCircleIcon
                         size={20}
                         color="var(--olive)"
                         weight="fill"
                       />
                     ) : (
-                      <Copy size={20} color="var(--foreground)" weight="fill" />
+                      <CopyIcon size={20} color="var(--foreground)" weight="fill" />
                     )}
                   </button>
                 )}
@@ -187,7 +182,7 @@ const Panel = () => {
     );
 
     return [snippets, tabs];
-  }, [entry, weight, size, color, copied, isDark]);
+  }, [entry, weight, size, color, copied]);
 
   useHotkeys("esc", () => setSelectionEntry(null));
 
@@ -232,11 +227,11 @@ const Panel = () => {
 
     navigator.clipboard?.writeText(
       "data:image/svg+xml;base64," +
-        btoa(
-          unescape(
-            encodeURIComponent(cloneWithSize(ref.current, size).outerHTML)
-          )
+      btoa(
+        unescape(
+          encodeURIComponent(cloneWithSize(ref.current, size).outerHTML)
         )
+      )
     );
     setCopied(CopyType.SVG_DATA);
   };
@@ -246,8 +241,7 @@ const Panel = () => {
 
     const { name } = entry;
     const data = await fetch(
-      `https://raw.githubusercontent.com/phosphor-icons/core/main/raw/${weight}/${name}${
-        weight === "regular" ? "" : `-${weight}`
+      `https://raw.githubusercontent.com/phosphor-icons/core/main/raw/${weight}/${name}${weight === "regular" ? "" : `-${weight}`
       }.svg`
     );
     const content = await data.text();
@@ -282,8 +276,7 @@ const Panel = () => {
 
     const { name } = entry;
     saveAs(
-      `https://raw.githubusercontent.com/phosphor-icons/core/main/raw/${weight}/${name}${
-        weight === "regular" ? "" : `-${weight}`
+      `https://raw.githubusercontent.com/phosphor-icons/core/main/raw/${weight}/${name}${weight === "regular" ? "" : `-${weight}`
       }.svg`,
       `${entry?.name}${weight === "regular" ? "" : `-${weight}`}.svg`
     );
@@ -433,13 +426,13 @@ const Panel = () => {
                 onClick={() => setShowMoreActions((s) => !s)}
               >
                 {!showMoreActions ? (
-                  <CaretDoubleRight
+                  <CaretDoubleRightIcon
                     size={16}
                     weight="bold"
                     color="var(--foreground)"
                   />
                 ) : (
-                  <CaretDoubleLeft
+                  <CaretDoubleLeftIcon
                     size={16}
                     weight="bold"
                     color="var(--foreground)"
@@ -459,7 +452,7 @@ const Panel = () => {
               e.key === "Enter" && setSelectionEntry(null);
             }}
           >
-            <XCircle color="currentColor" size={28} weight="fill" />
+            <XCircleIcon color="currentColor" size={28} weight="fill" />
           </button>
         </motion.aside>
       )}
