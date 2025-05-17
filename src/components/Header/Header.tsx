@@ -40,16 +40,15 @@ const Header = (_: HeaderProps) => {
   return (
     <header>
       <Banner.Container>
-        <Banner id={"2.1.0"}>
+        <Banner id={"rename-notice"}>
           <div className="message">
             <MegaphoneSimpleIcon size={32} mirrored />
             <small>
-              Phosphor v2.1 is out, adding 268 new icons and some general
-              revisions. Check our{" "}
-              <a href="https://github.com/phosphor-icons/homepage/releases">
+              Some packages may be renaming icons in coming versions, and deprecating older names. Existing names will continue to work, but we recommend upgrading at your convenience. See{" "}
+              <a href="https://github.com/phosphor-icons/react/releases/tag/v2.1.8">
                 release notes
               </a>{" "}
-              to see what's changed!
+              for details.
             </small>
           </div>
         </Banner>
@@ -60,10 +59,12 @@ const Header = (_: HeaderProps) => {
               We are now processing donations via{" "}
               <a href="https://www.buymeacoffee.com/phosphoricons">
                 Buy Me a Coffee
-              </a>{" "}
-              and{" "}
+              </a>{", "}
               <a href="https://ko-fi.com/phosphoricons">
                 Ko-fi
+              </a>{", and "}
+              <a href="https://opencollective.com/phosphoricons">
+                Open Collective
               </a>
               ! Your one-time or recurring contribution does a lot to keep us
               going. Please show us some support if you can!
