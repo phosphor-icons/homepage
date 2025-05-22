@@ -76,8 +76,12 @@ export function supportsWeight({
   return weight !== IconStyle.DUOTONE;
 }
 
+export function stripWrappingQuotes(value: string | null | undefined): string {
+  return value?.replace(/["'](.+)["']/, "$1") ?? "";
+}
+
 export function parseWeight(weight: string | null | undefined): IconStyle {
-  switch (weight?.replace('"', "").toLowerCase()) {
+  switch (stripWrappingQuotes(weight).toLowerCase()) {
     case "thin":
       return IconStyle.THIN;
     case "light":
@@ -95,18 +99,18 @@ export function parseWeight(weight: string | null | undefined): IconStyle {
 }
 
 export function parseQuery(query: string | null | undefined): string {
-  return query?.replace('"', "") ?? "";
+  return stripWrappingQuotes(query);
 }
 
 export function parseSize(size: string | null | undefined): number {
-  const sizeAsNumber = parseInt(size?.replace('"', "") ?? "32", 10);
+  const sizeAsNumber = parseInt(stripWrappingQuotes(size) || "32", 10);
   return Number.isFinite(sizeAsNumber)
     ? Math.min(Math.max(sizeAsNumber, 16), 96)
     : 32;
 }
 
 export function parseColor(color: string | null | undefined): string {
-  const parsedColor = TinyColor(color?.replace('"', "") ?? "#000000");
+  const parsedColor = TinyColor(stripWrappingQuotes(color) || "#000000");
   if (parsedColor.isValid()) {
     return parsedColor.toHexString();
   }
