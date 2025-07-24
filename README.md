@@ -55,7 +55,9 @@ Check out the full documentation on the [@phosphor-icons/web](https://github.com
 ```jsx
 import React from "react";
 import ReactDOM from "react-dom";
-import { Smiley, Heart, Horse } from "@phosphor-icons/react";
+import { Smiley } from '@phosphor-icons/react/dist/csr/Smiley'
+import { Heart } from '@phosphor-icons/react/dist/csr/Heart'
+import { Horse } from '@phosphor-icons/react/dist/csr//Horse'
 
 const App = () => {
   return (
