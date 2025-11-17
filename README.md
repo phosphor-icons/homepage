@@ -5,6 +5,7 @@
 <!-- END_LOGO -->
 
 <!-- BEGIN_OVERVIEW -->
+
 Phosphor is a flexible icon family for interfaces, diagrams, presentations — whatever, really.
 
 - 1,248 icons and counting
@@ -13,6 +14,7 @@ Phosphor is a flexible icon family for interfaces, diagrams, presentations — w
 - Raw stroke information retained to fine-tune the style
 
 More ways to use at [phosphoricons.com](https://phosphoricons.com).
+
 <!-- END_OVERVIEW -->
 
 ## For developers
@@ -55,14 +57,14 @@ Check out the full documentation on the [@phosphor-icons/web](https://github.com
 ```jsx
 import React from "react";
 import ReactDOM from "react-dom";
-import { Smiley, Heart, Horse } from "@phosphor-icons/react";
+import { SmileyIcon, HeartIcon, HorseIcon } from "@phosphor-icons/react";
 
 const App = () => {
   return (
     <div>
-      <Smiley />
-      <Heart size={32} color="hotpink" weight="fill" />
-      <Horse weight="duotone" />
+      <SmileyIcon />
+      <HeartIcon size={32} color="hotpink" weight="fill" />
+      <HorseIcon weight="duotone" />
     </div>
   );
 };
@@ -103,6 +105,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 > Due to possible namespace collisions with built-in HTML elements, compononent names in the Vue library are prefixed with `Ph`, but otherwise follow the same naming conventions. Both Pascal and kebab-case conventions can be used in templates.
 
 <!-- BEGIN_LINKS -->
+
 ## Our Projects
 
 - [@phosphor-icons/homepage](https://github.com/phosphor-icons/homepage) ▲ Phosphor homepage and general info
@@ -159,4 +162,5 @@ If you've made a port of Phosphor and you want to see it here, just open a PR [h
 ## License
 
 MIT © [Phosphor Icons](https://github.com/phosphor-icons)
+
 <!-- END_LINKS -->

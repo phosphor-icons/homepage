@@ -33,7 +33,7 @@ export function getCodeSnippets({
     [SnippetType.HTML]: `<i class="ph${
       isDefaultWeight ? "" : `-${weight}`
     } ph-${name}"></i>`,
-    [SnippetType.REACT]: `<${displayName} size={${size}} ${
+    [SnippetType.REACT]: `<${displayName}Icon size={${size}} ${
       !isDefaultColor ? `color="${color}" ` : ""
     }${isDefaultWeight ? "" : `weight="${weight}" `}/>`,
     [SnippetType.VUE]: `<Ph${displayName} :size="${size}" ${
