@@ -120,7 +120,7 @@ const Panel = () => {
     if (!entry) return [{}, []];
 
     const snippets = getCodeSnippets({
-      displayName: entry?.pascal_name!,
+      displayName: `${entry?.pascal_name!}Icon`,
       name: entry.name,
       weight,
       size,
