@@ -73,6 +73,15 @@ ReactDOM.render(<App />, document.getElementById("root"));
 - **Lightweight** – Supports tree-shaking, so your bundle only includes code for the icons you use.
 - **Flexible** – Icon Components are a transparent wrapper around SVG elements, so feel free to add your own inline `style` objects, `onClick` handler functions, and a multitude of other props you're used to using on SVGs.
 
+> [!TIP]
+> Some bundlers may eagerly transpile every icon module when importing from the package root. If development builds are slow, import client-rendered icons from their individual paths:
+>
+> ```jsx
+> import { SmileyIcon } from "@phosphor-icons/react/dist/csr/Smiley";
+> ```
+>
+> Next.js 13+ users can instead configure `optimizePackageImports` and keep package-root imports. See [Import Performance Optimization](https://github.com/phosphor-icons/react#import-performance-optimization) for details.
+
 ### Vue
 
 - **Parity** – As with React, you can manipulate the `color`, `size`, and `weight` of an icon with a few keystrokes, or provide default styles to all icons via the `provide/inject` API. It is fully tree-shakable and ready to use right away. Check out the full documentation on the [@phosphor-icons/vue](https://github.com/phosphor-icons/vue) repo page.
